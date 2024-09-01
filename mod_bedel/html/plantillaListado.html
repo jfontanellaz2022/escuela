@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../../public/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../public/assets/css/jquery-ui.css">
+     <link rel="stylesheet" href="../../public/assets/css/select2.min.css"  />
+     <link rel="stylesheet" href="../css/style.css"  />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<body>
+    
+<article>
+    <div id="breadcrumb">
+      <nav aria-label="breadcrumb" role="navigation">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Listado</li>
+          </ol>
+      </nav>
+    </div>
+</article>
+
+
+<article  class="container">
+  <section id="principal">
+    <div class="table-responsive" >
+      <table class="table table-striped table-bordered table-hover bg2" id="tabla_calendario">
+        <thead>
+          <tr>
+            <th class="text-left" colspan="13">
+               <table width="100%">
+                  <tr>
+                  <th class="text-left" colspan="5">
+                    <button class="btn btn-primary '.$rol_admin.'" onclick="entidadCrear()">Agregar</button>&nbsp;
+                    <button class="btn btn-primary '.$rol_admin.'" onclick="entidadEliminarSeleccionados()">Borrar Seleccionados</button>&nbsp;
+                  </th>
+                  <th class="text-right" colspan="7">
+                      <div class="col-7">
+                      <div class="input-group">
+                        <input id="inputBusquedaRapida" placeholder="Busqueda Rapida" type="text" class="form-control" value=""> 
+                        <div class="input-group-append">
+                        <div class="input-group-text">
+                          <a href="#" onclick="aplicarBusquedaRapida()"><i class="fa fa-search"></i></a>
+                        </div>
+                        </div>
+                      </div>
+                      </div>
+                    </th>
+                </tr>  
+               </table>
+            </th>
+              </tr>
+          <tr>
+            <th class="text-center" width="5%"><small><b><input type="checkbox" class="" id="seleccionar_todos"></b></small></th>
+            <th width="5%" class="text-center text-primary" colspan=3><small><b>ACCIONES</b><small></th>
+            <th class="text-center text-primary" width="30%"><small><b>campo2</b></small></th>
+            <th class="text-center text-primary" width="5%"><small><b>campo3</b></small></th>
+            <th class="text-center text-primary" width="25%"><small><b>campo4</b></small></th>
+            <th class="text-center text-primary" width="30%"><small><b>campo5</b></small></th>
+          </tr>
+          <tr>
+            <th class="text-right" colspan=4>
+                <button class="btn btn-primary" onclick="quitarFiltro()" title="Quitar Filtro"><img src="../../public/img/icons/filterminus.png" width="22"></button>
+                <button class="btn btn-primary" onclick="aplicarFiltro()" title="Aplicar Filtro"><img src="../../public/img/icons/filter.png" width="22"></button>
+              </th>
+            <th class="text-center" width="15%"><small><b><input type="text" class="form-control" id="inputFiltrocampo2" value=""></b></small></th>
+            <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltrocampo3" value=""></b></small></th>
+            <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltrocampo4" value=""></b></small></th>
+            <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltrocampo5" value=""></b></small></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                  <td align="center"><small><b><input type="checkbox" class=" check" id="check_campo1" name="check_usu[]" value="Campo1"></b></small></td>
+                      <td align="center" colspan="3">
+                      <div class="btn-group pull-right" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Acciones
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                          <a class=" dropdown-item small" href="#" onclick="entidadVer(Campo1)"><i class="fa fa-address-card-o"></i>&nbsp;Ver</a>
+                          <a class=" dropdown-item small" href="#" onclick="entidadEditar(Campo1)"><i class="fa fa-edit"></i>&nbsp;Editar</a>
+                          <a class=" dropdown-item small" href="#" data-toggle="modal" data-target="#confirmarModal" data-id="Campo1"><i class="fa fa-trash"></i>&nbsp;Borrar</a>
+                          <a class=" dropdown-item small" href="#" onclick="enviarEmail(Campo1)"><i class="fa fa-envelope"></i>&nbsp;Enviar Email</a>
+                        </div>
+                                    </div>
+                  </td>
+                  <td align="left"><small>campo2<small></td>
+                  <td align="left"><small>campo3</small></td>
+                  <td align="left"><small>campo4</small></td>
+                  <td align="left"><small>campo5</small></td>
+              </tr>
+        </tbody>
+         <tfoot>
+             <tr><td colspan='6'></td></td></tr>
+        </tfoot>
+        </table>
+    </div>
+
+
+
+  </section>  
+
+  <section id="resultado_accion">
+  </section>         
+</article>
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="../../public/assets/js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="../../public/assets/js/jquery-ui.js"></script>
+<script src="../../public/assets/js/select2.min.js"></script>
+<script src="../../public/assets/jquery/jquery.maskedinput.js"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+-->    
+
+<script>
+
+  $(document).ready(function() {
+    $("#inputCuit").mask("99-99999999-9");
+    /*$("input").blur(function() {
+                                $("#info").html("Unmasked value: " + $(this).mask());
+                            }).dblclick(function() {
+                                $(this).unmask();
+                            });*/
+                          })                        
+
+  function valideKeySoloNumerosSinPrimerCero(evt,val){
+    var inputValue = val;
+    //alert(val);
+    // Verificar si el primer carácter es cero
+    if (inputValue.length === 0 && evt.which === 48) {
+        evt.preventDefault();
+        return false;
+    }
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57 && inputValue.charAt(0)!== '0') { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
+
+function valideKeySoloNumeros(evt){
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57) { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
+
+
+$(function () {
+  $('.select2').select2({
+    closeOnSelect: false,
+    placeholder: "Buscar Localidad",
+    language: {
+                  noResults: function() {
+                                return "No hay resultado";        
+                                   },
+                  searching: function() {
+                                return "Buscando..";
+                                   }
+              },
+  });
+
+
+    $("#inputFechaNacimiento").datepicker({
+            dateFormat: 'dd/mm/yy',
+            maxDate: new Date()
+    });
+
+    
+
+});
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+

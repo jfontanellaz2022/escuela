@@ -1,0 +1,113 @@
+<!--  ID del REGISTRO que se va a procesar-->
+<input id="inputId" inputmode="numeric" placeholder="ID" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+
+<!-- *********************************************** -->
+<!-- **** 1 - AGREGAR/EDITAR CORRELATIVA A CURSADO   -->
+<!-- *********************************************** -->
+<div class="img form" id="correlativas_save">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h3 class="display-4"><span id="subtitulo_formulario">Crear Correlativa para cursado</span></h3>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Materia</strong>
+            <select id="inputMateria" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Materias Requerida</strong>
+            <select id="inputMateriaRequerida" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Condición</strong>
+            <select id="inputCondicion" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+              <option value="1">Regular</option>
+              <option value="2">Aprobada</option>
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarEntidad()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+
+<!-- ********************************************************** -->
+<!-- *********** 2 - VER REGISTRO DE CORRELATIVIDADES ********* -->
+<!-- ********************************************************** -->
+<div class="img form" id="correlativas_ver" >
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4"><span id="subtitulo_ver">Ver Correlativas para Cursar</span></h1>
+      <hr>
+      <p class="lead">Estos datos son estrictamente confidenciales.</p>
+  
+  <form id="form">
+      
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Carrera: </strong> <span id="spn_carrera"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Materia: </strong><span id="spn_materia"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Materia Requerida: </strong><span id="spn_materia_requerida"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Condicion: </strong><span id="spn_condicion"></span>
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadEditar($('#inputId').val())">Editar</button>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  
+  </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,6 @@
+[22-May-2024 20:55:37 UTC] PHP Warning:  Undefined array key "tipoUsuario" in /home2/uiakkdaq/public_html/mod_profesor/seguridadNivel2.php on line 3
+[22-May-2024 20:55:37 UTC] PHP Warning:  Undefined array key "idProfesor" in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 139
+[22-May-2024 22:40:45 UTC] PHP Warning:  Undefined array key "tipoUsuario" in /home2/uiakkdaq/public_html/mod_profesor/seguridadNivel2.php on line 3
+[22-May-2024 22:40:45 UTC] PHP Warning:  Undefined array key "idProfesor" in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 139
+[23-May-2024 01:04:12 UTC] PHP Warning:  Undefined array key "tipoUsuario" in /home2/uiakkdaq/public_html/mod_profesor/seguridadNivel2.php on line 3
+[23-May-2024 01:04:12 UTC] PHP Warning:  Undefined array key "idProfesor" in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 139

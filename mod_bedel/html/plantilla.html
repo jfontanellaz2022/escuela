@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../../public/assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../../public/assets/css/jquery-ui.css">
+     <link rel="stylesheet" href="../../public/css/select2.min.css">
+     <link rel="stylesheet" href="../../public/css/select2-bootstrap.css">
+
+     <link rel="shortcut icon" href="../public/assets/img/favicon.png">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <link rel="stylesheet" href="../../public/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../../css/style.css">
+      <link rel="stylesheet" href="../../public/css/custom.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<h1>ALERTS</h1>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+        <span style="color: #000000;">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            &nbsp;<strong>Atenci&oacute;n:</strong> Success Message
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>   
+        </span>  
+    </div>      
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning">
+        <span style="color: #000000;">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            &nbsp;<strong>Atenci&oacute;n:</strong> Warning Message
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>   
+        </span>    
+    </div>
+        
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
+        <span style="color: #000000;">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            &nbsp;<strong>Atenci&oacute;n:</strong> Error Message
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>   
+        </span>    
+    </div>
+
+
+
+  <article class="img form">
+        <div class="jumbotron jumbotron-fluid rounded form2">
+          <div class="container justifu+y-content-center">
+            <h1 class="display-4">FORMULARIOa</h1>
+            <hr>
+        <form id="form">
+            
+          <div class="form-row">  
+            <div class="form-group col-md-6">
+              <strong>Apellido</strong>
+              <input id="inputApellido" placeholder="Apellido" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+            </div>
+          </div>
+        
+          <div class="form-row">  
+            <div class="form-group col-md-6">
+              <strong>CUIT</strong>
+              <input id="inputCuit" name="inputCuit" value="00-00000000-0" inputmode="numeric" placeholder="" type="text" class="form-control" minlength="11" maxlength="11" required autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-row">  
+            <div class="form-group col-md-6">
+              <strong>Fecha Nacimiento</strong>
+              <input type="text" class="form-control" id="inputFechaNacimiento" placeholder="dd/mm/aaaa" required autocomplete="off">
+            </div>
+          </div>
+          
+          <div class="form-row">
+              <div class="form-group col-md-6"> 
+                    <strong>Localidad</strong>
+                    <select id="inputAltaEvento" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                        <option selected="selected">Evento</option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                  </select> 
+              </div>
+          </div>
+        
+
+          <div class="form-group row">  
+            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <strong>Tel.Numero (Sin el 0)</strong>
+                <input id="inputTelefonoCaracteristica" inputmode="tel" placeholder="Caracteristica" type="text" class="form-control" minlength="2" maxlength="4" onkeypress="return valideKeySoloNumerosSinPrimerCero(event,this.value);" required autocomplete="off">
+            
+              </div>
+
+              <div class="form-group col-md-3">
+                <strong>Tel.Numero (Sin el 15)</strong>
+                <input id="inputTelefonoNumero" inputmode="tel" placeholder="Numero" type="text" class="form-control" minlength="6" maxlength="9" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+              </div>
+          </div>
+
+          <div class="form-row">
+             <div class="form-group col-md-6">
+               <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="guardarPassword()">Guardar</button>
+             </div>
+           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <button type="button" class="btn btn-primary btn-block" onclick="load()">Volver</button>
+            </div>
+          </div>
+        
+        </form>
+        
+        </div>
+        </div>
+</article>
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="../../public/assets/js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="../../public/assets/js/jquery-ui.js"></script>
+<script src="../../public/assets/js/select2.min.js"></script>
+<script src="../../public/assets/jquery/jquery.maskedinput.js"></script>
+<script src="../../public/assets/jquery-3.4.1.min.js"></script>
+<script src="../../public/assets/jquery-ui.js"></script>
+<script src="../../public/assets/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="../../public/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js"></script>
+<script src="../../public/assets/jquery/jquery.maskedinput.js"></script>
+<script src="../../public/assets/select2.min.js"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+-->    
+
+<script>
+
+  $(document).ready(function() {
+    $("#inputCuit").mask("99-99999999-9");
+    $("#inputCuit").val("20249128342");
+		$("#inputCuit").mask("99-99999999-9");
+    /*$("input").blur(function() {
+                                $("#info").html("Unmasked value: " + $(this).mask());
+                            }).dblclick(function() {
+                                $(this).unmask();
+                            });*/
+                          })                        
+
+  function valideKeySoloNumerosSinPrimerCero(evt,val){
+    var inputValue = val;
+    //alert(val);
+    // Verificar si el primer carácter es cero
+    if (inputValue.length === 0 && evt.which === 48) {
+        evt.preventDefault();
+        return false;
+    }
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57 && inputValue.charAt(0)!== '0') { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
+
+function valideKeySoloNumeros(evt){
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57) { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
+
+
+$(function () {
+  $('.select2').select2({
+    closeOnSelect: false,
+    placeholder: "Buscar Localidad",
+    language: {
+                  noResults: function() {
+                                return "No hay resultado";        
+                                   },
+                  searching: function() {
+                                return "Buscando..";
+                                   }
+              },
+  });
+
+
+    $("#inputFechaNacimiento").datepicker({
+            dateFormat: 'dd/mm/yy',
+            maxDate: new Date()
+    });
+
+    
+
+});
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+

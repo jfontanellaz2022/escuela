@@ -1,0 +1,50 @@
+<form>
+    <div class="form-group">
+        <label for="inputEditarCursado"><strong>Tipo Cursado</strong></label>
+        <input type="hidden" id="inputEditarIdAlumno">
+        <input type="hidden" id="inputEditarIdMateria">
+        <input type="hidden" id="inputEditarAnioCursado">
+        <select name="inputEditarCursado" id="inputEditarCursado"  class="form-control input-form">
+            <option value="1">Presencial</option>
+            <option value="2">Semipresencial</option>
+            <option value="3">Libre</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEditarNota"><strong>Nota</strong></label>
+        <select name="inputEditarNota" id="inputEditarNota"  class="form-control input-form">
+            <option value="-1">Libre</option>
+            <option value="0">Cursando</option>
+            <option value="1">1 (Uno)</option>
+            <option value="2">2 (Dos)</option>
+            <option value="3">3 (Tres)</option>
+            <option value="4">4 (Cuatro)</option>
+            <option value="5">5 (Cinco)</option>
+            <option value="6">6 (Seis)</option>
+            <option value="7">7 (Siete)</option>
+            <option value="8">8 (Ocho)</option>
+            <option value="9">9 (Nueve)</option>
+            <option value="10">10 (Diez)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEditarEstado"><strong>Estado</strong></label>
+        <select name="inputEditarEstado" id="inputEditarEstado"  class="form-control input-form">
+            <option value="Regularizo">Regularizo</option>
+            <option value="Libre">Libre</option>
+            <option value="Promociono">Promociono</option>
+            <option value="Homologo">Homologo</option>
+            <option value="Aprobo">Aprobo</option>
+            <option value="Cursando">Cursando</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEditarFechaExpiracion"><strong>Fecha Expiración</strong></label>
+        <input type="text" class="form-control input-form" id="inputEditarFechaExpiracion" placeholder="aaaa/mm/dd" >
+    </div>
+    <button type="button" class="btn btn-primary" onclick="cursadoEditarGuardar()">Guardar</button>
+    <div>&nbsp;</div>
+</form>

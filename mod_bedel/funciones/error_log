@@ -1,0 +1,411 @@
+[02-May-2024 23:53:28 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[02-May-2024 23:53:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/getCarrerasHabilitadas.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:00:02 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:00:02 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/getCarrerasHabilitadas.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:00:42 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:00:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/getCarrerasHabilitadas.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:07:57 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:07:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:08:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'habilitada_cursado' in 'where clause' in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php:14
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php(14): mysqli_query(Object(mysqli), 'SELECT id, codi...')
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php on line 14
+[03-May-2024 00:09:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'habilitada_cursado' in 'where clause' in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php:14
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php(14): mysqli_query(Object(mysqli), 'SELECT id, codi...')
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php on line 14
+[03-May-2024 00:10:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'habilitada_cursado' in 'where clause' in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php:14
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php(14): mysqli_query(Object(mysqli), 'SELECT id, codi...')
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/carrerasHabilitadasSelect.php on line 14
+[03-May-2024 00:12:11 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:12:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarrera.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:47:43 UTC] PHP Fatal error:  Uncaught JsonException: Malformed UTF-8 characters, possibly incorrectly encoded in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarrera.php:42
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarrera.php(42): json_encode(Array, 4194304)
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarrera.php on line 42
+[03-May-2024 00:54:43 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:54:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(9): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:54:53 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:54:53 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(8): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:54:54 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:54:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(9): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:55:01 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:55:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(9): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:56:42 UTC] PHP Warning:  require_once(parameters.php): Failed to open stream: No such file or directory in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[03-May-2024 00:56:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'parameters.php' (include_path='../../config/') in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php:5
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoObtenerPorId.php(6): require_once()
+#1 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/funciones/_seguridad.php on line 5
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:25:17 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:27:56 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:29:49 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:41 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:30:41 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:41 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:41 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:41 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:53 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:30:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:30:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:10 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:31:10 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:10 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:10 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:10 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:13 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[06-May-2024 23:31:13 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:21 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:26 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:31:26 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:26 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:26 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:31:26 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:22 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:25 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:27 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:29 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:31 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:33 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[06-May-2024 23:34:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:34:51 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[06-May-2024 23:35:00 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:01:50 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[10-May-2024 23:03:03 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[10-May-2024 23:03:03 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[10-May-2024 23:03:20 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[10-May-2024 23:03:20 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[15-May-2024 23:24:38 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[15-May-2024 23:24:38 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[17-May-2024 11:16:43 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[17-May-2024 11:16:43 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:43:42 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:43:42 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:43:46 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 20:45:56 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:45:56 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:46:15 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 20:46:15 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 22:39:21 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 22:39:21 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 23:52:35 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 23:52:35 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 23:52:44 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 23:52:44 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[20-May-2024 23:53:37 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 23:53:37 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 23:53:44 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 23:53:44 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:23 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:32 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:54:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:40 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:54:57 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:55:05 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:12 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 37
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[20-May-2024 23:55:19 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListarAlumnos.php on line 148
+[21-May-2024 19:18:18 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 19:18:18 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 19:18:29 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 19:18:29 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 19:23:54 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 19:23:54 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[21-May-2024 20:03:05 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 9
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[21-May-2024 20:03:05 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 9
+[21-May-2024 20:03:05 UTC] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[22-May-2024 19:14:04 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[22-May-2024 19:14:04 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[22-May-2024 19:14:19 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 58
+[22-May-2024 19:14:19 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 58
+[22-May-2024 19:14:22 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[22-May-2024 19:14:22 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 59
+[28-May-2024 12:06:47 UTC] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[28-May-2024 12:06:47 UTC] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 12:11:20 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 19:12:30 UTC] PHP Warning:  Undefined variable $MY_SECRET in /home2/uiakkdaq/public_html/mod_bedel/funciones/carreraListar.php on line 159
+[28-May-2024 21:43:28 UTC] PHP Warning:  Undefined array key "idBedel" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 20
+[28-May-2024 21:43:31 UTC] PHP Warning:  Undefined array key "idBedel" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 20
+[28-May-2024 21:43:37 UTC] PHP Warning:  Undefined array key "idBedel" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 20
