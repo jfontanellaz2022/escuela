@@ -4,4 +4,5 @@
 /documentacion/*
 /conexion/*
 /public/*
+/vendor/*
 /app/models/DB.php
