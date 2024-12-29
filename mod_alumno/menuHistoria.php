@@ -1,8 +1,20 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-require_once "seguridadNivel1.php";
+require_once "verificarCredenciales.php";
+require_once "Alumno.php";
+
 $id_url = "menu_historia";
 //echo $_SESSION['idAlumno'];die;
+//var_dump($_SESSION['arreglo_datos_usuario']);die;
+$persona_id = $_SESSION['arreglo_datos_usuario']['idPersona'];
+$alumno = new Alumno();
+$_SESSION['idAlumno'] = $alumno->getAlumnoByIdPersona($persona_id)['id'];
+
+//var_dump($_SESSION['idAlumno']);exit;
+
+
+
+//$_SESSION['arreglo_credenciales_usuario'] = $objUsuario->getCredencialesByIdPersona($idPersona);
 ?>
 
 <!doctype html>

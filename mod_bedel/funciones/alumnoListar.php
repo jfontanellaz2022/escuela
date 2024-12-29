@@ -1,12 +1,14 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+
+require_once 'verificarCredenciales.php';
+
 
 require_once 'AlumnoFilter.php';
 require_once 'AlumnoEstudiaCarrera.php';
 require_once 'Sanitize.class.php';
 require_once 'pagination.php';
 require_once 'ArrayHash.class.php';
-require_once "_seguridad.php";
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
 
@@ -62,8 +64,6 @@ if($action == 'listar'){
 	
 	$objeto = new AlumnoFilter();
 	$arr_objetos = $objeto->getAlumnosDetalle($page,$per_page,$arr_filtro);
-	//var_dump($arr_objetos);die;
-
 	$numrows = $objeto->getCantidad();
 
 	//PAGINATION VARIABLES

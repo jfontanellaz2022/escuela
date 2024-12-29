@@ -1,9 +1,9 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../'.PATH_SEPARATOR.'../../conexion/');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+require_once 'verificarCredenciales.php';
+require_once "conexion.php";
+require_once 'Sanitize.class.php';
 
 $array_resultados = array();
 $search = (isset($_GET['searchTerm']))?$_GET['searchTerm']:false;

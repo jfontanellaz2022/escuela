@@ -22,15 +22,19 @@ class AlumnoRindeMateriaDetalle extends AlumnoRindeMateria{
 	public function getAlumnosByIdMateriaByIdCalendarioDetalle($materia_id,$calendario_id,$llamado=3){
 		$this->getConection();
 		if ($llamado==3) {
-			$sql = "SELECT a.*, p.email, arm.condicion, arm.nota, arm.estado_final, arm.FechaHoraInscripcion 
+			$sql = "SELECT a.id, a.anioIngreso, a.debeTitulo, a.habilitado, a.idPersona,
+			               p.dni, p.apellido, p.nombre, p.email, p.telefono_caracteristica, p.telefono_numero,
+			               arm.condicion, arm.nota, arm.estado_final, arm.FechaHoraInscripcion 
 			        FROM alumno_rinde_materia arm, alumno a, persona p  
-					WHERE arm.idMateria = ? and arm.idCalendario = ? and arm.idAlumno = a.id and a.dni = p.dni";
+					WHERE arm.idMateria = ? and arm.idCalendario = ? and arm.idAlumno = a.id and a.idPersona = p.id";
 			$stmt = $this->conection->prepare($sql);
 			$stmt->execute([$materia_id,$calendario_id]);
 		} else {
-			$sql = "SELECT a.*, p.email, arm.condicion, arm.nota, arm.estado_final, arm.FechaHoraInscripcion 
+			$sql = "SELECT a.id,a.anioIngreso, a.debeTitulo, a.habilitado, a.idPersona,
+			               p.dni, p.apellido, p.nombre, p.email, p.telefono_caracteristica, p.telefono_numero,
+			               arm.condicion, arm.nota, arm.estado_final, arm.FechaHoraInscripcion 
 					FROM alumno_rinde_materia arm, alumno a, persona p 
-					WHERE arm.idMateria = ? and arm.idCalendario = ? and arm.llamado = ? and arm.idAlumno=a.id and a.dni = p.dni";
+					WHERE arm.idMateria = ? and arm.idCalendario = ? and arm.llamado = ? and arm.idAlumno=a.id and a.idPersona = p.id";
 			$stmt = $this->conection->prepare($sql);
 			$stmt->execute([$materia_id,$calendario_id,$llamado]);
 		}

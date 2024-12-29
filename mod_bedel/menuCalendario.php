@@ -1,6 +1,6 @@
 <?php 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-require_once('seguridad.php');
+set_include_path('../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
+require_once 'verificarCredenciales.php';
 ?>
 <!doctype html>
 <html lang="es">
@@ -215,30 +215,6 @@ function aplicarFiltro() {
   };
 
 //******************************************* 
-// APLICA EL FILTRO AL LISTADO DE ENTIDADES   
-//******************************************* 
-function aplicarBusquedaRapida() {
-    let id = $("#inputFiltroId").val();
-    let anio = $("#inputFiltroAnio").val();
-    let evento = $("#inputFiltroEvento").val();
-    let fechaInicio = $("#inputFiltroFechaInicio").val();
-    let fechaFinalizacion = $("#inputFiltroFechaFinalizacion").val();
-    let busqueda = $("#inputBusquedaRapida").val();
-    let per_page = 10;
-    let parametros = {"action": "listar","page": 1,"per_page": per_page, "id":id, "anio":anio, "evento":evento, "fechaInicio":fechaInicio, "fechaFinalizacion":fechaFinalizacion,"busqueda_rapida":busqueda};
-    let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
-    $("#titulo").html(titulo);
-        $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
-            data: parametros,
-            method: 'POST',
-            success: function (data) {
-                $("#principal").slideDown("slow").html(data);
-            }
-        });       
-  };
- 
-//******************************************* 
 // QUITA EL FILTRO DEL LISTADO DE ENTIDADES   
 //******************************************* 
 function quitarFiltro() {
@@ -262,7 +238,7 @@ function entidadObtenerPorId(entidad_id){
         async: false
       });
     $.post(url, {"id":entidad_id}, function (data) {
-          resultado = data;
+          resultado = data.datos;
     },"json")
     return resultado;
 };
@@ -287,23 +263,25 @@ function entidadVer(entidad_id){
     $("#breadcrumb").slideDown("slow").html(breadcrumb);  
 
     datos_entidad = entidadObtenerPorId(entidad_id);
-    $.get(url,function(data) {
-          $("#resultado_accion").html("");
-          $("#principal").slideDown("slow").html(data);
-          $('#calendario_ver').removeClass('d-none');
-          $('#calendario_editar').addClass('d-none');
-          //******************************************************************** 
-          //**************************** CAMBIAR ******************************* 
-          $("#spn_id").html(datos_entidad.datos[0].id);
-          $("#spn_anio").html(datos_entidad.datos[0].AnioLectivo);
-          $("#spn_evento").html(datos_entidad.datos[0].descripcion+' ('+datos_entidad.datos[0].codigo+')');
-          $("#spn_fecha_inicio").html(datos_entidad.datos[0].fechaInicioEvento);
-          $("#spn_fecha_finalizacion").html(datos_entidad.datos[0].fechaFinalEvento);
-          $("#inputId").val(entidad_id);
-          
-           //******************************************************************** 
-           //******************************************************************** 
-    });
+    if (datos_entidad!=null) {
+        $.get(url,function(data) {
+            $("#resultado_accion").html("");
+            $("#principal").slideDown("slow").html(data);
+            $('#calendario_ver').removeClass('d-none');
+            $('#calendario_editar').addClass('d-none');
+            //******************************************************************** 
+            //**************************** CAMBIAR ******************************* 
+            $("#spn_id").html(datos_entidad.id);
+            $("#spn_anio").html(datos_entidad.anio_lectivo);
+            $("#spn_evento").html(datos_entidad.nombre+' ('+datos_entidad.codigo+')');
+            $("#spn_fecha_inicio").html(datos_entidad.fecha_inicio);
+            $("#spn_fecha_finalizacion").html(datos_entidad.fecha_final);
+            $("#inputId").val(datos_entidad.id);
+            
+            //******************************************************************** 
+            //******************************************************************** 
+        });
+    }
 }
 
 
@@ -394,7 +372,7 @@ function entidadEditar(entidad_id){
                           </nav>`;
       $("#breadcrumb").slideDown("slow").html(breadcrumb);   
       datos_entidad = entidadObtenerPorId(entidad_id);
-
+      if (datos_entidad!=null) {
       $.get(url,function(data) {
             $("#resultado_accion").html("");
             $("#principal").slideDown("slow").html(data);
@@ -403,7 +381,7 @@ function entidadEditar(entidad_id){
             //******************************************************************** 
             //**************************** CAMBIAR ******************************* 
             $("#inputAccion").val('editar');
-            $("#inputAnio").val(datos_entidad.datos[0].AnioLectivo);
+            $("#inputAnio").val(datos_entidad.anio_lectivo);
             //$("#inputCuatrimestre").val(datos_entidad.datos[0].AnioLectivo);
             //$('#inputCuatrimestre option[value="'+datos_entidad.datos[0].idPeriodoCuatrimestreActivo+'"]').attr("selected", "selected");
 
@@ -412,20 +390,20 @@ function entidadEditar(entidad_id){
             $("#inputFechaInicio").datepicker({
                 dateFormat: 'dd/mm/yy',
             });
-            if (datos_entidad.datos[0].fechaInicioEvento!=null) {
-                let anio = (datos_entidad.datos[0].fechaInicioEvento).substr(0,4);
-                let mes = (datos_entidad.datos[0].fechaInicioEvento).substr(5,2);
-                let dia = (datos_entidad.datos[0].fechaInicioEvento).substr(8,2);
+            if (datos_entidad.fecha_inicio!=null) {
+                let anio = (datos_entidad.fecha_inicio).substr(0,4);
+                let mes = (datos_entidad.fecha_inicio).substr(5,2);
+                let dia = (datos_entidad.fecha_inicio).substr(8,2);
                 $("#inputFechaInicio").datepicker('setDate',dia+'/'+mes+'/'+anio);
             }
 
             $("#inputFechaFinalizacion").datepicker({
                 dateFormat: 'dd/mm/yy',
             });
-            if (datos_entidad.datos[0].fechaFinalEvento!=null) {
-                let anio = (datos_entidad.datos[0].fechaFinalEvento).substr(0,4);
-                let mes = (datos_entidad.datos[0].fechaFinalEvento).substr(5,2);
-                let dia = (datos_entidad.datos[0].fechaFinalEvento).substr(8,2);
+            if (datos_entidad.fecha_final!=null) {
+                let anio = (datos_entidad.fecha_final).substr(0,4);
+                let mes = (datos_entidad.fecha_final).substr(5,2);
+                let dia = (datos_entidad.fecha_final).substr(8,2);
                 $("#inputFechaFinalizacion").datepicker('setDate',dia+'/'+mes+'/'+anio);
             }
 
@@ -451,13 +429,14 @@ function entidadEditar(entidad_id){
             });
 
             var data = {
-                id: datos_entidad.datos[0].idEvento,
-                text: datos_entidad.datos[0].descripcion + ' (' + datos_entidad.datos[0].codigo + ')'
+                id: datos_entidad.idTipifiacion,
+                text: datos_entidad.nombre + ' (' + datos_entidad.codigo + ')'
             };
             var newOption = new Option(data.text, data.id, false, false);
             $('#inputEvento').append(newOption).trigger('change');
-            $("#inputEvento option[value="+ datos_entidad.datos[0].idEvento +"]").attr("selected",true);
+            $("#inputEvento option[value="+ datos_entidad.idTipificacion +"]").attr("selected",true);
       });
+    };
 }
 
 
@@ -478,7 +457,7 @@ function entidadGuardar(){
     console.log(parametros);
     if (accion!="" && anio!="" && evento!=="" && fecha_inicio!="" && fecha_finalizacion!="") {
         $.post(url,parametros, function(data) {
-            if (data.codigo==100) {
+            if (data.codigo==200) {
                     $("#resultado_accion").html(`
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
                                                 

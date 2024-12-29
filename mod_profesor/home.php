@@ -4,16 +4,24 @@
    require_once "Persona.php";
    require_once "CalendarioAcademico.php";
 
+   
+
    $id_pagina = 'home';
    $id_persona = $_SESSION['arreglo_datos_usuario']['idPersona'];
+   
    $obj = new Persona();
+
+   
     
    $_SESSION['ARRAY_DATOS_PERSONALES_PROFESOR'] = $obj->hasProfesor($id_persona);
    $_SESSION['id_profesor'] = $_SESSION['ARRAY_DATOS_PERSONALES_PROFESOR']['idProfesor'];
- 
+
    // Determina si el Evento Armado de Lista de Materias de un Cuatrimestre dado esta habilitado en la fecha de hoy.
    $cal = new CalendarioAcademico;
-   $_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS'] = $cal->getEventosArmadoMaterias();
+   $_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS'] = $cal->getEventosArmadoMateriasActivo();
+   
+   //var_dump($_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS']);exit;
+   //die('entro');
    
 
 ?>
@@ -80,12 +88,5 @@ function expired() {
 setTimeout(expired, 60000*20);
 </script>
 <script src="./js/loadHome.js"></script>
-<script src="./js/funciones.js"></script>
-<script src="./js/loadCarreras.js"></script>
-<script src="./js/loadMaterias.js"></script>
-<script src="./js/loadAlumnos.js"></script>
-<script src="./js/gestionarFinales.js"></script>
-<script src="./js/gestionarCursado.js"></script>
-<script src="./js/gestionarRegularidadesAlumnos.js"></script>
 </body>
 </html>

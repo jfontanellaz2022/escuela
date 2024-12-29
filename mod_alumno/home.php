@@ -1,5 +1,6 @@
 <?php
-session_start();
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "verificarCredenciales.php";
 $id_url = "menu_home";
 ?>
 

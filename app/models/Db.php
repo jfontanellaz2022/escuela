@@ -8,7 +8,7 @@ class Db {
 	private $pass;
 	public  $conection;
 
-	public function __construct($host='localhost',$db_name='uiakkdaq_escuela',$db_user='root',$db_pass='1q2w3e4r') {		
+	public function __construct($host='localhost',$db_name='uiakkdaq_escuela_actual',$db_user='root',$db_pass='1q2w3e4r') {		
 		$this->host = $host;
 		$this->db = $db_name;
 		$this->user = $db_user;

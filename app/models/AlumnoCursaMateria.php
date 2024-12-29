@@ -13,11 +13,12 @@ class AlumnoCursaMateria {
 	private $cursado_tipo_id; 
 	private $cursado_anio;
 	private $cursado_tipo_descripcion;
-	private $fecha_hora_inscripcion;
+	private $fecha_inscripcion;
 	private $nota;
 	private $estado_final;
 	private $fecha_modificacion_nota;
 	private $fecha_vencimiento_regularidad = NULL;
+	private $estado_id;
 	private $usuario_id;
 
 	private $arr_regulares = [];
@@ -40,6 +41,35 @@ class AlumnoCursaMateria {
 		$stmt->execute();
 
 		return $stmt->fetchAll();
+	}
+
+	/* Get All Alumnos by Materia - ACTUALIZADO */
+	public function getAllAlumnosByMateria($param){
+		$this->getConection();
+		
+		$arr_resultado = [];
+		
+		if ( isset($param['materia_id']) && isset($param['anio_cursado']) ) {
+			$sql = "SELECT a.id, a.anioIngreso, a.debeTitulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
+		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
+					   p.telefono_numero, p.observaciones, p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
+					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_inscripcion, acm.nota, acm.fecha_modificacion_nota,
+					   p.email, p.telefono, 
+					   tca1.id as 'id_cursado', tca1.codigo as 'codigo_cursado', tca1.nombre as 'nombre_cursado',
+					   tca2.id as 'id_estado', tca2.codigo as 'codigo_estado', tca2.nombre as 'nombre_estado'	
+				FROM alumno a, alumno_cursa_materia acm, persona p, tipificacion tca1, tipificacion tca2
+				WHERE acm.idMateria = ? and acm.anio_cursado = ? and acm.idAlumno = a.id and 
+				      a.idPersona = p.id and a.habilitado = 'Si' and 
+				      acm.idCursado = tca1.id and
+					  acm.idEstado = tca2.id
+				ORDER BY p.apellido asc, p.nombre asc";
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$param['materia_id'],$param['anio_cursado']]);
+			$arr_resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);	
+
+		}
+
+		return $arr_resultado;
 	}
 
 	/* Get Alumno by Id */
@@ -115,7 +145,7 @@ class AlumnoCursaMateria {
 		$this->getConection();
             if ($vencimiento) {
                 $sql = "SELECT idMateria FROM " . $this->table . 
-				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= FechaVencimientoRegularidad ORDER BY idMateria ASC";
+				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= fecha_vencimiento_regularidad ORDER BY idMateria ASC";
             } else {
 				
                 $sql = "SELECT idMateria FROM " . $this->table . " WHERE idAlumno = ? AND estado_final = ? ORDER BY idMateria ASC";
@@ -137,7 +167,7 @@ class AlumnoCursaMateria {
 		$this->getConection();
             if ($vencimiento) {
                 $sql = "SELECT idMateria, tipo FROM " . $this->table . 
-				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= FechaVencimientoRegularidad ORDER BY idMateria ASC";
+				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= fecha_vencimiento_regularidad ORDER BY idMateria ASC";
             } else {
 				
                 $sql = "SELECT idMateria, tipo FROM " . $this->table . " WHERE idAlumno = ? AND estado_final = ? ORDER BY idMateria ASC";
@@ -162,7 +192,7 @@ class AlumnoCursaMateria {
 		$this->getConection();
             if ($vencimiento) {
                 $sql = "SELECT * FROM " . $this->table . 
-				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= FechaVencimientoRegularidad ORDER BY idMateria ASC";
+				        " WHERE idAlumno = ? AND estado_final = ? AND CURDATE() <= fecha_vencimiento_regularidad ORDER BY idMateria ASC";
             } else {
 				
                 $sql = "SELECT * FROM " . $this->table . " WHERE idAlumno = ? AND estado_final = ? ORDER BY idMateria ASC";
@@ -176,7 +206,7 @@ class AlumnoCursaMateria {
 			$arr_detalle['cursado'] = $fila['tipo'];
 			$arr_detalle['nota'] = $fila['nota'];
 			$arr_detalle['estado_final'] = $fila['estado_final'];
-			$arr_detalle['fecha_vencimiento_regularidad'] = $fila['FechaVencimientoRegularidad'];
+			$arr_detalle['fecha_vencimiento_regularidad'] = $fila['fecha_vencimiento_regularidad'];
 			$arr_resultado[] = $arr_detalle;
 		}
         $this->arr_regulares = $arr_resultado;
@@ -188,7 +218,7 @@ class AlumnoCursaMateria {
         $arr_resultado = array();
 		$stmt = "";
 		$this->getConection();
-        $sql = "SELECT idMateria, tipo FROM " . $this->table . " WHERE idAlumno = ? AND estado_final = ? AND anioCursado = ? ORDER BY idMateria ASC";
+        $sql = "SELECT idMateria, tipo FROM " . $this->table . " WHERE idAlumno = ? AND estado_final = ? AND anio_cursado = ? ORDER BY idMateria ASC";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$alumno_id,$estado,$anio]);
 		$arr_res = $stmt->fetchAll(PDO::FETCH_ASSOC);	
@@ -212,24 +242,24 @@ class AlumnoCursaMateria {
 			$expresion_estado_final = " acm.estado_final = '".$estado."' AND ";
 		};
         if ($vencimiento) {
-                $sql = "SELECT m.id, m.nombre, m.anio, acm.nota, tca.nombre as condicion, c.descripcion, acm.FechaVencimientoRegularidad, acm.anioCursado
+                $sql = "SELECT m.id, m.nombre, m.anio, acm.nota, tca.nombre as condicion, c.descripcion, acm.fecha_vencimiento_regularidad, acm.anio_cursado
                           FROM alumno_cursa_materia acm, materia m, tipo_cursado_alumno tca, carrera c, carrera_tiene_materia ctm
                           WHERE acm.idAlumno = ? AND 
                                 $expresion_estado_final
                                 acm.idMateria = m.id AND 
-                                acm.idTipoCursadoAlumno = tca.id AND
+                                acm.idCursado = tca.id AND
                                 m.id = ctm.idMateria AND
                                 ctm.idCarrera = c.id AND 
-                                CURDATE() <= FechaVencimientoRegularidad
+                                CURDATE() <= fecha_vencimiento_regularidad
 
                         ";        
             } else {
-                $sql = "SELECT m.id, m.nombre, m.anio, acm.nota, tca.nombre as condicion, c.descripcion, acm.FechaVencimientoRegularidad, acm.anioCursado
+                $sql = "SELECT m.id, m.nombre, m.anio, acm.nota, tca.nombre as condicion, c.descripcion, acm.fecha_vencimiento_regularidad, acm.anio_cursado
                           FROM alumno_cursa_materia acm, materia m, tipo_cursado_alumno tca, carrera c, carrera_tiene_materia ctm
                           WHERE acm.idAlumno = ? AND 
                                 $expresion_estado_final
                                 acm.idMateria = m.id AND 
-                                acm.idTipoCursadoAlumno = tca.id AND
+                                acm.idCursado = tca.id AND
                                 m.id = ctm.idMateria AND
                                 ctm.idCarrera = c.id
                         ";
@@ -244,7 +274,7 @@ class AlumnoCursaMateria {
                 $arr_materia['nota'] = $fila['nota'];
                 $arr_materia['condicion'] = $fila['condicion'];
                 $arr_materia['carrera'] = $fila['descripcion'];
-                $arr_materia['fecha_vencimiento'] = $fila['FechaVencimientoRegularidad'];
+                $arr_materia['fecha_vencimiento'] = $fila['fecha_vencimiento_regularidad'];
                 $arr_resultado[] = $arr_materia;
 			}
 
@@ -266,14 +296,14 @@ class AlumnoCursaMateria {
 				$this->id = $param["id"];
 				$this->alumno_id = $instancia["idAlumno"];
 				$this->materia_id = $instancia["idMateria"];
-				$this->cursado_anio = $instancia["anioCursado "];
-				$this->cursado_tipo_id = $instancia["idTipoCursadoAlumno"];
-				$this->tipo = $instancia["tipo"];
-				$this->fecha_hora_inscripcion = $instancia["FechaHoraInscripcion"];
+				$this->cursado_tipo_id = $instancia["idCursado"];
+				$this->cursado_anio = $instancia["anio_cursado "];
+				$this->fecha_inscripcion = $instancia["fecha_inscripcion"];
 				$this->nota = $instancia["nota"];
 				$this->estado_final = $instancia["estado_final"];
-				$this->fecha_modificacion_nota = $instancia["FechaModificacionNota"];
-				$this->fecha_vencimiento_regularidad = $instancia["FechaVencimientoRegularidad"];
+				$this->fecha_modificacion_nota = $instancia["fecha_modificacion_nota"];
+				$this->fecha_vencimiento_regularidad = $instancia["fecha_vencimiento_regularidad"];
+				$this->estado_id = $instancia["idEstado"];
 				$this->usuario_id = $instancia["idUsuario"];
 			}
 		}
@@ -283,29 +313,30 @@ class AlumnoCursaMateria {
 		//die($param["fecha_vencimiento_regularidad"]);
 		if(isset($param["alumno_id"])) $this->alumno_id = $param["alumno_id"];
 		if(isset($param["materia_id"])) $this->materia_id = $param["materia_id"];
-		if(isset($param["anio_cursado"])) $this->anio_cursado = $param["anio_cursado"];
-		if(isset($param["tipo"])) $this->tipo = $param["tipo"];
+		if(isset($param["anio_cursado"])) $this->cursado_anio = $param["anio_cursado"];
 		if(isset($param["cursado_id"])) $this->cursado_tipo_id = $param["cursado_id"];
-		if(isset($param["fecha_hora_inscripcion"])) $this->fecha_hora_inscripcion = $param["fecha_hora_inscripcion"];
+		if(isset($param["fecha_inscripcion"])) $this->fecha_inscripcion = $param["fecha_inscripcion"];
 		if(isset($param["nota"])) $this->nota = $param["nota"];
 		if(isset($param["estado_final"])) $this->estado_final = $param["estado_final"];
 		if(isset($param["fecha_modificacion_nota"])) $this->fecha_modificacion_nota = $param["fecha_modificacion_nota"];
 		if(isset($param["fecha_vencimiento_regularidad"])) $this->fecha_vencimiento_regularidad = $param["fecha_vencimiento_regularidad"];
 		else $this->fecha_vencimiento_regularidad = NULL;
-		
+		if(isset($param["estado_id"])) $this->estado_id = $param["estado_id"];
 		if(isset($param["usuario_id"])) $this->usuario_id = $param["usuario_id"];
 		
+
+
 		// Database operations 
 		if($exists){
 			$sql = "UPDATE ".$this->table. " SET idAlumno = ?, idMateria = ?, 
-			                                     anioCursado = ?, idTipoCursadoAlumno = ?, tipo = ?, FechaHoraInscripcion = ?,
-												 nota = ?, estado_final = ?, FechaModificacionNota = ?,
-												 FechaVencimientoRegularidad = ?, idUsuario = ?
-										     WHERE id = ?";
+			                                     anio_cursado = ?, idCursado = ?, tipo = ?, fecha_inscripcion = ?,
+												 nota = ?, estado_final = ?, fecha_modificacion_nota = ?,
+												 fecha_vencimiento_regularidad = ?, idEstado = ?, idUsuario = ?
+										     WHERE id = ? ";
 			$stmt = $this->conection->prepare($sql);
 			try {
-				$arr_arg = [$this->alumno_id,$this->materia_id,$this->anio_cursado,$this->cursado_tipo_id,$this->tipo,$this->fecha_hora_inscripcion,$this->nota,
-				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->usuario_id,$this->id];
+				$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_tipo_id,$this->fecha_inscripcion,$this->nota,
+				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id,$this->id];
 			    $stmt->execute($arr_arg);
 			} catch (Exception $e) {
 				return -1*$e->getCode();
@@ -313,12 +344,14 @@ class AlumnoCursaMateria {
 			$id = $this->id;
 		} else {
 			
-			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, anioCursado, idTipoCursadoAlumno, tipo, FechaHoraInscripcion, nota, estado_final, FechaModificacionNota, FechaVencimientoRegularidad, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, anio_cursado, idCursado, tipo, fecha_inscripcion, nota, estado_final, fecha_modificacion_nota, fecha_vencimiento_regularidad, idEstado, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
 			try {
-				$arr_arg = [$this->alumno_id,$this->materia_id,$this->anio_cursado,$this->cursado_tipo_id,$this->tipo,$this->fecha_hora_inscripcion,$this->nota,
-				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->usuario_id];
+				$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_tipo_id,$this->fecha_inscripcion,$this->nota,
+				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id];
 				$stmt->execute($arr_arg);
+				//$stmt->debugDumpParams();
+
 				$id = $this->conection->lastInsertId();
 				$this->id = $id;
 			} catch (Exception $e) {
@@ -327,7 +360,6 @@ class AlumnoCursaMateria {
 		}
 
 		return $id;	
-
 	} 
 
 
@@ -342,7 +374,7 @@ class AlumnoCursaMateria {
 
 	public function deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio){
 		$this->getConection();
-		$sql = "DELETE FROM ".$this->table. " WHERE idAlumno = ? AND idMateria = ? AND anioCursado = ?";
+		$sql = "DELETE FROM ".$this->table. " WHERE idAlumno = ? AND idMateria = ? AND anio_cursado = ?";
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$alumno_id,$materia_id,$anio]);
 	}

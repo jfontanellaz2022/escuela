@@ -1,6 +1,6 @@
 <?php 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-require_once('seguridad.php');
+set_include_path('../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
+require_once 'verificarCredenciales.php';
 ?>
 <!doctype html>
 <html lang="es">

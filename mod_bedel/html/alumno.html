@@ -9,8 +9,8 @@
     <div class="container justifu+y-content-center">
       <h1 class="display-4">Alumno</h1>
       <hr>
+
   <form id="form">
-    
     <div class="form-row">  
       <div class="form-group col-md-6">
         <strong>Documento</strong>
@@ -46,13 +46,6 @@
       </div>
     </div>
 
-    <div class="form-row" id="telefono_viejo">  
-      <div class="form-group col-md-6">
-        <strong>Telefono Fomato Viejo</strong>
-        <input id="inputTelefono" placeholder="telefono" type="text" class="form-control" maxlength="20" >
-      </div>
-    </div>
-
     <div class="form-row">  
       <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <strong>Cel.Numero (Sin el 0)</strong>
@@ -80,6 +73,27 @@
               <select id="inputLocalidad" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
             </select> 
         </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Año Ingreso</strong>
+        <select id="inputAnioIngreso" class="form-control">
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>  
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Debe Título</strong>
+        <select id="inputDebeTitulo" class="form-control">
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>  
+      </div>
     </div>
 
     <div class="form-row">

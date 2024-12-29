@@ -1,7 +1,7 @@
 //***********************************************
 //OBTIENE EL DATOS DE UNA MATERIA SEGUN SU ID
 //***********************************************
-function sacaDatosMateriaPorId(idMateria) {
+/*function sacaDatosMateriaPorId(idMateria) {
    var datos = {"materia":idMateria};
    var datos_materia;
    $.ajax({
@@ -15,7 +15,7 @@ function sacaDatosMateriaPorId(idMateria) {
       }
 });
 return datos_materia;
-}
+}*/
 
 
 //***********************************************

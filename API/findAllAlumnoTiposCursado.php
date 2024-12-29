@@ -5,11 +5,11 @@
 //** SACA TODOS LOS ALUMNOS DE UN ALUMNO POR ID ALUMNO                                 **
 //***************************************************************************************
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib');
-require_once('AlumnoTipoCursado.php');
+require_once('Tipificacion.php');
 require_once 'SanitizeCustom.class.php';
 //include_once 'seguridadNivel2.php';
 
-$objeto = new AlumnoTipoCursado;
+$objeto = new Tipificacion();
 $arr_formas_cursado = $objeto->getAllAlumnoTipoCursado();
 
 if (is_array($arr_formas_cursado)) {

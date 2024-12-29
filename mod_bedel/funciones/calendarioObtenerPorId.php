@@ -1,30 +1,35 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+require_once 'Sanitize.class.php';
+
+require_once 'CalendarioAcademico.php';
+
+require_once 'verificarCredenciales.php';
 
 $id = ( isset($_POST['id']) )?SanitizeVars::INT($_POST['id']):false;
 
+
+
 $array_resultados = array();
 if ($id) {
-    $sql = "SELECT c.id, c.AnioLectivo, c.fechaInicioEvento, c.fechaFinalEvento, c.idEvento, c.idPeriodoCuatrimestreActivo, e.descripcion, e.codigo
-            FROM calendarioacademico c, evento e
-            WHERE (c.idEvento = e.id) and c.id=$id"; 
-    //die($sql);        
-    $resultado = mysqli_query($conex,$sql);
-    if (mysqli_num_rows($resultado)>0) {
-      $filas = mysqli_fetch_all($resultado,MYSQLI_ASSOC);
-      $array_resultados['codigo'] = 100;
-      $array_resultados['datos'] = $filas;
+    $obj = new CalendarioAcademico();
+    $arr_datos_evento = $obj->getCalendarioById($id);
+    if (!$arr_datos_evento) {
+        $array_resultados['codigo'] = 500;
+        $array_resultados['mensaje'] = 'No existe Evento con el ID ' . $id;
+        $array_resultados['class'] = 'danger';
     } else {
-      $array_resultados['codigo'] = 11;
-      $array_resultados['datos'] = "No existe Registro de Calendario.";
+        $array_resultados['codigo'] = 200;
+        $array_resultados['mensaje'] = 'OK';
+        $array_resultados['class'] = 'success';
+        $array_resultados['datos'] = $arr_datos_evento;
     }
+    
 } else {
-  $array_resultados['codigo'] = 10;
-  $array_resultados['datos'] = "El ID de Calendario es Incorrecto.";
+  $array_resultados['codigo'] = 500;
+  $array_resultados['mensaje'] = 'El ID de Calendario es Incorrecto.' ;
+  $array_resultados['class'] = 'danger';
 }
 
 echo json_encode($array_resultados);

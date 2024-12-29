@@ -22,7 +22,6 @@
                 Configuracion 
               </a>
               <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="menuEvento.php">Eventos Academicos<span class="sr-only">(current)</span></a>
                 <a class="dropdown-item" href="menuCalendario.php">Calendario de Eventos<span class="sr-only">(current)</span></a>
                 <a class="dropdown-item" href="menuFechasExamenes.php">Fechas de Exámenes<span class="sr-only">(current)</span></a>
                 <a class="dropdown-item" href="menuCorrelativasRendir.php">Correlativas Para Rendir<span class="sr-only">(current)</span></a>

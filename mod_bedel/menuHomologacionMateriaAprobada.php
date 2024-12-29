@@ -1,7 +1,7 @@
 <?php
 //set_include_path('../app/lib/'.PATH_SEPARATOR.'../../conexion/');
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../conexion/');
-require_once 'seguridad.php';
+require_once 'verificarCredenciales.php';
 include_once 'conexion.php';
 include_once 'Sanitize.class.php';
 include_once 'ArrayHash.class.php';

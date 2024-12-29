@@ -6,14 +6,6 @@ class Usuario extends Persona
     protected $table = 'usuario';
 	protected $conection;
 	
-    /*private $id;
-    private $usuario; 
-	private $password; 
-    private $habilitado;
-    private $idPersona; 
-
-    protected $cantidad;*/
-
 	public function __construct() {
 		
 	}
@@ -28,8 +20,9 @@ class Usuario extends Persona
         //var_dump("ppp:" . $name . "ppp:" . $password_encriptada);exit;
 		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.pass, u.idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento,
                        p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, p.telefono_numero
-                FROM " . $this->table . " u, persona p 
+                FROM usuario u, persona p 
                 WHERE u.nombre = ? AND u.pass = ? AND u.idPersona = p.id";
+        //var_dump($sql);                
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name,$password_encriptada]);
 		return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -37,7 +30,7 @@ class Usuario extends Persona
 
     public function getUsuarioById($id){
 		$this->getConection();
-		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM " . $this->table . " u, persona p 
+		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM usuario u, persona p 
                 WHERE u.id = ? AND u.idPersona = p.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
@@ -47,7 +40,7 @@ class Usuario extends Persona
 
     public function getUsuarioByName($name){
 		$this->getConection();
-		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM " . $this->table . " u, persona p 
+		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM usuario u, persona p 
                 WHERE u.nombre = ? AND u.idPersona = p.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name]);
@@ -73,7 +66,7 @@ class Usuario extends Persona
 
 
     public function setPasswordById($id,$password) {
-        $sql = "UPDATE " . $this->table . " SET password = ? WHERE id = ?";
+        $sql = "UPDATE usuario SET password = ? WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
 		return $stmt->execute([md5($password),$id]);
     }
@@ -108,11 +101,11 @@ public function save($param){
     //* Database operations 
     
     if($exists){
-        $sql = "UPDATE ".$this->table. " SET nombre = ? , password = ?, habilitado = ?, idPersona = ? WHERE id = ?";
+        $sql = "UPDATE usuario SET nombre = ? , password = ?, habilitado = ?, idPersona = ? WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
         $res = $stmt->execute([$this->nombre,md5($this->password),$this->habilitado, $this->idPesona,$this->id]);
     } else {
-        $sql = "INSERT INTO ".$this->table. " (nombre, password, habilitado, idPersona) values(?, ?, ?, ?)";
+        $sql = "INSERT INTO usuario (nombre, password, habilitado, idPersona) values(?, ?, ?, ?)";
         $stmt = $this->conection->prepare($sql);
         $stmt->execute([$this->nombre,md5($this->password),$this->habilitado, $this->idPersona]);
         $this->id = $this->conection->lastInsertId();

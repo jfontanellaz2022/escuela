@@ -15,13 +15,15 @@ $id_carrera = (isset($_POST['carrera']))?SanitizeCustom::INT($_POST['carrera']):
 $array_resultados = [];
 
 if ($id_profesor) {
+   
    $carrera = new Carrera;
    $arr_materias_carrera = $carrera->getMateriasPorIdCarrera($id_carrera);
-      
+   
    $profesor = new Profesor();
    $arr_materias_dicta = $profesor->getMateriasByProfesor($id_profesor);
-     
 
+   //var_dump($arr_materias_dicta);exit;
+   
    $arr_materias = [];
 
    foreach ($arr_materias_dicta as $materia_item) {

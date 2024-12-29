@@ -1,6 +1,6 @@
 <?php 
 set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-require_once('seguridad.php');
+require_once 'verificarCredenciales.php';
 ?>
 <!doctype html>
 <html lang="es">
@@ -345,23 +345,24 @@ function entidadEditar(entidad_id){
             $("#principal").slideDown("slow").html(data);
             $('#alumno_editar').removeClass('d-none');
             $('#alumno_ver').addClass('d-none');
-            $('#telefono_viejo').removeClass('d-none');
             $('#alumno_asignar_carrera').addClass('d-none');
             $('#alumno_asignar_mesa').addClass('d-none');
             //******************************************************************** 
             //**************************** CAMBIAR ******************************* 
             $("#inputAccion").val('editar');
-            $("#inputId").val(entidad_id);
+            $("#inputId").val(datos_entidad.datos[0].id);
             $("#inputApellido").val(datos_entidad.datos[0].apellido);
             $("#inputNombre").val(datos_entidad.datos[0].nombre);
             $("#inputDocumento").attr('disabled',true)
             $("#inputDocumento").val(datos_entidad.datos[0].dni);
-            $("#inputDomicilio").val(datos_entidad.datos[0].domicilioCalle+' '+datos_entidad.datos[0].domicilioDpto);
+            $("#inputDomicilio").val(datos_entidad.datos[0].domicilio);
             $("#inputTelefono").val(datos_entidad.datos[0].telefono);
             $("#inputTelefono").attr('type','text');
             $("#inputTelefonoCaracteristica").val(datos_entidad.datos[0].telefono_caracteristica);
             $("#inputTelefonoNumero").val(datos_entidad.datos[0].telefono_numero);
             $("#inputEmail").val(datos_entidad.datos[0].email);
+            $("#inputAnioIngreso option[value="+ datos_entidad.datos[0].anio_ingreso +"]").attr("selected",true);
+            $("#inputDebeTitulo option[value="+ datos_entidad.datos[0].debe_titulo +"]").attr("selected",true);
 
             let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
@@ -433,6 +434,7 @@ function entidadEditar(entidad_id){
 //************************************************************************************************ 
 function entidadGuardar(){
     let accion = $("#inputAccion").val();
+    let persona_id = $("#inputId").val();
     let apellido = $("#inputApellido").val();
     let nombres = $("#inputNombre").val();
     let dni = $("#inputDocumento").val();
@@ -442,7 +444,9 @@ function entidadGuardar(){
     let email = $("#inputEmail").val();
     let localidad_id = $("#inputLocalidad").val();
     let fecha_nacimiento = $("#inputFechaNacimiento").val();
-    let parametros = {"accion":accion, "apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento};
+    let anio_ingreso = $("#inputAnioIngreso").val();
+    let debe_titulo = $("#inputDebeTitulo").val();
+    let parametros = {"accion":accion, "apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento,"anio_ingreso":anio_ingreso,"debe_titulo":debe_titulo,"persona_id":persona_id};
     let url = "funciones/"+entidad_nombre+"Guardar.php";
     if (accion!="" && apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="" && fecha_nacimiento!="") {
         $.post(url,parametros, function(data) {

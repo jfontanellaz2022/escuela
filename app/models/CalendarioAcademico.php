@@ -2,7 +2,7 @@
 require_once('Db.php');
 
 class CalendarioAcademico {
-	protected $table = 'calendarioacademico';
+	protected $table = 'calendario_academico';
 	protected $conection;
 	private $anio_lectivo;
 	private $periodo_cuatrimestre_id;
@@ -32,13 +32,47 @@ class CalendarioAcademico {
 		return $stmt->fetchAll();
 	}
 
-	// Get Calendario by Id 
+	// Get all Alumnos 
+	public function getCalendarioEventosFilter($filtros){
+		var_dump('asdsadasdsad');exit;
+		$this->getConection();
+		$where = "";
+		$andX = [];
+		$andX[] = " c.idTipificacion = t.id ";
+		var_dump('asdsadasdsad');exit;
+
+		if (isset($filtros['id'])) $andX[] = 'c.id = ' . $filtros['id'];
+		if (isset($filtros['anio_lectivo'])) $andX[] = 'c.anio_lectivo = ' . $filtros['anio_lectivo'];
+		if (isset($filtros['evento'])) $andX[] = " t.nombre like '%" . $filtros['evento'] . "%'";
+		if (isset($filtros['fecha_inicio'])) $andX[] = "c.fecha_inicio like '" . $filtros['fecha_inicio'] . "'";
+		if (isset($filtros['fecha_final'])) $andX[] = "c.fecha_final like '" . $filtros['fecha_final'] . "'";
+
+		if (count($andX)>0) $where = ' WHERE (' . implode(" and ",$andX) . ') ';
+		else $where = '';
+		
+		$sql = "SELECT c.id, c.anio_lectivo, c.fecha_inicio, c.fecha_final, c.idTipificacion,
+		           		t.id as 'tipificacion_id', t.codigo, t.nombre, t.descripcion 
+		        FROM calendario_academico c, tipificacion t 
+				$where ";
+
+		var_dump($sql);exit;
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return $res;
+
+	}
+
+	//Get Calendario by Id 
 	public function getCalendarioById($id){
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table . " WHERE id = ?";
+		$sql = "SELECT c.id, c.anio_lectivo, c.fecha_inicio, c.fecha_final, 
+		               c.idTipificacion, t.codigo, t.nombre
+		        FROM calendario_academico c, tipificacion t 
+		        WHERE c.id = ? AND c.idTipificacion = t.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
-
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -74,13 +108,13 @@ class CalendarioAcademico {
 	public function getCalendarioByCodigoEvento($codigo){
 		$this->getConection();
 		$sql = "SELECT c.*, e.descripcion as evento_descripcion 
-				FROM calendarioacademico c, evento e 
-				WHERE e.codigo = ? and e.id=c.idEvento
-				ORDER BY c.AnioLectivo desc, c.fechaFinalEvento desc";
+				FROM calendario_academico c, tipificacion e 
+				WHERE e.codigo = ? and e.id=c.idTipificacion
+				ORDER BY c.anio_lectivo desc, c.fecha_final desc";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$codigo]);
-
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$arr_resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $arr_resultado;
 	}
 
 	public function getIdCalendarioByCodigo($codigo){
@@ -154,15 +188,16 @@ class CalendarioAcademico {
 	public function getLastInscripcionExamen(){
 		$this->getConection();
 		$sql = "SELECT c.*, e.codigo, e.descripcion as evento_descripcion 
-				FROM calendarioacademico c, evento e 
-				WHERE e.id=c.idEvento and (e.codigo = 1005 or e.codigo = 1006 or e.codigo = 1007 or e.codigo = 1008 or e.codigo = 1009 or e.codigo = 1010)
-				ORDER BY c.fechaFinalEvento desc
+				FROM calendario_academico c, tipificacion e 
+				WHERE e.id=c.idTipificacion and (e.codigo = 1005 or e.codigo = 1006 or e.codigo = 1007 or e.codigo = 1008 or e.codigo = 1009 or e.codigo = 1010)
+				ORDER BY c.fecha_final desc
 				limit 0,1 ";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
-
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$arr_resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $arr_resultado;
 	}
+
 
 	// Get Calendario by Codigo
 	
@@ -183,23 +218,24 @@ class CalendarioAcademico {
 	public function getEventoActivoByCodigo($codigo){
 		$hoy = date('Y-m-d');
 		$objeto_eventos = $this->getCalendarioByCodigoEvento($codigo);
-		//var_dump($objeto_eventos);die;
 		$arr_resultado = [];
 		foreach ($objeto_eventos as $val) {
-			if (strtotime($hoy)>=strtotime($val['fechaInicioEvento']) &&
-				strtotime($hoy)<=strtotime($val['fechaFinalEvento'])) {
+			if (strtotime($hoy)>=strtotime($val['fecha_inicio']) &&
+				strtotime($hoy)<=strtotime($val['fecha_final'])) {
 					$arr_resultado[] = $val;
-			}
+					break;
+			};
 		}
 		return $arr_resultado;
 	}
 
 
-	public function getEventosArmadoMaterias() {
+	public function getEventosArmadoMateriasActivo() {
 		$arr_codigos_armado_listas = [];
-		for ($i=1014;$i<=1016;$i++) {
-			if (!empty($this->getEventoActivoByCodigo($i))) {
-				$arr_codigos_armado_listas[] = $i;
+		for ($ev=1014;$ev<=1016;$ev++) {
+			if (!empty($this->getEventoActivoByCodigo($ev))) {
+				
+				$arr_codigos_armado_listas[] = $ev;
 			}
 		}
 		return $arr_codigos_armado_listas;

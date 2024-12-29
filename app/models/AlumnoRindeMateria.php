@@ -88,8 +88,19 @@ class AlumnoRindeMateria {
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-	
-
+	/* Get Materias by Id Alumno y por Id Calendario 
+	Perfil: Profesor
+	Proceso: GestionarFechasExamenesFinales
+	Detalle: Saca el id del registro que contiene el id del alumno, el id calendario, el id materia, y el llamado
+	*/
+	public function getIdCalendario($arr){
+		$this->getConection();
+		$sql = "SELECT * FROM " . $this->table . " WHERE idMateria = ? and idAlumno = ? and idCalendario = ? and llamado = ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$arr['materia_id'],$arr['alumno_id'],$arr['calendario_id'],$arr['llamado']]);
+		//$stmt->debugDumpParams();die;
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
 
 	/****************************************************************************************************************
     
@@ -185,6 +196,7 @@ class AlumnoRindeMateria {
 				$condicion = $actualAlumnoRindeMateria["condicion"];
 				$estado_final = $actualAlumnoRindeMateria["estado_final"];
 				$fecha_hora_inscripcion = $actualAlumnoRindeMateria["FechaHoraInscripcion"];
+				$fecha_modificacion_nota = $actualAlumnoRindeMateria["FechaModificacionNota"];
 			}
 		}
 
@@ -198,24 +210,25 @@ class AlumnoRindeMateria {
 		if(isset($param["condicion"])) $condicion = $param["condicion"];
 		if(isset($param["estado_final"])) $estado_final = $param["estado_final"];
 		if(isset($param["fecha_hora_inscripcion"])) $fecha_hora_inscripcion = $param["fecha_hora_inscripcion"];
+		if(isset($param["fecha_modificacion_nota"])) $fecha_modificacion_nota = $param["fecha_modificacion_nota"];
 		if(isset($param["usuario_id"])) $idUsuario = $param["usuario_id"];
 		
 
 		// Database operations 
 		
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET idAlumno=?, idMateria=?, idCalendario=?, llamado=?, condicion=?, FechaHoraInscripcion=?, nota=?, estado_final=?, idUsuario=?  WHERE id=?";
+			$sql = "UPDATE ".$this->table. " SET idAlumno=?, idMateria=?, idCalendario=?, llamado=?, condicion=?, FechaHoraInscripcion=?, nota=?, estado_final=?, FechaModificacionNota=?, idUsuario=?  WHERE id=?";
 			try {
 				$stmt = $this->conection->prepare($sql);
-				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$idUsuario,$id]);
+				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$fecha_modificacion_nota,$idUsuario,$id]);
 			} catch (Exception $e) {
 				return -1*$e->getCode();
 			}
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, idCalendario, llamado, condicion, FechaHoraInscripcion, nota, estado_final, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, idCalendario, llamado, condicion, FechaHoraInscripcion, nota, estado_final, FechaModificacionNota, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
 				$stmt = $this->conection->prepare($sql);
-				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$idUsuario]);
+				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$fecha_modificacion_nota,$idUsuario]);
 				$id = $this->conection->lastInsertId();
 			} catch (Exception $e) {
 				return -1*$e->getCode();

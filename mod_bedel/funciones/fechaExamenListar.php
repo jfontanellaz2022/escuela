@@ -1,11 +1,11 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../'.PATH_SEPARATOR.'../../conexion/');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-include_once 'pagination.php';
-include_once 'ArrayHash.class.php';
-require_once "_seguridad.php";
+require_once 'verificarCredenciales.php';
+require_once 'conexion.php';
+require_once 'Sanitize.class.php';
+require_once 'pagination.php';
+require_once 'ArrayHash.class.php';
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
 
@@ -33,7 +33,7 @@ $habilitada = isset($_POST['habilitada'])?SanitizeVars::STRING($_POST['habilitad
 
 $andX = array();
 $andX[] = " (mf.idCalendarioAcademico=c.id) ";
-$andX[] = " (c.idEvento = e.id) ";
+$andX[] = " (c.idTipificacion = e.id) ";
 $andX[] = " (mf.idMateria=m.id) ";
 
 $sql = $sqlCantidadFilas = "";
@@ -41,10 +41,10 @@ $sql = $sqlCantidadFilas = "";
 if($action == 'listar'){
 	//die("entroooo");
 
-	$campos = " mf.id as id_fecha_examen, mf.fechaExamen as fecha_examen, c.id as id_calendario, c.AnioLectivo as anio_lectivo, 
+	$campos = " mf.id as id_fecha_examen, mf.fecha_examen as fecha_examen, c.id as id_calendario, c.anio_lectivo as anio_lectivo, 
 	            e.descripcion as descripcion_evento, mf.idCalendarioAcademico, mf.llamado, m.id as id_materia, 
 	            m.nombre as nombre_materia, m.carrera";
-	$tables = " materia_tiene_fechaexamen mf,materia m, calendarioacademico c, evento e ";
+	$tables = " materia_tiene_fecha_examen mf,materia m, calendario_academico c, tipificacion e ";
 	$where = "  ";
 	
 	
@@ -64,6 +64,7 @@ if($action == 'listar'){
 	
 	$sqlFinal = "SELECT $campos FROM  $tables $where";
 	
+	//die($sqlFinal);
 	
 	//PAGINATION VARIABLES
 	$page = ( isset($_REQUEST['page']) && !empty($_REQUEST['page']) )?$_REQUEST['page']:1;

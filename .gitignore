@@ -1,5 +1,7 @@
 !.gitignore
 /acreditacion/*
+/database/*
+/documentacion/*
 /conexion/*
 /public/*
 /app/models/DB.php

@@ -1,6 +1,8 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-require_once "seguridadNivel1.php";
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "verificarCredenciales.php";
+
 //require_once "../app/lib/CaptchaSecurityImages.php";
 $id_url = "menu_historia";
 //echo $_SESSION['idAlumno'];die;

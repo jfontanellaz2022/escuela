@@ -30,26 +30,25 @@ $anio = (isset($_POST['anio']))?SanitizeCustom::INT($_POST['anio']):date('Y');
 function sacarAlumnosPorMateriaPorAnio($arr_alumnos,$anio) {
    $arr_alumnos_por_anio = [];
    foreach ($arr_alumnos as $item) {
-       if ($item['anioCursado']==$anio) {
+       if ($item['anio_cursado']==$anio) {
          $arr_alumnos_por_anio[] = $item;
        };
    }
    //var_dump($anio,$arr_alumnos_por_anio);
    return $arr_alumnos_por_anio;
-
 }
 
 
 function sacarAlumnosPorMateria($arr_alumnos,$sinLibres) {
    echo "ver si se usa esto";
-
 }
-
-
 
 if ($id_materia) {
    $objeto = new Alumno;
+   //var_dump($objeto->getAllAlumnosByMateria($id_materia));exit;
    $arr_alumnos_por_anio = sacarAlumnosPorMateriaPorAnio($objeto->getAllAlumnosByMateria($id_materia),$anio);
+
+   
 
    if (is_array($arr_alumnos_por_anio)) {
       $array_resultados['codigo'] = 200;

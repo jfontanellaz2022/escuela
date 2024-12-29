@@ -3,28 +3,36 @@ set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'.
 require_once "seguridadNivel2.php";
 require_once "SanitizeCustom.class.php";
 require_once "AlumnoCursaMateria.php";
-require_once "AlumnoTipoCursado.php";
+require_once "Tipificacion.php";
 
 $idMateria = (isset($_POST['materia']) && $_POST['materia']!=NULL)?SanitizeVars::INT($_POST['materia']):false;
 $idAlumno = (isset($_POST['alumno']) && $_POST['alumno']!=NULL)?SanitizeVars::INT($_POST['alumno']):false;
-$codigo_cursado = (isset($_POST['cursado']) && $_POST['alumno']!=NULL)?SanitizeVars::STRING($_POST['cursado']):false;
-
+$codigo_cursado = (isset($_POST['cursado']) && $_POST['cursado']!=NULL)?SanitizeVars::STRING($_POST['cursado']):false;
 
 $array_resultados = array();
 
-$objCursado = new AlumnoTipoCursado();
-$datos_cursado = $objCursado->getAlumnoTipoCursadoByCodigo($codigo_cursado);
+$objCursado = new Tipificacion();
+
+// 201 - Presencial | 202 - Semipresencial | 203 - Libre 
+$datos_cursado = $objCursado->getTipificacionByCodigo($codigo_cursado);
 $cursado_id = $datos_cursado['id'];
 $cursado_nombre = $datos_cursado['nombre'];
+
+// 01 - Cursando | 02 - Regularizo | 03 - Promociono | | 04 - Aprobo || 05 - Libre || 06 - suspenso 
+$datos_estado = $objCursado->getTipificacionByCodigo('01');
+$estado_id = $datos_estado['id'];
+$estado_nombre = $datos_estado['nombre'];
+
+//var_dump($datos_estado);exit;
+
+
 $anio_actual = date('Y');
 
 if ($idMateria && $idAlumno && $cursado_id) {
-	
-
 	$obj = new AlumnoCursaMateria();
-	$res = $obj->save(['alumno_id'=>$idAlumno,"materia_id"=>$idMateria,"tipo"=>$cursado_nombre,"cursado_id"=>$cursado_id,'anio_cursado'=>$anio_actual]);
-
-	if ($res) {
+	$res = $obj->save(['alumno_id'=>$idAlumno,"materia_id"=>$idMateria,"tipo"=>$cursado_nombre,"cursado_id"=>$cursado_id,
+	                   'anio_cursado'=>$anio_actual,"estado_id"=>$estado_id, "nota"=>0.00]);
+	if ($res && $res>0) {
 		$array_resultados['codigo'] = 200;
         $array_resultados['mensaje'] = "El Alumno fue vinculado a la materia.";
 	} else {

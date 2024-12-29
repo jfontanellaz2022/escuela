@@ -3,7 +3,7 @@ require_once('Db.php');
 
 class AlumnoTipoCursado {
 
-	protected $table = 'tipo_cursado_alumno';
+	protected $table = 'tipificacion';
 	protected $conection;
 
 	private $id;

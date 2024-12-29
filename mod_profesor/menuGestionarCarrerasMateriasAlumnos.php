@@ -12,7 +12,15 @@
   <?php
       include_once('../app/views/header.html');
   ?>
+<style>
 
+.select2-container .select2-selection--single {
+    height: 39px !important;
+}
+
+ 
+
+</style>   
 </head>
 
 
@@ -42,10 +50,9 @@
     <div id="control_habilitado" style='display:none'></div>
     <div id="cargar_regularidades_habilitado" style='display:none'></div>
     <div id="titulo"></div>
-    <hr>
   </article>
 
-  <article class="container">
+  <article class="container-fluid">
        <section>
            <div class="row" id="resultado">
 

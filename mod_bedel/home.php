@@ -1,7 +1,10 @@
 <?php 
 set_include_path('../conexion/'.PATH_SEPARATOR.'./');
-require_once('config.php');
-require_once('seguridad.php');
+require_once 'verificarCredenciales.php';
+require_once 'config.php';
+
+//var_dump($_SESSION['arreglo_credenciales_usuario']);
+
 ?>
 <!doctype html>
 <html lang="es">
