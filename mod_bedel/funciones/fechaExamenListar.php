@@ -1,18 +1,29 @@
 <?php
-set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../'.PATH_SEPARATOR.'../../conexion/');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
-require_once 'verificarCredenciales.php';
-require_once 'conexion.php';
+require_once "verificarCredenciales.php";
 require_once 'Sanitize.class.php';
 require_once 'pagination.php';
 require_once 'ArrayHash.class.php';
 
+require_once 'MateriaFechaExamenFilter.php';
+
+
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
 
-$rol_usuario = '';
-//$rol_admin = ($_SESSION['user_rol']=='admin' || $_SESSION['user_rol']=='SYSTEM')?'':'disabledbutton';
+function capitalizeCadenas($str) {
+    $arr = explode(" ",$str);
+    $cad_final = ""; 
+	$band = (count($arr)>1)?true:false;
+	foreach($arr as $item) {
+		if ($band) $cad_final .= ucfirst($item).' ';
+		else $cad_final = ucfirst($item);
+	}
+	$cad_final = ($band)?substr($cad_final,0,strlen($cad_final)-1):$cad_final;
+    return $cad_final;
+}  
 
-$rol_admin = '';
+
 
 /**********************************************************************************************************************************************************************/
 /**************************************************************** RECIBIR PARAMETROS Y SANITIZARLOS *******************************************************************/
@@ -21,68 +32,33 @@ $rol_admin = '';
 $action = (isset($_POST['action'])&& $_POST['action'] !=NULL)?$_POST['action']:'';
 $busqueda = isset($_POST['busqueda_rapida'])?$_POST['busqueda_rapida']:null;
 
-/*$codigo = isset($_POST['codigo'])?$_POST['codigo']:"";
-$descripcion = isset($_POST['descripcion'])?SanitizeVars::STRING($_POST['descripcion']):false;
-$habilitada = isset($_POST['habilitada'])?SanitizeVars::STRING($_POST['habilitada']):false;*/
-
-//die($id.'-'.$anioLectivo.'-'.$evento.'-'.$fechaInicio.'-'.$fechaFinalizacion);
-
-/**********************************************************************************************************************************************************************/
-/**********************************************************************************************************************************************************************/
-/**********************************************************************************************************************************************************************/
-
-$andX = array();
-$andX[] = " (mf.idCalendarioAcademico=c.id) ";
-$andX[] = " (c.idTipificacion = e.id) ";
-$andX[] = " (mf.idMateria=m.id) ";
-
 $sql = $sqlCantidadFilas = "";
+$numrows = $total_pages = 0;
+$arr_objetos = $arr_filtro = [];
+
+if ($busqueda) {
+	$arr_filtro['busqueda'] = $busqueda;
+}
+
+/**********************************************************************************************************************************************************************/
+/**********************************************************************************************************************************************************************/
+/**********************************************************************************************************************************************************************/
 
 if($action == 'listar'){
-	//die("entroooo");
-
-	$campos = " mf.id as id_fecha_examen, mf.fecha_examen as fecha_examen, c.id as id_calendario, c.anio_lectivo as anio_lectivo, 
-	            e.descripcion as descripcion_evento, mf.idCalendarioAcademico, mf.llamado, m.id as id_materia, 
-	            m.nombre as nombre_materia, m.carrera";
-	$tables = " materia_tiene_fecha_examen mf,materia m, calendario_academico c, tipificacion e ";
-	$where = "  ";
-	
-	
-	if ($busqueda) $andX[] = " ((m.nombre like '%" . $busqueda ."%') or (m.id='$busqueda'))";
-	
-
-	if (count($andX)>0) $where = ' WHERE ' . implode(" and ",$andX) . ' ';
-	else $where = '';
-    
-	$where = $where . " ORDER BY mf.id DESC"; 
-    
-	$sql = "";
-
-	
-	$sqlCantidadFilas = "SELECT count(*) AS numrows
-						 FROM $tables $where";
-	
-	$sqlFinal = "SELECT $campos FROM  $tables $where";
-	
-	//die($sqlFinal);
-	
-	//PAGINATION VARIABLES
 	$page = ( isset($_REQUEST['page']) && !empty($_REQUEST['page']) )?$_REQUEST['page']:1;
 	$per_page = ( isset($_REQUEST['per_page']) && ($_REQUEST['per_page']>0) )?$_REQUEST['per_page']:1; //how much records you want to show
+	//var_dump($page,$per_page,$arr_filtro);exit;
+	$objeto = new MateriaFechaExamenFilter();
+	$arr_objetos = $objeto->getFechaExamenesDetalle($page,$per_page,$arr_filtro);
+	
+	$numrows = $objeto->getCantidad();
+    //var_dump($arr_objetos,$numrows);exit;
+	//PAGINATION VARIABLES
+	$total_pages = ceil($numrows/$per_page);
 	$adjacents  = 4; //gap between pages after number of adjacents
 	$offset = ($page - 1) * $per_page;
-	//Count the total number of row in your table*/
-   
-	$count_query = mysqli_query($conex,$sqlCantidadFilas);
-	
-	if ($row = mysqli_fetch_array($count_query)){$numrows = $row['numrows'];}
-	$total_pages = ceil($numrows/$per_page);
-	//main query to fetch the data
-	$sqlFinal .=  " LIMIT $offset,$per_page ";
-	$query = mysqli_query($conex,$sqlFinal);
 
-	
-
+	//var_dump('aca ',$numrows,$arr_objetos);die;
 	//*********************************************************** */
 	//****************  PONER LOS NOMBRES DE LOS CAMPOS ********* */
 	//*********************************************************** */
@@ -135,23 +111,26 @@ if($action == 'listar'){
           </tr>
         </thead>
 		<tbody>
-<?php
-if ($numrows>0){
-	$finales = $c = 0;
-	$pagina = (($page-1)*$per_page);
-	while ($row=mysqli_fetch_assoc($query)) {
-				$c++;
-				$indice = $pagina + $c;
-				$rowIdCampo1 = $row['id_fecha_examen']; 
-				$hashId = ArrayHash::encode(array($MY_SECRET=>$rowIdCampo1));
-				$rowCampo2 = $row['nombre_materia'] . ' <strong>('.$row['id_materia'] . ')</strong>';
-				$rowCampo3 = $row['carrera'];
-				$rowCampo4 = $row['descripcion_evento'] . ' del año ' .  $row['anio_lectivo'] . ' <strong>(' . $row['id_calendario'] . ')</strong>';
-				$rowCampo5 = $row['llamado'];
-				$rowCampo6 = $row['fecha_examen'];
 
-?>						
-       
+<?php
+if (!empty($arr_objetos)){
+	$finales = $c = 0;
+	foreach ($arr_objetos as $fila) {
+				
+				$c++;
+				//$indice = $pagina + $c;
+				$rowIdCampo1 = $fila['id_fecha_examen']; 
+				//$hashId = ArrayHash::encode(array($MY_SECRET=>$rowIdCampo1));
+				$rowCampo2 = $fila['nombre_materia'] . ' <strong>('.$fila['id_materia'] . ')</strong>';
+				$rowCampo3 = $fila['carrera'];
+				$rowCampo4 = $fila['descripcion_evento'] . ' del año ' .  $fila['anio_lectivo'] . ' <strong>(' . $fila['id_calendario'] . ')</strong>';
+				$rowCampo5 = $fila['llamado'];
+				$rowCampo6 = $fila['fecha_examen'];
+
+
+
+				
+?>			
             <tr>
                   <td align="center"><small><b><input type="checkbox" class=" check" id="check_<?=$rowIdCampo1?>" name="check_usu[]" value="<?=$rowIdCampo1?>"></b></small></td>
                       <td align="center" colspan="3">
@@ -178,7 +157,8 @@ if ($numrows>0){
 				$finales++;
 			};
 		?>	  
-        </tbody>
+			
+			</tbody>
          <tfoot>
              <tr>
 				<td colspan='10'>

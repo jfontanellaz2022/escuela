@@ -3,13 +3,14 @@ require_once('Db.php');
 
 class MateriaFechaExamen {
 
-	private $table = 'materia_tiene_fechaexamen';
-	private $conection;
+	private $table = 'materia_fecha_examen';
 	private $id;
-	private $idCalendarioAcademico;
+	private $idCalendario;
 	private $idMateria;
 	private $llamado; 
-	private $fechaExamen;
+	private $fecha_examen;
+	protected $conection;
+	protected $cantidad;
 
 	public function __construct() {
 		
@@ -20,6 +21,11 @@ class MateriaFechaExamen {
 		$dbObj = new Db();
 		$this->conection = $dbObj->conection;
 	}
+
+	public function getCantidad(){
+		return $this->cantidad;
+	}
+
 
 	/* Get all Alumnos */
 	public function getMateriasFechasExamenes(){
@@ -32,11 +38,16 @@ class MateriaFechaExamen {
 	}
 
 		/* Get Alumno by Id */
-	public function getMateriaFechaExamenById($fecha){
+	public function getMateriaFechaExamenById($id){
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table . " WHERE id = ?";
+		$sql = "SELECT mtf.id as 'fecha_examen_id', 
+		               mtf.idCalendario as 'calendario_id', 
+					   mtf.idMateria as 'materia_id', m.nombre as 'materia_nombre', 
+					   mtf.llamado, mtf.fecha_examen as 'fecha_examen'
+				FROM materia_fecha_examen mtf, materia m 
+				WHERE mtf.id = ? and mtf.idMateria = m.id";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$fecha]);
+		$stmt->execute([$id]);
 	
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
@@ -56,79 +67,81 @@ class MateriaFechaExamen {
 		$this->getConection();
 		$fecha_str = "";
 		$arr_resultado = [];
-		$sql = "SELECT * FROM " . $this->table . " WHERE idMateria = ? and idCalendarioAcademico = ?";
+		$sql = "SELECT * FROM " . $this->table . " WHERE idMateria = ? and idCalendario = ?";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$materia_id,$calendario_id]);
 
 		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($res as $val) {
-			$arr_resultado[] = $val['fechaExamen'];
+			$arr_resultado[] = $val['fecha_examen'];
 		}
 		$fecha_str = implode(" | ", $arr_resultado);
 
 		return $fecha_str;
 	}
 
+/* Save */
+public function save($param){
+	$this->getConection();
 
-
-/* Save MateriaFechaExamen */
-	/*public function save($param){
-		$this->getConection();
-		
-		//* Set default values 
-		$id = $idCalendarioAcademico = $idMateria = $llamado = $fechaExamen = "";
-
-		//* Check if exists 
-		$exists = false;
-		if(isset($param["id"]) and $param["id"] !=''){
-			
-           //die("ID: ".$param["id"]);
-			$instancia = $this->getMateriaFechaExamenById($param["id"]);
-			//			die('sdfsdfsdf ');
-
-			//var_dump($instancia);die;
-			if(isset($instancia["id"])){
-				$exists = true;	
-				//* Actual values 
-				$id = $param["id"];
-				$idCalendarioAcademico = $instancia["idCalendarioAcademico"];
-				$idMateria = $instancia["idMateria"];
-				$llamado = $instancia["llamado"];
-				$fechaExamen = $instancia["llamado"];
-			}
+	//* Check if exists 
+	$exists = false;
+	if(isset($param["id"]) and $param["id"] !=''){
+	
+		$actualObjeto = $this->getMateriaFechaExamenById($param["id"]);
+		if(isset($actualObjeto["fecha_examen_id"])){
+			$exists = true;	
+			//* Actual values 
+			$this->id = $param["fecha_examen_id"];
+			$this->idCalendario = $actualObjeto["idCalendario"];
+			$this->idMateria = $actualObjeto["idMateria"];
+			$this->llamado = $actualObjeto["llamado"];
+			$this->fecha_examen = $actualObjeto["fecha_examen"];
 		}
+	}
 
-		//* Received values 
-		if(isset($param["calendario_id"])) $idCalendarioAcademico = $param["calendario_id"];
-		if(isset($param["materia_id"])) $idMateria = $param["materia_id"];
-		if(isset($param["llamado"])) $llamado = $param["llamado"];
-		if(isset($param["fecha_examen"])) $fechaExamen = $param["fecha_examen"];
-		
+	//* Received values 
+	if(isset($param["idCalendario"])) $this->idCalendario = $param["idCalendario"];
+	if(isset($param["idMateria"])) $this->idMateria = $param["idMateria"];
+	if(isset($param["llamado"])) $this->llamado = $param["llamado"];
+	if(isset($param["fecha_examen"])) $this->fecha_examen = $param["fecha_examen"];
 
-		//* Database operations 
-		if($exists){
-			$sql = "UPDATE ".$this->table. " SET idCalendarioAcademico = ?, idMateria = ?, llamado = ?, fechaExamen = ?  WHERE id = ?";
-			//die('entrooo');
+	//* Database operations 
+	$code = 0;
+	if($exists){
+		$sql = "UPDATE ".$this->table. " SET idCalendario=?, idMateria=?, llamado=?, fecha_examen=? WHERE id=?";
+		try {
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$idCalendarioAcademico,$idMateria,$llamado,"$fechaExamen",$id]);
-		} else {
-			$sql = "INSERT INTO ".$this->table. " (idCalendarioAcademico, idMateria, llamado, fechaExamen) values(?, ?, ?, ?)";
-			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$idCalendarioAcademico,$idMateria,$llamado,$fechaExamen]);
-			$id = $this->conection->lastInsertId();
+			$res = $stmt->execute([$this->idCalendario,$this->idMateria,$this->llamado,$this->fecha_examen,$this->id]);
+			$code = $this->id;
+		} catch (Exception $e){
+			$code = -1;
 		}
+	} else {
+		//die('entro insert');
+		//var_dump([$this->idCalendario,$this->idMateria,$this->llamado,$this->fecha_examen]);exit;
+		$sql = "INSERT INTO ".$this->table. " (idCalendario, idMateria, llamado, fecha_examen) values(?, ?, ?, ?)";
+		try {
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$this->idCalendario,$this->idMateria,$this->llamado,$this->fecha_examen]);
+			$code = $this->id = $this->conection->lastInsertId();
+		} catch (Exception $e){
+			$code = -1;
+		}
+	}
 
-		return $id;	
+	return $code;	
 
-	}*/
+}
 
-	/* Delete Alumno by id */
-	/*public function deleteMateriaFechaExamenById($id){
-		$this->getConection();
-		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
-		$stmt = $this->conection->prepare($sql);
-		return $stmt->execute([$id]);
-	}*/
+public function delete($id) {
+	$this->getConection();
+	$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
+	$stmt = $this->conection->prepare($sql);
+	return $stmt->execute([$id]);
+}
+
+
 
 }
 

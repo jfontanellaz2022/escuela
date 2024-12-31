@@ -77,8 +77,6 @@ class Alumno extends Persona{
 
 
 
-
-
 /* Get All Alumnos que rindieron una Materia*/
 public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 	$this->getConection();
@@ -145,24 +143,41 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 
 
 	/* Get All Alumnos by Carrera - ACTUALIZADO */
-	public function getAllAlumnosByCarrera($id_carrera){
+	public function getAllAlumnosByCarrera($param){
 		$this->getConection();
+
+		
 		$sql = "SELECT a.id, a.anioIngreso, a.debeTitulo,a.habilitado,
 		               p.id as idPersona, p.apellido, p.nombre, p.dni, 
 		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio,
 					   p.email, p.telefono_caracteristica, p.telefono_numero, p.observaciones, 
-					   p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por
-        		FROM alumno a, persona p, alumno_estudia_carrera aec
-				WHERE aec.idCarrera = ? and
-					aec.idAlumno = a.id and
-					a.habilitado = 'Si' and 
-					a.idPersona = p.id
-				ORDER BY p.apellido asc, p.nombre asc";
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$id_carrera]);
+					   p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
+					   aec.anio, l.nombre as localidad_nombre, prov.nombre as provincia_nombre
+        		FROM alumno a, persona p, alumno_estudia_carrera aec, localidad l, provincia prov
+				WHERE aec.idAlumno = a.id and
+					  a.habilitado = 'Si' and 
+					  a.idPersona = p.id and 
+					  p.idLocalidad = l.id and 
+					  l.provincia_id = prov.id ";
 
+		if (isset($param['carrera_id'])) {
+					
+		   $sql .= " and aec.idCarrera = " . $param['carrera_id'];
+
+		};
+		if ($param['anio']) {
+
+			$sql .= " and aec.anio = " . $param['anio'];
+
+		};
+
+		$sql .= " ORDER BY p.apellido asc, p.nombre asc ";
+
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
+
 	
 	/* Get All Alumnos by Materia - ACTUALIZADO */
 	public function getAllAlumnosByMateria($id_materia){

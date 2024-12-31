@@ -1,29 +1,18 @@
 <?php
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-include_once 'ArrayHash.class.php';
-require_once 'seguridad.php';
+require_once 'Sanitize.class.php';
+require_once 'ArrayHash.class.php';
+require_once 'verificarCredenciales.php';
 
-$bandExisteTurnoActivo = true;
-if (isset($_SESSION['arrayTurnoActivo'])) {
-    $sqlCarreras = "SELECT a.id, a.descripcion
-                      FROM carrera a";
-    $resultadoCarreras = mysqli_query($conex, $sqlCarreras);
-    $_SESSION['carreras'] = array();
-    while ($filaCarreras = mysqli_fetch_assoc($resultadoCarreras)) {
-        $arreglo = array();
-        array_push($arreglo, $filaCarreras['id'], $filaCarreras['descripcion']);
-        array_push($_SESSION['carreras'], $arreglo);
-    };
+require_once 'Carrera.php';
 
-    $cantidadLlamados = $_SESSION['arrayTurnoActivo'][4];
-    $descripcionTurno = $_SESSION['arrayTurnoActivo'][2];
-    $idTurno = $_SESSION['arrayTurnoActivo'][0];
-} else {
-    $bandExisteTurnoActivo = false;
-}
+
+$obj = new Carrera();
+
+$arr_carreras_habilitadas_registracion = $obj->getCarrerasHabilitadasRegistracion();
+
+
 ?>
 
 <!doctype html>
@@ -193,13 +182,14 @@ if (isset($_SESSION['arrayTurnoActivo'])) {
 $(function () {
     let turno;
     let datos_turno;
-    let carrera;
     let arreglo_carreras;
-    carreras = getCarrerasHabilitadas();
-    arreglo_carreras = carreras.data;
+   
+    arreglo_carreras = <?php echo json_encode($arr_carreras_habilitadas_registracion);?>;
     $.each(arreglo_carreras, function(i, item) {
            $('#selectCarreras').append("<option value='"+item.id+"' >"+item.descripcion+" ("+item.id+")</option>");
     });
+
+
 });
 
 
@@ -221,16 +211,16 @@ function cargarAlumnos() {
                                                   <th scope="col">Localidad</th>
                                                 </tr>
                                               </thead><tbody></tbody></table>`);
-                if (data.codigo==100) {
+                if (data.codigo==200) {
                  
                 $.each(data.datos, function(i, item) {
-                     if (item.anioIngreso==anio) {
+                     if (item.anio==anio) {
                          let wsp = '<a href="https://api.whatsapp.com/send/?phone=549'+
                                     item.telefono_caracteristica+item.telefono_numero+
                                     '&text=Hola&type=phone_number&app_absent=0" target="_blank"><img src="../public/img/icons/wsp_icon.png" width="20"></a>';
                          tr="<tr><td>"+item.id+"</td><td>"+item.apellido+', '+item.nombre+"</td><td>"+item.dni+
                             "</td><td>"+item.email+"</td><td> "+wsp+" ("+item.telefono_caracteristica+") "+
-                            item.telefono_numero+"</td><td>"+item.localidad+" ("+item.provincia.toUpperCase()+")</td></tr>";
+                            item.telefono_numero+"</td><td>"+item.localidad_nombre+" ("+item.provincia_nombre.toUpperCase()+")</td></tr>";
                          $("#tabla tbody").append(tr);  
                      };
                 });
@@ -253,7 +243,7 @@ function cargarAlumnos() {
 //***********************************************************
 // RETORNA LAS CARRERAS ACTIVAS 
 //***********************************************************
-function getCarrerasHabilitadas() {
+/*function getCarrerasHabilitadas() {
    var evento;
    $.ajax({
       url:"./funciones/carrerasHabilitadasSelect.php",
@@ -265,7 +255,7 @@ function getCarrerasHabilitadas() {
       }
     });
    return evento;
-}
+}*/
 
 
 </script>

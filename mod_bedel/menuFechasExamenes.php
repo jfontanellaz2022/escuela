@@ -1,6 +1,17 @@
 <?php 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-require_once 'verificarCredenciales.php';
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
+
+require_once "verificarCredenciales.php";
+require_once "CalendarioAcademico.php";
+
+$obj = new CalendarioAcademico();
+$arr_datos_ultima_inscripcion = $obj->getLastInscripcionExamen();
+
+$calendario_id = $arr_datos_ultima_inscripcion['id'];
+
+//var_dump($calendario_id);exit;
+
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -70,29 +81,7 @@ let campo1 = "Id";
 let campo2 = "Codigo";
 let campo3 = "Descripcion";
 let campo4 = "Habilitada";
-
-
-//***********************************************************
-// RETORNA EL TURNO DE EXAMENES ACTIVO O EN CURSO SI LO HAY 
-//***********************************************************
-function getTurnoUltimaInscripcion() {
-   var datos_resultados = "";
-   $.ajax({
-      url:"./funciones/getEventoUltimaInscripcionExamenes.php",
-      type:"POST",
-      dataType : 'json',
-      async: false,
-      success: function(datos){
-         if (datos.codigo==100) {
-            datos_resultados = datos.data[0];
-         } else {
-            datos_resultados = "";
-         }
-      }
-});
-
-return datos_resultados;
-}
+let ultima_inscripcion_id = <?=$calendario_id;?>
 
 function getDatosFechaExamen(fecha_examen_id) {
    let datos_resultados = "";
@@ -104,9 +93,9 @@ function getDatosFechaExamen(fecha_examen_id) {
       data: param,
       dataType : 'json',
       async: false,
-      success: function(datos){
-         if (datos.codigo==100) {
-            datos_resultados = datos.data[0];
+      success: function(response){
+         if (response.codigo==200) {
+            datos_resultados = response.datos;
          } else {
             datos_resultados = "";
          }
@@ -132,7 +121,7 @@ function load(page) {
     
       let busqueda = $("#inputBusquedaRapida").val();
       let per_page = 10;
-     let parametros = {"action": "listar","page": page,"per_page": per_page, "busqueda_rapida":busqueda};
+      let parametros = {"action": "listar","page": page,"per_page": per_page, "busqueda_rapida":busqueda};
       let titulo = "<h1><i><u>Fechas de Exámenes</u></i></h1>";
       $("#titulo").html(titulo);
       $.post('funciones/fechaExamenListar.php', parametros, function (data) {
@@ -512,18 +501,18 @@ function guardarFechaMateria(){
     let llamado = $("#inputLlamadoFechaExamen").val();
     let fecha_examen = $("#inputFechaExamen").val();
     let accion = $("#inputAccionFechaExamen").val();
-    let calendario_id = getTurnoUltimaInscripcion().idCalendario;
+    let calendario_id = ultima_inscripcion_id;
     let parametros = "";
 
     if (calendario_id && materia_id && llamado && fecha_examen) {
-        if (accion=='editar') {
-            parametros = {"calendario_id":calendario_id, "materia_id":materia_id, "llamado":llamado, "fecha_examen":fecha_examen, "fecha_examen_id":fecha_examen_id, "accion":'editar'};
+        if (fecha_examen_id) {
+            parametros = {"calendario_id":calendario_id, "materia_id":materia_id, "llamado":llamado, "fecha_examen":fecha_examen, "fecha_examen_id":fecha_examen_id};
         } else if (accion=='nuevo') {
-            parametros = {"calendario_id":calendario_id, "materia_id":materia_id, "llamado":llamado, "fecha_examen":fecha_examen, "accion":'nuevo'};
+            parametros = {"calendario_id":calendario_id, "materia_id":materia_id, "llamado":llamado, "fecha_examen":fecha_examen};
         }
         
         $.post(url,parametros, function(data) {
-                if (data.codigo==100) {
+                if (data.codigo==200) {
                         $("#resultado_accion").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
                                                     <span style="color: #000000;">
@@ -579,7 +568,7 @@ function entidadEliminar(val){
     let parametros = {"accion":'eliminar',"fecha_examen_id":fecha_examen_id};
 if (confirm("Desea Eliminar el Registro de Fecha de la Fecha de Examen?.")) {
     $.post(url,parametros, function(data) {
-                if (data.codigo==100) {
+                if (data.codigo==200) {
                         $("#resultado_accion").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
                                                     <span style="color: #000000;">

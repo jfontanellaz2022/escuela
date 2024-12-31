@@ -187,14 +187,14 @@ class CalendarioAcademico {
 	// Devuelve la ultima inscripcion a  examenes
 	public function getLastInscripcionExamen(){
 		$this->getConection();
-		$sql = "SELECT c.*, e.codigo, e.descripcion as evento_descripcion 
-				FROM calendario_academico c, tipificacion e 
-				WHERE e.id=c.idTipificacion and (e.codigo = 1005 or e.codigo = 1006 or e.codigo = 1007 or e.codigo = 1008 or e.codigo = 1009 or e.codigo = 1010)
+		$sql = "SELECT c.*, t.codigo, t.nombre as evento_descripcion 
+				FROM calendario_academico c, tipificacion t 
+				WHERE t.id=c.idTipificacion and (t.codigo = 1005 or t.codigo = 1006 or t.codigo = 1007 or t.codigo = 1008)
 				ORDER BY c.fecha_final desc
 				limit 0,1 ";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
-		$arr_resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$arr_resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $arr_resultado;
 	}
 

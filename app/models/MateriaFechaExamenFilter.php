@@ -1,35 +1,39 @@
 <?php 
-require_once('FechaExamen.php');
+require_once('MateriaFechaExamen.php');
 
-class FechaExamenFilter extends FechaExamen{
+class MateriaFechaExamenFilter extends MateriaFechaExamen{
 	/* Aplica Filtro */
 	public function arreglo_filter($inicio,$final,$filtros) {
         $this->getConection();
 		//sql para sacar la cantidad 
         $sqlcount = "SELECT count(*) as cantidad
-	       			 FROM materia_tiene_fechaexamen mf,materia m, calendarioacademico c, evento e
-				     WHERE (mf.idCalendarioAcademico=c.id) and (c.idEvento = e.id) and (mf.idMateria=m.id) ";
+	       			 FROM materia_fecha_examen mf,materia m, calendario_academico c, tipificacion t
+				     WHERE (mf.idCalendario=c.id) and (c.idTipificacion = t.id) and (mf.idMateria=m.id) ";
        
 	    //sql con los los campos que me interesan 
-        $sql = "SELECT mf.id as id_fecha_examen, mf.fechaExamen as fecha_examen, c.id as id_calendario, c.AnioLectivo as anio_lectivo, 
-                       e.descripcion as descripcion_evento, mf.idCalendarioAcademico, mf.llamado, m.id as id_materia, 
+        $sql = "SELECT mf.id as id_fecha_examen, mf.fecha_examen, c.id as id_calendario, c.anio_lectivo, 
+                       t.nombre as descripcion_evento, mf.idCalendario, mf.llamado, m.id as id_materia, 
                        m.nombre as nombre_materia, m.carrera 
-				FROM materia_tiene_fechaexamen mf,materia m, calendarioacademico c, evento e
-				WHERE (mf.idCalendarioAcademico=c.id) and (c.idEvento = e.id) and (mf.idMateria=m.id) ";   
+				FROM materia_fecha_examen mf, materia m, calendario_academico c, tipificacion t
+				WHERE (mf.idCalendario=c.id) and (c.idTipificacion = t.id) and (mf.idMateria=m.id) ";   
 
-        if (isset($filtros['nombre_materia'])) {
-            $sql .= " and ( m.nombre like '%".$filtros['valor']."%' ) ";
+        if (isset($filtros['busqueda'])) {
+            $sql .= " and (( m.nombre like '%".$filtros['busqueda']."%' ) or ( mf.fecha_examen like '%".$filtros['busqueda']."%' )) ";
 
-			$sqlcount .= " and ( m.nombre like '%".$filtros['valor']."%' ) ";
+			$sqlcount .= " and (( m.nombre like '%".$filtros['busqueda']."%' ) or ( mf.fecha_examen like '%".$filtros['busqueda']."%' )) ";
         };               
 
         if (isset($inicio)&&isset($final)) {
-            $sql .= "LIMIT ".$inicio. "," . $final; 
+            $sql .= "ORDER BY c.id DESC, m.nombre ASC LIMIT ".$inicio. "," . $final; 
         };
-
+        
+        //var_dump($sqlcount);exit;
         $stmtcount = $this->conection->prepare($sqlcount);
+        
         $stmtcount->execute();
+        
         $res = $stmtcount->fetch(PDO::FETCH_ASSOC);  
+        
         if (!empty($res)) {
             $this->cantidad = $res['cantidad'];
         } else {

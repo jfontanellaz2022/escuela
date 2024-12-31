@@ -66,11 +66,14 @@ class Materia {
 	/* Get Materia by Nombre */
 	public function getMateriaByName($nombre){
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table . " WHERE nombre like ? ";
+		//$sql = "SELECT * FROM " . $this->table . " WHERE nombre like ? ";
+		$sql = "SELECT m.id, m.nombre, c.descripcion
+                FROM materia m, carrera c, carrera_tiene_materia ctm
+                WHERE (m.id=ctm.idMateria and ctm.idCarrera=c.id) and (m.nombre like ?)"; 
 		$stmt = $this->conection->prepare($sql);
-		$stmt->bindValue(1, "%$nombre%", PDO::PARAM_STR);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->execute(['%'.$nombre.'%']);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
 	}
 
 

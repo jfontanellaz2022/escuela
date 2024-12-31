@@ -57,6 +57,17 @@ class Carrera {
 	}
 
 
+	/* Get Carrera by Nombre */
+	public function getCarrerasHabilitadasRegistracion(){
+		$this->getConection();
+		$sql = "SELECT * FROM " . $this->table . " WHERE habilitacion_registro = 'Si' ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		$arr_res = $stmt->fetchAll(PDO::FETCH_DEFAULT);
+		//var_dump($arr_res);exit;
+		return $arr_res;
+	}
+
 	/* Save Alumno */
 	/*public function save($param){
 		$this->getConection();
@@ -124,6 +135,7 @@ class Carrera {
         $sql = "SELECT idMateria
                 FROM carrera c, carrera_tiene_materia ctm
                 WHERE c.id = ? AND c.id = ctm.idCarrera";
+				
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$carrera_id]);
 
