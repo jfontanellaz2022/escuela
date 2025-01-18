@@ -157,14 +157,9 @@ function cargarLlamados(carrera_id,profesor_id) {
    let cantidad_llamados;
    let carrera_nombre = getCarreraPorId(carrera_id).descripcion;
 
-   //let entidad_carrera = entidadObtenerPorId("carrera", carrera_id)
-   //let carrera_nombre = entidad_carrera.datos.descripcion;
-
    let titulo = '';
    let llamados;
       
-   //let entidad_calendario_llamado_1 = entidadObtenerPorCodigo("calendario", 1020);
-   //let entidad_calendario_llamado_2 = entidadObtenerPorCodigo("calendario", 1021);
    let llamado1_habilitado = llamado2_habilitado = "disabledbutton";
    
    if (llamado1_activo) {
@@ -250,7 +245,7 @@ function cargarMaterias(carrera_id,profesor_id,llamado) {
       let tabla_comienzo = `
                    <table class="table table-striped">
                       <thead class="thead-red">
-                         <tr><th>MATERIA</th><th>AÑO</th><th>FORMATO</th><th>CURSADO</th><th>FECHA EXÁMEN</th><th>ACCIONES</th></tr>
+                         <tr><th>MATERIA</th><th>AÑO</th><th>FORMATO</th><th>CURSADO</th><th>ACCIONES</th></tr>
                       </thead>
                       <tbody>
                     `;
@@ -277,10 +272,8 @@ function cargarMaterias(carrera_id,profesor_id,llamado) {
                    }
 
                    filas += `
-                                    <tr class='`+habilitar_materia+`'><td>`+materia.materia_nombre+
-                                    ` <strong>(`+materia.materia_id+`)</strong></td><td>`+materia.materia_anio+`</td>`+
+                                    <tr class='`+habilitar_materia+`'><td>`+materia.materia_nombre+` <strong>(`+materia.materia_id+`)</strong></td><td>`+materia.materia_anio+`</td>`+
                                     `<td>`+materia.formato_nombre+`</td>`+
-                                    `<td>`+materia.cursado_nombre+`</td>`+
                                     `<td>`+materia.cursado_nombre+`</td>`+
                                     `<td>`+
                                     `      <a href="#" class="linkAlumnos" onclick="cargarAlumnosPorMateriaExamenes(`+carrera_id+`,'`+carrera_nombre+`',`+materia.materia_id+`,'`+materia.materia_nombre+`',`+profesor_id+`,`+1+`)" data-toggle="tooltip" data-placement="bottom" title="Listado de Alumnos"><img src="../public/img/icons/listado_icon.png" width="25">`+budge+`</a>`+
@@ -478,28 +471,117 @@ function cargarAlumnosPorMateriaExamenes(carrera_id, carrera_nombre, materia_id,
    }, "json");
 }
 
+/*
+
+//****************************************************************
+//CARGA LAS MATERIAS DEL PROFESOR SEGUN LA CARRERA SELECCIONADA
+//***************************************************************
+function cargarMateriaPorCarreraRegularidades(carrera,profesor) {
+   let entrega_regularidades = getTurnoEntregaRegularidadActivo();
+   let habilitar_materia;
+   let evento_habilitado = entrega_regularidades.habilitado;
+   let evento_codigo = entrega_regularidades.evento_codigo;
+
+   let parametros = {"action":"Listar",'carrera':carrera, 'profesor':profesor};
+   let carrera_nombre = getCarreraNombrePorId(carrera);
+   let titulo = '<h1><i>'+carrera_nombre+'</i></h1><h3><strong>Materias</strong> (Cargar Notas Examenes)</h3>';
+   let bread = `<nav aria-label="breadcrumb" role="navigation">
+                 <ol class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="#" onclick="cargarHome()">Home</a></li>
+                   <li class="breadcrumb-item"><a href="#" onclick="cargarCarreras(`+profesor+`)">Carreras</a></li>
+                   <li class="breadcrumb-item">`+carrera_nombre+`</li>
+                 </ol>
+               </nav>`;
+   $("#breadcrumb").html(bread);
+   $.post( "./funciones/getMateriasPorCarrera.php", parametros, function( data ) {
+      let obj = JSON.parse(data);
+      $("#resultado").html("");
+      let tabla_comienzo = `
+                   <table class="table table-striped">
+                      <thead class="thead-red">
+                         <tr><th>MATERIA</th><th>AÑO</th><th>FORMATO</th><th>CURSADO</th><th>ACCIONES</th></tr>
+                      </thead>
+                      <tbody>
+                    `;
+      let filas = ``;
+      let tabla_final  = `   </tbody>
+                         </table>`;
+      if (obj.codigo==100) {
+              obj.data.forEach(materia => {
+                   if (evento_habilitado=='Si' && evento_codigo=='1011' && materia.codigoCursado=='01') {     
+                        filas += `
+                                    <tr><td>`+materia.nombre+` <strong>(`+materia.id+`)</strong></td><td>`+materia.anio+`</td>`+
+                                    `<td>`+materia.descripcion_formato+`</td>`+
+                                    `<td>`+materia.descripcion_cursado+`</td>`+
+                                    `<td>`+
+                                    `      <a href="#" class="linkAlumnos" onclick="cargarAlumnosPorMateriaRegularidad(`+carrera+`,`+materia.id+`,'`+materia.nombre+`',`+profesor+`,`+evento_codigo+`)" data-toggle="tooltip" data-placement="bottom" title="Listado de Alumnos"><img src="../assets/img/icons/listado_icon.png" width="25"></a>`+
+                                    `</td></tr>
+                                    `;
+                  } else if (evento_habilitado=='Si' && evento_codigo=='1012' && (materia.codigoCursado=='02' || materia.codigoCursado=='03')) {     
+                        filas += `
+                                    <tr><td>`+materia.nombre+` <strong>(`+materia.id+`)</strong></td><td>`+materia.anio+`</td>`+
+                                    `<td>`+materia.descripcion_formato+`</td>`+
+                                    `<td>`+materia.descripcion_cursado+`</td>`+
+                                    `<td>`+
+                                    `      <a href="#" class="linkAlumnos" onclick="cargarAlumnosPorMateriaRegularidad(`+carrera+`,`+materia.id+`,'`+materia.nombre+`',`+profesor+`,`+evento_codigo+`)" data-toggle="tooltip" data-placement="bottom" title="Listado de Alumnos"><img src="../assets/img/icons/listado_icon.png" width="25"></a>`+
+                                    `</td></tr>
+                                    `;
+                  } else {
+                        filas += `
+                              <tr class="disabledbutton"><td>`+materia.nombre+` <strong>(`+materia.id+`)</strong></td><td>`+materia.anio+`</td>`+
+                              `<td>`+materia.descripcion_formato+`</td>`+
+                              `<td>`+materia.descripcion_cursado+`</td>`+
+                              `<td>`+
+                              `      <a href="#" class="linkAlumnos" data-toggle="tooltip" data-placement="bottom" title="Listado de Alumnos"><img src="../assets/img/icons/listado_icon.png" width="25"></a>`+
+                              `</td></tr>
+                              `;
+
+                  }             
+               });
+      } else {
+             filas = `
+                      <tr><td>No Existen Materias Asociadas.</td></tr>
+                     `;
+             }
+       $("#resultado").html(tabla_comienzo+filas+tabla_final);
+    }); 
+
+}
+
+
+ 
+
 //****************************************************************************
-//CARGA LA NOTA DE UN EXAMEN A UN ALUMNO EN UNA MATERIA ESPECIFICADA
+//CARGA LA NOTA A UN ALUMNO EN UNA MATERIA ESPECIFICADA
 //****************************************************************************
-function finalesAgregarNotaAlumno(idMateria,materia_nombre,idCarrera,carrera_nombre,idCalendario,llamado,idProfesor) {
-   let alumno = $('#inputFinalesAltaAlumno').val();
-   let nota = $('#inputFinalesAltaNota').val()
-   let estado_final = $('#inputFinalesAltaEstadoFinal').val()
-   let parametros = {"materia":idMateria, "alumno":alumno, "calendario":idCalendario, "llamado":llamado, "nota":nota, "estadoFinal": estado_final};
-   $.post( "../API/setNotaExamenFinal.php", parametros, function( response ) {
-            
+function regularidadesAgregarNotaAlumno(carrera_id,materia_id,materia_nombre,profesor_id,materia_cursado,evento_codigo) {
+   let alumno = $('#inputRegularidadesAltaAlumno').val();
+   let nota = $('#inputRegularidadesAltaNota').val()
+   let estado_final = $('#inputRegularidadesAltaEstadoFinal').val()
+   $.post( "./funciones/setNotasCursado.php", {"materia":materia_id, "alumno":alumno, "nota":nota, "estadoFinal": estado_final}, function( data ) {
+            let obj = JSON.parse(data);
             $("#resultado_carga").removeClass("d-none");
-            if (response.codigo==200) {
+            if (obj.codigo==100) {
                 $("#resultado_carga").html(`<div class="alert alert-dark" role="alert">
-                                           <b><img src="../public/assets/img/icons/ok_icon.png" width="21">&nbsp;</b><span style="color: #000000;"><i>`+response.mensaje+`</i></span>
+                                           <b><img src="../public/img/icons/ok_icon.png" width="21">&nbsp;</b><span style="color: #000000;"><i>`+obj.data+`</i></span>
                                             </div>`);
-                cargarAlumnosPorMateriaExamenes(idCarrera, carrera_nombre, idMateria,materia_nombre,idProfesor,llamado)
+                let datos_alumno = sacaDatosAlumnoParaCursadoPorId(alumno,materia_id); 
+                if (datos_alumno.codigo==100) {
+                  //cargarAlumnos(idCarrera, idMateria, idProfesor, 'regularidades'); 
+                  cargarAlumnosPorMateriaRegularidad(carrera_id,materia_id,materia_nombre,profesor_id,materia_cursado,evento_codigo);
+                } else {
+                  $("#resultado_carga").html(`<div class="alert alert-secondary" role="alert"><img src="../assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                  No se pudo recuperar los datos del Alumno.</span></i>
+                   </div>`);
+                }                                            
             } else {
-                $("#resultado_carga").html(`<div class="alert alert-`+response.class+` alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+response.mensaje+`</span></i>
+                $("#resultado_carga").html(`<div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                                           `+obj.data+`</span></i>
                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                            <span aria-hidden="true">&times;</span>
                                          </button></div>`);
             }
-    },"json");
+    });
 }
+
+*/

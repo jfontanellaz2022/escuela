@@ -1,16 +1,15 @@
 <?php
-//set_include_path('../app/lib/'.PATH_SEPARATOR.'../../conexion/');
-set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../conexion/');
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
 require_once 'verificarCredenciales.php';
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-include_once 'ArrayHash.class.php';
-$sql = "SELECT * FROM carrera WHERE habilitada = 'Si'";
-$resultado = mysqli_query($conex,$sql);
-$ARREGLO_CARRERAS = array();
-if ($resultado) {
-  $ARREGLO_CARRERAS = mysqli_fetch_all($resultado);
-};
+require_once 'Sanitize.class.php';
+require_once 'ArrayHash.class.php';
+require_once 'Carrera.php';
+
+$ARREGLO_CARRERAS = [];
+
+$objCarrera = new Carrera();
+$ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
+//var_dump($ARREGLO_CARRERAS);exit;
 
 ?>
 <!doctype html>
@@ -22,81 +21,7 @@ if ($resultado) {
    <?php include_once('componente_header.html'); ?>
    <?php include("componente_script_jquery.html"); ?>
   
-  
-    <style>
-    .dropdown-item:hover{
-          background-color: #CFC290;
-        }        
-     footer.nb-footer {
-        background: #222;
-        border-top: 4px solid #b78c33; }
-    footer.nb-footer .about {
-        margin: 0 auto;
-        margin-top: 30px;
-        max-width: 1170px;
-        text-align: center; }
-    footer.nb-footer .about p {
-        font-size: 13px;
-        color: #999;
-        margin-top: 30px; }
-    footer.nb-footer .about .social-media {
-        margin-top: 15px; }
-    footer.nb-footer .about .social-media ul li a {
-        display: inline-block;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 50%;
-        font-size: 16px;
-        color: #b78c33;
-        border: 1px solid rgba(255, 255, 255, 0.3); }
-    footer.nb-footer .about .social-media ul li a:hover {
-        background: #b78c33;
-        color: #fff;
-        border-color: #b78c33; }
-    footer.nb-footer .footer-info-single {
-        margin-top: 30px; }
-    footer.nb-footer .footer-info-single .title {
-        color: #aaa;
-        text-transform: uppercase;
-        font-size: 16px;
-        border-left: 4px solid #b78c33;
-        padding-left: 5px; }
-    footer.nb-footer .footer-info-single ul li a {
-        display: block;
-        color: #aaa;
-        padding: 2px 0; }
-    footer.nb-footer .footer-info-single ul li a:hover {
-        color: #b78c33; }
-    footer.nb-footer .footer-info-single p {
-        font-size: 13px;
-        line-height: 20px;
-        color: #aaa; }
-    footer.nb-footer .copyright {
-        margin-top: 15px;
-        background: #111;
-        padding: 7px 0;
-        color: #999; }
-    footer.nb-footer .copyright p {
-        margin: 0;
-        padding: 0; }
-    .thead-green {
-        background-color: rgb(0, 99, 71);
-        color: white;
-    }
-    .disabledbutton {
-          pointer-events: none;
-          opacity: 0.5;
-      }
-
-    .input-form {
-          border: 1px solid black;
-          border-radius: 2px;
-          height: 36px !important;
-    }
-    
-    
-   </style>    
+      
 </head>
 <body>
  
@@ -132,7 +57,7 @@ if ($resultado) {
                             <?php
                                  if (count($ARREGLO_CARRERAS)>0) {
                                      foreach($ARREGLO_CARRERAS as $item) {
-                                         echo "<option value='$item[0]'>$item[2] ($item[0])</option>";
+                                         echo "<option value='" . $item['id'] . "'>" . $item['descripcion'] . " (" . $item['id'] . ")</option>";
                                      }
                                  }
                             ?>
@@ -200,11 +125,15 @@ $('#inputNota').select2({
 $("#inputCarrera").change(function(){
     let carrera_id = $("#inputCarrera").val();
     //Carga las Materias de una carrera en la select2
-    $.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
-          if (data.codigo==100) {
-            data.datos.forEach(materia => {
+    //alert(carrera_id);
+    $('#inputAlumno').val(null).trigger('change');
+    $('#inputMateria').val(null).trigger('change');
+    $.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(response){
+          if (response.codigo==200) {
+               $("#inputMateria").empty(); 
+           response.datos.forEach(materia => {
                       $("#inputMateria").append($('<option/>', {
-                            text: '('+materia.id+') '+materia.nombre,
+                            text: materia.nombre + ' ('+materia.id+') ',
                             value: materia.id,
                       }));
                 });
@@ -215,11 +144,12 @@ $("#inputCarrera").change(function(){
     },"json")
 
     //Carga los Alumnos de una carrera en la select2
-    $.post("./funciones/getAlumnosPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
-          if (data.codigo==100) {
-            data.datos.forEach(alumno => {
+    $.post("./funciones/getAlumnosPorIdCarrera.php",{"carrera_id":carrera_id},function(response){
+          if (response.codigo==200) {
+            $("#inputAlumno").empty(); 
+            response.datos.forEach(alumno => {
                       $("#inputAlumno").append($('<option/>', {
-                            text: '('+alumno.id+') '+alumno.apellido+', '+alumno.nombre,
+                            text: alumno.apellido+', '+alumno.nombre + ' ('+alumno.id+') ',
                             value: alumno.id,
                       }));
                 });
@@ -241,9 +171,9 @@ function guardarHomologacion() {
     console.log(parametros);
     $.post("./funciones/persistirHomologacionMateriaAprobada.php",parametros,function(res){
         let msg = "";
-        if (res.codigo==100) {
+        if (res.codigo==200) {
             msg = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Atención</strong> `+res.data+`
+                    <strong>Atención</strong> `+res.mensaje+`
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -256,7 +186,7 @@ function guardarHomologacion() {
          
         } else {
             msg = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Error</strong> `+res.data+`
+                    <strong>Error</strong> `+res.mensaje+`
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

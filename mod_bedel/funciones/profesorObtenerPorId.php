@@ -1,32 +1,38 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+require_once 'verificarCredenciales.php';
+require_once "Sanitize.class.php";
+require_once "Profesor.php";
 
 $id = ( isset($_POST['id']) )?SanitizeVars::INT($_POST['id']):false;
 
 $array_resultados = array();
 if ($id) {
-    $sql = "SELECT per.*, l.id as 'localidad_id', l.nombre as 'localidad_nombre', l.cp as 'codigo_postal', p.nombre as 'provincia_nombre' 
-            FROM profesor pro, persona per, localidad l, provincia p 
-            WHERE pro.id = $id AND pro.dni = per.dni AND per.idLocalidad = l.id AND l.provincia_id = p.id";
-    //die($sql);
-    $resultado = mysqli_query($conex,$sql);
-    if (mysqli_num_rows($resultado)>0) {
-      $filas = mysqli_fetch_all($resultado,MYSQLI_ASSOC);
-      $array_resultados['codigo'] = 100;
-      $array_resultados['datos'] = $filas;
+    $objProfesor = new Profesor();
+    $arr_datos_profesor = $objProfesor->getById($id);
+
+    if ($arr_datos_profesor) {
+        $array_resultados['codigo'] = 200;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "OK";
+        $array_resultados['datos'] = $arr_datos_profesor;
     } else {
-      $array_resultados['codigo'] = 11;
-      $array_resultados['datos'] = "No existe Profesor.";
+        $array_resultados['codigo'] = 500;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "El ID de Alumno es Incorrecto.";
     }
+
 } else {
-  $array_resultados['codigo'] = 10;
-  $array_resultados['datos'] = "El ID de Profesor es Incorrecto.";
+  $array_resultados['codigo'] = 500;
+  $array_resultados['alert'] = 'danger';
+  $array_resultados['mensaje'] = "El ID de Alumno es Incorrecto.";
 }
 
 echo json_encode($array_resultados);
+
+
+
+
 
 ?>

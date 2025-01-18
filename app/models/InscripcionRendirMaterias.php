@@ -141,7 +141,7 @@ private $arr_materias_tipo_cursado = [];
                 $arr_materias_verificadas_inscripcion_detalles[] = $arr_value_detalles;
             };
         }
-
+        //var_dump($arr_value_detalles);exit;
         return $arr_materias_verificadas_inscripcion_detalles;
 
     } 

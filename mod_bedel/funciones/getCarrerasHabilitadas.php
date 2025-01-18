@@ -1,25 +1,23 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+require_once "verificarCredenciales.php";
+require_once 'Sanitize.class.php';
+require_once "Carrera.php";
+
 
 $array_resultados = array();
-
-$sql = "SELECT id, codigo, descripcion, descripcion_corta, habilitada, imagen
-        FROM carrera 
-        WHERE habilitacion_cursado = 'Si'
-        ORDER BY descripcion ASC";
-//die($sql);        
-$resultado = mysqli_query($conex,$sql);
-if (mysqli_num_rows($resultado)>0) {
-      $filas = mysqli_fetch_all($resultado,MYSQLI_ASSOC);
-      $array_resultados['codigo'] = 100;
-      $array_resultados['data'] = $filas;
+$objCarrera = new Carrera();
+$arr_carreras = $objCarrera->getCarrerasHabilitadas();
+      
+if (count($arr_carreras)>0) {
+      $array_resultados['codigo'] = 200;
+      $array_resultados['alert'] = 'success';
+      $array_resultados['datos'] = $arr_carreras;
 } else {
-      $array_resultados['codigo'] = 11;
-      $array_resultados['data'] = "No existe la Carrera.";
+      $array_resultados['codigo'] = 500;
+      $array_resultados['alert'] = 'danger';
+      $array_resultados['mensaje'] = "No existe la Carrera.";
 }
 echo json_encode($array_resultados);
 

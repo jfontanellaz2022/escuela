@@ -1,16 +1,24 @@
 <?php
-//set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./');
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-
+require_once 'verificarCredenciales.php';
+require_once 'Sanitize.class.php';
+require_once 'ArrayHash.class.php';
 require_once 'CalendarioAcademico.php';
-//include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-include_once 'ArrayHash.class.php';
+require_once 'Constantes.php';
 
-$turno_id = 137;
-$inscripcion_activa = 136;
-$inscripcion_asociada = 136;
+$objCalendario = new CalendarioAcademico();
+$ARRAY_INSCRIPCION = $objCalendario->getLastInscripcionExamen();
+$ARRAY_TURNO = $objCalendario->getLastTurnoExamen();
+//var_dump($ARRAY_TURNO);exit;
 $cantidad_llamados = 1;
+$turno_id = $inscripcion_activa = $inscripcion_asociada = 0;
+if ( $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO || 
+     $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_TERCER_TURNO ) {
+      $inscripcion_activa = $ARRAY_INSCRIPCION['id'];
+      $inscripcion_asociada = $ARRAY_INSCRIPCION['id'];
+      $cantidad_llamados = 2;
+      $turno_id = $ARRAY_TURNO['id'];
+}
 
 ?>
 
@@ -51,6 +59,17 @@ $cantidad_llamados = 1;
         <hr>
     <form id="form">
         
+      
+    
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Carrera</strong>
+          <select name="selectCarreras" id="selectCarreras"  class="form-control" >
+            <option value='0'> - Seleccione Carrera - </option>  
+        </select>
+        </div>
+      </div>
+      
       <div class="form-row">  
         <div class="form-group col-md-6">
           <strong>Llamado</strong>
@@ -59,13 +78,11 @@ $cantidad_llamados = 1;
           </select>
         </div>
       </div>
-    
+
       <div class="form-row">  
         <div class="form-group col-md-6">
-          <strong>Carrera</strong>
-          <select name="selectCarreras" id="selectCarreras"  class="form-control" >
-            <option value='0'> - Seleccione Carrera - </option>  
-        </select>
+          <strong>Fecha del Acta</strong>
+          <input type="text"  class="form-control datepicker" id="inputFecha" autocomplete="off" placeholder="dd/mm/aaaa" required>
         </div>
       </div>
         
@@ -113,6 +130,38 @@ $(function () {
     let carrera;
     let arreglo_carreras;
 
+    $('.datepicker').datepicker({
+      dateFormat: 'dd/mm/yy',
+      showButtonPanel: false,
+      changeMonth: false,
+      changeYear: false,
+      /*showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true,
+      minDate: '+1D',
+      maxDate: '+3M',*/
+      inline: true
+    }).datepicker("setDate", new Date());;
+  
+    $.datepicker.regional['es'] = {
+    closeText: 'Cerrar',
+    prevText: '<Ant',
+    nextText: 'Sig>',
+    currentText: 'Hoy',
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    weekHeader: 'Sm',
+    dateFormat: 'dd/mm/yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+  };
+  $.datepicker.setDefaults($.datepicker.regional['es']);
+
     if (turno_id!='') {
        titulo = "Turno de Examen: <font color='red'>"+inscripcion_activa_id+"</font>";
        if (cantidad_llamados==1) {
@@ -124,34 +173,13 @@ $(function () {
        
        /**** SACA LAS CARRERAS HABILITADAS ******/
        carreras = getCarrerasHabilitadas();
-       arreglo_carreras = carreras.data;
-       $.each(arreglo_carreras, function(i, item) {
+       $.each(carreras, function(i, item) {
            $('#selectCarreras').append("<option value='"+item.id+"' >"+item.descripcion+" ("+item.id+")</option>");
        });
     };
     
-    //let titulo1 = "<h3><i><strong><u>CARRERA:</u></strong> "+datos_carrera+ "</i></h3>";
-    //let titulo2 = "<h4>Listado de Alumnos</h4>";
-
     $("#titulo").html(titulo);
 });
-
-
-function cargaMateriasConInscriptosPorCarrera()
-    {
-        let val = "";
-        val = $("#selectCarreras").val();
-        if ($("#selectLlamado").val()!=0 && val!=0) {
-            let parametros = val+'_'+$("#selectLlamado").val();
-            let p = {"parametros":parametros}
-            $.get("./funciones/generarMateriasConInscriptosPorCarrera.php",p,function (resul){
-                $("#resultado").html(resul);
-            });
-        } else {
-            alert('Debe seleccionaralguna de las opciones.');
-        }
-    }
-
 
 //***********************************************************
 // RETORNA LAS CARRERAS ACTIVAS 
@@ -163,12 +191,30 @@ function getCarrerasHabilitadas() {
       type:"POST",
       dataType : 'json',
       async: false,
-      success: function(datos){
-         evento = datos;
+      success: function(response){
+         evento = response.datos;
       }
     });
    return evento;
 }
+
+
+function cargaMateriasConInscriptosPorCarrera() {
+        let val = "";
+        val = $("#selectCarreras").val();
+        if (val!=0) {
+            let parametros = val+'_'+$("#selectLlamado").val()+'_'+$("#inputFecha").val();
+            let p = {"parametros":parametros}
+            $.get("./funciones/generarMateriasConInscriptosPorCarrera.php",p,function (resul){
+                $("#resultado").html(resul);
+            });
+        } else {
+            alert('Debe seleccionar alguna de las opciones.');
+        }
+}
+
+
+
 
 
 

@@ -1,6 +1,5 @@
 <?php
 session_start();
 session_destroy();
-require_once "./conexion/config.php";
-header('location: ' . $url . 'index.php');
+header('location: https://escuela40.net/index.php');
  ?>

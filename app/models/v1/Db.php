@@ -8,7 +8,7 @@ class Db {
 	private $pass;
 	public $conection;
 
-	public function __construct($host='localhost',$db_name='uiakkdaq_escuela_actual',$db_user='root',$db_pass='1q2w3e4r') {		
+	public function __construct($host='localhost',$db_name='uiakkdaq_escuela',$db_user='uiakkdaq_usuario',$db_pass='1qa_2ws_3ed_4rf') {		
 
 		$this->host = $host;
 		$this->db = $db_name;
@@ -16,7 +16,7 @@ class Db {
 		$this->pass = $db_pass;
 
 		try {
-           $this->conection = new PDO('mysql:host='.$this->host.'; dbname='.$this->db.';charset=UTF8', $this->user, $this->pass);
+           $this->conection = new PDO('mysql:host='.$this->host.'; dbname='.$this->db.';charset=utf8mb4', $this->user, $this->pass);
         } catch (PDOException $e) {
             echo $e->getMessage();
             exit();

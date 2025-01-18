@@ -51,20 +51,30 @@ class Carrera {
 		$this->getConection();
 		$sql = "SELECT * FROM " . $this->table . " WHERE descripcion like ? ";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->bindValue(1, "%$nombre%", PDO::PARAM_STR);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_DEFAULT);
+		$stmt->execute(["%$nombre%"]);
+		//$stmt->debugDumpParams();exit;
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 
-	/* Get Carrera by Nombre */
+	/* Get Carrera habilitadas para la inscripcion del nuevo a«Ðo */
 	public function getCarrerasHabilitadasRegistracion(){
 		$this->getConection();
 		$sql = "SELECT * FROM " . $this->table . " WHERE habilitacion_registro = 'Si' ";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
-		$arr_res = $stmt->fetchAll(PDO::FETCH_DEFAULT);
+		$arr_res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		//var_dump($arr_res);exit;
+		return $arr_res;
+	}
+
+	/* Get Carreras habilitadas  */
+	public function getCarrerasHabilitadas(){
+		$this->getConection();
+		$sql = "SELECT * FROM " . $this->table . " WHERE habilitada = 'Si' ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		$arr_res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $arr_res;
 	}
 
@@ -139,7 +149,7 @@ class Carrera {
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$carrera_id]);
 
-		foreach ($stmt->fetchAll(PDO::FETCH_DEFAULT) as $fila) {
+		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $fila) {
 			$arr_resultados[] = $fila['idMateria'];
 		}
 
@@ -191,14 +201,7 @@ class Carrera {
 
 }
 
-// ACA HACEMOS LAS PRUEBAS ** NO OLVIDAR COMENTAR
-//$c = new carrera();
 
-//var_dump($c->getCarreraById($id));die;
-
-
-//$mat->save(['id'=>'39','nombre'=>'blablabla','anio'=>'6','cursado_id'=>'3','carrera_nombre'=>'gestion informatica','promocionable'=>'N','idFormato'=>'2']);
-//var_dump($mat->getMateriaByName('Ingeni'));
 
 
 ?>

@@ -92,7 +92,7 @@ public function save($param){
 		if(isset($actualObjeto["fecha_examen_id"])){
 			$exists = true;	
 			//* Actual values 
-			$this->id = $param["fecha_examen_id"];
+			$this->id = $param["id"];
 			$this->idCalendario = $actualObjeto["idCalendario"];
 			$this->idMateria = $actualObjeto["idMateria"];
 			$this->llamado = $actualObjeto["llamado"];
@@ -112,6 +112,7 @@ public function save($param){
 		$sql = "UPDATE ".$this->table. " SET idCalendario=?, idMateria=?, llamado=?, fecha_examen=? WHERE id=?";
 		try {
 			$stmt = $this->conection->prepare($sql);
+			//var_dump([$this->idCalendario,$this->idMateria,$this->llamado,$this->fecha_examen,$this->id]);exit;
 			$res = $stmt->execute([$this->idCalendario,$this->idMateria,$this->llamado,$this->fecha_examen,$this->id]);
 			$code = $this->id;
 		} catch (Exception $e){

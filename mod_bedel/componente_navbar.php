@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-info"  >
+<nav class="navbar navbar-expand-md navbar-light bg-warning"  >
   <a class="navbar-brand" href="index.php"><img
     src="../public/img/logo.png" width="100"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -24,8 +24,8 @@
               <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="menuCalendario.php">Calendario de Eventos<span class="sr-only">(current)</span></a>
                 <a class="dropdown-item" href="menuFechasExamenes.php">Fechas de Exámenes<span class="sr-only">(current)</span></a>
-                <a class="dropdown-item" href="menuCorrelativasRendir.php">Correlativas Para Rendir<span class="sr-only">(current)</span></a>
-                <a class="dropdown-item" href="menuCorrelativasCursado.php">Correlativas Para Cursar<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item disabled" href="menuCorrelativasRendir.php">Correlativas Para Rendir<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item disabled" href="menuCorrelativasCursado.php">Correlativas Para Cursar<span class="sr-only">(current)</span></a>
               </div>
         </li>
 
@@ -36,8 +36,8 @@
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
            <a class="dropdown-item" href="menuAlumno.php">Alumnos<span class="sr-only">(current)</span></a>
            <a class="dropdown-item" href="menuProfesor.php">Docentes<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuMateria.php">Materias<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuCarrera.php">Carreras<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuMateria.php">Materias<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuCarrera.php">Carreras<span class="sr-only">(current)</span></a>
         </div>
   </li>
 
@@ -56,7 +56,7 @@
           Promociones
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item" href="menuPromociones.php">Procesar Promocionados<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuPromociones.php">Procesar Promocionados<span class="sr-only">(current)</span></a>
         </div>
   </li>
 
@@ -67,7 +67,7 @@
           Reportes
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item" href="menuActasCursado.php">Actas Cursado<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuActasCursado.php">Actas Cursado<span class="sr-only">(current)</span></a>
            <a class="dropdown-item" href="menuActasPromociones.php">Actas Promociones<span class="sr-only">(current)</span></a>
            <a class="dropdown-item" href="menuActasExamenes.php">Actas Exámenes<span class="sr-only">(current)</span></a>
            <div class="dropdown-divider"></div>
@@ -83,9 +83,10 @@
           <img src="../public/assets/img/icons/user_icon.png" width="22">
         </a>
         <div class="dropdown-menu dropdown-menu-right bg-light" aria-labelledby="servicesDropdown">
-            <a class="dropdown-item" href="#" onclick="cambiarPassword()">Cambiar Contraseña</a>
+            <a class="dropdown-item disabled" href="#" onclick="cambiarPassword()"><img src='../public/img/icons/chpassword_icon.png' width='20'>&nbsp;Cambiar Contraseña</a>
+            <a class="dropdown-item disabled" href="#" onclick="cambiarUsuario()"><img src='../public/img/icons/pngwing.png' width='20'>&nbsp;Cambiar Nombre Usuario</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../logout.php">Salir</a>
+            <a class="dropdown-item" href="../logout.php"><img src='../public/img/icons/exit_icon.png' width='18'>&nbsp;Salir</a>
         </div>
   </li>
 </ul>

@@ -8,33 +8,30 @@ class ProfesorFilter extends Profesor{
 		//sql para sacar la cantidad 
         $sqlcount = "SELECT count(*) as cantidad
 	       			 FROM profesor p, persona per 
-				     WHERE p.dni = per.dni ";
+				     WHERE p.idPersona = per.id ";
        
 	    //sql con los los campos que me interesan 
-        $sql = "SELECT p.id, p.dni, p.apellido, p.nombre, per.domicilio, per.idLocalidad, 
+        $sql = "SELECT p.id, per.dni, per.apellido, per.nombre, per.domicilio, per.idLocalidad, 
 		               per.telefono_caracteristica, per.telefono_numero, per.email 
 				FROM profesor p, persona per 
-				WHERE p.dni = per.dni ";   
+				WHERE p.idPersona = per.id ";   
 
-        if (isset($filtros['nombre'])) {
-            $sql .= " and ( p.nombre like '%".$filtros['nombre']."%' or p.apellido like '%".$filtros['nombre']."%' ) ";
-			$sqlcount .= " and ( p.nombre like '%".$filtros['nombre']."%' or p.apellido like '%".$filtros['nombre']."%' ) ";
-        };               
-        if (isset($filtros['dni'])) {
-             $sql .= " and ( p.dni like '%".$filtros['dni']."%' ) ";
-             $sqlcount .= " and ( p.dni like '%".$filtros['dni']."%' ) ";
-        };
-        if (isset($filtros['telefono'])) {
-            $sql .= " and ( per.telefono_numero like '%".$filtros['telefono']."%' ) ";
-            $sqlcount .= " and ( per.telefono_numero like '%".$filtros['telefono']."%' ) ";
-        };
-        if (isset($filtros['email'])) {
-            $sql .= " and ( per.email like '%".$filtros['email']."%' ) ";
-            $sqlcount .= " and ( per.email like '%".$filtros['email']."%' ) ";
-        };
+        if (isset($filtros['valor'])) {
+            $sql .= " and (( per.nombre like '%".$filtros['valor']."%' or per.apellido like '%".$filtros['valor']."%' ) " . 
+                    " or ( per.dni like '%".$filtros['valor']."%' ) " . 
+                    " or ( per.telefono_numero like '%".$filtros['valor']."%' ) " .
+                    " or ( per.email like '%".$filtros['valor']."%' )) "; 
+
+            $sqlcount .= " and (( per.nombre like '%".$filtros['valor']."%' or per.apellido like '%".$filtros['valor']."%' ) " .
+                    " or ( per.dni like '%".$filtros['valor']."%' ) " . 
+                    " or ( per.telefono_numero like '%".$filtros['valor']."%' ) " .
+                    " or ( per.email like '%".$filtros['valor']."%' )) "; 
+        };             
+
         if (isset($inicio)&&isset($final)) {
             $sql .= "LIMIT ".$inicio. "," . $final; 
         }
+
         $stmtcount = $this->conection->prepare($sqlcount);
         $stmtcount->execute();
         $res = $stmtcount->fetch(PDO::FETCH_ASSOC);  
@@ -58,9 +55,7 @@ class ProfesorFilter extends Profesor{
         $c = 0;
         $inicio = ($page*$per_page)-$per_page;
         $final = ($per_page);
-        //var_dump($filtro);die;
         $arr_resultado = $this->arreglo_filter($inicio,$final,$filtro);
-        //var_dump($arr_resultado);die;
         return $arr_resultado;
 	}
 

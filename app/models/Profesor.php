@@ -6,9 +6,7 @@ class Profesor {
 	protected $table = 'profesor';
 	protected $conection;
 	private $id;
-	private $dni;
-	private $apellido;
-	private $nombre; 
+	private $idPersona;
 	protected $cantidad;
 
 	public function __construct() {
@@ -36,6 +34,23 @@ class Profesor {
 		return $stmt->fetchAll();
 	}
 
+	/* Get by Id */
+	public function getById($id){
+		$arr_resultado = $arr_alumno = [];
+		$this->getConection();
+		$sql = "SELECT pr.idPersona, per.*, l.id as 'localidad_id', l.nombre as 'localidad_nombre', 
+		              l.cp as 'codigo_postal', p.nombre as 'provincia_nombre'
+            FROM profesor pr, persona per, localidad l, provincia p 
+            WHERE pr.id = ? AND 
+			      pr.idPersona = per.id AND 
+			      per.idLocalidad = l.id AND 
+			      l.idProvincia = p.id";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$id]);
+		$arr_profesor = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $arr_profesor;
+	}
+
 	/* Get Alumno by Id */
 	public function getProfesorById($id){
 		$this->getConection();
@@ -47,11 +62,11 @@ class Profesor {
 	}
 
 	/* Get Alumno by Dni */
-	public function getProfesorByDni($dni){
+	public function getProfesorByIdPersona($idPersona){
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table . " WHERE dni = ?";
+		$sql = "SELECT * FROM " . $this->table . " WHERE idPersona = ?";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$dni]);
+		$stmt->execute([$idPersona]);
 
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
@@ -69,27 +84,25 @@ class Profesor {
 				$exists = true;	
 				//* Actual values 
 				$this->id = $param["id"];
-				$this->dni = $actualObjeto["dni"];
-				$this->apellido = $actualObjeto["apellido"];
-				$this->nombre = $actualObjeto["nombres"];
+				$this->idPersona = $actualObjeto["idPersona"];
 			}
 		}
 
 		//* Received values 
-		if(isset($param["dni"])) $this->dni = $param["dni"];
-		if(isset($param["apellido"])) $this->apellido = $param["apellido"];
-		if(isset($param["nombres"])) $this->nombre = $param["nombres"];
+		if(isset($param["idPersona"])) $this->idPersona = $param["idPersona"];
 
 		//* Database operations 
 		
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET dni=?, apellido=?, nombre=? WHERE id=?";
+			$sql = "UPDATE ".$this->table. " SET idPersona = ? WHERE id=?";
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$this->dni,$this->apellido,$this->nombre, $this->id]);
+			$res = $stmt->execute([$this->idPersona,$this->id]);
+			//$stmt->debugDumpParams();
+
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (dni, apellido, nombre) values(?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (idPersona) values(?)";
 			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$this->dni,$this->apellido,$this->nombre]);
+			$stmt->execute([$this->idPersona]);
 			$this->id = $this->conection->lastInsertId();
 		}
 

@@ -6,10 +6,14 @@ require_once "CalendarioAcademico.php";
 
 $obj = new CalendarioAcademico();
 $arr_datos_ultima_inscripcion = $obj->getLastInscripcionExamen();
+$arr_datos_ultimo_turno = $obj->getLastTurnoExamen();
 
-$calendario_id = $arr_datos_ultima_inscripcion['id'];
+$ultima_inscripcion_id = $arr_datos_ultima_inscripcion['id'];
+$ultima_inscripcion_descripcion = $arr_datos_ultima_inscripcion['evento_descripcion'];
+$ultimo_turno_id = $arr_datos_ultimo_turno['id'];
+$ultimo_turno_descripcion = $arr_datos_ultimo_turno['evento_descripcion'].' - '.$arr_datos_ultimo_turno['anio_lectivo'];
 
-//var_dump($calendario_id);exit;
+//var_dump($ultima_inscripcion_descripcion);exit;
 
 
 ?>
@@ -81,7 +85,11 @@ let campo1 = "Id";
 let campo2 = "Codigo";
 let campo3 = "Descripcion";
 let campo4 = "Habilitada";
-let ultima_inscripcion_id = <?=$calendario_id;?>
+let ultima_inscripcion_id = <?=$ultima_inscripcion_id;?>;
+let ultima_inscripcion_descripcion = "<?=$ultima_inscripcion_descripcion;?>";
+let ultimo_turno_id = <?=$ultimo_turno_id;?>;
+let ultimo_turno_descripcion = "<?=$ultimo_turno_descripcion;?>";
+
 
 function getDatosFechaExamen(fecha_examen_id) {
    let datos_resultados = "";
@@ -242,11 +250,12 @@ function entidadCrear(){
 
 
       $("#breadcrumb").slideDown("slow").html(breadcrumb);                    
-
       $.get(url,function(data) {
             $("#resultado_accion").html("");
             $("#principal").slideDown("slow").html(data);
             $("#subtitulo_formulario").html("Crear a Fecha de Materia");
+            $("#inputTurnoId").val(ultimo_turno_id);
+            $("#inputTurnoDescripcion").val(ultimo_turno_descripcion+ " ("+ultimo_turno_id+")");
             //******************************************************************** 
             //******************************************************************** 
             $("#inputFechaExamen").datepicker({
@@ -347,6 +356,8 @@ function entidadDuplicar(fecha_examen_id){
             $("#subtitulo_formulario").html("Duplicar Fecha de Materia");
             $("#inputFechaExamen").val(fecha_examen);
             $("#inputAccionFechaExamen").val('nuevo');
+            $("#inputTurnoId").val(ultimo_turno_id);
+            $("#inputTurnoDescripcion").val(ultimo_turno_descripcion+ " ("+ultimo_turno_id+")");
             //******************************************************************** 
             //******************************************************************** 
 
@@ -438,6 +449,8 @@ function entidadEditar(fecha_examen_id){
             $("#inputFechaExamen").val(fecha_examen);
             $("#inputAccionFechaExamen").val('editar');
             $("#inputIdFechaExamen").val(fecha_examen_id);
+            $("#inputTurnoId").val(ultimo_turno_id);
+            $("#inputTurnoDescripcion").val(ultimo_turno_descripcion+ " ("+ultimo_turno_id+")");
             //******************************************************************** 
             //******************************************************************** 
 
@@ -501,7 +514,7 @@ function guardarFechaMateria(){
     let llamado = $("#inputLlamadoFechaExamen").val();
     let fecha_examen = $("#inputFechaExamen").val();
     let accion = $("#inputAccionFechaExamen").val();
-    let calendario_id = ultima_inscripcion_id;
+    let calendario_id = ultimo_turno_id;
     let parametros = "";
 
     if (calendario_id && materia_id && llamado && fecha_examen) {

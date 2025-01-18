@@ -1,6 +1,7 @@
 <?php 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
+set_include_path('../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
 require_once 'verificarCredenciales.php';
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -225,20 +226,20 @@ function entidadVer(entidad_id,alumno_descripcion){
           $('#alumno_asignar_mesa').addClass('d-none'); 
           //******************************************************************** 
           //**************************** CAMBIAR ******************************* 
-          $("#spn_nombres").html(datos_entidad.datos[0].apellido+', '+datos_entidad.datos[0].nombre);
-          $("#spn_fecha_nacimiento").html(datos_entidad.datos[0].fechaNacimiento);
-          $("#spn_documento").html(datos_entidad.datos[0].dni);
-          $("#spn_domicilio").html(datos_entidad.datos[0].domicilio);
+          $("#spn_nombres").html(datos_entidad.datos.apellido+', '+datos_entidad.datos.nombre);
+          $("#spn_fecha_nacimiento").html(datos_entidad.datos.fecha_nacimiento);
+          $("#spn_documento").html(datos_entidad.datos.dni);
+          $("#spn_domicilio").html(datos_entidad.datos.domicilio);
           $("#inputId").val(entidad_id);
           
-          if (datos_entidad.datos[0].telefono_caracteristica!=null && datos_entidad.datos[0].telefono_numero!=null) {
-                let wsp = `<a href="https://api.whatsapp.com/send/?phone=549`+datos_entidad.datos[0].telefono_caracteristica+datos_entidad.datos[0].telefono_numero+`&text=Hola&type=phone_number&app_absent=0" target="_blank">
+          if (datos_entidad.datos.telefono_caracteristica!=null && datos_entidad.datos.telefono_numero!=null) {
+                let wsp = `<a href="https://api.whatsapp.com/send/?phone=549`+datos_entidad.datos.telefono_caracteristica+datos_entidad.datos.telefono_numero+`&text=Hola&type=phone_number&app_absent=0" target="_blank">
                                     <img src="../public/img/icons/wsp_icon.png" width="20">
                             </a>`;
-                $("#spn_celular").html(wsp+' ('+datos_entidad.datos[0].telefono_caracteristica+') '+datos_entidad.datos[0].telefono_numero);
+                $("#spn_celular").html(wsp+' ('+datos_entidad.datos.telefono_caracteristica+') '+datos_entidad.datos.telefono_numero);
           }
-          $("#spn_email").html(datos_entidad.datos[0].email);
-          $("#spn_localidad").html(datos_entidad.datos[0].localidad_nombre + ' | Pcia. ' + datos_entidad.datos[0].provincia_nombre + ' | CP. '+datos_entidad.datos[0].codigo_postal);
+          $("#spn_email").html(datos_entidad.datos.email);
+          $("#spn_localidad").html(datos_entidad.datos.localidad_nombre + ' | Pcia. ' + datos_entidad.datos.provincia_nombre + ' | CP. '+datos_entidad.datos.codigo_postal);
           
            //******************************************************************** 
            //******************************************************************** 
@@ -259,7 +260,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_select2_obtener = "funciones/localidadObtener.php";// Esto puede cambiar
+      let url_select2_obtener = "../API/findLocalidad.php";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -290,7 +291,7 @@ function entidadCrear(){
                     theme: "bootstrap",
                     placeholder: "Buscar",
                     ajax: {
-                        url: url_select2_obtener,
+                        url: '../API/findLocalidad.php',
                         dataType: 'json',
                         delay: 250,
                         language: {
@@ -330,7 +331,7 @@ function entidadCrear(){
 function entidadEditar(entidad_id){
       let datos_entidad = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_obtener_entidad = "funciones/localidadObtener.php";
+      let url_obtener_entidad = "../API/findLocalidad.php";
       /*let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -350,25 +351,24 @@ function entidadEditar(entidad_id){
             //******************************************************************** 
             //**************************** CAMBIAR ******************************* 
             $("#inputAccion").val('editar');
-            $("#inputId").val(datos_entidad.datos[0].id);
-            $("#inputApellido").val(datos_entidad.datos[0].apellido);
-            $("#inputNombre").val(datos_entidad.datos[0].nombre);
-            $("#inputDocumento").attr('disabled',true)
-            $("#inputDocumento").val(datos_entidad.datos[0].dni);
-            $("#inputDomicilio").val(datos_entidad.datos[0].domicilio);
-            $("#inputTelefono").val(datos_entidad.datos[0].telefono);
+            $("#inputId").val(datos_entidad.datos.id);
+            $("#inputApellido").val(datos_entidad.datos.apellido);
+            $("#inputNombre").val(datos_entidad.datos.nombre);
+            $("#inputDocumento").val(datos_entidad.datos.dni);
+            $("#inputDomicilio").val(datos_entidad.datos.domicilio);
+            $("#inputTelefono").val(datos_entidad.datos.telefono);
             $("#inputTelefono").attr('type','text');
-            $("#inputTelefonoCaracteristica").val(datos_entidad.datos[0].telefono_caracteristica);
-            $("#inputTelefonoNumero").val(datos_entidad.datos[0].telefono_numero);
-            $("#inputEmail").val(datos_entidad.datos[0].email);
-            $("#inputAnioIngreso option[value="+ datos_entidad.datos[0].anio_ingreso +"]").attr("selected",true);
-            $("#inputDebeTitulo option[value="+ datos_entidad.datos[0].debe_titulo +"]").attr("selected",true);
+            $("#inputTelefonoCaracteristica").val(datos_entidad.datos.telefono_caracteristica);
+            $("#inputTelefonoNumero").val(datos_entidad.datos.telefono_numero);
+            $("#inputEmail").val(datos_entidad.datos.email);
+            $("#inputAnioIngreso option[value="+ datos_entidad.datos.anio_ingreso +"]").attr("selected",true);
+            $("#inputDebeTitulo option[value="+ datos_entidad.datos.debe_titulo +"]").attr("selected",true);
 
             let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
                                   <li class="breadcrumb-item" aria-current="page"><a href="#" onclick="load(1)">`+entidad_titulo2+`</></a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">`+datos_entidad.datos[0].apellido+', '+datos_entidad.datos[0].nombre+' <strong>('+entidad_id+`)</strong> <strong>|</strong> Editar</li>
+                                  <li class="breadcrumb-item active" aria-current="page">`+datos_entidad.datos.apellido+', '+datos_entidad.datos.nombre+' <strong>('+entidad_id+`)</strong> <strong>|</strong> Editar</li>
                               </ol>
                           </nav>`;
             $("#breadcrumb").slideDown("slow").html(breadcrumb);   
@@ -377,11 +377,12 @@ function entidadEditar(entidad_id){
                 dateFormat: 'dd/mm/yy',
                 maxDate: new Date()
             });
-            if (datos_entidad.datos[0].fechaNacimiento!=null) {
-                let anio = (datos_entidad.datos[0].fechaNacimiento).substr(0,4);
-                let mes = (datos_entidad.datos[0].fechaNacimiento).substr(5,2);
-                let dia = (datos_entidad.datos[0].fechaNacimiento).substr(8,2);
-                $("#inputFechaNacimiento").val(datos_entidad.datos[0].fechaNacimiento);
+
+            if (datos_entidad.datos.fecha_nacimiento!=null) {
+                let anio = (datos_entidad.datos.fecha_nacimiento).substr(0,4);
+                let mes = (datos_entidad.datos.fecha_nacimiento).substr(5,2);
+                let dia = (datos_entidad.datos.fecha_nacimiento).substr(8,2);
+                $("#inputFechaNacimiento").val(datos_entidad.datos.fecha_nacimiento);
                 let realDate = new Date(anio+'/'+mes+'/'+dia);  
                 $("#inputFechaNacimiento").datepicker('setDate',realDate);
             }
@@ -415,13 +416,13 @@ function entidadEditar(entidad_id){
             });
             
             var data = {
-                id: datos_entidad.datos[0].localidad_id,
-                text: datos_entidad.datos[0].localidad_nombre + ' (Pcia. ' + datos_entidad.datos[0].provincia_nombre + ')'
+                id: datos_entidad.datos.localidad_id,
+                text: datos_entidad.datos.localidad_nombre + ' (Pcia. ' + datos_entidad.datos.provincia_nombre + ')'
             };
             
             var newOption = new Option(data.text, data.id, false, false);
             $('#inputLocalidad').append(newOption).trigger('change');
-            $("#inputLocalidad option[value="+ datos_entidad.datos[0].localidad_id +"]").attr("selected",true);
+            $("#inputLocalidad option[value="+ datos_entidad.datos.localidad_id +"]").attr("selected",true);
 
       });
 }
@@ -449,29 +450,17 @@ function entidadGuardar(){
     let parametros = {"accion":accion, "apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento,"anio_ingreso":anio_ingreso,"debe_titulo":debe_titulo,"persona_id":persona_id};
     let url = "funciones/"+entidad_nombre+"Guardar.php";
     if (accion!="" && apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="" && fecha_nacimiento!="") {
-        $.post(url,parametros, function(data) {
-            if (data.codigo==100) {
+        $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
                                                 
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
+                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+response.mensaje+`
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>   
                                             </div>`);
-            } else {
-                    $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                <span style="color: #000000;">
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>   
-                                                </span>    
-                                            </div>`);
-            };
+            
             $("#inputApellido").val("");
             $("#inputNombre").val("");
             $("#inputDocumento").val("");
@@ -569,30 +558,19 @@ function vincularCarrera(entidad_id) {
 function guardarVinculo() {
     let alumno_id = $("#inputId").val();
     let carrera_id = $("#inputCarrera").val();
-    let parametro = {"alumno_id":alumno_id,"carrera_id":carrera_id};
-    $.post("./funciones/alumnoVincularCarrera.php",parametro,function(data){
-        if (data.codigo==100) {
-                    $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+    let anio = $("#inputAnioCarrera").val();
+    let parametro = {"alumno_id":alumno_id,"carrera_id":carrera_id,"anio":anio};
+    $.post("./funciones/alumnoVincularCarrera.php",parametro,function(response){
+            $("#resultado_accion").html(`
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
                                                 
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
+                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+response.mensaje+`
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>   
                                             </div>`);
-            } else {
-                    $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                <span style="color: #000000;">
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>   
-                                                </span>    
-                                            </div>`);
-            };
+           
             $("#inputId").val("");
             $("#inputCarrera").val("");
             load(1);

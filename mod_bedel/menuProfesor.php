@@ -1,5 +1,5 @@
 <?php 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
+set_include_path('./');
 require_once 'verificarCredenciales.php';
 
 ?>
@@ -112,28 +112,16 @@ $(function () {
    $.get("./html/modalEliminar.html",function(data){
       $("#modalEliminar").html(data);
    })
-    /*
-     $("#inputCuit").mask("99-99999999-9");
-    $("input").blur(function() {
-                                $("#info").html("Unmasked value: " + $(this).mask());
-                            }).dblclick(function() {
-                                $(this).unmask();
-                            });
-                            */
-    load(1);
+   load(1);
 });
   
 //****************************************** */
 // CARGA EL LISTADO DE TODOS LAS ENTIDADES   */
 //****************************************** */
 function load(page) {
-    let nombre = $("#inputFiltroNombres").val();
-    let dni = $("#inputFiltroDni").val();
-    let telefono = $("#inputFiltroTelefono").val();
-    let email = $("#inputFiltroEmail").val();
-    let busqueda = $("#inputBusquedaRapida").val();
+    let valor = $("#inputFiltroValor").val();
     let per_page = 10;
-    let parametros = {"action": "listar","page": page,"per_page": per_page, "nombre":nombre, "dni":dni, "telefono":telefono, "email":email, "busqueda_rapida":busqueda};
+    let parametros = {"action": "listar","page": page,"per_page": per_page, "valor":valor};
     let titulo = "<h1><i><u>Profesores</u></i></h1>";
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
@@ -168,17 +156,14 @@ function load(page) {
 // APLICA EL FILTRO AL LISTADO DE ENTIDADES     
 //********************************************* 
 
-  function aplicarFiltro() {
-    let nombre = $("#inputFiltroNombres").val();
-    let dni = $("#inputFiltroDni").val();
-    let telefono = $("#inputFiltroTelefono").val();
-    let email = $("#inputFiltroEmail").val();
-    let busqueda = $("#inputBusquedaRapida").val();
+
+function aplicarFiltro() {
+    let valor = $("#inputFiltroValor").val();
+
     let per_page = 10;
-    let parametros = {"action": "listar","page": 1,"per_page": per_page, "nombre":nombre, "dni":dni, "telefono":telefono, "email":email,"busqueda_rapida":busqueda};
+    let parametros = {"action": "listar","page": 1,"per_page": per_page, "valor":valor};
     let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
-    console.info(parametros);
-        $("#titulo").html(titulo);
+    $("#titulo").html(titulo);
         $.ajax({
             url: 'funciones/'+entidad_nombre+'Listar.php',
             data: parametros,
@@ -189,40 +174,13 @@ function load(page) {
         });
   };
   
-  //******************************************* 
-  // APLICA EL FILTRO AL LISTADO DE ENTIDADES   
-  //******************************************* 
-  function aplicarBusquedaRapida() {
-        let nombre = $("#inputFiltroNombres").val();
-        let dni = $("#inputFiltroDni").val();
-        let telefono = $("#inputFiltroTelefono").val();
-        let email = $("#inputFiltroEmail").val();
-        let busqueda = $("#inputBusquedaRapida").val();
-        let per_page = 10;
-        let parametros = {"action": "listar","page": 1,"per_page": per_page, "nombre":nombre, "dni":dni, "telefono":telefono, "email":email, "busqueda_rapida":busqueda};
-        //console.info(parametros);
-        let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
-        $("#titulo").html(titulo);
-        $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
-            data: parametros,
-            method: 'POST',
-            success: function (data) {
-                $("#principal").slideDown("slow").html(data);
-            }
-        });
-  };
  
 //******************************************* 
 // QUITA EL FILTRO DEL LISTADO DE ENTIDADES   
 //******************************************* 
 function quitarFiltro() {
-    $("#inputBusquedaRapida").val(""); 
-    $("#inputFiltroNombres").val("");
-    $("#inputFiltroDni").val("");
-    $("#inputFiltroTelefono").val("");
-    $("#inputFiltroEmail").val("");
-    load(1);  
+        $("#inputFiltroValor").val("");
+        load(1);  
 };
   
 
@@ -277,23 +235,24 @@ function entidadVer(entidad_id){
           $("#resultado_accion").html("");
           $("#principal").slideDown("slow").html(data);
           $('#profesor_editar').addClass('d-none');
+          $("#profesor_asignar_carrera").addClass("d-none");
           $('#profesor_ver').removeClass('d-none');
           //******************************************************************** 
           //**************************** CAMBIAR ******************************* 
           //$("#inputIdProfesor").val(entidad_id)
-          $("#spn_nombres").html(datos_entidad.datos[0].apellido+', '+datos_entidad.datos[0].nombre);
-          $("#spn_fecha_nacimiento").html(datos_entidad.datos[0].fecha_nacimiento);
-          $("#spn_documento").html(datos_entidad.datos[0].dni);
-          $("#spn_domicilio").html(datos_entidad.datos[0].domicilio);
+          $("#spn_nombres").html(datos_entidad.datos.apellido+', '+datos_entidad.datos.nombre);
+          $("#spn_fecha_nacimiento").html(datos_entidad.datos.fecha_nacimiento);
+          $("#spn_documento").html(datos_entidad.datos.dni);
+          $("#spn_domicilio").html(datos_entidad.datos.domicilio);
           $("#inputId").val(entidad_id);
-          if (datos_entidad.datos[0].telefono_caracteristica!=null && datos_entidad.datos[0].telefono_numero!=null) {
-                let wsp = `<a href="https://api.whatsapp.com/send/?phone=549`+datos_entidad.datos[0].telefono_caracteristica+datos_entidad.datos[0].telefono_numero+`&text=Hola&type=phone_number&app_absent=0" target="_blank">
+          if (datos_entidad.datos.telefono_caracteristica!=null && datos_entidad.datos.telefono_numero!=null) {
+                let wsp = `<a href="https://api.whatsapp.com/send/?phone=549`+datos_entidad.datos.telefono_caracteristica+datos_entidad.datos.telefono_numero+`&text=Hola&type=phone_number&app_absent=0" target="_blank">
                                     <img src="../public/assets/img/icons/WhatsApp.png" width="20">
                             </a>`;
-                $("#spn_celular").html(wsp+' ('+datos_entidad.datos[0].telefono_caracteristica+') '+datos_entidad.datos[0].telefono_numero);
+                $("#spn_celular").html(wsp+' ('+datos_entidad.datos.telefono_caracteristica+') '+datos_entidad.datos.telefono_numero);
           }
-          $("#spn_email").html(datos_entidad.datos[0].email);
-          $("#spn_localidad").html(datos_entidad.datos[0].localidad_nombre + ' | Pcia. ' + datos_entidad.datos[0].provincia_nombre + ' | CP. '+datos_entidad.datos[0].codigo_postal);
+          $("#spn_email").html(datos_entidad.datos.email);
+          $("#spn_localidad").html(datos_entidad.datos.localidad_nombre + ' | Pcia. ' + datos_entidad.datos.provincia_nombre + ' | CP. '+datos_entidad.datos.codigo_postal);
           
            //******************************************************************** 
            //******************************************************************** 
@@ -314,7 +273,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_select2_obtener = "funciones/localidadObtener.php";// Esto puede cambiar
+      let url_select2_obtener = "../API/findLocalidad.php";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -329,7 +288,7 @@ function entidadCrear(){
             $("#principal").slideDown("slow").html(data);
             $('#profesor_editar').removeClass('d-none');
             $('#profesor_ver').addClass('d-none');
-            $('#telefono_viejo').addClass('d-none');
+            $("#profesor_asignar_carrera").addClass("d-none");
             //*************************************************
             $("#inputFechaNacimiento").datepicker({
                 dateFormat: 'dd/mm/yy',
@@ -384,7 +343,7 @@ function entidadCrear(){
 function entidadEditar(entidad_id){
       let datos_entidad = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_obtener_entidad = "funciones/localidadObtener.php";
+      let url_obtener_entidad = "../API/findLocalidad.php";
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -393,10 +352,12 @@ function entidadEditar(entidad_id){
                               </ol>
                           </nav>`;
       $("#breadcrumb").slideDown("slow").html(breadcrumb);   
-      $("#profesor_ver").addClass("d-none");
-      $("#profesor_editar").removeClass("d-none");
+      
       datos_entidad = entidadObtenerPorId(entidad_id);
       $.get(url,function(data) {
+            $("#profesor_ver").addClass("d-none");
+            $("#profesor_asignar_carrera").addClass("d-none");
+            $("#profesor_editar").removeClass("d-none");
             $("#resultado_accion").html("");
             $("#principal").slideDown("slow").html(data);
             $('#profesor_editar').removeClass('d-none');
@@ -405,25 +366,23 @@ function entidadEditar(entidad_id){
             //******************************************************************** 
             //**************************** CAMBIAR ******************************* 
             $("#inputId").val(entidad_id);
-            $("#inputApellido").val(datos_entidad.datos[0].apellido);
-            $("#inputNombre").val(datos_entidad.datos[0].nombre);
-            $("#inputDocumento").attr('disabled',true)
-            $("#inputDocumento").val(datos_entidad.datos[0].dni);
-            $("#inputDomicilio").val(datos_entidad.datos[0].domicilio);
-            //$("#inputTelefono").val(datos_entidad.datos[0].telefono);
+            $("#inputApellido").val(datos_entidad.datos.apellido);
+            $("#inputNombre").val(datos_entidad.datos.nombre);
+            $("#inputDocumento").val(datos_entidad.datos.dni);
+            $("#inputDomicilio").val(datos_entidad.datos.domicilio);
             $("#inputTelefono").attr('type','text');
-            $("#inputTelefonoCaracteristica").val(datos_entidad.datos[0].telefono_caracteristica);
-            $("#inputTelefonoNumero").val(datos_entidad.datos[0].telefono_numero);
-            $("#inputEmail").val(datos_entidad.datos[0].email);
+            $("#inputTelefonoCaracteristica").val(datos_entidad.datos.telefono_caracteristica);
+            $("#inputTelefonoNumero").val(datos_entidad.datos.telefono_numero);
+            $("#inputEmail").val(datos_entidad.datos.email);
             $("#inputFechaNacimiento").datepicker({
                 dateFormat: 'dd/mm/yy',
                 maxDate: new Date()
             });
-            if (datos_entidad.datos[0].fechaNacimiento!=null) {
-                let anio = (datos_entidad.datos[0].fechaNacimiento).substr(0,4);
-                let mes = (datos_entidad.datos[0].fechaNacimiento).substr(5,2);
-                let dia = (datos_entidad.datos[0].fechaNacimiento).substr(8,2);
-                $("#inputFechaNacimiento").val(datos_entidad.datos[0].fechaNacimiento);
+            if (datos_entidad.datos.fecha_nacimiento!=null) {
+                let anio = (datos_entidad.datos.fecha_nacimiento).substr(0,4);
+                let mes = (datos_entidad.datos.fecha_nacimiento).substr(5,2);
+                let dia = (datos_entidad.datos.fecha_nacimiento).substr(8,2);
+                $("#inputFechaNacimiento").val(datos_entidad.datos.fecha_nacimiento);
                 let realDate = new Date(anio+'/'+mes+'/'+dia);  
                 $("#inputFechaNacimiento").datepicker('setDate',realDate);
             }
@@ -458,12 +417,12 @@ function entidadEditar(entidad_id){
                 }
             });
             var data = {
-                id: datos_entidad.datos[0].localidad_id,
-                text: datos_entidad.datos[0].localidad_nombre + ' (Pcia. ' + datos_entidad.datos[0].provincia_nombre + ')'
+                id: datos_entidad.datos.localidad_id,
+                text: datos_entidad.datos.localidad_nombre + ' (Pcia. ' + datos_entidad.datos.provincia_nombre + ')'
             };
             var newOption = new Option(data.text, data.id, false, false);
             $('#inputLocalidad').append(newOption).trigger('change');
-            $("#inputLocalidad option[value="+ datos_entidad.datos[0].localidad_id +"]").attr("selected",true);
+            $("#inputLocalidad option[value="+ datos_entidad.datos.localidad_id +"]").attr("selected",true);
       });
 }
 
@@ -486,30 +445,18 @@ function entidadGuardar(){
     let parametros = {"id":id,"apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento};
     let url = "funciones/"+entidad_nombre+"Guardar.php";
     if (apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="") {
-        $.post(url,parametros, function(data) {
-            if (data.codigo==100) {
+        $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
                                                 <span style="color: #000000;">
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
+                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+response.mensaje+`
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>   
                                                 </span>    
                                             </div>`);
-            } else {
-                    $("#resultado_accion").html(`
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                <span style="color: #000000;">
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+data.mensaje+`
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>   
-                                                </span>    
-                                            </div>`);
-            };
+            
             $("#inputId").val("");
             $("#inputApellido").val("");
             $("#inputNombre").val("");
@@ -520,7 +467,6 @@ function entidadGuardar(){
             $("#inputTelefonoNumero").val("");
             $("#inputEmail").val("");
             $("#inputLocalidad").val("");
-            $("#inputAccion").val("");
             let hoy = new Date();  
             let fecha_hoy = hoy.getDate() + '/' + ( hoy.getMonth() + 1 ) + '/' + hoy.getFullYear();
             $("#inputFechaNacimiento").datepicker('setDate',fecha_hoy);
@@ -656,6 +602,96 @@ $("body").on("click","#seleccionar_todos", function() {
                         load(1);
                 },"json");
   };
+
+
+
+//************************************************************************************************ 
+//************************************************************************************************ 
+//*********************************** VINCULAR ALUMNO A CARRERA  ********************************* 
+//************************************************************************************************ 
+//************************************************************************************************ 
+
+function vincularCarrera(entidad_id) {
+    let arreglo="";
+    let parametros = "";
+    let url = "html/"+entidad_nombre+".html";
+    let url_select2_obtener = "funciones/carreraObtener.php";// Esto puede cambiar
+    let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
+                              <ol class="breadcrumb">
+                                  <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+                                  <li class="breadcrumb-item" aria-current="page"><a href="#" onclick="load(1)">`+entidad_titulo2+`</></a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Vincular Carrera</li>
+                              </ol>
+                      </nav>`;
+    $("#breadcrumb").slideDown("slow").html(breadcrumb);                    
+      
+    $.get(url,function(data) {
+            $("#resultado_accion").html("");
+            $("#principal").slideDown("slow").html(data);
+            $('#profesor_editar').addClass('d-none');
+            $('#profesor_ver').addClass('d-none');
+            $('#profesor_asignar_carrera').removeClass('d-none');
+            $("#inputId").val(entidad_id);
+            //******************************************************************** 
+            //******************************************************************** 
+            $('#inputCarrera').select2({
+                    theme: "bootstrap",
+                    placeholder: "Buscar",
+                    language: {
+                                noResults: function() {
+                                          return "No hay resultado";        
+                                },
+                                searching: function() {
+                                          return "Buscando..";
+                                }
+                              },
+                    ajax: {
+                        url: url_select2_obtener,
+                        dataType: 'json',
+                        delay: 250,
+                        data: function (data) {
+                            return {
+                                searchTerm: data.term // search term
+                            };
+                        },
+                        processResults: function (response) {
+                            return {
+                                results:response
+                            };
+                        },
+                        cache: true
+                    }
+            });
+
+      });    
+
+}
+
+
+function guardarVinculo() {
+    let profesor_id = $("#inputId").val();
+    let carrera_id = $("#inputCarrera").val();
+    let anio = $("#inputAnioCarrera").val();
+    let parametro = {"profesor_id":profesor_id,"carrera_id":carrera_id,"anio":anio};
+    $.post("./funciones/profesorVincularCarrera.php",parametro,function(response){
+            $("#resultado_accion").html(`
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
+                                                
+                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                                    &nbsp;<strong>Atenci&oacute;n:</strong> `+response.mensaje+`
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>   
+                                            </div>`);
+           
+            $("#inputId").val("");
+            $("#inputCarrera").val("");
+            load(1);
+    },"json");
+
+
+}
+
 
 /*
   //************************************************ 

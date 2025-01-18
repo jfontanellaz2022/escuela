@@ -269,22 +269,22 @@ function cargarMaterias(id_carrera,id_profesor) {
         $.post( "../API/findAllMateriasPorCarreraPorProfesor.php", parametros, function( data ) {
           let obj = data;
           $("#resultado").html("");
-          let tabla_comienzo = `<div class="col-xs-12 col-sm-12 col-md-12" style="background-color: #E9D5B4;border-radius: 10px;">
-                           <div class="row" style="padding: 10px;"> 
-                                 <div class="col-xs-12 col-sm-12 col-md-8">
-                                    <select name="inputAltaMateria" id="inputAltaMateria" class="form-control">
-                                       <option value="">-- Materia --</option>
-                                 </select>
-                                 </div>
+          let tabla_comienzo = `<div class="col-xs-12 col-sm-12 col-md-12" id='panel_materia'style="background-color: #E9D5B4;border-radius: 10px;">
+                                    <div class="row disabled" style="padding: 10px;"> 
+                                          <div class="col-xs-12 col-sm-12 col-md-8">
+                                             <select name="inputAltaMateria" id="inputAltaMateria" class="form-control">
+                                                <option value="">-- Materia --</option>
+                                             </select>
+                                          </div>
 
-                                 <div class="col-xs-12 col-sm-12 col-md-4">
-                                    <button type="button" class="btn btn-primary btn-block" onclick="cursadoAgregarMateria(`+id_carrera+`)">
-                                       Agregar
-                                    </button>
+                                          <div class="col-xs-12 col-sm-12 col-md-4">
+                                             <button type="button" class="btn btn-primary btn-block `+habilitar_materia+`" onclick="cursadoAgregarMateria(`+id_carrera+`)">
+                                                Agregar
+                                             </button>
+                                          </div>
+                                          
+                                    </div>
                                  </div>
-                                 
-                           </div>
-</div>
                        <table id="tabla_materias" class="table table-striped">
                         <thead class="thead-red">
                              <tr><th>MATERIA</th><th>AÑO</th><th>FORMATO</th><th>CURSADO</th><th>ACCIONES</th></tr>
@@ -304,6 +304,7 @@ function cargarMaterias(id_carrera,id_profesor) {
                           habilitar_materia = '';  
                        } else {
                           habilitar_materia = 'disabledbutton';
+                          //alert('accca');
                        };
 
                        filas += `

@@ -1,28 +1,33 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once "verificarCredenciales.php";
+require_once 'Sanitize.class.php';
+require_once 'AlumnoRindeMateria.php';
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
-
-//require('own_recuperarEventoTurnoExamenCalendarioAcademico.php');
-
-$parametros = explode('_',$_GET['parametros']);
-$idCarrera = $parametros[0];
-$idCalendario = $parametros[1];
+//$parametros = explode('_',$_GET['parametros']);
+$parametros = $_GET['parametros'];
+$arrCarrera=explode('_',$parametros);
+$idCarrera = $arrCarrera[0];
+$idCalendario = $arrCarrera[1];
+$fecha_acta = $arrCarrera[2];
 
 $arrayMateriasPromocionadasPorCarrera=array();
-$sqlMateriasPorCarrera="SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
-                        FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
-                        WHERE a.idCalendario = $idCalendario  AND
-                              a.condicion ='Promocion' AND
-                              a.idMateria = b.idMateria AND
-                              b.idCarrera = $idCarrera AND 
-                              b.idMateria = c.id
-                        GROUP BY c.nombre
-                        ORDER BY c.anio";
+$arraytodasMateriasConPromocionadosPorCarrera=array();
 
-//echo $sqlMateriasPorCarrera;die;                      
+$objARM = new AlumnoRindeMateria();
+
+$arr_materias_por_carrera = $objARM->getMateriasConInscriptosPromocionadosPorCarrera($idCalendario,$idCarrera);
+
+if (count($arr_materias_por_carrera)>0) {
+    foreach ($arr_materias_por_carrera as $filaMateriasPorCarrera) {
+      $arrayMateriaPorCarrera = array(); 
+      array_push($arrayMateriaPorCarrera,$filaMateriasPorCarrera['id'],$filaMateriasPorCarrera['nombre'],$filaMateriasPorCarrera['anio'],$filaMateriasPorCarrera['cantidad']);
+      array_push($arraytodasMateriasConPromocionadosPorCarrera,$arrayMateriaPorCarrera);
+    }
+}
+
+//echo $sqlMateriasPorCarrera;die;    
+/*                  
 $resultadoMateriasPorCarrera=mysqli_query($conex,$sqlMateriasPorCarrera);
 $arraytodasMateriasConPromocionadosPorCarrera=array();
 while ($filaMateriasPorCarrera=mysqli_fetch_assoc($resultadoMateriasPorCarrera)) {
@@ -32,20 +37,25 @@ while ($filaMateriasPorCarrera=mysqli_fetch_assoc($resultadoMateriasPorCarrera))
             
     }
    
-    
-echo "<table class=\"pgui-grid grid legacy stripped\">";
+    */
+
+echo "<table class=\"table\">";
 $band=true;
 
 function sacaMateriaPorAnio($anio) {
  global $arraytodasMateriasConPromocionadosPorCarrera;
- global $idCarrera;
- global $idCalendario;
+ global  $parametros,$fecha;
  $band=false;$str="";
  foreach ($arraytodasMateriasConPromocionadosPorCarrera as $valor) {
    if ($valor[2]==$anio) {
-     $str.="<tr onmouseover=\"cambiar_color_over(this)\" onmouseout=\"cambiar_color_out(this)\" "
-          ." onclick=\"window.open('./funciones/PDF_ActaPromocionados.php?parametros=".$idCarrera.'_'.$idCalendario.'_'.$valor[0]."','_blank')\">"
-          ."<td style='text-align: left;'>$valor[1]</td><td style='text-align: center;'>$valor[3]</td></tr>";
+     $param = base64_encode($parametros.'_'.$valor[0]);
+     /*$str.="<tr onmouseover=\"cambiar_color_over(this)\" onmouseout=\"cambiar_color_out(this)\" "
+          ." onclick=\"window.open('./funciones/PDF_ActaPromocionados.php?parametros=".$param."','_blank')\">"
+          ."<td style='text-align: left;'>$valor[1]</td><td style='text-align: center;'>$valor[3]</td></tr>";*/
+     $str.= "<tr id='tr_{$parametros}_{$valor[0]}' >"
+          . " <td style='text-align: left;'><a href=\"./funciones/PDF_ActaPromocionados.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
+          . " <td style='text-align: center;'>$valor[3]</td> " 
+          . "</tr> ";
      $band=true;
      }
  }

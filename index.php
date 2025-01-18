@@ -1,8 +1,11 @@
 <?php
-        session_start();
-        set_include_path('./conexion');
-        require_once "config.php";
-        $_SESSION['token'] = crypt(rand(5, getrandmax()),$MY_SECRET);
+set_include_path('./app/models/'.PATH_SEPARATOR.'./app/lib'.PATH_SEPARATOR.'./');
+require_once 'Parameters.php';
+session_start();
+$_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
+
+//header(' location: ./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -77,15 +80,6 @@
       </div>
     </nav>
   </header>
-
-  <!--
-   ██████╗██╗   ██╗███████╗██████╗ ██████╗  ██████╗     ██████╗  █████╗  ██████╗ ██╗███╗   ██╗ █████╗ 
-  ██╔════╝██║   ██║██╔════╝██╔══██╗██╔══██╗██╔═══██╗    ██╔══██╗██╔══██╗██╔════╝ ██║████╗  ██║██╔══██╗
-  ██║     ██║   ██║█████╗  ██████╔╝██████╔╝██║   ██║    ██████╔╝███████║██║  ███╗██║██╔██╗ ██║███████║
-  ██║     ██║   ██║██╔══╝  ██╔══██╗██╔═══╝ ██║   ██║    ██╔═══╝ ██╔══██║██║   ██║██║██║╚██╗██║██╔══██║
-  ╚██████╗╚██████╔╝███████╗██║  ██║██║     ╚██████╔╝    ██║     ██║  ██║╚██████╔╝██║██║ ╚████║██║  ██║
-   ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
-  -->
 
   <section class="container-fluid pb-4 pt-4"> <!--Cuerpo de página-->
     <div> <!--Carrusel-->
@@ -168,15 +162,7 @@
 
           <div class="modal-body"> <!--Cuerpo del modal-->
             <form action=""> <!--Aquí iría el login.php-->
-              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
-                <label for="inputPerfil" class="form-label">Seleccione su perfil</label>
-                <select id="inputPerfil" class="form-select" aria-label="Default select example">
-                  <option value="1" selected>Alumno</option>
-                  <option value="2">Profesor</option>
-                  <option value="3">Bedel</option>
-                </select>
-              </div>
-  
+               
               <div class="mb-3 d-block"> <!--Ingresar usuario -->
                 <label for="inputUsuario" class="form-label">Ingrese su usuario</label>
                 <input type="text" class="form-control" id="inputUsuario" placeholder="">
@@ -210,21 +196,13 @@
         <div class="modal-content">
 
           <div class="modal-header"> <!--Encabezado del modal-->
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Recuperar contraseña</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Restablecer Contraseña</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
           <div class="modal-body"> <!--Cuerpo del modal-->
             <form action=""> <!--Aquí iría el recuperarCuenta.php-->
-              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
-                <label for="inputRestablecerPerfil" class="form-label">Seleccione su perfil</label>
-                <select id="inputRestablecerPerfil" class="form-select" aria-label="Default select example">
-                  <option value="1" selected>Alumno</option>
-                  <option value="2">Profesor</option>
-                  <option value="3">Bedel</option>
-                </select>
-              </div>
-  
+              
  
               <div class="mb-3"> <!--Ingresar correo electrónico -->
                 <label for="inputRestablecerEmail" class="form-label">E-mail</label>
@@ -299,15 +277,7 @@
 
   </section>
 
-  <!--
-  ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
-  ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
-  █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
-  ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
-  ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
-  ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
-  -->
-
+ 
   <footer class="pt-4 pb-4 bg-body-tertiary text-center"> <!--Pie de página-->
     <p>Todos los derechos reservados</p>
     <p class="datoContacto">Escuela Normal Superior Nº 40 “Mariano Moreno” | Direccion: J.M. Bullo 1402- 3070 San Cristóbal | Tel. Fax 03408-422447. Horario 18:00 a 21:00hs</p>
@@ -342,19 +312,18 @@
 $('#btnIngresar').click(function(event) {
       let usuario = $('#inputUsuario').val();
       let pwd = $('#inputPassword').val();
-      let perfil = $('#inputPerfil').val();
       let token = $('#inputToken').val();
 
-      let parametros = {'inputUsuario':usuario,'inputPassword':pwd,'inputPerfil':perfil,'token':token}
+      let parametros = {'inputUsuario':usuario,'inputPassword':pwd,'token':token}
       let link = "API/auth.php";
 
       $.post(link,parametros,function(response) {
             console.info(response);
-                if (response.datos==1) {
+                if (response.datos=='Alumno') {
                     $(location).attr('href','mod_alumno/home.php');
-                } else if (response.datos==2) {
+                } else if (response.datos=='Profesor') {
                     $(location).attr('href','mod_profesor/home.php');
-                } else if (response.datos==3) {
+                } else if (response.datos=='Bedel') {
                     $(location).attr('href','mod_bedel/home.php');
                 } $("#resultado").html('<div class="alert alert-'+response.class+'" role="alert"><b>Error:</b>&nbsp;'+response.mensaje+'.</div>');
       },"json")
@@ -362,20 +331,18 @@ $('#btnIngresar').click(function(event) {
 });
 
 $('#btnRestablecer').click(function(event) {
-      let perfil = $('#inputRestablecerPerfil').val();
       let email = $('#inputRestablecerEmail').val();
       let captcha = $('#inputCaptcha').val();
       let token = $('#inputToken').val();
 
-      let parametros = {'inputPerfil':perfil,'inputEmail':email, "inputCodigo":captcha, 'token':token}
-      let link = "ajax/restablecerPassword.php";
+      let parametros = {'inputEmail':email, "inputCodigo":captcha, 'token':token}
+      let link = "API/restablecerPassword.php";
 
       $.post(link,parametros,function(response) {
                console.info(response);
                $("#msg_restablecer").removeClass("d-none");
                if (response.codigo==200) {
                     $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><img src="./public/img/icons/ok_icon.png" width="20">&nbsp;'+response.mensaje+'</div>');
-                    $('#inputRestablecerPerfil').prop("disabled",true);
                     $('#inputRestablecerEmail').prop("disabled",true);
                     $('#inputCaptcha').prop("disabled",true);
                     $('#btnRestablecer').prop("disabled",true);
@@ -413,7 +380,6 @@ $('#btnDescargarInscripcion').click(function(event) {
 
 $("#modalOlvideContrasenia").on('hide.bs.modal', function(){
     $("#msg_restablecer").addClass("d-none");
-    $('#inputRestablecerPerfil').val("1");
     $('#inputRestablecerEmail').val("");
     $('#inputCaptcha').val("");
 });

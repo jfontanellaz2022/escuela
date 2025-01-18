@@ -60,7 +60,10 @@ class CarreraTieneMateria {
 	/* Get by Id */
 	public function getMateriasByIdCarreraDetalle($idCarrera){
 		$this->getConection();
-		$sql = "SELECT m.* FROM " . $this->table . " ctm, materia m WHERE ctm.idCarrera = ? and ctm.idMateria=m.id";
+		$sql = "SELECT m.* FROM carrera_tiene_materia ctm, materia m 
+		        WHERE ctm.idCarrera = ? and ctm.idMateria=m.id
+				ORDER BY anio asc, nombre asc ";
+		
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$idCarrera]);
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);

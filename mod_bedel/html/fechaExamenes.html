@@ -1,5 +1,6 @@
 <!--  ID del ALUMNO que se va a procesar-->
 <input id="inputIdFechaExamen" inputmode="numeric" placeholder="ID" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+<input id="inputTurnoId" inputmode="numeric" type="hidden">
 <input id="inputAccionFechaExamen" type="hidden" class="form-control" minlength="8" maxlength="8" required autocomplete="off">
 
 <!-- *************************************************** -->
@@ -11,6 +12,14 @@
       <h3 class="display-4"><span id="subtitulo_formulario">Crear a Fecha en Materia para la Mesa Exámenes</span></h3>
       <hr>
   <form id="form">
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Turno Examenes</strong>
+            <input type="text" class="form-control" id="inputTurnoDescripcion" readonly>
+            
+      </div>
+    </div>
 
     <div class="form-row">
       <div class="form-group col-md-6"> 

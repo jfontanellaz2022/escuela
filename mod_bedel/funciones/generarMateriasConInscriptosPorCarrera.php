@@ -1,33 +1,27 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once "verificarCredenciales.php";
+require_once 'Sanitize.class.php';
+require_once "AlumnoRindeMateria.php";
 
 $parametros=$_GET['parametros'];
 $arrCarreraTurnoLlamado=explode('_',$parametros);
 $idCarrera=$arrCarreraTurnoLlamado[0];
-$idCalendario=$arrCarreraTurnoLlamado[1];
-$llamado=$arrCarreraTurnoLlamado[2];
-$arrayMateriasAprobadasPorCarrera=array();
-$sqlMateriasPorCarrera="SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
-                        FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
-                        WHERE a.idCalendario ={$idCalendario} AND
-                              a.llamado ={$llamado} AND
-                              a.idMateria = b.idMateria AND
-                              b.idCarrera ={$idCarrera} AND
-                              b.idMateria = c.id AND
-                              a.condicion not like '%Promocion%' AND
-                              a.condicion not like '%Homologacion%' 
-                        GROUP BY c.nombre
-                        ORDER BY c.anio";
+$idCalendario = $arrCarreraTurnoLlamado[1];
+$llamado = $arrCarreraTurnoLlamado[2];
+$fecha = $arrCarreraTurnoLlamado[3];
+$arrayMateriasAprobadasPorCarrera = $arraytodasMateriasConInscriptosPorCarrera = [];
 
-$resultadoMateriasPorCarrera=mysqli_query($conex,$sqlMateriasPorCarrera);
-$arraytodasMateriasConInscriptosPorCarrera=array();
-while ($filaMateriasPorCarrera=mysqli_fetch_assoc($resultadoMateriasPorCarrera)) {
-    $arrayMateriaPorCarrera=array(); 
-    array_push($arrayMateriaPorCarrera,$filaMateriasPorCarrera['id'],$filaMateriasPorCarrera['nombre'],$filaMateriasPorCarrera['anio'],$filaMateriasPorCarrera['cantidad']);
-    array_push($arraytodasMateriasConInscriptosPorCarrera,$arrayMateriaPorCarrera);
+$objARM = new AlumnoRindeMateria();
+$arr_materias_por_carrera = $objARM->getMateriasConInscriptosExamenPorCarrera($idCalendario,$idCarrera,$llamado);
+//var_dump($arr_materias_por_carrera);exit;
+
+if (count($arr_materias_por_carrera)>0) {
+    foreach ($arr_materias_por_carrera as $filaMateriasPorCarrera) {
+      $arrayMateriaPorCarrera = array(); 
+      array_push($arrayMateriaPorCarrera,$filaMateriasPorCarrera['id'],$filaMateriasPorCarrera['nombre'],$filaMateriasPorCarrera['anio'],$filaMateriasPorCarrera['cantidad']);
+      array_push($arraytodasMateriasConInscriptosPorCarrera,$arrayMateriaPorCarrera);
+    }
 }
    
 echo "<table class=\"table\">";
@@ -35,12 +29,14 @@ $band=true;
 
 function sacaMateriaPorAnio($anio) {
  global $arraytodasMateriasConInscriptosPorCarrera;
- global $parametros;
+ global $parametros,$fecha;
  $band=false;$str="";
+ 
  foreach ($arraytodasMateriasConInscriptosPorCarrera as $valor) {
    if ($valor[2]==$anio) {
+     $param = base64_encode($parametros.'_'.$valor[0]);
      $str.= "<tr id='tr_{$parametros}_{$valor[0]}' >"
-          . " <td style='text-align: left;'><a href=\"./funciones/PDF_ActaExamen.php?parametros={$parametros}_{$valor[0]}\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
+          . " <td style='text-align: left;'><a href=\"./funciones/PDF_ActaExamen.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
           . " <td style='text-align: center;'>$valor[3]</td> " 
           . "</tr> ";
      $band=true;

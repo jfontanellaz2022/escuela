@@ -1,0 +1,5 @@
+[15-Jan-2025 19:32:19 America/Argentina/Buenos_Aires] PHP Fatal error:  Undefined class constant 'FETCH_DEFAULT' in /home2/uiakkdaq/public_html/app/models/Carrera.php on line 77
+[15-Jan-2025 19:32:34 America/Argentina/Buenos_Aires] PHP Fatal error:  Undefined class constant 'FETCH_DEFAULT' in /home2/uiakkdaq/public_html/app/models/Carrera.php on line 77
+[15-Jan-2025 19:37:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Undefined class constant 'FETCH_DEFAULT' in /home2/uiakkdaq/public_html/app/models/Carrera.php on line 77
+[15-Jan-2025 19:37:12 America/Argentina/Buenos_Aires] PHP Fatal error:  Undefined class constant 'FETCH_DEFAULT' in /home2/uiakkdaq/public_html/app/models/Carrera.php on line 77
+[15-Jan-2025 19:37:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Undefined class constant 'FETCH_DEFAULT' in /home2/uiakkdaq/public_html/app/models/Carrera.php on line 77

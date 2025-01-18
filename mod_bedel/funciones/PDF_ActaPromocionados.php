@@ -1,10 +1,10 @@
 <?php
-set_include_path('../../app/lib/'.PATH_SEPARATOR.'../../conexion/');
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/');
-require_once('AlumnoRindeMateriaDetalle.php');
-require_once('Carrera.php');
-require_once('Materia.php');
-require_once('ActasPdf.class.php');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once 'verificarCredenciales.php';
+require_once 'AlumnoRindeMateriaDetalle.php';
+require_once 'Carrera.php';
+require_once 'Materia.php';
+require_once 'ActasPdf.class.php';
 
 // create new PDF document
 $pdf = new ActasPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -44,16 +44,16 @@ $pdf->SetFont('times', 'BI', 12);
 // add a page
 $pdf->AddPage();
 
-$parametros=$_GET['parametros'];
+$parametros = base64_decode($_GET['parametros']);
 $arrCarreraTurnoLlamado=explode('_',$parametros);
 $idCarrera=$arrCarreraTurnoLlamado[0];
 $idCalendario=$arrCarreraTurnoLlamado[1];
-$idMateria=$arrCarreraTurnoLlamado[2];
-$llamado=1;
+$fecha_acta=$arrCarreraTurnoLlamado[2];
+$pdf->fecha_acta = $fecha_acta;
+$idMateria=$arrCarreraTurnoLlamado[3];
 
 $alumnos_rinden_materia = new AlumnoRindeMateriaDetalle();
-$ARRAY_ALUMNOS_RINDEN_MATERIA = $alumnos_rinden_materia->getAlumnosByIdMateriaByIdCalendarioDetalle($idMateria,$idCalendario,$llamado);
-//var_dump($ARRAY_ALUMNOS_RINDEN_MATERIA);die;
+$ARRAY_ALUMNOS_RINDEN_MATERIA = $alumnos_rinden_materia->getAlumnosByIdMateriaByIdCalendarioDetalle($idMateria,$idCalendario,1);
 
 $carrera = new Carrera();
 $carrera_nombre = $carrera->getCarreraById($idCarrera)['descripcion_corta'];
@@ -91,7 +91,7 @@ $pdf->SetX(11);
 $pdf->SetFillColor(255,255,255);	
 $pdf->Cell(52,7,'EVALUACIONES DE ALUMNOS:',0,0,'L',false);
 $pdf->SetFont('courier','',10);
-$pdf->Cell(105,7,'REGULARES FINALES',0,0,'L',TRUE);
+$pdf->Cell(105,7,'PROMOCIONADOS',0,0,'L',TRUE);
 $pdf->SetFont('courier','B',10);
 $pdf->Cell(10,7,'DIA',1,0,'L',TRUE);
 $pdf->Cell(10,7,'MES',1,0,'L',TRUE);
@@ -163,7 +163,7 @@ foreach ($ARRAY_ALUMNOS_RINDEN_MATERIA as $item) {
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('ActaPromocionados.pdf', 'I');
+$pdf->Output('AP_' . $carrera_nombre . '_' . $materia_nombre . '_' . $materia_anio_nombre . '.pdf', 'I');
 
 //============================================================+
 // END OF FILE

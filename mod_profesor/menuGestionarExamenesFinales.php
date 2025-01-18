@@ -3,6 +3,7 @@
   set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
   require_once "verificarCredenciales.php";
   require_once 'CalendarioAcademico.php';
+  require_once 'Constantes.php';
   
   $calendario = new CalendarioAcademico();
  
@@ -10,55 +11,48 @@
 
   $cantidad_llamados = $inscripcion_activa = $inscripcion_asociada = $llamado1_activo = $llamado2_activo = 0;
 
-  if (empty($arr_datos_turno)) {
-     $arr_datos_turno = $calendario->getEventoActivoByCodigo(1001);
-     $cantidad_llamados = 2;
-  };
-  if (empty($arr_datos_turno)) {
-     $arr_datos_turno = $calendario->getEventoActivoByCodigo(1002);
-     $cantidad_llamados = 1;
-  };
-  if (empty($arr_datos_turno)) {
-     $arr_datos_turno = $calendario->getEventoActivoByCodigo(1003);
-     $cantidad_llamados = 2;
-  };
-  if (empty($arr_datos_turno)) {
-     $arr_datos_turno = $calendario->getEventoActivoByCodigo(1004);
-     $cantidad_llamados = 1;
-  };
-  
-  $turno_id = isset($arr_datos_turno[0]["id"])?$arr_datos_turno[0]["id"]:0;
+  $arr_datos_turno = $calendario->getLastTurnoExamen();
+  $arr_ultima_inscripcion = $calendario->getLastInscripcionExamen();
+  //var_dump($arr_datos_turno);exit;
+  if ($arr_datos_turno['codigo']==Constantes::CODIGO_PRIMER_TURNO) {
+      $cantidad_llamados = 2;
+  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_SEGUNDO_TURNO) {
+      $cantidad_llamados = 1;
+  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_TERCER_TURNO) {
+      $cantidad_llamados = 2;
+  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_MESA_ESPECIAL_TURNO) {
+      $cantidad_llamados = 1;
+  }
+
+    
+  //$turno_id = isset($arr_datos_turno["id"])?$arr_datos_turno["id"]:0;
   
   // esteeee esta mal 
-  //die('ddddd');
-  $arr_ultima_inscripcion = $calendario->getLastInscripcionExamen();
+ 
   
   //var_dump($arr_ultima_inscripcion);exit;
-  if ($arr_ultima_inscripcion[0]["codigo"]==1005) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = $inscripcion_activa;
-  } else if ($arr_ultima_inscripcion[0]["codigo"]==1006) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = $inscripcion_activa;
-  } else if ($arr_ultima_inscripcion[0]["codigo"]==1007) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = $inscripcion_activa;
-  } else if ($arr_ultima_inscripcion[0]["codigo"]==1008) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = $inscripcion_activa;
-  } else if ($arr_ultima_inscripcion[0]["codigo"]==1009) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = 1005; // sacar el id
-  } else if ($arr_ultima_inscripcion[0]["codigo"]==1010) {
-     $inscripcion_activa = $arr_ultima_inscripcion[0]["id"];
-     $inscripcion_asociada = 1007; // sacar el id
+
+  $inscripcion_activa = 0;
+  $inscripcion_asociada = 0;
+  if ($arr_ultima_inscripcion["codigo"]==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO) {
+     $inscripcion_activa = $arr_ultima_inscripcion["id"];
+     //$inscripcion_asociada = $inscripcion_activa;
+  } else if ($arr_ultima_inscripcion["codigo"]==Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO) {
+     $inscripcion_activa = $arr_ultima_inscripcion["id"];
+     //$inscripcion_asociada = $inscripcion_activa;
+  } else if ($arr_ultima_inscripcion["codigo"]==Constantes::CODIGO_INSCRIPCION_TERCER_TURNO) {
+     $inscripcion_activa = $arr_ultima_inscripcion["id"];
+     //$inscripcion_asociada = $inscripcion_activa;
+  } else if ($arr_ultima_inscripcion["codigo"]==Constantes::CODIGO_INSCRIPCION_MESA_ESPECIAL) {
+     $inscripcion_activa = $arr_ultima_inscripcion["id"];
+     //$inscripcion_asociada = $inscripcion_activa;
   };
 
   $id_pagina = 'finales';
   //var_dump($arr_ultima_inscripcion);exit;
   $fecha_actual = strtotime(date("d-m-Y H:i:00",time()));
-  $fecha_inicio = !is_null($arr_datos_turno[0]['fecha_inicio'])?strtotime($arr_datos_turno[0]['fecha_inicio']):NULL;
-  $fecha_final = !is_null($arr_datos_turno[0]['fecha_final'])?strtotime($arr_datos_turno[0]['fecha_final']):NULL; 
+  $fecha_inicio = !is_null($arr_datos_turno['fecha_inicio'])?strtotime($arr_datos_turno['fecha_inicio']):NULL;
+  $fecha_final = !is_null($arr_datos_turno['fecha_final'])?strtotime($arr_datos_turno['fecha_final']):NULL; 
   
   $habilitar_listados_materia = FALSE;
   if ($fecha_actual>=$fecha_inicio || $fecha_actual<=$fecha_final) {
@@ -69,26 +63,26 @@
   // *********  SACAR LOS PERIODOS CORRESPONDIENTES A LOS LLAMADOS *************
   if ($cantidad_llamados==2) {
       if (empty($arr_datos_llamado)) {
-         $arr_datos_llamado[1020] = $calendario->getEventoActivoByCodigo(1020);
-         $arr_datos_llamado[1021] = $calendario->getEventoActivoByCodigo(1021);
+         //var_dump('entroooo',$calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO));exit;
+         $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
+         $arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO);
       };
   } else if ($cantidad_llamados==1) {
       if (empty($arr_datos_llamado)) {
-         $arr_datos_llamado[1020] = $calendario->getEventoActivoByCodigo(1020);
+         $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
       };
   }
 
 
-  if (isset($arr_datos_llamado[1020]) && !empty($arr_datos_llamado[1020])) {
+  if (isset($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO])) {
      $llamado1_activo = TRUE;
   };
 
-  if (isset($arr_datos_llamado[1021]) && !empty($arr_datos_llamado[1021])) {
+  if (isset($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO])) {
      $llamado2_activo = TRUE;
-   //die('entro 2222');
  };
 
-
+   //var_dump($arr_datos_llamado,$llamado1_activo,$llamado2_activo);exit;
   // ****************************************************************************
 
   

@@ -1,9 +1,12 @@
 <?php
-        session_start();
-        set_include_path('./conexion');
-        require_once "config.php";
-        $_SESSION['token'] =crypt(rand(5, getrandmax()),$MY_SECRET);
+set_include_path('./app/models/'.PATH_SEPARATOR.'./app/lib/'.PATH_SEPARATOR.'./');
+session_start();
+require_once "Carrera.php";
 
+$_SESSION['token'] = crypt(rand(5, getrandmax()),'escuela_40');
+$ARREGLO_CARRERAS = [];
+$objCarrera = new Carrera();
+$ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 ?>
 
 <!DOCTYPE html>
@@ -79,14 +82,6 @@
     </nav>
   </header>
 
-  <!--
-   ██████╗██╗   ██╗███████╗██████╗ ██████╗  ██████╗     ██████╗  █████╗  ██████╗ ██╗███╗   ██╗ █████╗ 
-  ██╔════╝██║   ██║██╔════╝██╔══██╗██╔══██╗██╔═══██╗    ██╔══██╗██╔══██╗██╔════╝ ██║████╗  ██║██╔══██╗
-  ██║     ██║   ██║█████╗  ██████╔╝██████╔╝██║   ██║    ██████╔╝███████║██║  ███╗██║██╔██╗ ██║███████║
-  ██║     ██║   ██║██╔══╝  ██╔══██╗██╔═══╝ ██║   ██║    ██╔═══╝ ██╔══██║██║   ██║██║██║╚██╗██║██╔══██║
-  ╚██████╗╚██████╔╝███████╗██║  ██║██║     ╚██████╔╝    ██║     ██║  ██║╚██████╔╝██║██║ ╚████║██║  ██║
-   ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
-  -->
 
   <section class="container-fluid pb-4 pt-5"> <!--Cuerpo de página-->
     <section class="container-fluid pb-4 pt-5">
@@ -119,19 +114,25 @@
               <hr>
               <label for="inputCarrera" class="form-label" style="font-family: 'Fredoka', sans-serif;">Carrera a la que se Inscribe<span style="color: red;">*</span></label>
               <select class="form-select" aria-label="Default select example" name="inputCarrera" id="inputCarrera" style="font-family: 'Fredoka', sans-serif;">
-                <option value="15" selected>Tecnicatura Desarrollo de Software</option>
+              <?php
+                                 if (count($ARREGLO_CARRERAS)>0) {
+                                     foreach($ARREGLO_CARRERAS as $item) {
+                                         echo "<option value='" . $item['id'] . "'>" . $item['descripcion'] . "(" . $item['id'] . ")</option>";
+                                     }
+                                 }
+                            ?>
               </select>
               <input type="hidden" class="form-control" name="inputToken" id="inputToken" value="<?=$_SESSION['token']?>">
             </div>
             
             <div class="col-sm-6">
               <label for="inputApellido" class="form-label pt-2" style="font-family: 'Fredoka', sans-serif;">Apellido <span style="color: red;">*</span></label>
-              <input type="text" class="form-control" name="inputApellido" id="inputApellido" style="font-family: 'Fredoka', sans-serif;" placeholder="Ingrese Apellido">
+              <input type="text" class="form-control" name="inputApellido" id="inputApellido" style="font-family: 'Fredoka', sans-serif;" placeholder="Ingrese Apellido" maxlength="45">
             </div>
             
             <div class="col-sm-6 mb-3">
               <label for="inputNombres" class="form-label pt-2" style="font-family: 'Fredoka', sans-serif;">Nombre<span style="color: red;">*</span></label>
-              <input type="text" class="form-control" name="inputNombres" id="inputNombres" style="font-family: 'Fredoka', sans-serif;" placeholder="Ingresa Nombre">
+              <input type="text" class="form-control" name="inputNombres" id="inputNombres" style="font-family: 'Fredoka', sans-serif;" placeholder="Ingresa Nombre" maxlength="45">
             </div>
             
             <div class="col-sm-6">
@@ -153,12 +154,12 @@
               <div class="row g-3 align-items-center pt-2">
                 <div class="col-3">
                   <label for="inputCaracteristicaTelefono" class="form-label" style="font-family: 'Fredoka', sans-serif;">Area<span style="color: red;">*</span></label>
-                  <input type="tel" name="inputCaracteristicaTelefono" id="inputCaracteristicaTelefono" class="form-control" style="font-family: 'Fredoka', sans-serif;" placeholder="sin el 0">
+                  <input type="tel" name="inputCaracteristicaTelefono" id="inputCaracteristicaTelefono" class="form-control" style="font-family: 'Fredoka', sans-serif;" placeholder="sin el 0" maxlength="5">
                 </div>
                 
                 <div class="col-9">
                   <label for="inputNumeroTelefono" class="form-label" style="font-family: 'Fredoka', sans-serif;">Celular<span style="color: red;">*</span></label>
-                  <input type="tel" name="inputNumeroTelefono" id="inputNumeroTelefono" class="form-control" style="font-family: 'Fredoka', sans-serif;" placeholder="sin el 15">
+                  <input type="tel" name="inputNumeroTelefono" id="inputNumeroTelefono" class="form-control" style="font-family: 'Fredoka', sans-serif;" placeholder="sin el 15" maxlength="10">
                 </div>
               </div>
             </div>
@@ -173,12 +174,12 @@
               </select>
               
               <label for="inputEmail" class="form-label  pt-2" style="font-family: 'Fredoka', sans-serif;">Email<span style="color: red;">*</span></label>
-              <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="correo@mail.com">
+              <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="correo@mail.com" maxlength="45">
             </div>
             
             <div class="col-12">
               <label for="domicilio" class="form-label pt-2" style="font-family: 'Fredoka', sans-serif;">Domicilio<span style="color: red;">*</span></label>
-              <input type="text" class="form-control" name="inputDomicilio" id="inputDomicilio" placeholder="San Martin 1122">
+              <input type="text" class="form-control" name="inputDomicilio" id="inputDomicilio" placeholder="San Martin 1122" maxlength="50">
             </div>
             
             <div class="col-sm-6">
@@ -195,26 +196,21 @@
 
             <div class="col-sm-6 mb-3">
               <label for="inputOcupacion" class="form-label pt-2" style="font-family: 'Fredoka', sans-serif;">Ocupacion </label>
-              <input type="text" class="form-control" name="inputOcupacion" id="inputOcupacion">
+              <input type="text" class="form-control" name="inputOcupacion" id="inputOcupacion" maxlength="50">
             </div>
             
             <div class="col-sm-6">
               <label for="inputTitulo" class="form-label" style="font-family: 'Fredoka', sans-serif;">Titulo Secundario</label>
-              <input type="text" class="form-control" name="inputTitulo" id="inputTitulo">
+              <input type="text" class="form-control" name="inputTitulo" id="inputTitulo" maxlength="100">
             </div>
             
             <div class="col-sm-6 mb-3">
               <label for="inputEscuela" class="form-label" style="font-family: 'Fredoka', sans-serif;">Escuela de la que egresó</label>
-              <input type="text" class="form-control" name="inputEscuela" id="inputEscuela">
+              <input type="text" class="form-control" name="inputEscuela" id="inputEscuela" maxlength="50">
             </div>
 
             <div id="mensaje" class="d-grid gap-2 pt-2 d-none">
-                  <div class="alert alert-danger d-flex align-items-center text-center justify-content-center" role="alert" style="font-size: 14px; padding: 4px 10px; margin: 5px 0; border-radius: 4px; min-height: 30px;">
-                    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:" style="width: 16px; height: 16px;"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                    <div>
-                        No se han completado algunos datos Obligatorios.
-                    </div>
-                  </div>
+                  
             </div>
 
             <div class="d-grid gap-2 pt-2">
@@ -254,15 +250,7 @@
 
           <div class="modal-body"> <!--Cuerpo del modal-->
             <form action=""> <!--Aquí iría el login.php-->
-              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
-                <label for="inputPerfil" class="form-label">Seleccione su perfil</label>
-                <select id="inputPerfil" class="form-select" aria-label="Default select example">
-                  <option value="1" selected>Alumno</option>
-                  <option value="2">Profesor</option>
-                  <option value="3">Bedel</option>
-                </select>
-              </div>
-  
+                
               <div class="mb-3 d-block"> <!--Ingresar usuario -->
                 <label for="inputUsuario" class="form-label">Ingrese su usuario</label>
                 <input type="text" class="form-control" id="inputUsuario" placeholder="">
@@ -297,21 +285,12 @@
         <div class="modal-content">
 
           <div class="modal-header"> <!--Encabezado del modal-->
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Recuperar contraseña</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Restablecer Contraseña</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
           <div class="modal-body"> <!--Cuerpo del modal-->
             <form action=""> <!--Aquí iría el recuperarCuenta.php-->
-              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
-                <label for="inputRestablecerPerfil" class="form-label">Seleccione su perfil</label>
-                <select id="inputRestablecerPerfil" class="form-select" aria-label="Default select example">
-                  <option value="1" selected>Alumno</option>
-                  <option value="2">Profesor</option>
-                  <option value="3">Bedel</option>
-                </select>
-              </div>
-  
  
               <div class="mb-3"> <!--Ingresar correo electrónico -->
                 <label for="inputRestablecerEmail" class="form-label">E-mail</label>
@@ -337,15 +316,6 @@
       </div>
     </div>
   </section>
-
-  <!--
-  ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
-  ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
-  █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
-  ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
-  ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
-  ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
-  -->
 
   <footer class="pt-4 pb-4 bg-body-tertiary text-center"> <!--Pie de página-->
     <p>Todos los derechos reservados</p>
@@ -392,10 +362,7 @@ txtInputArea.addEventListener('keyup',()=>{
 
 
 $(document).ready(function() {
-    let url_select2_localidad = "ajax/localidadObtener.php";// Esto puede cambiar 
-    let url_select2_carrera = "ajax/carreraObtener.php";// Esto puede cambiar 
-
-    
+    let url_select2_localidad = "API/findLocalidad.php";// Esto puede cambiar 
     $('#inputLocalidad').select2({
                                 theme: "bootstrap",
                                 placeholder: "Ingrese la Localidad",
@@ -425,65 +392,9 @@ $(document).ready(function() {
                                     cache: true
                                 }
     }); 
-
-    $('#inputCarrera').select2({
-                                theme: "bootstrap",
-                                placeholder: "Buscar Carrera",
-                                language: {
-                                            noResults: function() {
-                                              return "No hay resultado";        
-                                            },
-                                            searching: function() {
-                                              return "Buscando..";
-                                            }
-                                          },
-                                ajax: {
-                                    url: url_select2_carrera,
-                                    dataType: 'json',
-                                    delay: 250,
-                                    data: function (data) {
-                                        return {
-                                            searchTerm: data.term // search term
-                                        };
-                                    },
-                                    processResults: function (response) {
-                                        return {
-                                            results:response
-                                        };
-                                    },
-                                    cache: true
-                                }
-    });
+   
 });
 
-
-$('#inputLocalidad').select2();
-
-$('#btnEnviar').click(function(event) {
-      event.preventDefault();
-
-      let usuario = $('#inputUsuario').val();
-      let pwd = $('#inputPassword').val();
-      let perfil = $('#inputPerfil').val();
-      let parametros = {'inputUsuario':usuario,'inputPassword':pwd,'inputPerfil':perfil}
-      let link = "ajax/autenticar.php";
-
-      $.post(link,parametros,function(response) {
-            console.info(response);
-            if (response.status==200) {
-                if (response.estado==1) {
-                    $(location).attr('href','mod_alumno/home.php');
-                } else if (response.estado==2) {
-                    $(location).attr('href','mod_profesor/home.php');
-                } else if (response.estado==3) {
-                    $(location).attr('href','mod_bedel/home.php');
-                }
-            } else {
-                $("#resultado").html('<div class="alert alert-danger" role="alert"><b>Error:</b>&nbsp;'+response.data+'.</div>');
-            }
-      },"json")
-
-});
 
 
 $("#btnRegistrar").click(function(event) {
@@ -507,13 +418,11 @@ $("#btnRegistrar").click(function(event) {
 
     $("#mensaje").removeClass('d-none');
     if (car && ape && nom && dni && f_nac && loc && cel_car && cel_num && genero && email && dom && estado_civil && ocupacion && titulo && escuela && token) {
-        let url = "ajax/registrarIngresante.php";
+        let url = "API/insertIngresante.php";
         let parametros = {'inputCarrera':car, 'inputApellido':ape,'inputNombres':nom,'inputDni':dni,
                           'inputFechaNacimiento':f_nac,'inputLocalidad':loc, 'inputCelularCar':cel_car,'inputCelularNum':cel_num,
                           'inputGenero':genero,'inputEmail':email,'inputDomicilio':dom,'inputEstadoCivil':estado_civil,
                           'inputOcupacion':ocupacion,'inputTitulo':titulo,'inputEscuela':escuela,'token':token};
-
-        console.info(parametros);
 
         $.post(url,parametros,function(response){
               if (response.codigo==200) {
@@ -595,12 +504,11 @@ $('#btnIngresar').click(function(event) {
 
 
 $('#btnRestablecer').click(function(event) {
-      let perfil = $('#inputRestablecerPerfil').val();
       let email = $('#inputRestablecerEmail').val();
       let captcha = $('#inputCaptcha').val();
       let token = $('#inputToken').val();
 
-      let parametros = {'inputPerfil':perfil,'inputEmail':email, "inputCodigo":captcha, 'token':token}
+      let parametros = {'inputEmail':email, "inputCodigo":captcha, 'token':token}
       let link = "ajax/restablecerPassword.php";
 
       $.post(link,parametros,function(response) {
@@ -608,7 +516,6 @@ $('#btnRestablecer').click(function(event) {
                $("#msg_restablecer").removeClass("d-none");
                if (response.codigo==200) {
                     $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><img src="./public/img/icons/ok_icon.png" width="20">&nbsp;'+response.mensaje+'</div>');
-                    $('#inputRestablecerPerfil').prop("disabled",true);
                     $('#inputRestablecerEmail').prop("disabled",true);
                     $('#inputCaptcha').prop("disabled",true);
                     $('#btnRestablecer').prop("disabled",true);
@@ -620,7 +527,6 @@ $('#btnRestablecer').click(function(event) {
 
 $("#modalOlvideContrasenia").on('hide.bs.modal', function(){
     $("#msg_restablecer").addClass("d-none");
-    $('#inputRestablecerPerfil').val("1");
     $('#inputRestablecerEmail').val("");
     $('#inputCaptcha').val("");
 });

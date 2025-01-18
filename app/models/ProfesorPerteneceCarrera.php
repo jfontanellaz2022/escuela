@@ -45,6 +45,22 @@ class ProfesorPerteneceCarrera {
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+	/* Get by Id */
+	public function getProfesorPerteneceCarreraByIdProfesor($idProfesor){
+		$this->getConection();
+		$sql = "SELECT c.descripcion, c.habilitada, c.imagen, ppc.idProfesor, ppc.idCarrera
+				FROM profesor_pertenece_carrera ppc, carrera c
+				WHERE ppc.idProfesor = ? and ppc.idCarrera = c.id";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$idProfesor]);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		//var_dump($res);exit;
+
+		return $res;
+	}
+
+	
+
 	/* Save */
 	public function save($param){
 		$this->getConection();
@@ -75,7 +91,7 @@ class ProfesorPerteneceCarrera {
 			$res = $stmt->execute([$this->profesor_id,$this->carrera_id, $this->id]);
 		} else {
 			$sql = "INSERT INTO ".$this->table. " (idProfesor, idCarrera) values(?, ?)";
-			//var_dump([$this->profesor_id,$this->carrera_id],$sql);
+			//var_dump([$this->profesor_id,$this->carrera_id],$sql);exit;
 			$stmt = $this->conection->prepare($sql);
 			$stmt->execute([$this->profesor_id,$this->carrera_id]);
 			$id = $this->conection->lastInsertId();

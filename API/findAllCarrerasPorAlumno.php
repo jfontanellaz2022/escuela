@@ -4,14 +4,13 @@
 //** SACA TODOS LOS ALUMNOS HABILITADOS QUE ESTAN INSCRIPTOS UNA CARRERA PORR ID DE CARRERA        **
 //***************************************************************************************************
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-require_once 'seguridadNivel2.php';
+//require_once 'seguridadNivel2.php';
 require_once 'AlumnoEstudiaCarrera.php';
 require_once 'SanitizeCustom.class.php';
 
 $id_alumno = (isset($_POST['alumno']))?SanitizeVars::INT($_POST['alumno']):false;
-
 if ($id_alumno) {
-   $objeto = new AlumnoEstudiaCarrera;
+   $objeto = new AlumnoEstudiaCarrera();
    $arr_carreras = $objeto->getAlumnoEstudiaCarreraByIdAlumno($id_alumno);
 
  

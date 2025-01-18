@@ -99,7 +99,7 @@ if($action == 'listar'){
 		  
 			  
           <tr>
-            <th class="text-center" width="5%"><small><b><input type="checkbox" class="" id="seleccionar_todos"></b></small></th>
+            <th class="text-center" width="5%"></th>
             <th width="5%" class="text-center text-primary" colspan=3><small><b>ACCIONES</b><small></th>
 			<th class="text-center text-primary" width="5%"><small><b><?=$labelCampo1?></b></small></th>
             <th class="text-center text-primary" width="25%"><small><b><?=$labelCampo2?></b></small></th>

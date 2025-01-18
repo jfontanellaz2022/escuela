@@ -13,7 +13,7 @@ $fecha_examen = (isset($_POST['fecha_examen']) && $_POST['fecha_examen']!=NULL)?
 
 $fecha_examen_id = (isset($_POST['fecha_examen_id']) && $_POST['fecha_examen_id']!=NULL)?SanitizeVars::INT($_POST['fecha_examen_id']):false;
 
-//die($calendario_id." * ".$materia_id." * ".$llamado." * ".$fecha_examen);
+//die($fecha_examen_id." * ".$calendario_id." * ".$materia_id." * ".$llamado." * ".$fecha_examen);
 
 $entidad = "Fecha de Exámen";
 

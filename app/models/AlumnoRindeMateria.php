@@ -171,6 +171,52 @@ class AlumnoRindeMateria {
     }
 
 
+	// Bedel - generarMateriasConInscriptosPorCarrera
+	public function getMateriasConInscriptosExamenPorCarrera($calendario_id,$carrera_id,$llamado)
+    {
+		$this->getConection();
+        $sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
+				FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
+				WHERE a.idCalendario = ? AND
+					a.llamado = ? AND
+					a.idMateria = b.idMateria AND
+					b.idCarrera = ? AND
+					b.idMateria = c.id AND
+					a.condicion not like '%Promocion%' AND
+					a.condicion not like '%Homologacion%' 
+				GROUP BY c.nombre
+				ORDER BY c.anio";
+		$stmt = $this->conection->prepare($sql);
+		
+		$stmt->execute([$calendario_id,$llamado,$carrera_id]);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $res;
+    }
+
+
+	// Bedel - generarMateriasConPromocionadosPorCarrera
+	public function getMateriasConInscriptosPromocionadosPorCarrera($calendario_id,$carrera_id)
+	{
+		$this->getConection();
+		$sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
+                        FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
+                        WHERE a.idCalendario = ?  AND
+                              a.condicion ='Promocion' AND
+                              a.idMateria = b.idMateria AND
+                              b.idCarrera = ? AND 
+                              b.idMateria = c.id
+                        GROUP BY c.nombre
+                        ORDER BY c.anio";
+		$stmt = $this->conection->prepare($sql);
+		
+		$stmt->execute([$calendario_id,$carrera_id]);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return $res;
+	}
+
+
 	/* Save Alumno */
 	public function save($param){
 		$this->getConection();
@@ -225,10 +271,11 @@ class AlumnoRindeMateria {
 				return -1*$e->getCode();
 			}
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, idCalendario, llamado, condicion, FechaHoraInscripcion, nota, estado_final, FechaModificacionNota, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (idAlumno, idMateria, idCalendario, llamado, condicion, FechaHoraInscripcion, nota, estado_final, idUsuario) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
 				$stmt = $this->conection->prepare($sql);
-				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$fecha_modificacion_nota,$idUsuario]);
+				//var_dump([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$idUsuario]);exit;
+				$stmt->execute([$idAlumno,$idMateria,$idCalendario,$llamado,$condicion,$fecha_hora_inscripcion,$nota,$estado_final,$idUsuario]);
 				$id = $this->conection->lastInsertId();
 			} catch (Exception $e) {
 				return -1*$e->getCode();

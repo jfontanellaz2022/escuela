@@ -41,7 +41,7 @@
 
 <li class="nav-item px-4 dropdown">
       <a class="nav-link dropdown-toggle text-white" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <font color='black'><strong><?=$_SESSION['usuario']?></strong></font> <img src="../public/img/icons/user_icon.png" width="22">
+      <font color='black'><strong><?=$_SESSION['arreglo_datos_usuario']['usuario_nombre']?></strong></font> <img src="../public/img/icons/user_icon.png" width="22">
       </a>
       <div class="dropdown-menu dropdown-menu-right bg-info" aria-labelledby="servicesDropdown">
       <a class="dropdown-item" href="menuCambiarPassword.php"><img src="../public/img/icons/chpassword_icon.png" width="25"> Cambiar Contrase&ntilde;a</a>

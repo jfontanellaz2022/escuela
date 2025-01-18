@@ -46,7 +46,7 @@ class Persona {
 	// Get all Personas 
 	public function getPersonas(){
 		$this->getConection();
-		$sql = "SELECT id as idPersona, dni, apellido, nombre, fechaNacimiento, nacionalidad, idLocalidad, domicilio, email, 
+		$sql = "SELECT id as idPersona, dni, apellido, nombre, fecha_nacimiento, nacionalidad, idLocalidad, domicilio, email, 
 		        telefono_numero, telefono_caracteristica, observaciones, sexo, estado_civil, ocupacion,
 				titulo, titulo_expedido_por
 		        FROM persona";
@@ -58,7 +58,7 @@ class Persona {
 	//Get Persona by Id
 	public function getPersonaById($id){
 		$this->getConection();
-		$sql = "SELECT id as idPersona, dni, apellido, nombre, fechaNacimiento, nacionalidad, idLocalidad, domicilio, email, 
+		$sql = "SELECT id as idPersona, dni, apellido, nombre, fecha_nacimiento, nacionalidad, idLocalidad, domicilio, email, 
 					   telefono_numero, telefono_caracteristica, observaciones, sexo, estado_civil, ocupacion,
 					   titulo, titulo_expedido_por
 				FROM persona WHERE id = ? ";
@@ -71,7 +71,7 @@ class Persona {
 	//Get Persona by DNI
 	public function getPersonaByDni($dni){
 		$this->getConection();
-		$sql = "SELECT id as idPersona, dni, apellido, nombre, fechaNacimiento, nacionalidad, idLocalidad, domicilio, email, 
+		$sql = "SELECT id as idPersona, dni, apellido, nombre, fecha_nacimiento, nacionalidad, idLocalidad, domicilio, email, 
 					   telefono_numero, telefono_caracteristica, observaciones, sexo, estado_civil, ocupacion,
 					   titulo, titulo_expedido_por
 				FROM persona WHERE dni = ? ";
@@ -80,10 +80,20 @@ class Persona {
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+	/* Get Persona by Dni */
+	public function getPersonaByEmail($email){
+		$this->getConection();
+		$sql = "SELECT * FROM " . $this->table . " WHERE email = ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$email]);
+
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
 	//Has Profesor by Id Persona
 	public function hasPersona($id){
 		$this->getConection();
-		$sql = "SELECT p.id as idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, 
+		$sql = "SELECT p.id as idPersona, p.dni, p.apellido, p.nombre, p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, 
 					   p.telefono_numero, p.telefono_caracteristica, p.observaciones, p.sexo, p.estado_civil, p.ocupacion,
 					   p.titulo, p.titulo_expedido_por
 				FROM persona p
@@ -94,49 +104,7 @@ class Persona {
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-	//Has Alumno by Id Alumno
-	public function hasAlumno($id){
-		$this->getConection();
-		$sql = "SELECT p.id as idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, 
-					   p.telefono_numero, p.telefono_caracteristica, p.observaciones, p.sexo, p.estado_civil, p.ocupacion,
-					   p.titulo, p.titulo_expedido_por, a.id as idAlumno, a.anioIngreso, a.debetitulo
-				FROM persona p, alumno a 
-				WHERE a.idPersona = ? and a.idPersona = p.id";
-		
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$id]);
-		return $stmt->fetch(PDO::FETCH_ASSOC);
-	}
-
-	//Has Profesor by Id Persona
-	public function hasProfesor($id){
-		$this->getConection();
-		$sql = "SELECT p.id as idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, 
-					   p.telefono_numero, p.telefono_caracteristica, p.observaciones, p.sexo, p.estado_civil, p.ocupacion,
-					   p.titulo, p.titulo_expedido_por, pr.id as idProfesor
-				FROM persona p, profesor pr
-				WHERE pr.idPersona = ? and pr.idPersona = p.id";
-		
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$id]);
-		return $stmt->fetch(PDO::FETCH_ASSOC);
-	}
-
-
-	//Has Bedel by Id Persona
-	public function hasBedel($id){
-		$this->getConection();
-		$sql = "SELECT p.id as idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, 
-					   p.telefono_numero, p.telefono_caracteristica, p.observaciones, p.sexo, p.estado_civil, p.ocupacion,
-					   p.titulo, p.titulo_expedido_por, b.id as idBedel
-				FROM persona p, bedel b
-				WHERE b.idPersona = ? and b.idPersona = p.id";
-		
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$id]);
-		return $stmt->fetch(PDO::FETCH_ASSOC);
-	}
-
+	
 	// Save Object Persona
 	public function save($param){
 		$this->getConection();
@@ -152,7 +120,7 @@ class Persona {
 				$this->apellido = $actualobj["apellido"];
 				$this->nombres = $actualobj["nombre"];
 				$this->genero = $actualobj["sexo"];
-				$this->fecha_nacimiento = $actualobj["fechaNacimiento"];
+				$this->fecha_nacimiento = $actualobj["fecha_nacimiento"];
 				$this->localidad_id = $actualobj["idLocalidad"];
 				$this->domicilio = $actualobj["domicilio"];
 				$this->email = $actualobj["email"];
@@ -184,19 +152,22 @@ class Persona {
 		if(isset($param["observaciones"])) $this->observaciones = $param["observaciones"];
 		//Database operations 
 		if($exists){
-			$p = [$this->dni, $this->apellido, $this->nombres, $this->fecha_nacimiento, $this->localidad_id, $this->domicilio, $this->email, 
-			$this->telefono_caracteristica, $this->telefono_numero, $this->genero, $this->estado_civil, $this->ocupacion, $this->titulo, 
-			$this->titulo_expedido_por, $this->observaciones, $this->id ];
-			$sql = "UPDATE persona SET dni=?, apellido=?, nombre=?, fechaNacimiento=?, idLocalidad=?, domicilio=?, email=?, 
-			                                     telefono_caracteristica=?, telefono_numero=?, sexo=?, estado_civil=?, ocupacion=?, 
-												 titulo=?, titulo_expedido_por=?, observaciones=? WHERE id=?";
+			$p = [$this->dni, $this->apellido, $this->nombres, $this->fecha_nacimiento, $this->localidad_id, 
+			      $this->domicilio, $this->email, $this->telefono_caracteristica, $this->telefono_numero, $this->genero, 
+				  $this->estado_civil, $this->ocupacion, $this->titulo, $this->titulo_expedido_por, $this->observaciones, $this->id];
+			//var_dump($p);exit;
+			$sql = "UPDATE persona SET dni=?, apellido=?, nombre=?, fecha_nacimiento=?, idLocalidad=?, 
+			                           domicilio=?, email=?, telefono_caracteristica=?, telefono_numero=?, sexo=?, 
+									   estado_civil=?, ocupacion=?, titulo=?, titulo_expedido_por=?, observaciones=? WHERE id=?";
 			$stmt = $this->conection->prepare($sql);
 			$res = $stmt->execute($p);
+			//$stmt->debugDumpParams();exit;
+
 		} else {
-			$p = [$this->dni, $this->apellido, $this->nombres, $this->fecha_nacimiento, $this->localidad_id, $this->domicilio, $this->email, $this->telefono_caracteristica, $this->telefono_numero, $this->genero, $this->estado_civil, $this->ocupacion, $this->titulo, $this->titulo_expedido_por, $this->observaciones];
-			//die('entroo');
-			//var_dump($p);exit;
-			$sql = "INSERT INTO persona (dni, apellido, nombre, fechaNacimiento, idLocalidad, domicilio, email, telefono_caracteristica, telefono_numero, sexo, estado_civil, ocupacion, titulo, titulo_expedido_por, observaciones) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
+			$p = [$this->dni, $this->apellido, $this->nombres, $this->fecha_nacimiento, $this->localidad_id, 
+			      $this->domicilio, $this->email, $this->telefono_caracteristica, $this->telefono_numero, $this->genero, 
+				  $this->estado_civil, $this->ocupacion, $this->titulo, $this->titulo_expedido_por, $this->observaciones];
+			$sql = "INSERT INTO persona (dni, apellido, nombre, fecha_nacimiento, idLocalidad, domicilio, email, telefono_caracteristica, telefono_numero, sexo, estado_civil, ocupacion, titulo, titulo_expedido_por, observaciones) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
 			$stmt->execute($p);
 			$this->id = $this->conection->lastInsertId();

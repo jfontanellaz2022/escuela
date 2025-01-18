@@ -11,81 +11,7 @@ require_once 'verificarCredenciales.php';
    <?php include_once('componente_header.html'); ?>
    <?php include("componente_script_jquery.html"); ?>
   
-  
-    <style>
-    .dropdown-item:hover{
-          background-color: #CFC290;
-        }        
-     footer.nb-footer {
-        background: #222;
-        border-top: 4px solid #b78c33; }
-    footer.nb-footer .about {
-        margin: 0 auto;
-        margin-top: 30px;
-        max-width: 1170px;
-        text-align: center; }
-    footer.nb-footer .about p {
-        font-size: 13px;
-        color: #999;
-        margin-top: 30px; }
-    footer.nb-footer .about .social-media {
-        margin-top: 15px; }
-    footer.nb-footer .about .social-media ul li a {
-        display: inline-block;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 50%;
-        font-size: 16px;
-        color: #b78c33;
-        border: 1px solid rgba(255, 255, 255, 0.3); }
-    footer.nb-footer .about .social-media ul li a:hover {
-        background: #b78c33;
-        color: #fff;
-        border-color: #b78c33; }
-    footer.nb-footer .footer-info-single {
-        margin-top: 30px; }
-    footer.nb-footer .footer-info-single .title {
-        color: #aaa;
-        text-transform: uppercase;
-        font-size: 16px;
-        border-left: 4px solid #b78c33;
-        padding-left: 5px; }
-    footer.nb-footer .footer-info-single ul li a {
-        display: block;
-        color: #aaa;
-        padding: 2px 0; }
-    footer.nb-footer .footer-info-single ul li a:hover {
-        color: #b78c33; }
-    footer.nb-footer .footer-info-single p {
-        font-size: 13px;
-        line-height: 20px;
-        color: #aaa; }
-    footer.nb-footer .copyright {
-        margin-top: 15px;
-        background: #111;
-        padding: 7px 0;
-        color: #999; }
-    footer.nb-footer .copyright p {
-        margin: 0;
-        padding: 0; }
-    .thead-green {
-        background-color: rgb(0, 99, 71);
-        color: white;
-    }
-    .disabledbutton {
-          pointer-events: none;
-          opacity: 0.5;
-      }
-
-    .input-form {
-          border: 1px solid black;
-          border-radius: 2px;
-          height: 36px !important;
-    }
-    
-    
-   </style>    
+        
 </head>
 <body>
  
@@ -429,7 +355,7 @@ function entidadEditar(entidad_id){
             });
 
             var data = {
-                id: datos_entidad.idTipifiacion,
+                id: datos_entidad.idTipificacion,
                 text: datos_entidad.nombre + ' (' + datos_entidad.codigo + ')'
             };
             var newOption = new Option(data.text, data.id, false, false);
@@ -566,11 +492,10 @@ function entidadEliminarSeleccionadosConfirmar(){
                   }
       );
       arreglo = arreglo.substr(1,arreglo.length-1);
-      console.log(arreglo)
       parametros = {"id":arreglo};
       $.post(url, parametros, function (data) {
               $("#resultado_accion").html(`
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+data.alert+`">
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                                                     &nbsp;<strong>Atención:</strong> `+data.mensaje+`
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -601,7 +526,7 @@ function entidadEliminarSeleccionadosConfirmar(){
         parametros = {"id":entidad_id};
                 $.post(url, parametros, function (data) {
                         $("#resultado_accion").html(`
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+data.alert+`">
                                                 
                                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                                                     &nbsp;<strong>Atención:</strong> `+data.mensaje+`

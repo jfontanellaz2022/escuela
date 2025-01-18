@@ -1,29 +1,36 @@
 <?php
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-include_once 'ArrayHash.class.php';
-require_once 'seguridad.php';
+require_once 'verificarCredenciales.php';
+require_once 'Sanitize.class.php';
+require_once 'ArrayHash.class.php';
+require_once 'CalendarioAcademico.php';
+require_once 'Constantes.php';
 
-$bandExisteTurnoActivo = true;
-if (isset($_SESSION['arrayTurnoActivo'])) {
-    $sqlCarreras = "SELECT a.id, a.descripcion
-                      FROM carrera a";
-    $resultadoCarreras = mysqli_query($conex, $sqlCarreras);
-    $_SESSION['carreras'] = array();
-    while ($filaCarreras = mysqli_fetch_assoc($resultadoCarreras)) {
-        $arreglo = array();
-        array_push($arreglo, $filaCarreras['id'], $filaCarreras['descripcion']);
-        array_push($_SESSION['carreras'], $arreglo);
-    };
+$objCalendario = new CalendarioAcademico();
+$ARRAY_INSCRIPCION = $objCalendario->getLastInscripcionExamen();
+$ARRAY_TURNO = $objCalendario->getLastTurnoExamen();
 
-    $cantidadLlamados = $_SESSION['arrayTurnoActivo'][4];
-    $descripcionTurno = $_SESSION['arrayTurnoActivo'][2];
-    $idTurno = $_SESSION['arrayTurnoActivo'][0];
+$fecha_desde = $ARRAY_INSCRIPCION['fecha_inicio'];
+$fecha_hasta = $ARRAY_TURNO['fecha_final'];
+$fecha_actual = date('Y-m-d');
+//var_dump($fecha_desde,$fecha_hasta,$fecha_actual);exit;
+
+if($fecha_actual <= $fecha_desde && $fecha_actual<=$fecha_hasta) {
+   // echo "Garantia activa";
 } else {
-    $bandExisteTurnoActivo = false;
+    //echo "Garantia inactiva";
 }
+
+$turno_id = $inscripcion_activa = 0;
+
+$inscripcion_activa = $ARRAY_INSCRIPCION['id'];
+$turno_id = $ARRAY_TURNO['id'];
+
+
+
+
+
 ?>
 
 <!doctype html>
@@ -35,81 +42,6 @@ if (isset($_SESSION['arrayTurnoActivo'])) {
    <?php include_once('componente_header.html'); ?>
    <?php include("componente_script_jquery.html"); ?>
   
-  
-    <style>
-    .dropdown-item:hover{
-          background-color: #CFC290;
-        }        
-     footer.nb-footer {
-        background: #222;
-        border-top: 4px solid #b78c33; }
-    footer.nb-footer .about {
-        margin: 0 auto;
-        margin-top: 30px;
-        max-width: 1170px;
-        text-align: center; }
-    footer.nb-footer .about p {
-        font-size: 13px;
-        color: #999;
-        margin-top: 30px; }
-    footer.nb-footer .about .social-media {
-        margin-top: 15px; }
-    footer.nb-footer .about .social-media ul li a {
-        display: inline-block;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 50%;
-        font-size: 16px;
-        color: #b78c33;
-        border: 1px solid rgba(255, 255, 255, 0.3); }
-    footer.nb-footer .about .social-media ul li a:hover {
-        background: #b78c33;
-        color: #fff;
-        border-color: #b78c33; }
-    footer.nb-footer .footer-info-single {
-        margin-top: 30px; }
-    footer.nb-footer .footer-info-single .title {
-        color: #aaa;
-        text-transform: uppercase;
-        font-size: 16px;
-        border-left: 4px solid #b78c33;
-        padding-left: 5px; }
-    footer.nb-footer .footer-info-single ul li a {
-        display: block;
-        color: #aaa;
-        padding: 2px 0; }
-    footer.nb-footer .footer-info-single ul li a:hover {
-        color: #b78c33; }
-    footer.nb-footer .footer-info-single p {
-        font-size: 13px;
-        line-height: 20px;
-        color: #aaa; }
-    footer.nb-footer .copyright {
-        margin-top: 15px;
-        background: #111;
-        padding: 7px 0;
-        color: #999; }
-    footer.nb-footer .copyright p {
-        margin: 0;
-        padding: 0; }
-    .thead-green {
-        background-color: rgb(0, 99, 71);
-        color: white;
-    }
-    .disabledbutton {
-          pointer-events: none;
-          opacity: 0.5;
-      }
-
-    .input-form {
-          border: 1px solid black;
-          border-radius: 2px;
-          height: 36px !important;
-    }
-    
-    
-   </style>    
 </head>
 <body>
  
@@ -134,19 +66,32 @@ if (isset($_SESSION['arrayTurnoActivo'])) {
   <article class="img form">
     <div class="jumbotron jumbotron-fluid rounded form2">
       <div class="container justifu+y-content-center">
-        <h2 class="display-5">Actas de Promociones</h2>
+        <h2 class="display-5">Actas de Promociones  (<?=$inscripcion_activa?>)</h2>
         <hr>
     <form id="form">
     
       <div class="form-row">  
         <div class="form-group col-md-6">
           <strong>Carrera</strong>
-          <select name="selectCarreras" id="selectCarreras"  class="form-control" onchange="cargaMateriasConPromocionadosPorCarrera(this.value)">
+          <select name="selectCarreras" id="selectCarreras"  class="form-control">
             <option value='0'> - Seleccione Carrera - </option>  
         </select>
         </div>
       </div>
+
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha del Acta</strong>
+          <input type="text"  class="form-control datepicker" id="inputFecha" autocomplete="off" placeholder="dd/mm/aaaa" required>
+        </div>
+      </div>
         
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <button type="button" class="btn btn-primary btn-block" onclick="cargaMateriasConPromocionadosPorCarrera()">Aceptar</button>
+        </div>
+      </div>
+      
       <div class="form-row">
         <div class="form-group col-md-6">
           <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Volver</button>
@@ -185,14 +130,46 @@ $(function () {
     let carrera;
     let arreglo_carreras;
 
-    turno = getTurnoActivo();
-    console.info(turno);
-    if (turno.habilitado=='Si') {
-       titulo = "Turno de Examen: <font color='red'>"+turno.calendario_id+"</font>";
+    let inscripcion_activa_id = <?=$inscripcion_activa?>;
+    let turno_id = <?=$turno_id?>;
+
+    $('.datepicker').datepicker({
+      dateFormat: 'dd/mm/yy',
+      showButtonPanel: false,
+      changeMonth: false,
+      changeYear: false,
+      /*showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true,
+      minDate: '+1D',
+      maxDate: '+3M',*/
+      inline: true
+    }).datepicker("setDate", new Date());;
+  
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+        dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+
+    if (turno_id!='') {
+       titulo = "Turno de Examen: <font color='red'>"+inscripcion_activa_id+"</font>";
        carreras = getCarrerasHabilitadas();
-       arreglo_carreras = carreras.data;
-       $.each(arreglo_carreras, function(i, item) {
-           $('#selectCarreras').append("<option value='"+item.id+'_'+turno.calendario_id_inscripcion_asociada+"' >"+item.descripcion+" ("+item.id+")</option>");
+       $.each(carreras, function(i, item) {
+           $('#selectCarreras').append("<option value='"+item.id+"_"+inscripcion_activa_id+"' >"+item.descripcion+" ("+item.id+")</option>");
        });
 
 
@@ -205,12 +182,13 @@ $(function () {
 });
 
 
-function cargaMateriasConPromocionadosPorCarrera(val)
+function cargaMateriasConPromocionadosPorCarrera()
     {
+        let val = "";
+        val = $("#selectCarreras").val();
         if (val!=0) {
-            let parametros = val;
+            let parametros = val+'_'+$("#inputFecha").val();
             let p = {"parametros":parametros}
-
 
             $.get("./funciones/generarMateriasConPromocionadosPorCarrera.php",p,function (resul){
                 $("#resultado").html(resul);
@@ -288,8 +266,8 @@ function getCarrerasHabilitadas() {
       type:"POST",
       dataType : 'json',
       async: false,
-      success: function(datos){
-         evento = datos;
+      success: function(response){
+         evento = response.datos;
       }
     });
    console.info(evento); 

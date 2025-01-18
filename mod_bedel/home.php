@@ -1,10 +1,7 @@
 <?php 
-set_include_path('../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('./');
 require_once 'verificarCredenciales.php';
-require_once 'config.php';
-
-//var_dump($_SESSION['arreglo_credenciales_usuario']);
-
+$dni = 24912834;
 ?>
 <!doctype html>
 <html lang="es">
@@ -82,7 +79,7 @@ function guardarPassword() {
     let password_actual = $("#inputPasswordActual").val();
     let password_nueva = $("#inputPasswordNueva").val();
     let password_re_nueva = $("#inputRePasswordNueva").val();
-    let parametros = {"dni":<?=$_SESSION['dni']?>,"password_actual":password_actual,"password_nueva":password_nueva,"password_re_nueva":password_re_nueva}
+    let parametros = {"dni":<?=$dni?>,"password_actual":password_actual,"password_nueva":password_nueva,"password_re_nueva":password_re_nueva}
     if ( password_nueva==password_re_nueva) {
         $.post("./funciones/passwordModificar.php",parametros,function(datos){
                 if (datos.codigo == 100) {

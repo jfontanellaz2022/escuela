@@ -1,5 +1,5 @@
-<!-- Formulario -->
-<div class="img form visible" id="profesor_editar">
+<!-- 1 Formulario -->
+<div class="img form" id="profesor_editar">
   <div class="jumbotron jumbotron-fluid rounded form2">
     <div class="container justifu+y-content-center">
       <h1 class="display-4">Profesor</h1>
@@ -10,7 +10,7 @@
       <div class="form-group col-md-6">
         <strong>Documento</strong>
         <input id="inputDocumento" inputmode="numeric" placeholder="Documento" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
-        <input id="inputId" inputmode="numeric" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+        <input id="inputId" inputmode="numeric" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
       </div>
     </div>
     
@@ -41,13 +41,6 @@
         <input id="inputDomicilio" placeholder="Domicilio" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
       </div>
     </div>
-
-    <!-- <div class="form-row" id="telefono_viejo">  
-      <div class="form-group col-md-6">
-        <strong>Telefono Fomato Viejo</strong>
-        <input id="inputTelefono" placeholder="telefono" type="text" class="form-control" maxlength="20" >
-      </div>
-    </div> -->
 
     <div class="form-row">  
       <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -95,7 +88,7 @@
   </div>
 </div>
 
-<!-- VER -->
+<!-- 2 VER -->
 <div class="img form" id="profesor_ver" >
   <div class="jumbotron jumbotron-fluid rounded form2">
     <div class="container justifu+y-content-center">
@@ -157,12 +150,48 @@
   
     <div class="form-row">
       <div class="form-group col-md-6">
-        <button type="button" class="btn btn-primary btn-block" onclick="load(1)">Volver</button>
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
       </div>
     </div>
   
   </form>
   
+  </div>
+  </div>
+</div>
+
+
+<!-- *********************************************** -->
+<!-- *********** 3 - ASIGNAR A UNA CARRERA ********* -->
+<!-- *********************************************** -->
+<div class="img form d-none" id="profesor_asignar_carrera">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Vincular Profesor a Carrera</h1>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Carrera</strong>
+              <select id="inputCarrera" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+   <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarVinculo()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
   </div>
   </div>
 </div>

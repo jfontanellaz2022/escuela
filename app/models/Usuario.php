@@ -18,10 +18,13 @@ class Usuario extends Persona
 		$this->getConection();
         $password_encriptada = md5($password);
         //var_dump("ppp:" . $name . "ppp:" . $password_encriptada);exit;
-		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.pass, u.idPersona, p.dni, p.apellido, p.nombre, p.fechaNacimiento,
-                       p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, p.telefono_numero
-                FROM usuario u, persona p 
-                WHERE u.nombre = ? AND u.pass = ? AND u.idPersona = p.id";
+		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.password, u.idPersona, u.idRol, 
+                       r.descripcion as rol_descripcion,
+                       p.dni, p.apellido, p.nombre, p.fecha_nacimiento,
+                       p.idLocalidad, p.domicilio, p.email, 
+                       p.telefono_caracteristica, p.telefono_numero
+                FROM usuario u, persona p, rol r
+                WHERE u.nombre = ? AND u.password = ? AND u.idPersona = p.id and u.idRol=r.id";
         //var_dump($sql);                
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name,$password_encriptada]);
@@ -30,7 +33,7 @@ class Usuario extends Persona
 
     public function getUsuarioById($id){
 		$this->getConection();
-		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM usuario u, persona p 
+		$sql = "SELECT u.id as idUsuario, u.nombre as usuario_nombre, u.password,  u.idRol, u.idPersona, p.* FROM usuario u, persona p 
                 WHERE u.id = ? AND u.idPersona = p.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
@@ -38,9 +41,21 @@ class Usuario extends Persona
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+    public function getUsuarioByIdPersona($idPersona){
+		$this->getConection();
+		$sql = "SELECT u.id as idUsuario, u.nombre as usuario_nombre, u.password, u.idRol, u.idPersona, p.* FROM usuario u, persona p 
+                WHERE u.idPersona = ? AND u.idPersona = p.id";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$idPersona]);
+
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+   
     public function getUsuarioByName($name){
 		$this->getConection();
-		$sql = "SELECT u.id as idUsuario,u.nombre usuario_nombre, u.password, u.habilitado, u.idPersona, p.* FROM usuario u, persona p 
+		$sql = "SELECT u.id as idUsuario, u.nombre as usuario_nombre, u.password,  u.idRol, u.idPersona, p.* FROM usuario u, persona p 
                 WHERE u.nombre = ? AND u.idPersona = p.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name]);
@@ -48,17 +63,23 @@ class Usuario extends Persona
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+
     //* SACA TODAS LAS CREDENCIALES DE UN USUARIO, ES DECIR A QUE SUBSISTEMAS PUEDE INGRESAR EN FUNCION DE SU ROL 
-    public function getCredencialesByIdPersona($persona_id){
+    public function getCredencialesByIdPersona($rol_id){
         $arr_credenciales = [];
-        if (!empty($this->hasProfesor($persona_id))) {
-            $arr_credenciales[] = 'Profesor';;
-        }
-        if (!empty($this->hasAlumno($persona_id))) {
-            $arr_credenciales[] = 'Alumno';;
-        }
-        if (!empty($this->hasBedel($persona_id))) {
+        if ($rol_id==3) {
+            $arr_credenciales[] = 'Profesor';
+        } else if ($rol_id==4) {
+            $arr_credenciales[] = 'Alumno';
+        } else if ($rol_id==5) {
             $arr_credenciales[] = 'Bedel';
+        } else if ($rol_id==6) {
+            $arr_credenciales[] = 'Bedel';
+            $arr_credenciales[] = 'Profesor';
+        } else if ($rol_id==7) {
+            $arr_credenciales[] = 'Bedel';
+            $arr_credenciales[] = 'Profesor';
+            $arr_credenciales[] = 'Alumno';
         }
         
 		return $arr_credenciales;
@@ -76,6 +97,7 @@ class Usuario extends Persona
 public function save($param){
     $this->getConection();
 
+    $id = $nombre = $password = $idPersona = $idRol = 0;
     //* Check if exists 
     $exists = false;
     if(isset($param["id"]) and $param["id"] !=''){
@@ -83,31 +105,32 @@ public function save($param){
         if(isset($actualObjeto["id"])){
             $exists = true;	
             //* Actual values 
-            $this->id = $param["id"];
-            $this->nombre = $actualObjeto["usuario_nombre"];
-            $this->idTipo = $actualObjeto["idtipo"];
-            $this->password = $actualObjeto["password"];
-            $this->idPersona = $actualObjeto["idPersona"];
+            $id = $param["id"];
+            $nombre = $actualObjeto["usuario_nombre"];
+            $password = $actualObjeto["password"];
+            $idPersona = $actualObjeto["idPersona"];
         }
     }
 
     //* Received values 
-    if(isset($param["id"])) $this->dni = $param["id"];
-    if(isset($param["nombre"])) $this->idTipo = $param["nombre"];
-    if(isset($param["password"])) $this->password = $param["password"];
-    if(isset($param["habilitado"])) $this->password = $param["habilitado"];
-    if(isset($param["idPersona"])) $this->password_vencida = $param["idPersona"];
+    if(isset($param["id"])) $id = $param["id"];
+    if(isset($param["nombre"])) $nombre = $param["nombre"];
+    if(isset($param["password"])) $password = $param["password"];
+    if(isset($param["idPersona"])) $idPersona = $param["idPersona"];
+    if(isset($param["idRol"])) $idRol = $param["idRol"];
+
 
     //* Database operations 
     
     if($exists){
-        $sql = "UPDATE usuario SET nombre = ? , password = ?, habilitado = ?, idPersona = ? WHERE id = ?";
+        $sql = "UPDATE usuario SET nombre = ? , password = ?, idPersona = ?, idRol = ? WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
-        $res = $stmt->execute([$this->nombre,md5($this->password),$this->habilitado, $this->idPesona,$this->id]);
+        $res = $stmt->execute([$nombre, md5($password), $idPersona, $idRol, $id]);
     } else {
-        $sql = "INSERT INTO usuario (nombre, password, habilitado, idPersona) values(?, ?, ?, ?)";
+        $sql = "INSERT INTO usuario (nombre, password, idPersona, idRol) values(?, ?, ?, ?)";
         $stmt = $this->conection->prepare($sql);
-        $stmt->execute([$this->nombre,md5($this->password),$this->habilitado, $this->idPersona]);
+        //var_dump($param,'-----',[$nombre, md5($password), $idPersona, $idRol]);exit;
+        $stmt->execute([$nombre, md5($password), $idPersona, $idRol]);
         $this->id = $this->conection->lastInsertId();
     }
 

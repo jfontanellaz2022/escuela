@@ -1,28 +1,21 @@
 <?php
    set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
    include_once "verificarCredenciales.php";
-   require_once "Persona.php";
+   require_once "Profesor.php";
    require_once "CalendarioAcademico.php";
 
-   
 
    $id_pagina = 'home';
-   $id_persona = $_SESSION['arreglo_datos_usuario']['idPersona'];
-   
-   $obj = new Persona();
-
-   
-    
-   $_SESSION['ARRAY_DATOS_PERSONALES_PROFESOR'] = $obj->hasProfesor($id_persona);
-   $_SESSION['id_profesor'] = $_SESSION['ARRAY_DATOS_PERSONALES_PROFESOR']['idProfesor'];
+   $_SESSION['id_persona'] = $_SESSION['arreglo_datos_usuario']['idPersona'];
+   $objProfesor = new Profesor();
+   $_SESSION['id_profesor'] = $objProfesor->getProfesorByIdPersona($_SESSION['id_persona'])['id'];
 
    // Determina si el Evento Armado de Lista de Materias de un Cuatrimestre dado esta habilitado en la fecha de hoy.
    $cal = new CalendarioAcademico;
    $_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS'] = $cal->getEventosArmadoMateriasActivo();
    
-   //var_dump($_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS']);exit;
-   //die('entro');
-   
+  // var_dump($_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS']);exit;
+  
 
 ?>
 
@@ -85,7 +78,7 @@ function expired() {
   location.href = "./logout.php";
 }
 
-setTimeout(expired, 60000*20);
+//setTimeout(expired, 60000*20);
 </script>
 <script src="./js/loadHome.js"></script>
 </body>

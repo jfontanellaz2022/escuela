@@ -1,13 +1,12 @@
 <?php
-set_include_path('../../app/lib/'.PATH_SEPARATOR.'../../conexion/');
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once "verificarCredenciales.php";
 require_once('AlumnoRindeMateriaDetalle.php');
 require_once('Carrera.php');
 require_once('Materia.php');
-require_once('MyPdf.class.php');
-
+require_once('ActasPdf.class.php');
 // create new PDF document
-$pdf = new MyPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+$pdf = new ActasPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Escuela Normal Superior 40 - Mariano Moreno');
@@ -24,6 +23,7 @@ $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
 
 // set margins
 $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
@@ -44,13 +44,14 @@ $pdf->SetFont('times', 'BI', 12);
 // add a page
 $pdf->AddPage();
 
-$parametros=$_GET['parametros'];
-$arrCarreraTurnoLlamado=explode('_',$parametros);
-$idCarrera=$arrCarreraTurnoLlamado[0];
-$idCalendario=$arrCarreraTurnoLlamado[1];
-$llamado=$arrCarreraTurnoLlamado[2];
-$idMateria=$arrCarreraTurnoLlamado[3];
-
+$parametros = base64_decode($_GET['parametros']);
+$arrCarreraTurnoLlamado = explode('_',$parametros);
+$idCarrera = $arrCarreraTurnoLlamado[0];
+$idCalendario = $arrCarreraTurnoLlamado[1];
+$llamado = $arrCarreraTurnoLlamado[2];
+$fecha_acta = $arrCarreraTurnoLlamado[3];
+$pdf->fecha_acta = $fecha_acta;
+$idMateria = $arrCarreraTurnoLlamado[4];
 $alumnos_rinden_materia = new AlumnoRindeMateriaDetalle();
 $ARRAY_ALUMNOS_RINDEN_MATERIA = $alumnos_rinden_materia->getAlumnosByIdMateriaByIdCalendarioDetalle($idMateria,$idCalendario,$llamado);
 
@@ -129,7 +130,9 @@ $pdf->Cell(32,10,'DOC. DE IDENTIDAD',1,0,'C',true);
 $pdf->Cell(68,10,'APELLIDO Y NOMBRES',1,0,'C',true);
 $pdf->Cell(30,10,'EVALUACIONES',1,0,'C',true);
 $pdf->Cell(30,10,'OBSERVACIONES',1,1,'C',true);
-$cant_desaprobados = $cant_ausentes = $i = 0;
+$cant_desaprobados = $cant_aprobados = $cant_ausentes = $i = 0;
+//var_dump($ARRAY_ALUMNOS_RINDEN_MATERIA);exit;
+
 foreach ($ARRAY_ALUMNOS_RINDEN_MATERIA as $item) {
     $i++;
     $pdf->SetX(11);
@@ -155,11 +158,10 @@ foreach ($ARRAY_ALUMNOS_RINDEN_MATERIA as $item) {
     $pdf->Cell(30,5,$item['condicion'],1,1,'R',false);
 };
 
-
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('ActaVolante.pdf', 'I');
+$pdf->Output('AV_' . $carrera_nombre . '_' . $materia_nombre . '_' . $materia_anio_nombre . '.pdf', 'I');
 
 //============================================================+
 // END OF FILE

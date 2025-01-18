@@ -1,14 +1,12 @@
 <?php
-set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
 require_once 'verificarCredenciales.php';
-
-
+require_once 'Sanitize.class.php';
+require_once 'ArrayHash.class.php';
+require_once 'pagination.php';
 require_once 'AlumnoFilter.php';
 require_once 'AlumnoEstudiaCarrera.php';
-require_once 'Sanitize.class.php';
-require_once 'pagination.php';
-require_once 'ArrayHash.class.php';
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
 
@@ -31,27 +29,13 @@ function capitalizeCadenas($str) {
 
 $action = (isset($_POST['action'])&& $_POST['action'] !=NULL)?$_POST['action']:'';
 $valor = isset($_POST['valor'])?SanitizeVars::STRING($_POST['valor']):false;
-//$dni = isset($_POST['dni'])?$_POST['dni']:false;
-//$telefono = isset($_POST['telefono'])?$_POST['telefono']:false;
-//$email = isset($_POST['email'])?SanitizeVars::STRING($_POST['email']):false;
 
-//$sql = $sqlCantidadFilas = "";
 $numrows = $total_pages = 0;
 $arr_objetos = $arr_filtro = [];
 
 if ($valor) {
 	$arr_filtro['valor'] = $valor;
 }
-
-/*if ($dni) {
-	$arr_filtro['dni'] = $dni;
-}
-if ($telefono) {
-	$arr_filtro['telefono'] = $telefono;
-}
-if ($email) {
-	$arr_filtro['email'] = $email;
-}*/
 
 //var_dump($arr_filtro);die;
 /**********************************************************************************************************************************************************************/
@@ -71,13 +55,6 @@ if($action == 'listar'){
 	$adjacents  = 4; //gap between pages after number of adjacents
 	$offset = ($page - 1) * $per_page;
 
-
-	//*********************************************************** */
-	//****************  PONER LOS NOMBRES DE LOS CAMPOS ********* */
-	//*********************************************************** */
-	$campo1 = "Id";$campo2 = "Nombres"; $campo3 = "Dni"; $campo4 = "Telefono"; $campo5 = "Email"; 
-	//*********************************************************** */
-	//*****
 ?>	
 
 <div class="table-responsive" >
@@ -137,10 +114,10 @@ if (!empty($arr_objetos)){
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                           <a class=" dropdown-item small" href="#" onclick="entidadVer('<?=$rowIdCampo1?>','<?=$rowCampo2?>')"><i class="fa fa-address-card-o"></i>&nbsp;Ver</a>
                           <a class=" dropdown-item small" href="#" onclick="entidadEditar('<?=$rowIdCampo1?>')"><i class="fa fa-edit"></i>&nbsp;Editar</a>
-                          <a class=" dropdown-item small" href="#" data-toggle="modal" data-target="#confirmarModal" data-id="<?=$rowIdCampo1?>"><i class="fa fa-trash"></i>&nbsp;Borrar</a>
+                          <a class=" dropdown-item small disabled" href="#" data-toggle="modal" data-target="#confirmarModal" data-id="<?=$rowIdCampo1?>"><i class="fa fa-trash"></i>&nbsp;Borrar</a>
                           <a class=" dropdown-item small" href="#" onclick="vincularCarrera('<?=$rowIdCampo1?>')"><i class="fa fa-graduation-cap"></i>&nbsp;Vincular Carrera</a>
-						  <a class=" dropdown-item small" href="#" onclick="inscribirCursado('<?=$rowIdCampo1?>')"><i class="fa fa-graduation-cap"></i>&nbsp;Asignar Cursado</a> 
-						  <a class=" dropdown-item small" href="#" onclick="inscribirExamen('<?=$rowIdCampo1?>')"><i class="fa fa-graduation-cap"></i>&nbsp;Inscribir a Exámen</a>
+						  <a class=" dropdown-item small disabled" href="#" onclick="inscribirCursado('<?=$rowIdCampo1?>')"><i class="fa fa-graduation-cap"></i>&nbsp;Asignar Cursado</a> 
+						  <a class=" dropdown-item small disabled" href="#" onclick="inscribirExamen('<?=$rowIdCampo1?>')"><i class="fa fa-graduation-cap"></i>&nbsp;Inscribir a Exámen</a>
 						  
                         </div>
                                     </div>

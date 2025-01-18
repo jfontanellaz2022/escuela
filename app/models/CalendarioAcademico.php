@@ -1,15 +1,16 @@
 <?php 
-require_once('Db.php');
+require_once 'Db.php';
+require_once 'Constantes.php';
 
 class CalendarioAcademico {
 	protected $table = 'calendario_academico';
 	protected $conection;
 	private $anio_lectivo;
-	private $periodo_cuatrimestre_id;
 	private $fecha_inicio;
 	private $fecha_final; 
-	private $bedel_id;
+	private $usuario_id;
 	private $evento_id;
+	
 	protected $cantidad;
 
 	public function __construct() {
@@ -20,6 +21,11 @@ class CalendarioAcademico {
 	public function getConection(){
 		$dbObj = new Db();
 		$this->conection = $dbObj->conection;
+	}
+
+	// Set conection 
+	public function getCantidad(){
+		return $this->cantidad;
 	}
 
 	// Get all Alumnos 
@@ -189,7 +195,46 @@ class CalendarioAcademico {
 		$this->getConection();
 		$sql = "SELECT c.*, t.codigo, t.nombre as evento_descripcion 
 				FROM calendario_academico c, tipificacion t 
-				WHERE t.id=c.idTipificacion and (t.codigo = 1005 or t.codigo = 1006 or t.codigo = 1007 or t.codigo = 1008)
+				WHERE t.id=c.idTipificacion and ( t.codigo = " . Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO . " or 
+				                                  t.codigo = " . Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO . " or 
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_TERCER_TURNO . " or 
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_MESA_ESPECIAL . " )
+				ORDER BY c.fecha_final desc
+				limit 0,1 ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		$arr_resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $arr_resultado;
+	}
+
+	// Devuelve la ultima inscripcion a  examenes
+	public function getLastInscripcionExamenConIntermedias(){
+		$this->getConection();
+		$sql = "SELECT c.*, t.codigo, t.nombre as evento_descripcion 
+				FROM calendario_academico c, tipificacion t 
+				WHERE t.id=c.idTipificacion and ( t.codigo = " . Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO . " or 
+				                                  t.codigo = " . Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO . " or 
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_TERCER_TURNO . " or 
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_MESA_ESPECIAL . " or
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_INTERMEDIA_PRIMER_TURNO . " or
+												  t.codigo = " . Constantes::CODIGO_INSCRIPCION_INTERMEDIA_SEGUNDO_TURNO . " )
+				ORDER BY c.fecha_final desc
+				limit 0,1 ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		//$stmt->debugDumpParams();exit;
+		$arr_resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $arr_resultado;
+	}
+
+	// Devuelve la ultima inscripcion a  examenes
+	public function getLastTurnoExamen(){
+		$this->getConection();
+		$sql = "SELECT c.*, t.codigo, t.nombre as evento_descripcion 
+				FROM calendario_academico c, tipificacion t 
+				WHERE t.id=c.idTipificacion and ( t.codigo = " . Constantes::CODIGO_PRIMER_TURNO . " or 
+				                                  t.codigo = " . Constantes::CODIGO_SEGUNDO_TURNO . " or 
+												  t.codigo = " . Constantes::CODIGO_TERCER_TURNO . " )
 				ORDER BY c.fecha_final desc
 				limit 0,1 ";
 		$stmt = $this->conection->prepare($sql);
@@ -216,8 +261,10 @@ class CalendarioAcademico {
 	}
 
 	public function getEventoActivoByCodigo($codigo){
+		
 		$hoy = date('Y-m-d');
 		$objeto_eventos = $this->getCalendarioByCodigoEvento($codigo);
+		//var_dump($objeto_eventos);exit;
 		$arr_resultado = [];
 		foreach ($objeto_eventos as $val) {
 			if (strtotime($hoy)>=strtotime($val['fecha_inicio']) &&
@@ -226,6 +273,8 @@ class CalendarioAcademico {
 					break;
 			};
 		}
+		//var_dump($arr_resultado);exit;
+
 		return $arr_resultado;
 	}
 
@@ -241,52 +290,55 @@ class CalendarioAcademico {
 		return $arr_codigos_armado_listas;
 	}
 
+	
 	// Save 
-	/*public function save($param){
+	public function save($param){
 		$this->getConection();
 
+		$id = $anio_lectivo = $idTipificacion = $idUsuario = $fecha_inicio = $fecha_final = "";
 		//* Check if exists 
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
-			$actualObjeto = $this->getAlumnoById($param["id"]);
+			$actualObjeto = $this->getCalendarioById($param["id"]);
 			if(isset($actualObjeto["id"])){
 				$exists = true;	
 				//* Actual values 
 				$id = $param["id"];
-				$dni = $actualObjeto["dni"];
-				$apellido = $actualObjeto["apellido"];
-				$nombres = $actualObjeto["nombres"];
-				$anio_ingreso = $actualObjeto["anio_ingreso"];
-				$debe_titulo = $actualObjeto["debe_titulo"];
-				$habilitado = $actualObjeto["habilitado"];
+				$anio_lectivo = $actualObjeto["anio_lectivo"];
+				$idTipificacion = $actualObjeto["idTipificacion"];
+				$idUsuario = $actualObjeto["idUsuario"];
+				$fecha_inicio = $actualObjeto["fecha_inicio"];
+				$fecha_final = $actualObjeto["fecha_final"];
 			}
 		}
-
+		
 		//* Received values 
-		if(isset($param["dni"])) $dni = $param["dni"];
-		if(isset($param["apellido"])) $apellido = $param["apellido"];
-		if(isset($param["nombres"])) $nombres = $param["nombres"];
-		if(isset($param["anio_ingreso"])) $anio_ingreso = $param["anio_ingreso"];
-		if(isset($param["debe_titulo"])) $debe_titulo = $param["debe_titulo"];
-		if(isset($param["habilitado"])) $habilitado = $param["habilitado"];
+		if(isset($param["anio_lectivo"])) $anio_lectivo = $param["anio_lectivo"];
+		if(isset($param["idTipificacion"])) $idTipificacion = $param["idTipificacion"];
+		if(isset($param["idUsuario"])) $idUsuario = $param["idUsuario"];
+		if(isset($param["fecha_inicio"])) $fecha_inicio = $param["fecha_inicio"];
+		if(isset($param["fecha_final"])) $fecha_final = $param["fecha_final"];
 		
-
 		//* Database operations 
-		
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET dni=?, apellido=?, nombre=?, anioIngreso=?, debeTitulo=?, habilitado=? WHERE id=?";
+			$sql = "UPDATE ".$this->table. " SET anio_lectivo=?, idTipificacion=?, idUsuario=?, fecha_inicio=?, fecha_final=? WHERE id=?";
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$dni,$apellido,$nombres,$anio_ingreso,$debe_titulo, $habilitado, $id]);
+			$res = $stmt->execute([$anio_lectivo, $idTipificacion, $idUsuario, $fecha_inicio, $fecha_final, $id]);
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (dni, apellido, nombre, anioIngreso, debeTitulo, habilitado) values(?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (anio_lectivo, idTipificacion, idUsuario,fecha_inicio, fecha_final) values(?, ?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$dni,$apellido,$nombres,$anio_ingreso,$debe_titulo, $habilitado]);
+			//var_dump([$anio_lectivo, $idTipificacion, $idUsuario,$fecha_inicio, $fecha_final]);exit;
+			//$stmt->execute([$anio_lectivo, $idTipificacion, "'".$fecha_inicio."'", "'".$fecha_final."'"]);
+			$stmt->execute([$anio_lectivo, $idTipificacion, $idUsuario, $fecha_inicio, $fecha_final]);
+			//$stmt->debugDumpParams();
+
 			$id = $this->conection->lastInsertId();
 		}
 
 		return $id;	
 
-	}*/
+	}
+
 
 	/* Delete Alumno by id */
 	
@@ -298,15 +350,5 @@ class CalendarioAcademico {
 	}
 
 }
-
-//$c = new CalendarioAcademico();
-
-//var_dump($c->getEventosArmadoMaterias());
-
-
-
-/*
-array(10) { ["id"]=> int(123) ["AnioLectivo"]=> int(2023) ["idPeriodoCuatrimestreActivo"]=> NULL ["fechaInicioEvento"]=> string(10) "2023-11-09" ["fechaFinalEvento"]=> string(10) "2023-11-13" ["finalizado"]=> NULL ["idBedel"]=> NULL ["idEvento"]=> int(5) ["descripcion"]=> NULL ["evento_descripcion"]=> string(33) "Inscripcion 3er Turno de Examenes" }
-*/
 
 ?>

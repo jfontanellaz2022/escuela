@@ -10,7 +10,7 @@ class Alumno extends Persona{
 	public function getAlumnos(){
 		$arr_resultado = $arr_alumnos = $arr_datos_persona = [];
 		$this->getConection();
-		$sql = "SELECT id as idAlumno, anioIngreso, debeTitulo, idPersona FROM alumno";
+		$sql = "SELECT id as idAlumno, anio_ingreso, debe_titulo, idPersona FROM alumno";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 		$arr_alumnos = $stmt->fetchAll(PDO::FETCH_ASSOC); 
@@ -24,13 +24,50 @@ class Alumno extends Persona{
 		return $arr_resultado;
 	}
 
+
+	/* Get by Id */
+	public function getById($id){
+		$arr_resultado = $arr_alumno = $arr_datos_persona = [];
+		$this->getConection();
+		$sql = "SELECT per.*, l.id as 'localidad_id', l.nombre as 'localidad_nombre', 
+		              l.cp as 'codigo_postal', p.nombre as 'provincia_nombre',
+                   a.anio_ingreso, a.debe_titulo, a.id as idAlumno
+            FROM alumno a, persona per, localidad l, provincia p 
+            WHERE a.id = ? AND 
+			      a.idPersona = per.id AND 
+			      per.idLocalidad = l.id AND 
+			      l.idProvincia = p.id";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$id]);
+		$arr_alumno = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $arr_alumno;
+	}
+
 	/* Get by Id */
 	public function getAlumnoById($id){
 		$arr_resultado = $arr_alumno = $arr_datos_persona = [];
 		$this->getConection();
-		$sql = "SELECT id as idAlumno, anioIngreso, debeTitulo, idPersona FROM alumno WHERE id = ?";
+		$sql = "SELECT id as idAlumno, anio_ingreso, debe_titulo, habilitado, idPersona FROM alumno WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
+		$arr_alumno = $stmt->fetch(PDO::FETCH_ASSOC);
+		if (!empty($arr_alumno)) {
+			$persona_id = $arr_alumno['idPersona'];
+			$arr_datos_persona = $this->getPersonaById($persona_id);
+			$arr_resultado = array_merge($arr_alumno, $arr_datos_persona);
+		}
+		return $arr_resultado;
+	}
+
+
+	/* Get by Id */
+	public function getAlumnoByIdPersona($idPersona){
+		$arr_resultado = $arr_alumno = $arr_datos_persona = [];
+		$this->getConection();
+		$sql = "SELECT id as idAlumno, anio_ingreso, debe_titulo, habilitado, idPersona 
+		        FROM alumno WHERE idPersona = ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$idPersona]);
 		$arr_alumno = $stmt->fetch(PDO::FETCH_ASSOC);
 		if (!empty($arr_alumno)) {
 			$persona_id = $arr_alumno['idPersona'];
@@ -44,7 +81,7 @@ class Alumno extends Persona{
 	/* Get All Alumnos que cursaron una Materia */
 	public function getAllAlumnosCursanMateria($id_materia){
 		$this->getConection();
-		$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
+		$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
                        acm.FechaHoraInscripcion, acm.nota, acm.FechaModificacionNota, p.email, p.telefono_caracteristica, p.telefono_numero,
 					   tca.codigo as 'codigo_cursado'
                 FROM alumno a, alumno_cursa_materia acm, persona p, tipo_cursado_alumno tca
@@ -63,7 +100,7 @@ class Alumno extends Persona{
 	/* Get All Alumnos que rindieron una Materia*/
 	public function getAllAlumnosRindenMateria($id_materia){
 		$this->getConection();
-		$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, arm.condicion, arm.nota, arm.estado_final,
+		$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, arm.condicion, arm.nota, arm.estado_final,
                        arm.FechaHoraInscripcion, arm.FechaModificacionNota, p.email, p.telefono_caracteristica, p.telefono_numero
                 FROM alumno a, alumno_rinde_materia arm, persona p 
                 WHERE arm.idMateria = ? AND
@@ -81,7 +118,7 @@ class Alumno extends Persona{
 public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 	$this->getConection();
 	$arr_parametros = [$id_alumno];
-	$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
+	$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
                        acm.FechaHoraInscripcion, acm.nota, acm.FechaModificacionNota, p.email, p.telefono_caracteristica, p.telefono_numero,
 					   tca.codigo as 'codigo_cursado'
 			FROM alumno a, alumno_cursa_materia acm, persona p, tipo_cursado_alumno tca
@@ -92,7 +129,7 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 			ORDER BY p.apellido ASC, p.nombre ASC";
 	
 	if ($estado != "") {
-		$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
+		$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, acm.anioCursado, acm.tipo as cursado, acm.estado_final,
                        acm.FechaHoraInscripcion, acm.nota, acm.FechaModificacionNota, p.email, p.telefono_caracteristica, p.telefono_numero,
 					   tca.codigo as 'codigo_cursado'
 				FROM alumno a, alumno_cursa_materia acm, persona p, tipo_cursado_alumno tca
@@ -117,7 +154,7 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 	public function getAllMateriasRendidasPorAlumno($id_alumno, $estado = ""){
 		$this->getConection();
 		$arr_parametros = [$id_alumno];
-		$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, arm.condicion, arm.nota, arm.estado_final,
+		$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, arm.condicion, arm.nota, arm.estado_final,
                        arm.FechaHoraInscripcion, arm.FechaModificacionNota, arm.idMateria, p.email, p.telefono_caracteristica, p.telefono_numero
                 FROM alumno a, alumno_rinde_materia arm, persona p 
                 WHERE arm.idAlumno = ? AND
@@ -126,7 +163,7 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 				ORDER BY p.apellido ASC, p.nombre ASC";
 		
 		if ($estado != "") {
-			$sql = "SELECT a.id as idAlumno, a.anioIngreso, a.debeTitulo, arm.condicion, arm.nota, arm.estado_final,
+			$sql = "SELECT a.id as idAlumno, a.anio_ingreso, a.debe_titulo, arm.condicion, arm.nota, arm.estado_final,
                        arm.FechaHoraInscripcion, arm.FechaModificacionNota, arm.idMateria, p.email, p.telefono_caracteristica, p.telefono_numero
                 	FROM alumno a, alumno_rinde_materia arm, persona p 
                 	WHERE arm.idAlumno = ? AND
@@ -147,9 +184,9 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 		$this->getConection();
 
 		
-		$sql = "SELECT a.id, a.anioIngreso, a.debeTitulo,a.habilitado,
+		$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo,a.habilitado,
 		               p.id as idPersona, p.apellido, p.nombre, p.dni, 
-		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio,
+		               p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio,
 					   p.email, p.telefono_caracteristica, p.telefono_numero, p.observaciones, 
 					   p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
 					   aec.anio, l.nombre as localidad_nombre, prov.nombre as provincia_nombre
@@ -158,7 +195,7 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 					  a.habilitado = 'Si' and 
 					  a.idPersona = p.id and 
 					  p.idLocalidad = l.id and 
-					  l.provincia_id = prov.id ";
+					  l.idProvincia = prov.id ";
 
 		if (isset($param['carrera_id'])) {
 					
@@ -183,8 +220,8 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 	public function getAllAlumnosByMateria($id_materia){
 		$this->getConection();
 		
-		$sql = "SELECT a.id, a.anioIngreso, a.debeTitulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
-		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
+		$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
+		               p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
 					   p.telefono_numero, p.observaciones, p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
 					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_inscripcion, acm.nota, acm.fecha_modificacion_nota,
 					   p.email, p.telefono, 
@@ -209,15 +246,14 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 		$this->getConection();
 
 		//* Set default values 
-		$id = $anio_ingreso = $debe_titulo = $habilitado = "";
+		$id = $anio_ingreso = $debe_titulo = $habilitado = $idPersona = "";
 
 		//* Check if exists 
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
-			//die('sdfsdfsdf '.$param["habilitado"]);
+			
 			$actualObjeto = $this->getAlumnoById($param["id"]);
-			//var_dump($actualAlumno);die;
-			if(isset($actualObjeto["id"])){
+			if(isset($actualObjeto["idAlumno"])){
 				$exists = true;	
 				//* Actual values 
 				$id = $param["id"];
@@ -225,31 +261,30 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 				$debe_titulo = $actualObjeto["debe_titulo"];
 				$habilitado = $actualObjeto["habilitado"];
 			}
+			//var_dump($param);exit;
 		}
-
 		//* Received values 
 		if(isset($param["anio_ingreso"])) $anio_ingreso = $param["anio_ingreso"];
 		if(isset($param["debe_titulo"])) $debe_titulo = $param["debe_titulo"];
 		if(isset($param["habilitado"])) $habilitado = $param["habilitado"];
-		
+		else $habilitado = 'Si';
+		if(isset($param["idPersona"])) $idPersona = $param["idPersona"];
 
 		//* Database operations 
-		
+		//var_dump($param["id"],$id,$actualObjeto,[$id,$anio_ingreso,$debe_titulo, $habilitado, $idPersona]);exit;
 		if($exists){
-			if($exists){
-			$sql = "UPDATE ".$this->table. " SET anioIngreso=?, debeTitulo=?, habilitado=? WHERE id=?";
+			$sql = "UPDATE alumno SET anio_ingreso=?, debe_titulo=?, habilitado=? WHERE id=?";
+			//var_dump([$anio_ingreso,$debe_titulo, $habilitado, $id]);exit;
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$dni,$apellido,$nombres,$anio_ingreso,$debe_titulo, $habilitado, $id]);
+			$res = $stmt->execute([$anio_ingreso,$debe_titulo, $habilitado, $id]);
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (anioIngreso, debeTitulo, habilitado) values(?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO alumno (anio_ingreso, debe_titulo, habilitado, idPersona) values(?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$anio_ingreso,$debe_titulo, $habilitado]);
+			$stmt->execute([$anio_ingreso,$debe_titulo, $habilitado,$idPersona]);
 			$id = $this->conection->lastInsertId();
 		}
 
 		return $id;	
-
-	}
 
 	}
 	
@@ -257,7 +292,7 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 	/* Delete by id */
 	public function deleteAlumnoById($id){
 		$this->getConection();
-		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
+		$sql = "DELETE FROM alumno WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
 	}

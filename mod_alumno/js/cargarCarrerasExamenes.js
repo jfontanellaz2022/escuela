@@ -18,16 +18,13 @@ function cargarCarrerasExamenes(idAlumno) {
 
   //Remuevo la class que me deshabilita
   $("#resultado").removeClass("disabledbutton");
-  let parametros = {"action":"Listar",'alumno':idAlumno};
-  $.post( "./funciones/getCarrerasPorIdAlumno.php", parametros, function( data ) {
-    let obj = JSON.parse(data);
-    
-
+  let parametros = {'alumno':idAlumno};
+  $.post( "../API/findAllCarrerasPorAlumno.php", parametros, function( response ) {
     $("#breadcrumb").html(bread);
     $("#titulo").html(titulo);
     $("#resultado").html("");
-    obj.data.forEach(carrera => {
-       let resul = `<div class="col-md-4">
+    response.datos.forEach(carrera => {
+    let resul = `<div class="col-md-4">
              <div class="card" style="width: 18rem;">
                      <img src="../assets/img/`+carrera.imagen+`" class="card-img-top">
                      <div class="card-body">
@@ -40,7 +37,7 @@ function cargarCarrerasExamenes(idAlumno) {
              </div>`;
         $("#resultado").append(resul);
      });
-  });
+  },"json");
 }
 
 

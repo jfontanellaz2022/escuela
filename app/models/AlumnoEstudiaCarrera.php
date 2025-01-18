@@ -22,23 +22,51 @@ class AlumnoEstudiaCarrera {
 	}
 
 	/* Get all Carreras */
-	public function getAlumnoEstudiaCarrera(){
+	public function getAlumnoEstudiaCarrera($carrera_id=0,$alumno_id=0){
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table;
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute();
+		if ($carrera_id==0 && $alumno_id==0) {
+			$sql = "SELECT * FROM ".$this->table;
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute();
+		} else {
+			$sql = "SELECT * FROM ".$this->table ." WHERE idAlumno = ? AND idCarrera = ?";
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$alumno_id,$carrera_id]);
+			//$stmt->debugDumpParams();
 
-		return $stmt->fetchAll();
+		}
+
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $res;
 	} 
+
+
+	/* Get Carrera by Id */
+	public function getById($id){
+		$this->getConection();
+		$sql = "SELECT *
+				FROM alumno_estudia_carrera
+				WHERE id = ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$id]);
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $res;
+	}
 
 	/* Get Carrera by Id */
 	public function getAlumnoEstudiaCarreraById($id){
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table . " WHERE id = ?";
+		//$sql = "SELECT * FROM " . $this->table . " WHERE id = ?";
+		$sql = "SELECT distinct a.id, p.dni, p.apellido, p.nombre
+				FROM alumno_estudia_carrera aec, alumno a, persona p
+				WHERE aec.idCarrera = ? AND
+					aec.idAlumno = a.id AND 
+					a.idPersona = p.id
+				ORDER BY p.apellido asc, p.nombre asc";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
-
-		return $stmt->fetch(PDO::FETCH_ASSOC);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
 	}
 
 	/* Get Carrera by Id */
@@ -55,55 +83,54 @@ class AlumnoEstudiaCarrera {
 
 
 	/* Save Alumno */
-	/*public function save($param){
+	public function save($param){
 		$this->getConection();
 
 		//* Set default values 
-		$id = $nombre = $anio = $cursado_id = $carrera_nombre = $promocionable = $formato_id = "";
-
+		$id = $idAlumno = $idCarrera = $anio = $mesa_especial = $fecha_inscripcion = "";
+		
 		//* Check if exists 
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
 			//die('sdfsdfsdf '.$param["habilitado"]);
-			$actualMateria = $this->getMateriaById($param["id"]);
+			$actualMateria = $this->getById($param["id"]);
 			//var_dump($actualAlumno);die;
 			if(isset($actualAlumno["id"])){
 				$exists = true;	
 				//* Actual values 
 				$id = $param["id"];
-				$nombre = $actualMateria["nombre"];
+				$idAlumno = $actualMateria["idAlumno"];
+				$idCarrera = $actualMateria["idCarrera"];
 				$anio = $actualMateria["anio"];
-				$cursado_id = $actualMateria["idCursado"];
-				$carrera_nombre = $actualMateria["carrera"];
-				$promocionable = $actualMateria["promocionable"];
-				$formato_id = $actualMateria["idFormato"];
+				$mesa_especial = $actualMateria["mesa_especial"];
+				$fecha_inscripcion = $actualMateria["fecha_inscripcion"];
 			}
 		}
 
 		//* Received values 
-		if(isset($param["nombre"])) $nombre = $param["nombre"];
+		if(isset($param["idAlumno"])) $idAlumno = $param["idAlumno"];
+		if(isset($param["idCarrera"])) $idCarrera = $param["idCarrera"];
 		if(isset($param["anio"])) $anio = $param["anio"];
-		if(isset($param["cursado_id"])) $cursado_id = $param["cursado_id"];
-		if(isset($param["carrera_nombre"])) $carrera_nombre = $param["carrera_nombre"];
-		if(isset($param["promocionable"])) $promocionable = $param["promocionable"];
-		if(isset($param["formato_id"])) $formato_id = $param["formato_id"];
+		if(isset($param["mesa_especial"])) $mesa_especial = $param["mesa_especial"];
+		if(isset($param["fecha_inscripcion"])) $fecha_inscripcion = $param["fecha_inscripcion"];
 
 		//* Database operations 
 		
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET nombre=?, anio=?, idCursado=?, carrera=?, promocionable=?, idFormato=? WHERE id=?";
+			$sql = "UPDATE ".$this->table. " SET idAlumno = ?, idCarrera = ?,  anio = ?, mesa_especial = ?, fecha_inscripcion = ? WHERE id = ?";
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$nombre,$anio,$cursado_id,$carrera_nombre,$promocionable, $formato_id, $id]);
+			$res = $stmt->execute([$idAlumno,$idCarrera,$anio,$mesa_especial,$fecha_inscripcion, $id]);
 		} else {
-			$sql = "INSERT INTO ".$this->table. " (nombre, anio, idCursado, carrera, promocionable, idFormato) values(?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (idAlumno, idCarrera, anio, mesa_especial, fecha_inscripcion) values(?, ?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$nombre,$anio,$cursado_id,$carrera_nombre,$promocionable, $formato_id]);
+			//var_dump([$idAlumno,$idCarrera,$anio,$mesa_especial,$fecha_inscripcion]);exit;
+			$stmt->execute([$idAlumno,$idCarrera,$anio,$mesa_especial,$fecha_inscripcion]);
 			$id = $this->conection->lastInsertId();
 		}
 
 		return $id;	
 
-	}*/
+	}
 
 	/* Delete Alumno by id */
 	public function deleteAlumnoEstudiaCarreraById($id){

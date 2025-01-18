@@ -1,45 +1,82 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/class/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+require_once 'verificarCredenciales.php';
+
+require_once 'Sanitize.class.php';
+
+require_once 'Tipificacion.php';
+require_once 'CalendarioAcademico.php';
+require_once 'AlumnoRindeMateria.php';
+
+require_once 'Constantes.php';
+
+//var_dump($_SESSION['arreglo_datos_usuario']);exit;
+
+//Constantes::CODIGO_HOMOLOGACION;
 
 $idCarrera = SanitizeVars::INT($_POST['carrera_id']);
 $idMateria = SanitizeVars::INT($_POST['materia_id']);
 $idAlumno = SanitizeVars::INT($_POST['alumno_id']);
-
+$idUsuario = $_SESSION['arreglo_datos_usuario']['id'];
 $nota = SanitizeVars::INT($_POST['nota']);
+
 $array_resultados = array();
 
-function getCodigoCalendarioHomologacion($conex) {
-   $sql = "SELECT id FROM calendarioacademico WHERE idEvento = 1026";
-   $resultado = mysqli_query($conex,$sql);
-   $idCalendario = 0;
-   if ($resultado) {
-       $fila = mysqli_fetch_assoc($resultado);
-       $idCalendario = $fila['id'];
-   };
-   return $idCalendario;
-}
+$objTipificacion = new Tipificacion(); 
+$res = $objTipificacion->getTipificacionByCodigo(Constantes::CODIGO_HOMOLOGACION);
 
 
-$idCalendario = getCodigoCalendarioHomologacion($conex);
-$ahora = date("Y-m-d H:i:s");
-if ($idAlumno && $idMateria && $idAlumno && $nota && $idCalendario) {
-    $sql = "INSERT INTO alumno_rinde_materia(idAlumno,idMateria,idCalendario,llamado,condicion,FechaHoraInscripcion,nota,estado_final, FechaModificacionNota) " .
-           "VALUES ($idAlumno,$idMateria,$idCalendario,1,'Homologacion','$ahora',$nota,'Aprobo','$ahora') ";
-    $resultado = mysqli_query($conex,$sql);
-    if (mysqli_affected_rows($conex)!=-1) {
-      $array_resultados['codigo'] = 100;
-      $array_resultados['data'] = "La Homologación se ha realizado.";
-    } else {
-      $array_resultados['codigo'] = 11;
-      $array_resultados['data'] = "La Homologación NO se ha realizado.";
+$tipificacion_id = $res['id'];
+$anio_actual = date('Y');
+$ahora = date("Y-m-d");
+
+//var_dump($idCarrera,$idMateria,$idAlumno,$nota);exit;
+
+//$idCalendario = getCodigoCalendarioHomologacion($conex);
+
+if ($idAlumno && $idMateria && $idAlumno && $nota) {
+    
+    $objCalendario = new CalendarioAcademico();
+     
+    $param['anio_lectivo'] = $anio_actual;
+    $param['idTipificacion'] = $tipificacion_id;
+    $param['idUsuario'] = $idUsuario;
+    $param['fecha_inicio'] = $ahora;
+    $param['fecha_final'] = $ahora;
+
+    $calendario_id = $objCalendario->save($param);
+
+    //var_dump($calendario_id);exit;
+    
+    if ($calendario_id) {
+        $objAlumnoRindeMateria = new AlumnoRindeMateria();
+        $param1['alumno_id'] = $idAlumno;
+        $param1['materia_id'] = $idMateria;
+        $param1['calendario_id'] = $calendario_id;
+        $param1['llamado'] = 1;
+        $param1['condicion'] = 'Homologacion';
+        $param1['fecha_hora_inscripcion'] = date("Y-m-d H:i:s");
+        $param1['nota'] = $nota;
+        $param1['estado_final'] = 'Aprobo';
+        $param1['usuario_id'] = $idUsuario;
+
+        $res_arm = $objAlumnoRindeMateria->save($param1);
+
+        if ($res_arm) {
+            $array_resultados['codigo'] = 200;
+            $array_resultados['alert'] = "success";
+            $array_resultados['mensaje'] = "La Homologación se ha realizado.";
+        } else {
+            $array_resultados['codigo'] = 500;
+            $array_resultados['alert'] = "danger";
+            $array_resultados['mensaje'] = "No se ha podido guardar la homologación.";
+        }
+
     }
 } else {
-    $array_resultados['codigo'] = 10;
-    $array_resultados['data'] = "Faltan Datos Obligatarios.";
+    $array_resultados['codigo'] = 500;
+    $array_resultados['data'] = "Faltan Datos Obligatorios.";
 }
 echo json_encode($array_resultados);
 

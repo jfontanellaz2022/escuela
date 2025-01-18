@@ -6,3 +6,4 @@
 /public/*
 /vendor/*
 /app/models/DB.php
+/app/lib/tcpdf/*

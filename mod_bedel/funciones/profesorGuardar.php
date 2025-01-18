@@ -1,16 +1,14 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
-
-require_once "Profesor.php";
-require_once "Persona.php";
-require_once "Usuario.php";
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once "verificarCredenciales.php";
 require_once 'SanitizeCustom.class.php';
-
-require_once "_seguridad.php";
+require_once "Persona.php";
+require_once "Profesor.php";
+require_once "Usuario.php";
 
 $entidad = "Profesor";
 
-$id = (isset($_POST['id']) && $_POST['id']!=NULL)?SanitizeCustom::INT($_POST['id']):false;
+$profesor_id = (isset($_POST['id']) && $_POST['id']!=NULL)?SanitizeCustom::INT($_POST['id']):false;
 $apellido = (isset($_POST['apellido']) && $_POST['apellido']!=NULL)?SanitizeCustom::APELLIDO_NOMBRES($_POST['apellido']):false;
 $nombres = (isset($_POST['nombres']) && $_POST['nombres']!=NULL)?SanitizeCustom::APELLIDO_NOMBRES($_POST['nombres']):false;
 $dni = (isset($_POST['dni']) && $_POST['dni']!=NULL)?SanitizeCustom::DOCUMENTO_CUIL($_POST['dni'],8,8):false;
@@ -20,56 +18,94 @@ $telefono_numero = (isset($_POST['telefono_numero']) && $_POST['telefono_numero'
 $email = (isset($_POST['email']) && $_POST['email']!=NULL)?SanitizeCustom::EMAIL($_POST['email']):false;
 $localidad_id = (isset($_POST['localidad_id']) && $_POST['localidad_id']!=NULL)?SanitizeCustom::INT($_POST['localidad_id']):false;
 $fecha_nacimiento = (isset($_POST['fecha_nacimiento']) && $_POST['fecha_nacimiento']!=NULL)?SanitizeCustom::DATE($_POST['fecha_nacimiento']):false;
+
+$persona_id = 0;
 $array_resultados = array();
 $objetoPersona = new Persona;
 $objetoProfesor = new Profesor;
+$objetoUsuario = new Usuario;
 
-if ($id) {
-    $persona_id = $objetoPersona->getPersonaByDni($dni)['id'];
-    $profesor_id = $objetoProfesor->getProfesorByDni($dni)['id'];
+if ($profesor_id) /* UPDATE */ {
+    $persona_id = $objetoProfesor->getById($profesor_id)['idPersona'];
+    //var_dump($persona_id);exit;
+    if ($persona_id) {
+        //*** PERSONA: ACTUALIZA DATOS ****************
+        $param = ['idPersona'=>$persona_id,'dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
+                  'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
+                  'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero];
+        $res = $objetoPersona->save($param);
+        if (!$res) {
+            $array_resultados['codigo'] = 500;
+            $array_resultados['alert'] = 'danger';
+            $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del Profesor (Persona 1).";  
+            echo json_encode($array_resultados);exit;
+        }
+        //******************************************** */
 
-    $idPer = $objetoPersona->save(['id'=>$persona_id,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
-                                'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
-                                'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero]);
-    
-    $idProf = $objetoProfesor->save(['id'=>$profesor_id,'dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres]);
+        //*** PROFESOR: ACTUALIZA DATOS ****************
+        $param_profesor = ['id'=>$profesor_id,'idPersona'=>$persona_id];
+        $res = $objetoProfesor->save($param_profesor);
+        if (!$res) {
+            $array_resultados['codigo'] = 500;
+            $array_resultados['alert'] = 'danger';
+            $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del Profesor (Profesor).";  
+            echo json_encode($array_resultados);exit;
+        }
+        //******************************************** */
 
-    if ($idPer && $idProf) {
-        $array_resultados['codigo'] = 100;
-        $array_resultados['mensaje'] = "Los datos del $entidad fueron Actualizados Exitosamente.";
     } else {
-        $array_resultados['codigo'] = 12;
-        $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del $entidad. ";
-    } 
-    
+        $array_resultados['codigo'] = 500;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del Profesor (Persona 2).";  
+        echo json_encode($array_resultados);exit;
+    }
 
-} else {
-        if (!empty($objetoPersona->getPersonaByDni($dni))) {
-                $persona_id = $objetoPersona->getPersonaByDni($dni)['id'];
-                //die('aca 1');
-                $idPer = $objetoPersona->save(['id'=>$persona_id,'dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
-                                               'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
-                                               'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero]);
-        } else {
-               //die('aca 2');
-                $idPer = $objetoPersona->save(['dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
-                                               'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
-                                               'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero]);
-        };
+    $array_resultados['codigo'] = 200;
+    $array_resultados['alert'] = 'success';
+    $array_resultados['mensaje'] = "El Profesor <strong>$apellido, $nombres</strong> fueron actualizados Exitosamente.";
 
-      //die('aca 3');
-      $idProf = $objetoProfesor->save(['dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres]);
+} else /* INSERT*/ {
+    //*** PERSONA: INSERT DATOS ****************
+    $param = ['dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
+                  'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
+                  'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero];
+    $persona_id = $objetoPersona->save($param);
+    if (!$persona_id) {
+        $array_resultados['codigo'] = 500;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "Hubo un Error en la Creacaión de los datos del Profesor (Persona 1).";  
+        echo json_encode($array_resultados);exit;
+    }
+    //******************************************** 
 
-      $objetoUsuario = new Usuario();
-      $password = md5($dni);
-      $objetoUsuario->save(['dni'=>$dni,'idTipo'=>2,'password'=>$password]);
+    //*** PROFESOR: ACTUALIZA DATOS ****************
+    $param_profesor = ['idPersona'=>$persona_id];
+    $res = $objetoProfesor->save($param_profesor);
+    if (!$res) {
+        $array_resultados['codigo'] = 500;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del Profesor (Profesor).";  
+        echo json_encode($array_resultados);exit;
+    }
+    //******************************************** 
 
-      $array_resultados['codigo'] = 100;
-      $array_resultados['mensaje'] = "El $entidad <strong>$apellido, $nombres</strong> fueron creado Exitosamente.";
-      
-      // $array_resultados['codigo'] = 12;
-      // $array_resultados['mensaje'] = "Hubo un Error en la creación del $entidad. ";
-      
+
+    //*** USUARIO: ACTUALIZA DATOS ****************
+    $param_usuario['nombre'] = $dni;
+    $param_usuario['password'] = $dni;
+    $param_usuario['idRol'] = 3;
+    $param_usuario['idPersona'] = $persona_id;
+    $res = $objetoUsuario->save($param_usuario);
+    if (!$res) {
+        $array_resultados['codigo'] = 500;
+        $array_resultados['alert'] = 'danger';
+        $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del Profesor (Usuario).";  
+        echo json_encode($array_resultados);exit;
+    }
+
+    $array_resultados['codigo'] = 200;
+    $array_resultados['alert'] = 'success';
+    $array_resultados['mensaje'] = "El Profesor se ha creado!.";  
 };
 
 echo json_encode($array_resultados);

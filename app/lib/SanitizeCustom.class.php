@@ -22,7 +22,7 @@ abstract class SanitizeCustom extends SanitizeVars {
   }
 
   public static function DOMICILIO($string, $min='2', $max=''){
-    $patron = "/^[a-zA-Z0-9ñÑ áéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜ°.]*$/";
+    $patron = "/^[a-zA-Z0-9ñÑ áéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜ°.:_-]*$/";
     if (preg_match($patron, $string)) {
       $len = strlen($string);
       if((($min != '') && ($len < $min)) || (($max != '') && ($len > $max))) return FALSE;

@@ -2,21 +2,91 @@
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
 
 require_once "verificarCredenciales.php";
+require_once "Alumno.php";
 require_once "CalendarioAcademico.php";
+require_once "Constantes.php";
 
 $id_url = "menu_examenes";
 $_SESSION['arr_materias_inscriptas_actualizadas'] = [];
 
-/* ACA HACEMOS LAS PRUEBAS ** NO OLVIDAR COMENTAR */
-$c = new CalendarioAcademico();
-$_SESSION['arr_calendario'] = $c->getInscripcionExamenActiva();
+//* OBTENEMOS EL ID DE LA PERSONA Y EL ID DEL ALUMNO  **
+$idPersona = $idAlumno = $idCalendario = $cantidad_llamados = 0;
+$fecha_inicio = $fecha_final = "";
+$hoy = date('Y-m-d');
+
+$idPersona = $_SESSION['arreglo_datos_usuario']['idPersona'];
+$objAlumno = new Alumno();
+$arr_datos_alumno = $objAlumno->getAlumnoByIdPersona($idPersona);
+
+if (!empty($arr_datos_alumno)) {
+  $idAlumno = $arr_datos_alumno['idAlumno'];
+  $_SESSION['idAlumno'] = $idAlumno;
+}
+// ******************************************************
+
+
+$objCalendario = new CalendarioAcademico();
+$arr_datos_calendario = $objCalendario->getLastInscripcionExamen();
+
+if (!empty($arr_datos_calendario)) {
+      $fecha_inicio = $arr_datos_calendario['fecha_inicio'];
+      $fecha_final = $arr_datos_calendario['fecha_final'];
+      if ( strtotime($hoy)>=strtotime($fecha_inicio) && strtotime($hoy)<=strtotime($fecha_final) ) {
+            if ($arr_datos_calendario['codigo']==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO || 
+                  $arr_datos_calendario['codigo']==Constantes::CODIGO_INSCRIPCION_TERCER_TURNO) {
+                  $idCalendario = $arr_datos_calendario['id'];
+                  $_SESSION['arr_calendario']['inscripcion_asociada'] = $idCalendario;
+                  $_SESSION['arr_calendario']['inscripcion_activa'] = $idCalendario;
+                  $cantidad_llamados = 2;
+            } else if ($arr_datos_calendario['codigo']==Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO) {
+                  $idCalendario = $arr_datos_calendario['id'];
+                  $_SESSION['arr_calendario']['inscripcion_asociada'] = $idCalendario;
+                  $_SESSION['arr_calendario']['inscripcion_activa'] = $idCalendario;
+                  $cantidad_llamados = 1;
+            } else if ($arr_datos_calendario['codigo']==Constantes::CODIGO_INSCRIPCION_INTERMEDIA_PRIMER_TURNO ||
+                      $arr_datos_calendario['codigo']==Constantes::CODIGO_INSCRIPCION_INTERMEDIA_SEGUNDO_TURNO) {
+                  $idCalendario = $objCalendario->getLastInscripcionExamen()['id'];
+                  $_SESSION['arr_calendario']['inscripcion_asociada'] = $idCalendario;
+                  $_SESSION['arr_calendario']['inscripcion_activa'] = $arr_datos_calendario['id'];
+                  $cantidad_llamados = 2;
+            }
+            $_SESSION['arr_calendario']['cantidad_llamados'] = $cantidad_llamados;
+      } else { 
+            $arr_datos_calendario = $objCalendario->getLastInscripcionExamenConIntermedias();
+            //var_dump($arr_datos_calendario);exit;
+            //$idCalendario = $arr_datos_calendario['']
+            $fecha_inicio = $arr_datos_calendario['fecha_inicio'];
+            $fecha_final = $arr_datos_calendario['fecha_final'];
+            if ( strtotime($hoy)>=strtotime($fecha_inicio) && strtotime($hoy)<=strtotime($fecha_final) ) {
+                //die('entroo');
+                $_SESSION['arr_calendario']['inscripcion_asociada'] = $objCalendario->getLastInscripcionExamen()['id'];
+                $_SESSION['arr_calendario']['inscripcion_activa'] = $arr_datos_calendario['id'];
+                //var_dump($_SESSION['arr_calendario']);exit;
+            } else {
+                $_SESSION['arr_calendario']['inscripcion_activa'] =  $idCalendario;
+            }
+          //die('nada activo');
+      }
+}
+
+
+
 
 //var_dump($_SESSION['arr_calendario']);die;
+
+//$_SESSION['arr_calendario']['inscripcion_activa'] = $idCalendario;
+
+
+
+
+//$_SESSION['arr_calendario']['inscripcion_activa'];
+//$calendario_id = $_SESSION['arr_calendario']['inscripcion_asociada'];
+//$cantidad_llamados = $_SESSION['arr_calendario']['cantidad_llamados'];
+
 $disabledClass = 'disabledbutton';
 if (!$_SESSION['arr_calendario']['inscripcion_activa']==0) {
   $disabledClass = '';
 }
-
 
 ?>
 
@@ -70,12 +140,12 @@ if (!$_SESSION['arr_calendario']['inscripcion_activa']==0) {
 <!-- JAVASCRIPT CUSTOM -->
 <script>
 $("document").ready(function() {
-   cargarCarrerasExamenes(<?php $_SESSION['idAlumno'];?>);
+   cargarCarrerasExamenes(<?=$_SESSION['idAlumno'];?>);
 })
 function expired() {
   location.href = "../logout.php";
 }
-setTimeout(expired, 60000*20);
+//setTimeout(expired, 60000*20);
 
 
 //*************************************************************************************
@@ -99,11 +169,11 @@ function cargarCarrerasExamenes(idAlumno) {
   //Remuevo la class que me deshabilita
   $("#resultado").removeClass("disabledbutton");
   let parametros = {'alumno':idAlumno};
-  $.post( "./funciones/getCarrerasPorIdAlumno.php", parametros, function( data ) {
+  $.post( "../API/findAllCarrerasPorAlumno.php", parametros, function( response ) {
     $("#breadcrumb").html(bread);
     $("#titulo").html(titulo+subtitulo);
     $("#resultado").html("");
-    data.datos.forEach(carrera => {
+    response.datos.forEach(carrera => {
        let resul = `<div class="col-md-4">
              <div class="card" style="width: 18rem;">
                      <img src="../public/img/`+carrera.imagen+`" class="card-img-top">
@@ -145,33 +215,33 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
          $("#resultado").html();
          table1 = `<table class="table table-striped" id="tabla_examen">
               <thead>
-              <tr><th colspan=4 style='text-align: center;background-color: #1692ED;' >INSCRIPCIÓN A EXÁMENES FINALES</th></tr>
+              <tr><th colspan=4 style='text-align: center;background-color:rgb(22, 237, 58);' >INSCRIPCIÓN A EXÁMENES FINALES</th></tr>
               <tr><th>&nbsp;</th><th scope="col" align='center' >Materia</th><th scope="col" align='center'>Inscribirse</th></tr>
               </thead>  
               <tbody>`;
          table2 = `</tbody>
               <tfoot><td colspan=3><button class='btn btn-primary btn-block' onclick='persistirInscripciones(`+carrera_id+`)'>Confirmar</button></td></tfoot>
-              </table>`;     
+              </table>`;    
          data.forEach(materia => {
-                if (materia['estado']==1) {
+                if (materia['estado_inscripcion']==1) {
                           filas += `<tr class=''>
                                         <td id='col_`+materia.materia_id+`'></td>
-                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br><strong>Cursado: `+materia.cursado+`</strong></br><strong>Año: </strong>`+materia.anio+`<br><strong>Fecha Exámen: `+materia.fecha+`</strong></td>
+                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
                                         <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
                     
-                } else if (materia['estado']==2) {
+                } else if (materia['estado_inscripcion']==2) {
                           filas += `<tr style="cursor:default">
                                         <td id='col_`+materia.materia_id+`'><span class="badge badge-success">Inscripto</span></td>
-                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br><strong>Cursado: `+materia.cursado+`</strong></br><strong>Año: </strong>`+materia.anio+`<br><strong>Fecha Exámen: `+materia.fecha+`</strong></td>
+                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
                                         <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
-                } else if (materia['estado']==3) {
+                } else if (materia['estado_inscripcion']==3) {
                           filas += `<tr class='disabledbutton'>
                                         <td id='col_`+materia.materia_id+`'><span class="badge badge-success">Inscripto</span></td>
-                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br><strong>Cursado: `+materia.cursado+`</strong></br><strong>Año: </strong>`+materia.anio+`<br><strong>Fecha Exámen: `+materia.fecha+` </strong></td>
+                                        <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
                                         <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
@@ -186,7 +256,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
 
 function guardarIncripcion(val,id) {
 
-    $.post('./funciones/setMateriasParaRendir.php',{"materia_id":id,"inscribir":val},function(data){
+    $.post('../API/setMateriasParaRendir.php',{"materia_id":id,"inscribir":val},function(data){
         if (data.res=='Si') {
           Swal.fire({
               title: "Actualización Realizada!",
@@ -209,7 +279,7 @@ function guardarIncripcion(val,id) {
 
 
 function persistirInscripciones(carrera) {
-  $.post("./funciones/persistirInscripcionesParaRendir.php",{"carrera_id":carrera},function(data) {
+  $.post("../API/insertInscripcionesParaRendir.php",{"carrera_id":carrera},function(data) {
       Swal.fire({
             title: "Actualización Realizada!",
             text: "La inscripción se ha Confirmado.",

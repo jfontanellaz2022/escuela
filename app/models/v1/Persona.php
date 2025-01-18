@@ -71,6 +71,7 @@ class Persona {
 
 	/* Get Persona by Dni */
 	public function getPersonaByEmail($email){
+		var_dump($email);exit;
 		$this->getConection();
 		$sql = "SELECT * FROM " . $this->table . " WHERE email = ?";
 		$stmt = $this->conection->prepare($sql);

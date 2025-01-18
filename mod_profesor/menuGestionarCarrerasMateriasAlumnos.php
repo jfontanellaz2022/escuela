@@ -1,8 +1,6 @@
 <?php
   set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
-
   require_once "verificarCredenciales.php";
-       
   $id_pagina = 'carreras';
 ?>
 
@@ -90,7 +88,7 @@
    
    let carrera_id = '';
    let profesor_id = '<?=$_SESSION['id_profesor'];?>';
-   let arr_eventos_activos = <?=json_encode($_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS']);?>;
+   let arr_eventos_activos = '';
    let materia_id = '';
    let materia_nombre = '';
    let opcion = 'cursado';
@@ -105,7 +103,7 @@
       cargarCarreras(profesor_id);
    });
 
-   setTimeout(expired, 60000*20);
+   //setTimeout(expired, 60000*20);
 
 </script>
 

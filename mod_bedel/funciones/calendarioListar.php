@@ -1,5 +1,5 @@
 <?php
-set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
 include_once 'Sanitize.class.php';
 include_once 'pagination.php';
@@ -138,7 +138,6 @@ if($action == 'listar'){
 			$finales = $c = 0;
 			foreach ($arr_objetos as $fila) {
 						$c++;
-						$indice = $pagina + $c;
 						$rowIdCampo1 = $fila['id']; 
 						//$hashId = ArrayHash::encode(array($MY_SECRET=>$rowIdCampo1));
 						$rowCampo2 = $fila['anio_lectivo'];

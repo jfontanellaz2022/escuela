@@ -1,5 +1,5 @@
 <?php
-set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
 require_once 'verificarCredenciales.php';
 require_once 'Sanitize.class.php';
@@ -13,7 +13,7 @@ $evento = (isset($_POST['evento']) && $_POST['evento']!=NULL)?SanitizeVars::INT(
 $fecha_inicio = (isset($_POST['fecha_inicio']) && $_POST['fecha_inicio']!=NULL)?SanitizeVars::DATE($_POST['fecha_inicio']):false;
 $fecha_final = (isset($_POST['fecha_finalizacion']) && $_POST['fecha_finalizacion']!=NULL)?SanitizeVars::DATE($_POST['fecha_finalizacion']):false;
 
-//die($anio_lectivo."&&".$evento."&&".$fecha_inicio."&&".$fecha_finalizacion);
+//die($anio_lectivo."&&".$evento."&&".$fecha_inicio."&&".$fecha_final);
 
 $arr_resultados = array();
 $arr_param = [];
