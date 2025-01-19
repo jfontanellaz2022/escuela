@@ -1,9 +1,16 @@
 <?php
+// PERMITE A BEDELES Y PROFESORES
 session_start();
-if (!in_array('Profesor',$_SESSION['arreglo_credenciales_usuario']) && 
-    !in_array('Alumno',$_SESSION['arreglo_credenciales_usuario'])) {
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+if ( !isset($_SESSION['arreglo_credenciales_usuario']) ) {
     session_destroy();
     header('location: ../index.php');
-} 
+};
+
+if ( !in_array($_SESSION['arreglo_credenciales_usuario'],['Profesor','Bedel']) ) {
+    session_destroy();
+    header('location: ../index.php');
+};
 
 ?>

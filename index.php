@@ -1,10 +1,13 @@
 <?php
 set_include_path('./app/models/'.PATH_SEPARATOR.'./app/lib'.PATH_SEPARATOR.'./');
-require_once 'Parameters.php';
 session_start();
-$_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
+require_once 'Parameters.php';
+require_once "Carrera.php";
 
-//header(' location: ./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+$_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
+$ARREGLO_CARRERAS = [];
+$objCarrera = new Carrera();
+$ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 
 ?>
 <!DOCTYPE html>
@@ -241,16 +244,22 @@ $_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
 
           <div class="modal-body"> <!--Cuerpo del modal-->
             <form action=""> <!--Aquí iría el recuperarCuenta.php-->
+ 
+              
               <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
-                <label for="inputDescargarInscripcionAnio" class="form-label">Año del Ingreso</label>
-                <select id="inputDescargarInscripcionAnio" class="form-select" aria-label="Default select example">
-                  <option value="2025" selected>2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
+                <label for="inputDescargarInscripcionCarrera" class="form-label">Carrera</label>
+                <select id="inputDescargarInscripcionCarrera" class="form-select" aria-label="Default select example">
+                <option value="">** Seleccionar Carrera **</option>
+                <?php
+                                 if (count($ARREGLO_CARRERAS)>0) {
+                                     foreach($ARREGLO_CARRERAS as $item) {
+                                         echo "<option value='" . $item['id'] . "'>" . $item['descripcion'] . "(" . $item['id'] . ")</option>";
+                                     }
+                                 }
+                            ?>
                 </select>
               </div>
-  
- 
+
               <div class="mb-3"> <!--Ingresar correo electrónico -->
                 <label for="inputDescargarInscripcionDni" class="form-label">Número de DNI</label>
                 <input type="text" id="inputDescargarInscripcionDni" class="form-control" placeholder="Ingrese DNI" maxlength=8 aria-describedby="passwordHelpBlock">
@@ -268,7 +277,7 @@ $_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
           </div>
 
           <div class="modal-footer"> <!--Pie del modal-->
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Volver al inicio</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="location.href='./index.php'">Volver al inicio</button>
             <button type="button" id="btnDescargarInscripcion" class="btn btn-primary" >Descargar</button>
           </div>
         </div>
@@ -354,27 +363,29 @@ $('#btnRestablecer').click(function(event) {
 
 
 $('#btnDescargarInscripcion').click(function(event) {
-      let anio = $('#inputDescargarInscripcionAnio').val();
+      let carrera = $('#inputDescargarInscripcionCarrera').val();
       let dni = $('#inputDescargarInscripcionDni').val();
       let captcha = $('#inputDescargarInscripcionCaptcha').val();
-      let token = $('#inputToken').val();
+      let link = "API/findInscripcionPorDni.php";
+      let parametros = {'carrera':carrera,'dni':dni,'codigo':captcha}
 
-      let parametros = {'inputAnio':anio,'inputDni':dni, "inputCodigo":captcha, 'token':token}
-      let link = "ajax/descargarInscripcion.php";
-
-      $.post(link,parametros,function(response) {
-               console.info(response);
-               $("#msg_descargar_inscripcion").removeClass("d-none");
-               if (response.codigo==200) {
-                    $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><img src="./public/img/icons/ok_icon.png" width="20">&nbsp;'+response.mensaje+'</div>');
-                    $('#inputDescargarInscripcionAnio').prop("disabled",true);
-                    $('#inputDescargarInscripcionDni').prop("disabled",true);
-                    $('#inputDescargarInscripcionCaptcha').prop("disabled",true);
-                    $('#btnDescargarInscripcion').prop("disabled",true);
-               } else {
-                    $("#msg_descargar_inscripcion").html('<div class="alert alert-'+response.class+'" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;'+response.mensaje+'</div>');
-               } 
-      },"json");
+      if (carrera && dni && captcha) {
+            $.post(link,parametros,function(response) {
+                    console.info(response);
+                    $("#msg_descargar_inscripcion").removeClass("d-none");
+                    if (response.codigo==200) {
+                          $("#msg_restablecer").html('<div class="alert alert-'+response.alert+'" role="alert"><img src="./public/img/icons/ok_icon.png" width="20">&nbsp;'+response.mensaje+'</div>');
+                          $('#inputDescargarInscripcionDni').prop("disabled",true);
+                          $('#inputDescargarInscripcionCaptcha').prop("disabled",true);
+                          $('#btnDescargarInscripcion').prop("disabled",true);
+                          $("#msg_descargar_inscripcion").html('<div class="alert alert-'+response.alert+'" role="alert">Para descargar la Inscripción hacer click <a href="'+response.url+'" target="_blank">Aquí</a>.</div>');
+                    } else {
+                          $("#msg_descargar_inscripcion").html('<div class="alert alert-'+response.alert+'" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;'+response.mensaje+'</div>');
+                    } 
+            },"json");
+     } else {
+      $("#msg_descargar_inscripcion").html('<div class="alert alert-danger" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;No ha completado todos los campos.</div>');
+     }
 });
 
 

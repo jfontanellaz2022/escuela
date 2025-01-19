@@ -1,10 +1,17 @@
 <?php
+// PERMITE A ALUMNOS BEDELES Y PROFESORES
 session_start();
-if (($_SESSION['tipoUsuario']!='1')||(!$_SESSION['tipoUsuario'])) {
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+if ( !isset($_SESSION['arreglo_credenciales_usuario']) ) {
     session_destroy();
-    header('location: http://www.escuela40.net');
-}
+    header('location: ../index.php');
+};
 
-
+if ( !in_array($_SESSION['arreglo_credenciales_usuario'],['Alumno','Profesor','Bedel']) ) {
+    session_destroy();
+    header('location: ../index.php');
+};
 
 ?>
+

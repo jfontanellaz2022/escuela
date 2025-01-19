@@ -36,7 +36,7 @@ function sacaMateriaPorAnio($anio) {
    if ($valor[2]==$anio) {
      $param = base64_encode($parametros.'_'.$valor[0]);
      $str.= "<tr id='tr_{$parametros}_{$valor[0]}' >"
-          . " <td style='text-align: left;'><a href=\"./funciones/PDF_ActaExamen.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
+          . " <td style='text-align: left;'><a href=\"../API/reporteActaExamenes.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
           . " <td style='text-align: center;'>$valor[3]</td> " 
           . "</tr> ";
      $band=true;

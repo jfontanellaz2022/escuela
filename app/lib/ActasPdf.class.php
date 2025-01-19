@@ -6,7 +6,7 @@ class ActasPdf extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-        $image_file = '../../public/assets/img/logo_n.jpg';
+        $image_file = '../public/assets/img/logo_n.jpg';
         //$image_file = '';
         $this->Image($image_file, 10, 4, 20, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 				//          (arch       ,  coord_x, coord_y, tamanio

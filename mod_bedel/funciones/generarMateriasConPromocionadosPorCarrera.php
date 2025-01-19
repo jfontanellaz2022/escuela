@@ -53,7 +53,7 @@ function sacaMateriaPorAnio($anio) {
           ." onclick=\"window.open('./funciones/PDF_ActaPromocionados.php?parametros=".$param."','_blank')\">"
           ."<td style='text-align: left;'>$valor[1]</td><td style='text-align: center;'>$valor[3]</td></tr>";*/
      $str.= "<tr id='tr_{$parametros}_{$valor[0]}' >"
-          . " <td style='text-align: left;'><a href=\"./funciones/PDF_ActaPromocionados.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
+          . " <td style='text-align: left;'><a href=\"../API/reporteActaPromocionados.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
           . " <td style='text-align: center;'>$valor[3]</td> " 
           . "</tr> ";
      $band=true;

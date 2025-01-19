@@ -7,6 +7,6 @@ class Parameters {
 	const VALOR_DB_PASSWORD = '';
 
 	const VALOR_SECRET = '1436ae7d13b8f453d623a7b22080b0e';
-	const VALOR_URL = 'http://localhost/';
+	const VALOR_URL = 'http://localhost/ens40_2912';
 
 }

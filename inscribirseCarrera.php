@@ -53,7 +53,9 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
                 <li><a class="dropdown-item" href="#">¡Inscribirse ahora!</a></li>
                 <li><a class="dropdown-item disabled" href="#">Oferta académica</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item disabled" href="#">Descargar comprobante</a></li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalDescargarInscripcion">Comprobante Inscripción</a>
+                </li>
               </ul>
             </li>
 
@@ -315,6 +317,60 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
         </div>
       </div>
     </div>
+
+
+<!-- Modal: Descargar Inscripcion -->
+<div class="modal fade" id="modalDescargarInscripcion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header"> <!--Encabezado del modal-->
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Descargar Inscripción</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body"> <!--Cuerpo del modal-->
+            <form action=""> <!--Aquí iría el recuperarCuenta.php-->
+ 
+              
+              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
+                <label for="inputDescargarInscripcionCarrera" class="form-label">Carrera</label>
+                <select id="inputDescargarInscripcionCarrera" class="form-select" aria-label="Default select example">
+                <option value="">** Seleccionar Carrera **</option>
+                <?php
+                                 if (count($ARREGLO_CARRERAS)>0) {
+                                     foreach($ARREGLO_CARRERAS as $item) {
+                                         echo "<option value='" . $item['id'] . "'>" . $item['descripcion'] . "(" . $item['id'] . ")</option>";
+                                     }
+                                 }
+                            ?>
+                </select>
+              </div>
+
+              <div class="mb-3"> <!--Ingresar correo electrónico -->
+                <label for="inputDescargarInscripcionDni" class="form-label">Número de DNI</label>
+                <input type="text" id="inputDescargarInscripcionDni" class="form-control" placeholder="Ingrese DNI" maxlength=8 aria-describedby="passwordHelpBlock">
+              </div>
+
+              <div class="mb-3"> <!--Ingresar correo electrónico -->
+                <img src="./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5" alt="Captcha" id='img_captcha'/>&nbsp;
+                <input class="form-control mr-sm-2" type="text" placeholder="Ingrese Codigo" aria-label="Search" id='inputDescargarInscripcionCaptcha' maxlength="5" required >&nbsp;
+              </div>       
+              <!--Aquí iría el Captcha-->
+
+              <div id="msg_descargar_inscripcion" class="mb-3 d-none"> <!--Ingresar correo electrónico -->
+              </div> 
+
+          </div>
+
+          <div class="modal-footer"> <!--Pie del modal-->
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="location.href='./index.php'">Volver al inicio</button>
+            <button type="button" id="btnDescargarInscripcion" class="btn btn-primary" >Descargar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <footer class="pt-4 pb-4 bg-body-tertiary text-center"> <!--Pie de página-->
@@ -523,6 +579,32 @@ $('#btnRestablecer').click(function(event) {
                     $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;'+response.mensaje+'</div>');
                } 
       },"json");
+});
+
+$('#btnDescargarInscripcion').click(function(event) {
+      let carrera = $('#inputDescargarInscripcionCarrera').val();
+      let dni = $('#inputDescargarInscripcionDni').val();
+      let captcha = $('#inputDescargarInscripcionCaptcha').val();
+      let link = "API/findInscripcionPorDni.php";
+      let parametros = {'carrera':carrera,'dni':dni,'codigo':captcha}
+
+      if (carrera && dni && captcha) {
+            $.post(link,parametros,function(response) {
+                    console.info(response);
+                    $("#msg_descargar_inscripcion").removeClass("d-none");
+                    if (response.codigo==200) {
+                          $("#msg_restablecer").html('<div class="alert alert-'+response.alert+'" role="alert"><img src="./public/img/icons/ok_icon.png" width="20">&nbsp;'+response.mensaje+'</div>');
+                          $('#inputDescargarInscripcionDni').prop("disabled",true);
+                          $('#inputDescargarInscripcionCaptcha').prop("disabled",true);
+                          $('#btnDescargarInscripcion').prop("disabled",true);
+                          $("#msg_descargar_inscripcion").html('<div class="alert alert-'+response.alert+'" role="alert">Para descargar la Inscripción hacer click <a href="'+response.url+'" target="_blank">Aquí</a>.</div>');
+                    } else {
+                          $("#msg_descargar_inscripcion").html('<div class="alert alert-'+response.alert+'" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;'+response.mensaje+'</div>');
+                    } 
+            },"json");
+     } else {
+      $("#msg_descargar_inscripcion").html('<div class="alert alert-danger" role="alert"><img src="./public/img/icons/error_icon1.png" width="20">&nbsp;No ha completado todos los campos.</div>');
+     }
 });
 
 $("#modalOlvideContrasenia").on('hide.bs.modal', function(){

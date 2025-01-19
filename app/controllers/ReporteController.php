@@ -12,7 +12,7 @@ class ReporteController {
 		$this->conection = $dbObj->conection;
 	}
 
-	public function getReporteInscripcion($dni,$anio){
+	public function getReporteInscripcion($dni,$anio,$carrera_id){
         $this->getConection();
 
         $sql = "SELECT c.descripcion as 'NombreCarrera', p.nombre as 'Nombre', p.apellido as 'Apellido', 
@@ -26,16 +26,15 @@ class ReporteController {
          WHERE p.dni = ? AND
                p.id = a.idPersona AND 
                a.id = ac.idAlumno AND 
+               ac.idCarrera = ? AND 
                ac.idCarrera = c.id AND 
                ac.anio = ? AND
                p.idLocalidad = loc.id AND
                loc.idProvincia = prov.id ";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$dni,$anio]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->execute([$dni,$carrera_id,$anio]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     
     }
 }
 
-$obj = new ReporteController();
-var_dump($obj->getReporteInscripcion('94426705',2025));
