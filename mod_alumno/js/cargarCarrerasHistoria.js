@@ -7,7 +7,7 @@ function obtenerMateriasPorCarrera(idCarrera) {
   let parametros = {"carrera":idCarrera};
   let arr_materias;
   $.ajax({
-    url: '../API/findAllMateriasPorCarrera.php',
+    url: "../API/findAllMateriasPorCarrera.php?token=<?=$_SESSION['token'];?>",
     type: 'POST',
     data: parametros,
     dataType: "json",
@@ -25,7 +25,7 @@ function obtenerMateriasAprobadasPorAlumnoPorCarrera(idAlumno, idCarrera) {
   let parametros = {"alumno":idAlumno,"carrera":idCarrera};
   let arr_materias;
   $.ajax({
-    url: '../API/findMateriasAprobadasPorAlumnoPorCarrera.php',
+    url: "../API/findMateriasAprobadasPorAlumnoPorCarrera.php?token=<?=$_SESSION['token'];?>",
     type: 'POST',
     data: parametros,
     dataType: "json",
@@ -58,7 +58,7 @@ function cargarCarrerasHistoria(idAlumno) {
   $("#grafica").addClass('d-none');
   $("#resultado").removeClass("disabledbutton");
   let parametros = {'alumno':idAlumno};
-  $.post( "../API/findAllCarrerasPorAlumno.php", parametros, function( data ) {
+  $.post( "../API/findAllCarrerasPorAlumno.php?token=<?=$_SESSION['token'];?>", parametros, function( data ) {
     $("#breadcrumb").html(bread);
     $("#titulo").html(titulo);
     $("#resultado").html("");

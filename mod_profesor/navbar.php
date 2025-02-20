@@ -21,7 +21,7 @@
    </li>
 
   <li class="nav-item nav-item-regularidades <?php echo ($id_pagina == 'regularidades')?'active':'';?>">
-    <a href="menuGestionarRegularidadesPromociones.php" class="nav-link">
+    <a href="menuGestionarRegularidadesPromociones.php" class="nav-link disabled">
       Regularidades
       <span class="sr-only">(current)</span></a>
   </li>

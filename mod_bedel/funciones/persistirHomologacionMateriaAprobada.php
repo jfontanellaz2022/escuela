@@ -1,14 +1,10 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/class/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
-
 require_once 'verificarCredenciales.php';
-
 require_once 'Sanitize.class.php';
-
 require_once 'Tipificacion.php';
 require_once 'CalendarioAcademico.php';
 require_once 'AlumnoRindeMateria.php';
-
 require_once 'Constantes.php';
 
 //var_dump($_SESSION['arreglo_datos_usuario']);exit;

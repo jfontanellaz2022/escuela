@@ -1,9 +1,7 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
-
 require_once "verificarCredenciales.php";
 require_once 'Sanitize.class.php';
-
 require_once 'AlumnoEstudiaCarrera.php';
 
 $idCarrera = SanitizeVars::INT($_POST['carrera_id']);

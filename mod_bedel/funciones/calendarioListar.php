@@ -1,19 +1,11 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
-
-include_once 'Sanitize.class.php';
-include_once 'pagination.php';
-
+require_once 'verificarCredenciales.php';
+require_once 'Sanitize.class.php';
+require_once 'pagination.php';
 require_once 'CalendarioAcademicoFilter.php';
-//require_once "_seguridad.php";
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
-
-$rol_usuario = '';
-//$rol_admin = ($_SESSION['user_rol']=='admin' || $_SESSION['user_rol']=='SYSTEM')?'':'disabledbutton';
-
-$rol_admin = '';
-
 
 /**********************************************************************************************************************************************************************/
 /**************************************************************** RECIBIR PARAMETROS Y SANITIZARLOS *******************************************************************/
@@ -99,8 +91,8 @@ if($action == 'listar'){
                <table class="table borderless" width="100%">
                   <tr>
                   <th class="text-left" colspan="12">
-                    <button class="btn btn-primary rol_admin" onclick="entidadCrear()">Agregar</button>&nbsp;
-                    <button class="btn btn-primary rol_admin" onclick="entidadEliminarSeleccionados()">Borrar Seleccionados</button>&nbsp;
+                    <button class="btn btn-primary " onclick="entidadCrear()">Agregar</button>&nbsp;
+                    <button class="btn btn-primary " onclick="entidadEliminarSeleccionados()">Borrar Seleccionados</button>&nbsp;
                   </th>
                   
                 </tr>  

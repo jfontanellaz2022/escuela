@@ -1,9 +1,8 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
-
+require_once "verificarCredenciales.php";
 require_once "conexion.php";
 require_once "Sanitize.class.php";
-require_once "_seguridad.php";
 
 ini_set("default_charset", "UTF-8");
 mb_internal_encoding("UTF-8");

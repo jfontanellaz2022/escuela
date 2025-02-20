@@ -18,7 +18,8 @@ class Db {
 		try {
            $this->conection = new PDO('mysql:host='.$this->host.'; dbname='.$this->db.';charset=utf8mb4', $this->user, $this->pass);
         } catch (PDOException $e) {
-            echo $e->getMessage();
+			include_once "./error403.html";
+            //echo $e->getMessage();
             exit();
         }
 

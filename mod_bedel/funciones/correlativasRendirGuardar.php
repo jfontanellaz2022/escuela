@@ -1,9 +1,9 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
+require_once "verificarCredenciales.php";
+require_once "Sanitize.class.php";
 require_once "CorrelativasParaRendir.php";
-require_once 'Sanitize.class.php';
-require_once '_seguridad.php';
 
 //$accion = (isset($_POST['accion']) && $_POST['accion']!=NULL)?SanitizeVars::STRING($_POST['accion']):false;
 $id = (isset($_POST['id']) && $_POST['id']!=NULL)?SanitizeVars::INT($_POST['id']):false;
@@ -28,10 +28,10 @@ if ($materia_id && $materia_requerida_id && $condicion_id) {
       $res = $correlativas->save($arr_argumentos); 
                  
       if ($res) {
-         $arr_resultados['codigo'] = 100;
+         $arr_resultados['codigo'] = 200;
          $arr_resultados['mensaje'] = "Los datos de la $entidad fueron Actualizados Exitosamente.";
       } else {
-         $arr_resultados['codigo'] = 12;
+         $arr_resultados['codigo'] = 500;
          $arr_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos de la $entidad. ";
       }
 

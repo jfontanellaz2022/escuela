@@ -93,8 +93,8 @@ public function save($param){
 			$exists = true;	
 			//* Actual values 
 			$this->id = $param["id"];
-			$this->idCalendario = $actualObjeto["idCalendario"];
-			$this->idMateria = $actualObjeto["idMateria"];
+			$this->idCalendario = $actualObjeto["calendario_id"];
+			$this->idMateria = $actualObjeto["materia_id"];
 			$this->llamado = $actualObjeto["llamado"];
 			$this->fecha_examen = $actualObjeto["fecha_examen"];
 		}
@@ -105,7 +105,7 @@ public function save($param){
 	if(isset($param["idMateria"])) $this->idMateria = $param["idMateria"];
 	if(isset($param["llamado"])) $this->llamado = $param["llamado"];
 	if(isset($param["fecha_examen"])) $this->fecha_examen = $param["fecha_examen"];
-
+	//var_dump("hola",$param);exit;
 	//* Database operations 
 	$code = 0;
 	if($exists){

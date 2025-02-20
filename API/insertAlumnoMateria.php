@@ -9,8 +9,16 @@ $idMateria = (isset($_POST['materia']) && $_POST['materia']!=NULL)?SanitizeVars:
 $idAlumno = (isset($_POST['alumno']) && $_POST['alumno']!=NULL)?SanitizeVars::INT($_POST['alumno']):false;
 $codigo_cursado = (isset($_POST['cursado']) && $_POST['cursado']!=NULL)?SanitizeVars::STRING($_POST['cursado']):false;
 
-$array_resultados = array();
-
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 $objCursado = new Tipificacion();
 
 // 201 - Presencial | 202 - Semipresencial | 203 - Libre 

@@ -29,11 +29,16 @@ function generarCodigo() {
 
 $email = SanitizeCustom::EMAIL($_POST['inputEmail']);
 $codigo = SanitizeCustom::STRING($_POST['inputCodigo']);
-
-//var_dump($_SESSION['security_code'].'-'.$email.'-'.$codigo);exit;
-
-
-$arr_resultado = [];
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 
 if ($email && $codigo) {
     if ($_SESSION['security_code']==strtoupper($codigo)) {
@@ -138,7 +143,7 @@ if ($email && $codigo) {
     
 } else {
     $arr_resultado['codigo'] = 504;
-    $arr_resultado['mensaje'] = 'Debe completar todos los campos de texto.';
+    $arr_resultado['mensaje'] = 'El formato de email es incorrecto / debe completar todos los campos de texto.';
     $arr_resultado['class'] = 'danger';
 }
 

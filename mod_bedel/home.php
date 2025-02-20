@@ -2,6 +2,7 @@
 set_include_path('./');
 require_once 'verificarCredenciales.php';
 $dni = 24912834;
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -70,7 +71,7 @@ function load() {
   
 
 function cambiarPassword() {
-    $.get("./html/passwordModificar.html", function(data) {
+    $.get("./html/passwordModificar.html?token=<?=$_SESSION['token'];?>", function(data) {
             $("#section_principal").html(data);
     });
 }
@@ -81,17 +82,17 @@ function guardarPassword() {
     let password_re_nueva = $("#inputRePasswordNueva").val();
     let parametros = {"dni":<?=$dni?>,"password_actual":password_actual,"password_nueva":password_nueva,"password_re_nueva":password_re_nueva}
     if ( password_nueva==password_re_nueva) {
-        $.post("./funciones/passwordModificar.php",parametros,function(datos){
+        $.post("./funciones/passwordModificar.php?token=<?=$_SESSION['token'];?>",parametros,function(datos){
                 if (datos.codigo == 100) {
                     $("#section_footer").html();
-                    $("#section_footer").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                    $("#section_footer").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                                 `+datos.mensaje+`</span></i>
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button></div></div>`);
                     habilitarControles(true);                             
                 } else {
-                    $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                    $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                                 `+datos.mensaje+`</span></i>
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -100,7 +101,7 @@ function guardarPassword() {
                 }
         },"json");
     } else {
-        $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+        $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                                 La contraseña no coincide con la repetición.</span></i>
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>

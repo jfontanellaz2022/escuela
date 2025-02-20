@@ -5,6 +5,7 @@ class Usuario extends Persona
 {
     protected $table = 'usuario';
 	protected $conection;
+    private $id;
 	
 	public function __construct() {
 		

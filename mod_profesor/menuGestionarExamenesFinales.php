@@ -1,36 +1,85 @@
 <?php
 
-  set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
-  require_once "verificarCredenciales.php";
-  require_once 'CalendarioAcademico.php';
-  require_once 'Constantes.php';
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
+require_once "verificarCredenciales.php";
+require_once 'CalendarioAcademico.php';
+require_once 'Constantes.php';
   
-  $calendario = new CalendarioAcademico();
+$calendario = new CalendarioAcademico();
  
-  $arr_datos_inscripcion = $arr_datos_turno = $arr_datos_llamado = [];
+$arr_datos_inscripcion = $arr_datos_turno = $arr_datos_llamado = [];
+$cantidad_llamados = $inscripcion_activa = $inscripcion_asociada = $llamado1_activo = $llamado2_activo = 0;
+$disabledVerCarreras = $disabledVerLlamado1 = $disabledVerMateriasLlamado1 = $disabledVerAlumnosLlamado1 = $disabledPonerNotasAlumnosLlamado1 = "";
+$disabledVerLlamado2 = $disabledVerMateriasLlamado2 = $disabledVerAlumnosLlamado2 = $disabledPonerNotasAlumnosLlamado2 = "";
 
-  $cantidad_llamados = $inscripcion_activa = $inscripcion_asociada = $llamado1_activo = $llamado2_activo = 0;
+$arr_datos_turno = $calendario->getLastTurnoExamen();
+//var_dump($arr_datos_turno);exit;
+$fecha_actual = strtotime(date("d-m-Y H:i:00",time()));
+$fecha_inicio = !is_null($arr_datos_turno['fecha_inicio'])?strtotime($arr_datos_turno['fecha_inicio']):NULL;
+$fecha_final = !is_null($arr_datos_turno['fecha_final'])?strtotime($arr_datos_turno['fecha_final']):NULL; 
 
-  $arr_datos_turno = $calendario->getLastTurnoExamen();
+// SI EXISTE TURNO ACTIVO
+if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
+    // DETERMINAR LA CANTIDAD DE LLAMADOS EN FUNCION DEL TURNO (1er,2do,3er,Mesa Especial)
+    if ($arr_datos_turno['codigo']==Constantes::CODIGO_PRIMER_TURNO) {
+      $cantidad_llamados = 2;
+    } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_SEGUNDO_TURNO) {
+        $cantidad_llamados = 1;
+    } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_TERCER_TURNO) {
+        $cantidad_llamados = 2;
+    } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_MESA_ESPECIAL_TURNO) {
+        $cantidad_llamados = 1;
+    }
+
+    $_SESSION['turno_id'] = $arr_datos_turno['id'];
+
+    //var_dump($_SESSION['turno_id'],$arr_datos_turno);exit;
+
+    $disabledVerCarreras = $disabledVerMaterias = $disabledVerAlumnos = "";
+    $disabledPonerNotasAlumnos = "disabledbutton";
+
+    // *********  SACAR LOS PERIODOS CORRESPONDIENTES A LOS LLAMADOS *************
+    if ($cantidad_llamados==2) {
+      if (empty($arr_datos_llamado)) {
+        //var_dump('entroooo',$calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO));exit;
+        $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
+        $arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO);
+      };
+    } else if ($cantidad_llamados==1) {
+        if (empty($arr_datos_llamado)) {
+          $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
+        };
+    }
+
+    // DETERMINAR SI HAY LLAMADO1_ACTIVO - HABILITAR EDICION_ALUMNO_PONER_NOTAS
+    if (isset($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO])) {
+      $llamado1_activo = TRUE;
+      $disabledPonerNotasAlumnosLlamado1 = "";
+    } else {
+      $disabledPonerNotasAlumnosLlamado1 = "disabledbutton";
+    }
+
+    // DETERMINAR SI HAY LLAMADO2_ACTIVO - HABILITAR EDICION_ALUMNO_PONER_NOTAS
+
+    if (isset($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO])) {
+      $llamado2_activo = TRUE;
+      $disabledPonerNotasAlumnosLlamado2 = "";
+    } else {
+      $disabledPonerNotasAlumnosLlamado2 = "disabledbutton";
+    }
+
+
+
+
+
+
+} else {
+   $disabledVerCarreras = $disabledVerLlamado1 = $disabledVerMateriasLlamado1 = $disabledVerAlumnosLlamado1 = $disabledPonerNotasAlumnosLlamado1  = "disabledbutton";
+   $disabledVerLlamado2 = $disabledVerMateriasLlamado2 = $disabledVerAlumnosLlamado2 = $disabledPonerNotasAlumnosLlamado2  = "disabledbutton";
+
+}
+
   $arr_ultima_inscripcion = $calendario->getLastInscripcionExamen();
-  //var_dump($arr_datos_turno);exit;
-  if ($arr_datos_turno['codigo']==Constantes::CODIGO_PRIMER_TURNO) {
-      $cantidad_llamados = 2;
-  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_SEGUNDO_TURNO) {
-      $cantidad_llamados = 1;
-  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_TERCER_TURNO) {
-      $cantidad_llamados = 2;
-  } else if ($arr_datos_turno['codigo']==Constantes::CODIGO_MESA_ESPECIAL_TURNO) {
-      $cantidad_llamados = 1;
-  }
-
-    
-  //$turno_id = isset($arr_datos_turno["id"])?$arr_datos_turno["id"]:0;
-  
-  // esteeee esta mal 
- 
-  
-  //var_dump($arr_ultima_inscripcion);exit;
 
   $inscripcion_activa = 0;
   $inscripcion_asociada = 0;
@@ -60,36 +109,21 @@
   }
   
 
-  // *********  SACAR LOS PERIODOS CORRESPONDIENTES A LOS LLAMADOS *************
-  if ($cantidad_llamados==2) {
-      if (empty($arr_datos_llamado)) {
-         //var_dump('entroooo',$calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO));exit;
-         $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
-         $arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO);
-      };
-  } else if ($cantidad_llamados==1) {
-      if (empty($arr_datos_llamado)) {
-         $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
-      };
-  }
+  
 
 
-  if (isset($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO])) {
-     $llamado1_activo = TRUE;
-  };
 
-  if (isset($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO]) && !empty($arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO])) {
-     $llamado2_activo = TRUE;
- };
 
-   //var_dump($arr_datos_llamado,$llamado1_activo,$llamado2_activo);exit;
-  // ****************************************************************************
+ 
+
 
   
+// DETERMINAR SI HAY INSCRIPCION_ACTIVA (FECHA_DESDE_INSCRIPCION A FECHA_HASTA_TURNO_2DO_LLAMADO) - HABILITAR VER_CARRERAS, VER_LLAMADO_1, VER_MATERIAS, VER_ALUMNOS 
    
 
+   
+   
 
-  
 
 
 
@@ -153,20 +187,7 @@
 
   <article class="container-fluid">
        <section>
-           <div class="row" id="resultado">
-
-                  <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                                  <img src="../public/img/logo_n.jpg" class="card-img-top">
-                                  <div class="card-body">
-                                      <h5 class="card-title"><img src="../public/img/icons/add2_icon.png" width="23">&nbsp;Nueva vinculación a Carrera</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                      <p class="card-text"></p>
-                                      <button class="btn btn-primary btn-block" onclick="vincularCarrera(`+idProfesor+`)">Vincularme</button>
-                                  </div>
-                        </div>
-                  </div>
-
+           <div class="row disabledbutton" id="resultado">
 
            </div><!-- Cierra Row-->
            <div class="row" id="controles"></div><!-- Cierra Row-->
@@ -185,16 +206,27 @@
 <script>
 let carrera_nombre = '';
 let carrera_id = '';
-var profesor_id = '<?=$_SESSION['id_profesor'];?>';
+let profesor_id = '<?=$_SESSION['id_profesor'];?>';
 let habilitar_listados_materia = <?=$habilitar_listados_materia;?>;
 let inscripcion_activa = <?=$inscripcion_activa;?>;
 let turno_activo = <?=$llamado1_activo;?>;
 let llamado1_activo = <?=$llamado1_activo;?>;
 let llamado2_activo = <?=$llamado2_activo;?>;
-var materia_nombre = '';
-var materia_id = '';
-var opcion = 'Examenes';
+let materia_nombre = '';
+let materia_id = '';
+let opcion = 'Examenes';
 let llamado_numero = '';
+let token = "<?=$_SESSION['token'];?>";
+let disabledVerCarreras = "<?=$disabledVerCarreras;?>";
+let disabledVerLlamado1 = "<?=$disabledVerLlamado1;?>";
+let disabledVerMateriasLlamado1 = "<?=$disabledVerMateriasLlamado1;?>";
+let disabledPonerNotasAlumnosLlamado1 = "<?=$disabledPonerNotasAlumnosLlamado1;?>";
+let disabledVerLlamado2 = "<?=$disabledVerLlamado2;?>";
+let disabledVerMateriasLlamado2 = "<?=$disabledVerMateriasLlamado2;?>";
+let disabledVerAlumnosLlamado2 = "<?=$disabledVerAlumnosLlamado2;?>";
+let disabledPonerNotasAlumnosLlamado2 = "<?=$disabledPonerNotasAlumnosLlamado2;?>";
+
+
 function expired() {
   //location.href = "./logout.php";
 }

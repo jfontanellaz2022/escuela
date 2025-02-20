@@ -1,6 +1,6 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-
+require_once "seguridadNivel1.php";
 require_once "AlumnoRindeMateriaDetalle.php";
 require_once "Sanitize.class.php";
 //require_once "_seguridad.php";
@@ -8,8 +8,16 @@ require_once "Sanitize.class.php";
 $calendario_id = ( isset($_POST['calendario_id']) )?SanitizeVars::INT($_POST['calendario_id']):false;
 $materia_id = ( isset($_POST['materia_id']) )?SanitizeVars::INT($_POST['materia_id']):false;
 $llamado = ( isset($_POST['llamado']) )?SanitizeVars::INT($_POST['llamado']):3;
-$arr_resultados = $arr_datos = [];
+$token = (isset($_GET['token']))?$_GET['token']:false;
 
+if ($token!=$_SESSION['token']) {
+  $finalResponse['codigo'] = 500;
+  $finalResponse['class'] = 'danger';
+  $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($finalResponse);die;
+}
+
+$arr_resultados = $arr_datos = [];
 if ($materia_id && $calendario_id) {
     
     $profesor_carrera = new AlumnoRindeMateriaDetalle();

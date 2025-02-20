@@ -1,10 +1,22 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-require_once 'verificarCredenciales.php';
+require_once "seguridadNivel2.php";
 require_once 'AlumnoRindeMateriaDetalle.php';
 require_once 'Carrera.php';
 require_once 'Materia.php';
 require_once 'ActasInscripcionExamenesPdf.class.php';
+
+//*******************TOKEN  *****************************/
+$array_resultados = [];
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 
 // create new PDF document
 $pdf = new ActasInscripcionExamenesPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);

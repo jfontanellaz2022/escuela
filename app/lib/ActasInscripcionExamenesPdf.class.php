@@ -1,6 +1,7 @@
 <?php
 require_once('ActasPdf.class.php');
-setlocale(LC_TIME, 'es_ES.UTF-8');
+date_default_timezone_set("America/Argentina/Buenos_Aires");
+setlocale(LC_TIME, 'es_AR.UTF-8','esp');
 
 class ActasInscripcionExamenesPdf extends ActasPdf {
     private $dia,$mes,$anio,$aprobados,$desaprobados,$ausentes;
@@ -81,6 +82,7 @@ class ActasInscripcionExamenesPdf extends ActasPdf {
      
      // Page footer
     public function Footer() {
+        
         // Position at 15 mm from bottom
         $this->SetY(-35);
         // Set font

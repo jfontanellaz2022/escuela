@@ -11,6 +11,8 @@ require_once 'AlumnoEstudiaCarrera.php';
 require_once 'Usuario.php';
 
 function enviarEmail($arr) {
+   $carrera_id = $arr['carrera_id'];
+   $anio_lectivo = $arr['anio_lectivo'];
    $apellido = $arr['apellido'];
    $nombres = $arr['nombres'];
    $dni = $arr['dni'];
@@ -18,8 +20,9 @@ function enviarEmail($arr) {
    $telefono = $arr['telefono'];
    $fecha_nacimiento = $arr['fecha_nacimiento'];
    $email = $arr['email'];
-
-
+   $url_pdf = "";
+   $codificacion = base64_encode($anio_lectivo.'&'.$dni.'&'.$carrera_id);
+   $url_pdf .= 'https://escuela40.net/API/reporteInscripcionCarrera.php?p='. $codificacion;
 
    $para      = $email;
    $titulo    = 'E.N.S. 40 "Mariano Moreno" - Datos de la registracion del ingresante ';
@@ -72,15 +75,15 @@ function enviarEmail($arr) {
                        <body>
                          <div class='container'>
                            <img src='$imageUrl' alt='Encabezado' class='image'>
-                           <p class='header'>La Resgistracion se realizo correctamente fue modificada.</p>
+                           <p class='header'>La Resgistraci&oacute;n se realiz&oacute; correctamente.</p>
                            
-                           <p class='content'>Para ingresar a la aplicacion de Gestión de la escuela debe ir a la url www.escuela40.net .
-                             Una vez que ingreso a link, deber&aacute; hace click en la opcion 'Acceder al Sistema', se le abrir&aacute; un nueva ventana emergente
-                             y desde ahi debe seleccionar el Perfil 'Alumno', en usuario colocar su n&uacute;mero de DNI, y en contrase&ntilde;a tambien debe colocar
-                             el n&uactue;mero de dni (una vez que ingreso por razones de seguridad se recomienda cambiar la contrase&ntilde;a). 
+                           <p class='content'>Para ingresar a la aplicaci&oacute;n de Gesti&oacute;n de la escuela debe ir a la url <a href='https://escuela40.net'>https://escuela40.net</a> .
+                             Una vez que ingreso al link, deber&aacute; hace click en la opcion 'Acceder al Sistema', se le abrir&aacute; un nueva ventana, 
+                             y desde ah&iacute; debe ingresar en usuario su n&uacute;mero de DNI, y en contrase&ntilde;a tambi&eacute;n debe ingresar
+                             su n&uactue;mero de dni (una vez que ingres&oacute; por razones de seguridad se recomienda cambiar la contrase&ntilde;a). 
                            </p>
-                           <p class='content'>Para descargar el formulario generado por la inscripcion haga click <a href='' target='_blank'>Aqu&iacute;</a>.</p>
-                           <p class='content'>Recuerda que en este sistema usted va a gestionar muchas tareas administrativas mientras transite la carrera.</p>
+                           <p class='content'>Para descargar el formulario generado por la inscripci&oacute;n haga click <a href='".$url_pdf."' target='_blank'>Aqu&iacute;</a>.</p>
+                           <p class='content'>Recuerda que en &eacute;ste sistema usted va a gestionar muchas tareas administrativas mientras transite la carrera.</p>
                            <p class='content'>El Instituto le da la Bienvenida!!! <br>E.N.S. 40 'Mariano Moreno'.</p>
                          </div>
                        </body>
@@ -91,9 +94,7 @@ function enviarEmail($arr) {
                $headers = "MIME-Version: 1.0" . "\r\n";
                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                $headers .= "From: soporte@escuela40.net" . "\r\n";
-
-
-              //mail($para, $titulo, $mensaje, $headers);
+              mail($para, $titulo, $mensaje, $headers);
 
 
 };
@@ -165,7 +166,16 @@ $titulo = (isset($_POST['inputTitulo'])&& $_POST['inputTitulo']!=NULL)?$_POST['i
 $escuela = (isset($_POST['inputEscuela'])&& $_POST['inputEscuela']!=NULL)?$_POST['inputEscuela']:false;
 
 
-$token = $_POST['token'];
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 
 $estado_civil_desc = "";
 if ($estado_civil==1) {
@@ -202,7 +212,7 @@ if ($token!=$_SESSION['token']) {
             $respuesta['alert'] = 'danger';
             $respuesta['mensaje'] = 'El Token es INCORRECTO.';
             echo json_encode($respuesta);die;
-}
+} else {
 
 
 if (!$apellido || !$nombres || !$dni || !$fechaNacimiento || !$sexo || !$celular_caracteristica || !$celular_numero || 
@@ -383,7 +393,7 @@ if (!$apellido || !$nombres || !$dni || !$fechaNacimiento || !$sexo || !$celular
                      $respuesta['mensaje'] = 'Los datos de la inscripción se realizó correctamente.';
 
                      enviarEmail(['apellido'=>$apellido,'nombres'=>$nombres,'dni'=>$dni,'telefono'=>'(' . $celular_caracteristica . ') ' . $celular_numero,
-                                  'domicilio'=>$domicilio,'fecha_nacimiento'=>$fechaNacimiento,'email'=>$email]);
+                                  'domicilio'=>$domicilio,'fecha_nacimiento'=>$fechaNacimiento,'email'=>$email,'carrera_id'=>$carrera,'anio_lectivo'=>$anio_ingreso]);
 
 
          } else {  // ** SI EXISTE PERSONA ENTONCES ACTUALIZA SUS DATOS??? **                
@@ -436,12 +446,14 @@ if (!$apellido || !$nombres || !$dni || !$fechaNacimiento || !$sexo || !$celular
                      $respuesta['mensaje'] = 'Los datos de la inscripción se realizó correctamente.';
                      
                      enviarEmail(['apellido'=>$apellido,'nombres'=>$nombres,'dni'=>$dni,'telefono'=>'(' . $celular_caracteristica . ') ' . $celular_numero,
-                                  'domicilio'=>$domicilio,'fecha_nacimiento'=>$fechaNacimiento,'email'=>$email]);
+                                  'domicilio'=>$domicilio,'fecha_nacimiento'=>$fechaNacimiento,'email'=>$email,'carrera_id'=>$carrera,'anio_lectivo'=>$anio_ingreso]);
     
          }
 
 
 } 
+
+}
 echo json_encode($respuesta);
 
  ?>

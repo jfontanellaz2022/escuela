@@ -1,6 +1,5 @@
 <?php 
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-
 require_once "verificarCredenciales.php";
 require_once "CalendarioAcademico.php";
 
@@ -12,9 +11,6 @@ $ultima_inscripcion_id = $arr_datos_ultima_inscripcion['id'];
 $ultima_inscripcion_descripcion = $arr_datos_ultima_inscripcion['evento_descripcion'];
 $ultimo_turno_id = $arr_datos_ultimo_turno['id'];
 $ultimo_turno_descripcion = $arr_datos_ultimo_turno['evento_descripcion'].' - '.$arr_datos_ultimo_turno['anio_lectivo'];
-
-//var_dump($ultima_inscripcion_descripcion);exit;
-
 
 ?>
 <!doctype html>
@@ -96,7 +92,7 @@ function getDatosFechaExamen(fecha_examen_id) {
    let param = {"fecha_examen_id":fecha_examen_id};
 
    $.ajax({
-      url:"./funciones/fechaExamenObtenerPorId.php",
+      url:"./funciones/fechaExamenObtenerPorId.php?token=<?=$_SESSION['token'];?>",
       type:"POST",
       data: param,
       dataType : 'json',
@@ -132,7 +128,7 @@ function load(page) {
       let parametros = {"action": "listar","page": page,"per_page": per_page, "busqueda_rapida":busqueda};
       let titulo = "<h1><i><u>Fechas de Exámenes</u></i></h1>";
       $("#titulo").html(titulo);
-      $.post('funciones/fechaExamenListar.php', parametros, function (data) {
+      $.post('funciones/fechaExamenListar.php?token=<?=$_SESSION['token'];?>', parametros, function (data) {
               $("#principal").fadeIn(100).html(data);}
       );
 };
@@ -154,7 +150,7 @@ function aplicarBusquedaRapida() {
     let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
     $("#titulo").html(titulo);
         $.ajax({
-            url: 'funciones/fechaExamenListar.php',
+            url: 'funciones/fechaExamenListar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             success: function (data) {
@@ -175,7 +171,7 @@ function quitarFiltro() {
 // NOS PERMITE BUSCAR UNA ENTIDAD POR ID       
 //************************************************** 
 function entidadObtenerPorId(entidad_id){
-    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php";
+    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php?token=<?=$_SESSION['token'];?>";
     let resultado;
     
     $.ajaxSetup({
@@ -196,7 +192,7 @@ function entidadObtenerPorId(entidad_id){
 function entidadVer(entidad_id){
     let datos_entidad = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_obtener_entidad = "funciones/eventoObtener.php";
+    let url_obtener_entidad = "funciones/eventoObtener.php?token=<?=$_SESSION['token'];?>";
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -239,7 +235,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/fechaExamenes.html";
-      let url_select2_obtener_materias = "funciones/materiaObtener.php";// Esto puede cambiar
+      let url_select2_obtener_materias = "funciones/materiaObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -338,7 +334,7 @@ function entidadDuplicar(fecha_examen_id){
       let llamado = datos_examen.llamado;
       let fecha_examen = datos_examen.fecha_examen;
       
-      let url_select2_obtener_materias = "funciones/materiaObtener.php";// Esto puede cambiar
+      let url_select2_obtener_materias = "funciones/materiaObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -430,7 +426,7 @@ function entidadEditar(fecha_examen_id){
       let llamado = datos_examen.llamado;
       let fecha_examen = datos_examen.fecha_examen;
       
-      let url_select2_obtener_materias = "funciones/materiaObtener.php";// Esto puede cambiar
+      let url_select2_obtener_materias = "funciones/materiaObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -508,7 +504,7 @@ function entidadEditar(fecha_examen_id){
 // GRABA LA ENTIDAD NUEVO EN LA BASE DE DATOS       
 //************************************************* 
 function guardarFechaMateria(){
-    let url = "funciones/fechaExamenGuardar.php";
+    let url = "funciones/fechaExamenGuardar.php?token=<?=$_SESSION['token'];?>";
     let fecha_examen_id = $("#inputIdFechaExamen").val();
     let materia_id = $("#inputMateriaFechaExamen").val();
     let llamado = $("#inputLlamadoFechaExamen").val();
@@ -575,7 +571,7 @@ function guardarFechaMateria(){
 
 
 function entidadEliminar(val){
-    let url = "funciones/fechaExamenEliminar.php";
+    let url = "funciones/fechaExamenEliminar.php?token=<?=$_SESSION['token'];?>";
     let fecha_examen_id = val;
     
     let parametros = {"accion":'eliminar',"fecha_examen_id":fecha_examen_id};

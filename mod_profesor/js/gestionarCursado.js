@@ -31,7 +31,7 @@ function expired() {
 function getCarreras() {
    let carreras
    $.ajax({
-      url:"../API/findAllCarreras.php",
+      url:"../API/findAllCarreras.php?token="+token,
       type:"GET",
       dataType : 'json',
       async: false,
@@ -62,7 +62,7 @@ function getCarreraPorId(carrera_id) {
 function getCursadoActivo() {
    let datos_cursado;
    $.ajax({
-      url:"../API/findEventoCursadoActivo.php",
+      url:"../API/findEventoCursadoActivo.php?token="+token,
       type:"GET",
       dataType : 'json',
       async: false,
@@ -95,7 +95,7 @@ function vincularCarrera(idProfesor) {
 
   $.get("./html/cargarCarrera.html",function(datos){
     $("#resultado").html(datos);
-        $.post("../API/findAllCarreras.php", function(datos_carreras) {
+        $.post("../API/findAllCarreras.php?token="+token, function(datos_carreras) {
           if (datos_carreras.codigo==200) {
               let obj = datos_carreras.datos; 
               obj.forEach(carrera => {
@@ -136,7 +136,7 @@ function cargarCarreras(idProfesor) {
   //Remuevo la class que me deshabilita
   $("#resultado").removeClass("disabledbutton");
   let parametros = {'profesor':idProfesor};
-  $.post( "../API/findAllCarrerasPorProfesor.php", parametros, function( data ) {
+  $.post( "../API/findAllCarrerasPorProfesor.php?token="+token, parametros, function( data ) {
                   let obj = data;
                   $("#breadcrumb").html(bread);
                   $("#titulo").html(titulo);
@@ -181,7 +181,7 @@ function cargarCarreras(idProfesor) {
 function desvincularCarrera(idCarrera,idProfesor) {
   let parametros = {"carrera":idCarrera, "profesor":idProfesor};
   if (confirm("Desea desvincularse de la Carrera?")) {
-      $.post("../API/removeProfesorCarrera.php",parametros,function (response) {
+      $.post("../API/removeProfesorCarrera.php?token="+token,parametros,function (response) {
             $("#controles").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                                     <span style="color: #000000;">
@@ -209,7 +209,7 @@ function cursadoAgregarCarrera() {
 
   if (idCarrera && idProfesor) {
      parametros = {"profesor":idProfesor,"carrera":idCarrera};
-     $.post("../API/insertProfesorCarrera.php",parametros, function(response){
+     $.post("../API/insertProfesorCarrera.php?token="+token,parametros, function(response){
             $("#controles").html(`
                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                                       <span style="color: #000000;">
@@ -266,7 +266,7 @@ function cargarMaterias(id_carrera,id_profesor) {
                </nav>`;
    $("#breadcrumb").html(bread);
    $("#titulo").html(titulo);
-        $.post( "../API/findAllMateriasPorCarreraPorProfesor.php", parametros, function( data ) {
+        $.post( "../API/findAllMateriasPorCarreraPorProfesor.php?token="+token, parametros, function( data ) {
           let obj = data;
           $("#resultado").html("");
           let tabla_comienzo = `<div class="col-xs-12 col-sm-12 col-md-12" id='panel_materia'style="background-color: #E9D5B4;border-radius: 10px;">
@@ -327,7 +327,7 @@ function cargarMaterias(id_carrera,id_profesor) {
                  }
            $("#resultado").html(tabla_comienzo+filas+tabla_final);
 
-           $.post( "../API/findAllMateriasPorCarrera.php", parametros, function( data_materias ) {
+           $.post( "../API/findAllMateriasPorCarrera.php?token="+token, parametros, function( data_materias ) {
                if (data_materias.codigo==200) {
                      let obj = data_materias.datos; 
                      obj.forEach(materia => {
@@ -354,7 +354,7 @@ function cursadoAgregarMateria(carrera_id) {
    let profesor_id = valor[1];
    let parametros = {"materia":materia_id, "profesor":profesor_id};
    
-   $.post("../API/insertProfesorMateria.php",parametros,function(response){
+   $.post("../API/insertProfesorMateria.php?token="+token,parametros,function(response){
       if (response.codigo==200) {
                         $("#controles").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
@@ -392,7 +392,7 @@ function cursadoDesvincularMateria(idProfesor,idMateria,idCarrera) {
          let carrera = idCarrera;
          let materia = idMateria;
          let profesor = idProfesor;
-         $.post( "../API/removeProfesorMateria.php",{"profesor":profesor,"materia":materia},function(response) {
+         $.post( "../API/removeProfesorMateria.php?token="+token,{"profesor":profesor,"materia":materia},function(response) {
                   $("#controles").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                        <span style="color: #000000;">
                                              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -417,7 +417,7 @@ function sacaDatosMateriaPorId(idMateria) {
    var datos = {"materia":idMateria};
    var datos_materia;
    $.ajax({
-      url:"../API/findMateriaPorId.php",
+      url:"../API/findMateriaPorId.php?token="+token,
       type:"POST",
       data: datos,
       dataType : 'json',
@@ -468,7 +468,7 @@ function cargarAlumnosPorMateriaCursado(carrera_id, materia_id,materia_nombre,pr
     };
     
     let parametros = {"action":"Listar",'materia':materia_id};
-      $.post( "../API/findAllAlumnosPorMateria.php", parametros, function( response ) {
+      $.post( "../API/findAllAlumnosPorMateria.php?token="+token, parametros, function( response ) {
         let bread = `<nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="#" onclick="cargarHome()">Home</a></li>
@@ -568,7 +568,7 @@ function cargarAlumnosPorMateriaCursado(carrera_id, materia_id,materia_nombre,pr
       $("#resultado_carga").html(nofilas);
     };
    //CARGA EL SELECT2 CON LOS ALUMNOS DE LA CARRERA
-    $.post( "../API/findAllAlumnosPorCarrera.php", {'carrera':carrera_id}, function( data_alumnos ) {
+    $.post( "../API/findAllAlumnosPorCarrera.php?token="+token, {'carrera':carrera_id}, function( data_alumnos ) {
        let obj = data_alumnos;
        obj.datos.forEach(alumno => {
              $("#inputAltaAlumno").append($('<option/>', {
@@ -582,7 +582,7 @@ function cargarAlumnosPorMateriaCursado(carrera_id, materia_id,materia_nombre,pr
     });
  
     //CARGA EL SELECT2 CON LOS DATOS DEL CURSADO
-    $.post( "../API/findAllAlumnoTiposCursado.php", function( data_cursado ) {
+    $.post( "../API/findAllAlumnoTiposCursado.php?token="+token, function( data_cursado ) {
        let obj = data_cursado;
        obj.datos.forEach( cursado_forma => {
              $("#inputAltaCursado").append($('<option/>', {
@@ -610,7 +610,7 @@ function sacaDatosAlumnoParaCursadoPorId(idAlumno,idMateria) {
    var datos = {"alumno":idAlumno, "materia":idMateria};
    var datos_alumno;
    $.ajax({
-      url:"../API/findAlumnoPorMateria.php",
+      url:"../API/findAlumnoPorMateria.php?token="+token,
       type:"POST",
       data: datos,
       dataType : 'json',
@@ -632,7 +632,7 @@ function cursadoAgregarAlumno(idMateria,idCarrera,idProfesor) {
 
     if (alumno && cursado_forma) {
          let parametros = {'materia':idMateria, 'alumno':alumno, 'cursado':cursado_forma};
-         $.post( "../API/insertAlumnoMateria.php", parametros, function( response ) {
+         $.post( "../API/insertAlumnoMateria.php?token="+token, parametros, function( response ) {
                   $("#resultado_carga").removeClass("d-none");
                   
                   if (response.codigo==200) {
@@ -703,7 +703,7 @@ function cursadoAgregarAlumno(idMateria,idCarrera,idProfesor) {
      
      let anio = new Date().getFullYear();
      if(confirm("Desvincular de la materia a ?")) {
-        $.post('../API/removeAlumnoMateria.php', {"materia":idMateria,"alumno":idAlumno,"anio":anio}, function(response){
+        $.post('../API/removeAlumnoMateria.php?token='+token, {"materia":idMateria,"alumno":idAlumno,"anio":anio}, function(response){
             $("#controles").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                   <span style="color: #000000;">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>

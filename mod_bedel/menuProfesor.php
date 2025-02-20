@@ -26,7 +26,7 @@ require_once 'verificarCredenciales.php';
     <div id="breadcrumb">
       <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
-              <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Carreras</li>
           </ol>
       </nav>
@@ -133,7 +133,7 @@ function load(page) {
     $("#titulo").html(titulo);
     $("#breadcrumb").html(breadcrumb);
     $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
+            url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             beforeSend: function () {
@@ -165,7 +165,7 @@ function aplicarFiltro() {
     let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
     $("#titulo").html(titulo);
         $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
+            url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             success: function (data) {
@@ -188,7 +188,7 @@ function quitarFiltro() {
 // NOS PERMITE BUSCAR UNA ENTIDAD POR ID       
 //************************************************** 
 function entidadObtenerPorId(entidad_id){
-    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php";
+    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php?token=<?=$_SESSION['token'];?>";
     let resultado;
     
     $.ajaxSetup({
@@ -221,7 +221,7 @@ function entidadObtenerPorId(entidad_id){
 function entidadVer(entidad_id){
     let datos_entidad = "";
     let url = "html/profesor.html";
-    let url_obtener_entidad = "funciones/localidadObtener.php";
+    let url_obtener_entidad = "funciones/localidadObtener.php?token=<?=$_SESSION['token'];?>";
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -273,7 +273,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_select2_obtener = "../API/findLocalidad.php";// Esto puede cambiar
+      let url_select2_obtener = "../API/findLocalidad.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -343,7 +343,7 @@ function entidadCrear(){
 function entidadEditar(entidad_id){
       let datos_entidad = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_obtener_entidad = "../API/findLocalidad.php";
+      let url_obtener_entidad = "../API/findLocalidad.php?token=<?=$_SESSION['token'];?>";
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -443,7 +443,7 @@ function entidadGuardar(){
     let localidad_id = $("#inputLocalidad").val();
     let fecha_nacimiento = $("#inputFechaNacimiento").val();
     let parametros = {"id":id,"apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento};
-    let url = "funciones/"+entidad_nombre+"Guardar.php";
+    let url = "funciones/"+entidad_nombre+"Guardar.php?token=<?=$_SESSION['token'];?>";
     if (apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="") {
         $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
@@ -545,7 +545,7 @@ $("body").on("click","#seleccionar_todos", function() {
   function entidadEliminarSeleccionadosConfirmar(){
       let arreglo="";
       let parametros = "";
-      let url = "funciones/"+entidad_nombre+"Eliminar.php";
+      let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
       let cantidad_seleccionados = 0;
       $('.check:checked').each(
                   function() {
@@ -585,7 +585,7 @@ $("body").on("click","#seleccionar_todos", function() {
   function entidadEliminarSeleccionado(entidad_id){
         let arreglo="";
         let parametros = "";
-        let url = "funciones/"+entidad_nombre+"Eliminar.php";
+        let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
         parametros = {"id":entidad_id};
                 $.post(url, parametros, function (data) {
                         $("#resultado_accion").html(`
@@ -615,7 +615,7 @@ function vincularCarrera(entidad_id) {
     let arreglo="";
     let parametros = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_select2_obtener = "funciones/carreraObtener.php";// Esto puede cambiar
+    let url_select2_obtener = "funciones/carreraObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -673,7 +673,7 @@ function guardarVinculo() {
     let carrera_id = $("#inputCarrera").val();
     let anio = $("#inputAnioCarrera").val();
     let parametro = {"profesor_id":profesor_id,"carrera_id":carrera_id,"anio":anio};
-    $.post("./funciones/profesorVincularCarrera.php",parametro,function(response){
+    $.post("./funciones/profesorVincularCarrera.php?token=<?=$_SESSION['token'];?>",parametro,function(response){
             $("#resultado_accion").html(`
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
                                                 
@@ -693,43 +693,6 @@ function guardarVinculo() {
 }
 
 
-/*
-  //************************************************ 
-  // NOS PERMITE ENVIAR UN EMAIL A UNA INTERESADO    
-  //************************************************ 
-  function enviarEmail(id) {
-    if (confirm("Desea enviar un Email con el QR y sus datos al Interesado?")) {
-    let url = "./funciones/interesadoEnviarEmail.php";
-    let parametros = {"interesado_id":id};
-    $.post(url, parametros, function(data) {
-        if (data.codigo==100) {
-            $("#resultado_accion").html(`
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
-                                      <span style="color: #000000;">
-                                      <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                          <strong>Atención:</strong>&nbsp;`+data.mensaje+`
-                                      </span>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                      </button>       
-                                </div>
-                        `);
-        } else {
-            $("#resultado_accion").html(`
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                      <span style="color: #000000;">
-                                      <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                          <strong>Atención:</strong>&nbsp;`+data.mensaje+`
-                                      </span>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                      </button>       
-                                </div>
-                        `);
-        }
-    },"json");
-    };
-  } */
 
 </script>
 

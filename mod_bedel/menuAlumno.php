@@ -51,7 +51,7 @@ require_once 'verificarCredenciales.php';
 
 <!-- JAVASCRIPT CUSTOM -->
 <script src="./js/funciones.js"></script>
-<script src="../public/assets/js/sweetalert2.all.min.js"></script>
+<script src="../public/js/sweetalert2.all.min.js"></script>
 <script>
 
 function valideKeySoloNumerosSinPrimerCero(evt,val){
@@ -128,7 +128,7 @@ function load(page) {
     $("#titulo").html(titulo);
     $("#breadcrumb").html(breadcrumb);
     $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
+            url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             beforeSend: function () {
@@ -153,14 +153,12 @@ function load(page) {
 
   function aplicarFiltro() {
     let valor = $("#inputFiltroValor").val();
-    console.info(valor);
-
     let per_page = 10;
     let parametros = {"action": "listar","page": 1,"per_page": per_page, "valor":valor};
     let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
     $("#titulo").html(titulo);
         $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
+            url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             success: function (data) {
@@ -181,7 +179,7 @@ function quitarFiltro() {
 // NOS PERMITE BUSCAR UNA ENTIDAD POR ID       
 //************************************************** 
 function entidadObtenerPorId(entidad_id){
-    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php";
+    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php?token=<?=$_SESSION['token'];?>";
     let resultado;
     
     $.ajaxSetup({
@@ -202,7 +200,7 @@ function entidadObtenerPorId(entidad_id){
 function entidadVer(entidad_id,alumno_descripcion){
     let datos_entidad = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_obtener_entidad = "funciones/localidadObtener.php";
+    let url_obtener_entidad = "funciones/localidadObtener.php?token=<?=$_SESSION['token'];?>";
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -260,7 +258,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_select2_obtener = "../API/findLocalidad.php";// Esto puede cambiar
+      let url_select2_obtener = "../API/findLocalidad.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -291,7 +289,7 @@ function entidadCrear(){
                     theme: "bootstrap",
                     placeholder: "Buscar",
                     ajax: {
-                        url: '../API/findLocalidad.php',
+                        url: '../API/findLocalidad.php?token=<?=$_SESSION['token'];?>',
                         dataType: 'json',
                         delay: 250,
                         language: {
@@ -331,7 +329,7 @@ function entidadCrear(){
 function entidadEditar(entidad_id){
       let datos_entidad = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_obtener_entidad = "../API/findLocalidad.php";
+      let url_obtener_entidad = "../API/findLocalidad.php?token=<?=$_SESSION['token'];?>";
       /*let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -448,7 +446,7 @@ function entidadGuardar(){
     let anio_ingreso = $("#inputAnioIngreso").val();
     let debe_titulo = $("#inputDebeTitulo").val();
     let parametros = {"accion":accion, "apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento,"anio_ingreso":anio_ingreso,"debe_titulo":debe_titulo,"persona_id":persona_id};
-    let url = "funciones/"+entidad_nombre+"Guardar.php";
+    let url = "funciones/"+entidad_nombre+"Guardar.php?token=<?=$_SESSION['token'];?>";
     if (accion!="" && apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="" && fecha_nacimiento!="") {
         $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
@@ -500,7 +498,7 @@ function vincularCarrera(entidad_id) {
     let arreglo="";
     let parametros = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_select2_obtener = "funciones/carreraObtener.php";// Esto puede cambiar
+    let url_select2_obtener = "funciones/carreraObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -560,7 +558,7 @@ function guardarVinculo() {
     let carrera_id = $("#inputCarrera").val();
     let anio = $("#inputAnioCarrera").val();
     let parametro = {"alumno_id":alumno_id,"carrera_id":carrera_id,"anio":anio};
-    $.post("./funciones/alumnoVincularCarrera.php",parametro,function(response){
+    $.post("./funciones/alumnoVincularCarrera.php?token=<?=$_SESSION['token'];?>",parametro,function(response){
             $("#resultado_accion").html(`
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
                                                 
@@ -590,7 +588,7 @@ function inscribirExamen(entidad_id) {
     let arreglo="";
     let parametros = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_select2_obtener = "funciones/carreraObtener.php";// Esto puede cambiar ACA SERIA OBTENER MESA EXAMENES
+    let url_select2_obtener = "funciones/carreraObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar ACA SERIA OBTENER MESA EXAMENES
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -698,7 +696,7 @@ $('#inputLlamadoInscribirExamen').append(newOption).trigger('change');*/
             $("#inputCarreraInscribirExamen").change(function(){
                 let carrera_id = $("#inputCarreraInscribirExamen").val();
                 /****** DESDE ESTA LLAMADA AJAX SE CARGAN CON LOS DATOS DE LAS MATERIAS DE LA CARRERA SELECCIONADA **********/    
-                $.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
+                $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(data){
                     
                     if (data.codigo==100) {
                         data.datos.forEach(materia => {
@@ -714,7 +712,7 @@ $('#inputLlamadoInscribirExamen').append(newOption).trigger('change');*/
 
 
             /****** DESDE ESTA LLAMADA AJAX SE CARGAN CON LOS DATOS DE LAS MATERIAS DE LA CARRERA SELECCIONADA **********/    
-            $.post("./funciones/getUltimoTurno.php",function(data){
+            $.post("./funciones/getUltimoTurno.php?token=<?=$_SESSION['token'];?>",function(data){
                 
                 if (data.codigo==100) {
                     data.datos.forEach(turno => {
@@ -724,7 +722,6 @@ $('#inputLlamadoInscribirExamen').append(newOption).trigger('change');*/
                             }));
                         });
 
-                    //console.info(data.datos[0].llamados);
                     if (data.datos[0].llamados==1) { 
                             var item = {
                                 id: 1,
@@ -760,50 +757,6 @@ $('#inputLlamadoInscribirExamen').append(newOption).trigger('change');*/
             },"json");
             /*************************************************************************************************************/
 
-        /*
-                    $("#inputCarreraInscribirExamen").change(function(){
-                    let carrera_id = $("#inputCarrera").val();
-                    //Carga las Materias de una carrera en la select2
-                    $.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
-                        if (data.codigo==100) {
-                            data.datos.forEach(materia => {
-                                    $("#inputMateria").append($('<option/>', {
-                                            text: '('+materia.id+') '+materia.nombre,
-                                            value: materia.id,
-                                    }));
-                                });
-                                $('#inputMateria').select2({
-                                    theme: "bootstrap4",
-                                });
-                        };
-                    },"json")
-
-                    //Carga los Alumnos de una carrera en la select2
-                    $.post("./funciones/getAlumnosPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
-                        if (data.codigo==100) {
-                            data.datos.forEach(alumno => {
-                                    $("#inputAlumno").append($('<option/>', {
-                                            text: '('+alumno.id+') '+alumno.apellido+', '+alumno.nombre,
-                                            value: alumno.id,
-                                    }));
-                                });
-                                $('#inputAlumno').select2({
-                                    theme: "bootstrap4",
-                                    allowClear: false,
-                                    theme: "custom-option-select"
-                                });
-                        };
-                    },"json")
-                })
-
-*/
-
-
-/*$("#inputCarreraInscribirExamen").change(function(){
-   alert($("#inputCarreraInscribirExamen").val());
-})*/
-
-
   });    
 }
 
@@ -816,8 +769,7 @@ function guardarInscripcionMesa() {
     
     if  (alumno_id && materia_id && evento_academico_id && llamado) {
         let parametro = {"alumno_id":alumno_id,"materia_id":materia_id,"evento_academico_id":evento_academico_id,"llamado":llamado};
-        console.info(parametro);
-        $.post("./funciones/setAlumnoMesa.php",parametro,function(data){
+        $.post("./funciones/setAlumnoMesa.php?token=<?=$_SESSION['token'];?>",parametro,function(data){
             if (data.codigo==100) {
                         Swal.fire({
                                 icon: 'success',
@@ -938,7 +890,7 @@ $("body").on("click","#seleccionar_todos", function() {
 function entidadEliminarSeleccionadosConfirmar(){
       let arreglo="";
       let parametros = "";
-      let url = "funciones/"+entidad_nombre+"Eliminar.php";
+      let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
       let cantidad_seleccionados = 0;
       $('.check:checked').each(
                   function() {
@@ -946,7 +898,6 @@ function entidadEliminarSeleccionadosConfirmar(){
                   }
       );
       arreglo = arreglo.substr(1,arreglo.length-1);
-      console.log(arreglo)
       parametros = {"id":arreglo};
       $.post(url, parametros, function (data) {
               $("#resultado_accion").html(`
@@ -979,7 +930,7 @@ function entidadEliminarSeleccionadosConfirmar(){
   function entidadEliminarSeleccionado(entidad_id){
         let arreglo="";
         let parametros = "";
-        let url = "funciones/"+entidad_nombre+"Eliminar.php";
+        let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
         parametros = {"id":entidad_id};
                 $.post(url, parametros, function (data) {
                         $("#resultado_accion").html(`
@@ -997,44 +948,7 @@ function entidadEliminarSeleccionadosConfirmar(){
                 },"json");
   };
 
-  /*
-
-  //************************************************ 
-  // NOS PERMITE ENVIAR UN EMAIL A UNA INTERESADO    
-  //************************************************ 
-  function enviarEmail(id) {
-    if (confirm("Desea enviar un Email con el QR y sus datos al Interesado?")) {
-    let url = "./funciones/interesadoEnviarEmail.php";
-    let parametros = {"interesado_id":id};
-    $.post(url, parametros, function(data) {
-        if (data.codigo==100) {
-            $("#resultado_accion").html(`
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
-                                      <span style="color: #000000;">
-                                      <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                          <strong>Atención:</strong>&nbsp;`+data.mensaje+`
-                                      </span>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                      </button>       
-                                </div>
-                        `);
-        } else {
-            $("#resultado_accion").html(`
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                      <span style="color: #000000;">
-                                      <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                          <strong>Atención:</strong>&nbsp;`+data.mensaje+`
-                                      </span>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                      </button>       
-                                </div>
-                        `);
-        }
-    },"json");
-    };
-  } */
+  
 
 //*********************************************************************************************
 //***************** CARGA LA HISTORIA ACADEMICA DEL ALUMNO PARA ESA CARRERA *******************
@@ -1045,7 +959,7 @@ function cargarHistoriaPorCarrera(carrera_id,alumno_id,carrera_descripcion,alumn
       bread = `<nav aria-label="breadcrumb" role="navigation">
                       <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="menuEscritorio.php">Home</a></li>
-                      <li class="breadcrumb-item"><a href="menuAlumno.php">Alumnos</a></li>
+                      <li class="breadcrumb-item"><a href="menuAlumno.php?token=<?=$_SESSION['token'];?>">Alumnos</a></li>
                       <li class="breadcrumb-item active" aria-current="page">`+alumno_descripcion+` <strong>|</strong> `+carrera_descripcion+' <strong>('+carrera_id+`)</strong></li>
                       </ol>
                   </nav>`;
@@ -1057,7 +971,7 @@ function cargarHistoriaPorCarrera(carrera_id,alumno_id,carrera_descripcion,alumn
       parametros = {"carrera_id":carrera_id,"alumno_id":alumno_id};
 
       $.ajax({
-        url:'./funciones/getHistoriaAcademicaPorCarrera.php',
+        url:'./funciones/getHistoriaAcademicaPorCarrera.php?token=<?=$_SESSION['token'];?>',
         method: "POST",
         data: parametros,
         success:function(data){
@@ -1065,37 +979,6 @@ function cargarHistoriaPorCarrera(carrera_id,alumno_id,carrera_descripcion,alumn
         }
       });
 } 
-
-//*********************************************************************************************
-//****************** CARGA LA MATERIAS RENDIDAS DEL ALUMNO PARA ESA CARRERA *******************
-//*********************************************************************************************
-function cargarMateriasRendidas(carrera_id,alumno_id,carrera_descripcion,alumno_descripcion) {
-      let titulo;
-      let bread;
-      bread = `<nav aria-label="breadcrumb" role="navigation">
-                      <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="menuEscritorio.php">Home</a></li>
-                      <li class="breadcrumb-item"><a href="menuAlumno.php">Alumnos</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">`+alumno_descripcion+` <strong>|</strong> `+carrera_descripcion+' <strong>('+carrera_id+`)</strong></li>
-                      </ol>
-                  </nav>`;
-      titulo = `<h1><i>Materias Rendidas</i></h1>
-                    <h3>`+carrera_descripcion+` - Materias</h3>`;
-      
-      $("#breadcrumb").html(bread);
-      $("#titulo").html(titulo);
-      parametros = {"carrera_id":carrera_id,"alumno_id":alumno_id,"action":'listar'};
-
-      $.ajax({
-        url:'./funciones/carreraListarMateriasRendidasPoridAlumno.php',
-        method: "POST",
-        data: parametros,
-        success:function(data){
-          $("#principal").html(data).fadeIn('slow');
-        }
-      });
-} 
-
 
 
 </script>

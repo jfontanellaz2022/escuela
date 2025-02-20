@@ -23,6 +23,18 @@ class Tipificacion {
 		$this->conection = $dbObj->conection;
 	}
 
+	/* Get all Eventos */
+	public function getAllEventos($eventos){
+		$this->getConection();
+		$sql = "SELECT tip.* 
+		        FROM (SELECT * FROM tipificacion t WHERE codigo >= 1000 and codigo <= 1023) tip
+		        WHERE tip.nombre like ? or tip.codigo like ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute(['%'.$eventos.'%','%'.$eventos.'%']);
+        $arr_res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $arr_res;
+	} 
+
 	/* Get all Cursados */
 	public function getAllAlumnoTipoCursado(){
 		$this->getConection();

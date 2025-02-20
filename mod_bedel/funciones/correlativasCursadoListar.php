@@ -1,11 +1,11 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
+require_once 'verificarCredenciales.php';
 require_once 'CorrelativasParaCursarFilter.php';
 require_once 'Sanitize.class.php';
 require_once 'pagination.php';
 require_once 'ArrayHash.class.php';
-require_once "_seguridad.php";
 
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
@@ -119,7 +119,7 @@ if (!empty($arr_objetos)){
                   <td align="center"><small><b><input type="checkbox" class=" check" id="check_<?=$rowIdCampo1?>" name="check_usu[]" value="<?=$rowIdCampo1?>"></b></small></td>
                       <td align="center" colspan="3">
                       <div class="btn-group pull-right" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn-sm disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Acciones
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">

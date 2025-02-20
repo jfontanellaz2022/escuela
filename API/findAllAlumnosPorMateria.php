@@ -16,16 +16,23 @@
 //***************************************************************************************************
 
 
-set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib');
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "seguridadNivel1.php";
 require_once('Alumno.php');
 require_once 'SanitizeCustom.class.php';
-//include_once 'seguridadNivel2.php';
 
 $id_materia = (isset($_POST['materia']))?SanitizeCustom::INT($_POST['materia']):false;
 $sinLibres = (isset($_POST['sinLibres']) && (in_array($_POST['sinLibres'],[true,false])))?$_POST['sinLibres']:false;
 $anio = (isset($_POST['anio']))?SanitizeCustom::INT($_POST['anio']):date('Y');
 
-//$anio = 2023;
+$token = (isset($_GET['token']))?$_GET['token']:false;
+
+if ($token!=$_SESSION['token']) {
+  $finalResponse['codigo'] = 500;
+  $finalResponse['class'] = 'danger';
+  $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($finalResponse);die;
+}
 
 function sacarAlumnosPorMateriaPorAnio($arr_alumnos,$anio) {
    $arr_alumnos_por_anio = [];

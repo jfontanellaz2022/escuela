@@ -92,7 +92,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
                     <br>
                     <div class="form-row">
                         <input type="button" id="btnGuardar" class="btn btn-primary" onclick="guardarHomologacion()" value="Guardar">&nbsp;&nbsp;&nbsp;
-                        <input type="button" class="btn btn-primary" onclick="location.href='menuHomologacionMateriaAprobada.php'" value="Nueva" >
+                        <input type="button" class="btn btn-primary" onclick="location.href='menuHomologacionMateriaAprobada.php?token=<?=$_SESSION['token'];?>'" value="Nueva" >
                     </div>
                 
                 </form>
@@ -128,7 +128,7 @@ $("#inputCarrera").change(function(){
     //alert(carrera_id);
     $('#inputAlumno').val(null).trigger('change');
     $('#inputMateria').val(null).trigger('change');
-    $.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(response){
+    $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
           if (response.codigo==200) {
                $("#inputMateria").empty(); 
            response.datos.forEach(materia => {
@@ -144,7 +144,7 @@ $("#inputCarrera").change(function(){
     },"json")
 
     //Carga los Alumnos de una carrera en la select2
-    $.post("./funciones/getAlumnosPorIdCarrera.php",{"carrera_id":carrera_id},function(response){
+    $.post("./funciones/getAlumnosPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
           if (response.codigo==200) {
             $("#inputAlumno").empty(); 
             response.datos.forEach(alumno => {
@@ -168,8 +168,7 @@ function guardarHomologacion() {
     let alumno_id = $("#inputAlumno").val();
     let nota = $("#inputNota").val();
     let parametros = {"carrera_id":carrera_id,"materia_id":materia_id,"alumno_id":alumno_id,"nota":nota}
-    console.log(parametros);
-    $.post("./funciones/persistirHomologacionMateriaAprobada.php",parametros,function(res){
+    $.post("./funciones/persistirHomologacionMateriaAprobada.php?token=<?=$_SESSION['token'];?>",parametros,function(res){
         let msg = "";
         if (res.codigo==200) {
             msg = `<div class="alert alert-success alert-dismissible fade show" role="alert">

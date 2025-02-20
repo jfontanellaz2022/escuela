@@ -94,7 +94,7 @@ if ( $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO |
       
       <div class="form-row">
         <div class="form-group col-md-6">
-          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Volver</button>
+          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php?token=<?=$_SESSION['token'];?>'">Volver</button>
         </div>
       </div>
     
@@ -187,7 +187,7 @@ $(function () {
 function getCarrerasHabilitadas() {
    var evento;
    $.ajax({
-      url:"./funciones/getCarrerasHabilitadas.php",
+      url:"./funciones/getCarrerasHabilitadas.php?token=<?=$_SESSION['token'];?>",
       type:"POST",
       dataType : 'json',
       async: false,
@@ -205,7 +205,7 @@ function cargaMateriasConInscriptosPorCarrera() {
         if (val!=0) {
             let parametros = val+'_'+$("#selectLlamado").val()+'_'+$("#inputFecha").val();
             let p = {"parametros":parametros}
-            $.get("./funciones/generarMateriasConInscriptosPorCarrera.php",p,function (resul){
+            $.get("./funciones/generarMateriasConInscriptosPorCarrera.php?token=<?=$_SESSION['token'];?>",p,function (resul){
                 $("#resultado").html(resul);
             });
         } else {

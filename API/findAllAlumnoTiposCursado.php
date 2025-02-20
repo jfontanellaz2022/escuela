@@ -4,10 +4,19 @@
 //** Autor: jfontanellaz@gmail.com                                                     **
 //** SACA TODOS LOS ALUMNOS DE UN ALUMNO POR ID ALUMNO                                 **
 //***************************************************************************************
-set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib');
-require_once('Tipificacion.php');
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "seguridadNivel1.php";
+require_once 'Tipificacion.php';
 require_once 'SanitizeCustom.class.php';
-//include_once 'seguridadNivel2.php';
+
+$token = (isset($_GET['token']))?$_GET['token']:false;
+
+if ($token!=$_SESSION['token']) {
+  $finalResponse['codigo'] = 500;
+  $finalResponse['class'] = 'danger';
+  $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($finalResponse);die;
+}
 
 $objeto = new Tipificacion();
 $arr_formas_cursado = $objeto->getAllAlumnoTipoCursado();

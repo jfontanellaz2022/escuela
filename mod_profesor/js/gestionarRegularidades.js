@@ -245,7 +245,7 @@ function cargarAlumnosPorMateriaRegularidad(carrera_id,materia_id,materia_nombre
    let evento_habilitado;
    let titulo = '<h1><i>'+materia_nombre+'</h1></i><h3><strong>Alumnos</strong> (Crear Regularidades)</h3>';
    let boton_agregar_alumno = '';  
-   let accion_editar = '<a href="#" title="Editar Datos de la Regularidad"><img src="../assets/img/icons/edit_icon.png" width="23"></a>';
+   let accion_editar = '<a href="#" title="Editar Datos de la Regularidad"><img src="../public/img/icons/edit_icon.png" width="23"></a>';
    //let carrera_nombre = getCarreraNombrePorId(carrera_id);
  
    //if (materia_cursado == '01') {

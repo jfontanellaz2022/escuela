@@ -1,9 +1,8 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
-
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-//require_once "_seguridad.php";
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'../');
+require_once 'verificarCredenciales.php';
+require_once 'conexion.php';
+require_once 'Sanitize.class.php';
 
 $codigo = (isset($_POST['codigo']) && $_POST['codigo']!="")?$_POST['codigo']:false;
 $array_resultados = array();

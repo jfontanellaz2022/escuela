@@ -97,11 +97,11 @@ function load(page) {
       let titulo = "<h1><i><u>Calendario de Eventos</u></i></h1><h2>Listado</h2>";
       $("#titulo").html(titulo);
       $.ajax({
-          url: 'funciones/'+entidad_nombre+'Listar.php',
+          url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
           data: parametros,
           method: 'POST',
           beforeSend: function () {
-            $("#principal").html("<img src='../public/assets/img/load_icon.gif' width='50' >");  
+            $("#principal").html("<img src='../public/img/load_icon.gif' width='50' >");  
           },
           success: function (data) {
               $("#principal").fadeIn(100).html(data);
@@ -131,7 +131,7 @@ function aplicarFiltro() {
     let titulo = "<h1><i><u>"+entidad_titulo1+"</u></i></h1>";
     $("#titulo").html(titulo);
         $.ajax({
-            url: 'funciones/'+entidad_nombre+'Listar.php',
+            url: 'funciones/'+entidad_nombre+'Listar.php?token=<?=$_SESSION['token'];?>',
             data: parametros,
             method: 'POST',
             success: function (data) {
@@ -157,7 +157,7 @@ function quitarFiltro() {
 // NOS PERMITE BUSCAR UNA ENTIDAD POR ID       
 //************************************************** 
 function entidadObtenerPorId(entidad_id){
-    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php";
+    let url = "funciones/"+entidad_nombre+"ObtenerPorId.php?token=<?=$_SESSION['token'];?>";
     let resultado;
     
     $.ajaxSetup({
@@ -178,7 +178,7 @@ function entidadObtenerPorId(entidad_id){
 function entidadVer(entidad_id){
     let datos_entidad = "";
     let url = "html/"+entidad_nombre+".html";
-    let url_obtener_entidad = "funciones/eventoObtener.php";
+    let url_obtener_entidad = "funciones/eventoObtener.php?token=<?=$_SESSION['token'];?>";
     let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -224,7 +224,7 @@ function entidadCrear(){
       let arreglo="";
       let parametros = "";
       let url = "html/calendario.html";
-      let url_select2_obtener_eventos = "funciones/eventoObtener.php";// Esto puede cambiar
+      let url_select2_obtener_eventos = "funciones/eventoObtener.php?token=<?=$_SESSION['token'];?>";// Esto puede cambiar
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -288,7 +288,7 @@ function entidadCrear(){
 function entidadEditar(entidad_id){
       let datos_entidad = "";
       let url = "html/"+entidad_nombre+".html";
-      let url_select2_obtener_eventos = "funciones/eventoObtener.php";
+      let url_select2_obtener_eventos = "funciones/eventoObtener.php?token=<?=$_SESSION['token'];?>";
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
                                   <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
@@ -379,8 +379,7 @@ function entidadGuardar(){
     let fecha_inicio = $("#inputFechaInicio").val();
     let fecha_finalizacion = $("#inputFechaFinalizacion").val();
     let parametros = {"accion":accion, "id":id, "anio":anio, "evento":evento, "fecha_inicio":fecha_inicio, "fecha_finalizacion":fecha_finalizacion};
-    let url = "funciones/"+entidad_nombre+"Guardar.php";
-    console.log(parametros);
+    let url = "funciones/"+entidad_nombre+"Guardar.php?token=<?=$_SESSION['token'];?>";
     if (accion!="" && anio!="" && evento!=="" && fecha_inicio!="" && fecha_finalizacion!="") {
         $.post(url,parametros, function(data) {
             if (data.codigo==200) {
@@ -484,7 +483,7 @@ $("body").on("click","#seleccionar_todos", function() {
 function entidadEliminarSeleccionadosConfirmar(){
       let arreglo="";
       let parametros = "";
-      let url = "funciones/"+entidad_nombre+"Eliminar.php";
+      let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
       let cantidad_seleccionados = 0;
       $('.check:checked').each(
                   function() {
@@ -522,7 +521,7 @@ function entidadEliminarSeleccionadosConfirmar(){
   function entidadEliminarSeleccionado(entidad_id){
         let arreglo="";
         let parametros = "";
-        let url = "funciones/"+entidad_nombre+"Eliminar.php";
+        let url = "funciones/"+entidad_nombre+"Eliminar.php?token=<?=$_SESSION['token'];?>";
         parametros = {"id":entidad_id};
                 $.post(url, parametros, function (data) {
                         $("#resultado_accion").html(`

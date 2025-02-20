@@ -1,9 +1,7 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
-//require_once 'conexion.php';
-//require_once "verificarCredenciales.php";
+require_once "verificarCredenciales.php";
 require_once "Sanitize.class.php";
-
 require_once "MateriaFechaExamen.php";
 
 $calendario_id = (isset($_POST['calendario_id']) && $_POST['calendario_id']!=NULL)?SanitizeVars::INT($_POST['calendario_id']):false;
@@ -26,11 +24,10 @@ if ($calendario_id && $materia_id && $llamado && $fecha_examen) {
     $param['idMateria'] = $materia_id;
     $param['llamado'] = $llamado;
     $param['fecha_examen'] = $fecha_examen;
-
+        
     if ($fecha_examen_id) {
       $param['id'] = $fecha_examen_id;
     } 
-
     $res = $obj->save($param);
     if ($res==-1) {
             $array_resultados['codigo'] = 500;

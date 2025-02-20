@@ -1,13 +1,18 @@
 <?php
 set_include_path('./app/models/'.PATH_SEPARATOR.'./app/lib'.PATH_SEPARATOR.'./');
 session_start();
+header("X-Frame-Options: DENY");
+
 require_once 'Parameters.php';
 require_once "Carrera.php";
-
-$_SESSION['token'] = crypt(rand(5, getrandmax()),Parameters::VALOR_SECRET);
+$_SESSION['token'] = bin2hex(random_bytes(35));
 $ARREGLO_CARRERAS = [];
 $objCarrera = new Carrera();
 $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
+
+if (!isset($_SESSION['token'])) {
+  headers("location: index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +21,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Gestión - E.N.S. N° 40</title>
-  <link rel="icon" href="./public/assets/img/favicon.ico">
+  <link rel="icon" href="./public/img/favicon.ico">
 
   <!--CDN de Bootstrap-->
   <link rel="stylesheet" href="./public/sass/style.css">
@@ -29,7 +34,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light"> <!--Navegación-->
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
-          <img src="./public/assets/img/Logo ENS40.png" alt="Logo" width="40" class="d-inline-block align-text-center">
+          <img src="./public/img/Logo ENS40.png" alt="Logo" width="40" class="d-inline-block align-text-center">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +45,6 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             
             <li class="nav-item">
-              <!--Disparador del MODAL para acceder al sistema-->
               <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalAccederSistema">Acceder al sistema</a>
             </li>
             
@@ -89,13 +93,13 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./public/assets/img/Esc40_1.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/assets/img/Esc40_2.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/assets/img/Esc40_3.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_3.png" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -153,32 +157,35 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
       </div>
     </div>
     <input type="hidden" class="form-control" name="inputToken" id="inputToken" value="<?=$_SESSION['token']?>">
-    <!-- Modal: Acceder al sistema-->
+   
     <div class="modal fade" id="modalAccederSistema" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
-          <div class="modal-header"> <!--Encabezado del modal-->
+          <div class="modal-header"> 
             <h1 class="modal-title fs-5" id="exampleModalLabel">Acceder al sistema</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <div class="modal-body"> <!--Cuerpo del modal-->
-            <form action=""> <!--Aquí iría el login.php-->
+          <div class="modal-body"> 
+            <form action="" method="POST"> 
                
-              <div class="mb-3 d-block"> <!--Ingresar usuario -->
+              <div class="mb-3 d-block"> 
                 <label for="inputUsuario" class="form-label">Ingrese su usuario</label>
-                <input type="text" class="form-control" id="inputUsuario" placeholder="">
+                <input type="text" class="form-control" id="inputUsuario" maxlength="15" placeholder="">
               </div>
   
-              <div class="mb-3"> <!--Ingresar contraseña -->
+              <div class="mb-3"> 
                 <label for="inputPassword" class="form-label">Ingrese su contraseña</label>
-                <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock">
+                <input type="password" id="inputPassword" class="form-control" maxlength="10" aria-describedby="passwordHelpBlock">
               </div>
             </form>
+
+            <div id="msg_ingreso" class="mb-3 d-none">
+              </div>
           </div>
 
-          <div class="modal-footer"> <!--Pie del modal-->
+          <div class="modal-footer"> 
             <div class="row">
               <div class="col d-grid gap-2 d-md-flex disabled">
                <a class="" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalOlvideContrasenia">¿Olvidaste tu contraseña?</a>
@@ -193,37 +200,35 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
       </div>
     </div>
 
-    <!-- Modal: Olvidé la contraseña-->
     <div class="modal fade" id="modalOlvideContrasenia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
-          <div class="modal-header"> <!--Encabezado del modal-->
+          <div class="modal-header"> 
             <h1 class="modal-title fs-5" id="exampleModalLabel">Restablecer Contraseña</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <div class="modal-body"> <!--Cuerpo del modal-->
-            <form action=""> <!--Aquí iría el recuperarCuenta.php-->
+          <div class="modal-body"> 
+            <form action="" method="POST"> 
               
  
-              <div class="mb-3"> <!--Ingresar correo electrónico -->
+              <div class="mb-3"> 
                 <label for="inputRestablecerEmail" class="form-label">E-mail</label>
-                <input type="text" id="inputRestablecerEmail" class="form-control" placeholder="Ingrese Email" aria-describedby="passwordHelpBlock">
+                <input type="text" id="inputRestablecerEmail" class="form-control" maxlength="45" placeholder="Ingrese Email" aria-describedby="passwordHelpBlock">
               </div>
 
-              <div class="mb-3"> <!--Ingresar correo electrónico -->
-                <img src="./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5" alt="Captcha" id='img_captcha'/>&nbsp;
+              <div class="mb-3"> 
+                <img src="./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5&token=<?=$_SESSION['token'];?>" alt="Captcha" id='img_captcha'/>&nbsp;
                 <input class="form-control mr-sm-2" type="text" placeholder="Ingrese Codigo" aria-label="Search" id='inputCaptcha' maxlength="5" required >&nbsp;
               </div>       
-              <!--Aquí iría el Captcha-->
 
-              <div id="msg_restablecer" class="mb-3 d-none"> <!--Ingresar correo electrónico -->
+              <div id="msg_restablecer" class="mb-3 d-none">
               </div> 
 
           </div>
 
-          <div class="modal-footer"> <!--Pie del modal-->
+          <div class="modal-footer"> 
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Volver al inicio</button>
             <button type="button" id="btnRestablecer" class="btn btn-primary" >Reestablecer</button>
           </div>
@@ -232,21 +237,20 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
     </div>
 
 
-    <!-- Modal: Descargar Inscripcion -->
     <div class="modal fade" id="modalDescargarInscripcion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
-          <div class="modal-header"> <!--Encabezado del modal-->
+          <div class="modal-header"> 
             <h1 class="modal-title fs-5" id="exampleModalLabel">Descargar Inscripción</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <div class="modal-body"> <!--Cuerpo del modal-->
-            <form action=""> <!--Aquí iría el recuperarCuenta.php-->
+          <div class="modal-body">
+            <form action=""> 
  
               
-              <div class="mb-3"> <!--Seleccionar perfil (Bedel, profesor, alumno/a)-->
+              <div class="mb-3">
                 <label for="inputDescargarInscripcionCarrera" class="form-label">Carrera</label>
                 <select id="inputDescargarInscripcionCarrera" class="form-select" aria-label="Default select example">
                 <option value="">** Seleccionar Carrera **</option>
@@ -260,23 +264,22 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
                 </select>
               </div>
 
-              <div class="mb-3"> <!--Ingresar correo electrónico -->
+              <div class="mb-3"> 
                 <label for="inputDescargarInscripcionDni" class="form-label">Número de DNI</label>
                 <input type="text" id="inputDescargarInscripcionDni" class="form-control" placeholder="Ingrese DNI" maxlength=8 aria-describedby="passwordHelpBlock">
               </div>
 
-              <div class="mb-3"> <!--Ingresar correo electrónico -->
-                <img src="./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5" alt="Captcha" id='img_captcha'/>&nbsp;
+              <div class="mb-3"> 
+                <img src="./app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5&token=<?=$_SESSION['token'];?>" alt="Captcha" id='img_captcha'/>&nbsp;
                 <input class="form-control mr-sm-2" type="text" placeholder="Ingrese Codigo" aria-label="Search" id='inputDescargarInscripcionCaptcha' maxlength="5" required >&nbsp;
               </div>       
-              <!--Aquí iría el Captcha-->
 
-              <div id="msg_descargar_inscripcion" class="mb-3 d-none"> <!--Ingresar correo electrónico -->
+              <div id="msg_descargar_inscripcion" class="mb-3 d-none">
               </div> 
 
           </div>
 
-          <div class="modal-footer"> <!--Pie del modal-->
+          <div class="modal-footer"> 
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="location.href='./index.php'">Volver al inicio</button>
             <button type="button" id="btnDescargarInscripcion" class="btn btn-primary" >Descargar</button>
           </div>
@@ -287,7 +290,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
   </section>
 
  
-  <footer class="pt-4 pb-4 bg-body-tertiary text-center"> <!--Pie de página-->
+  <footer class="pt-4 pb-4 bg-body-tertiary text-center"> 
     <p>Todos los derechos reservados</p>
     <p class="datoContacto">Escuela Normal Superior Nº 40 “Mariano Moreno” | Direccion: J.M. Bullo 1402- 3070 San Cristóbal | Tel. Fax 03408-422447. Horario 18:00 a 21:00hs</p>
 
@@ -313,7 +316,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 </body>
 
 <!--Script JQUERY-->
-<script src="./public/assets/js/jquery-3.4.1.min.js"></script>
+<script src="./public/js/jquery-3.4.1.min.js"></script>
 <!--Script JS de Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -327,14 +330,18 @@ $('#btnIngresar').click(function(event) {
       let link = "API/auth.php";
 
       $.post(link,parametros,function(response) {
-            console.info(response);
+            if (response.codigo==200) {
                 if (response.datos=='Alumno') {
-                    $(location).attr('href','mod_alumno/home.php');
+                    $(location).attr('href','mod_alumno/home.php?token=<?=$_SESSION['token'];?>');
                 } else if (response.datos=='Profesor') {
-                    $(location).attr('href','mod_profesor/home.php');
+                    $(location).attr('href','mod_profesor/home.php?token=<?=$_SESSION['token'];?>');
                 } else if (response.datos=='Bedel') {
-                    $(location).attr('href','mod_bedel/home.php');
-                } $("#resultado").html('<div class="alert alert-'+response.class+'" role="alert"><b>Error:</b>&nbsp;'+response.mensaje+'.</div>');
+                    $(location).attr('href','mod_bedel/home.php?token=<?=$_SESSION['token'];?>');
+                };
+            } else {
+                $("#msg_ingreso").removeClass('d-none');
+                $("#msg_ingreso").html('<div class="alert alert-'+response.class+'" role="alert">'+response.mensaje+'.</div>');
+            }
       },"json")
 
 });
@@ -344,8 +351,8 @@ $('#btnRestablecer').click(function(event) {
       let captcha = $('#inputCaptcha').val();
       let token = $('#inputToken').val();
 
-      let parametros = {'inputEmail':email, "inputCodigo":captcha, 'token':token}
-      let link = "API/restablecerPassword.php";
+      let parametros = {'inputEmail':email, "inputCodigo":captcha}
+      let link = "API/restablecerPassword.php?token=<?=$_SESSION['token'];?>";
 
       $.post(link,parametros,function(response) {
                console.info(response);
@@ -366,10 +373,11 @@ $('#btnDescargarInscripcion').click(function(event) {
       let carrera = $('#inputDescargarInscripcionCarrera').val();
       let dni = $('#inputDescargarInscripcionDni').val();
       let captcha = $('#inputDescargarInscripcionCaptcha').val();
-      let link = "API/findInscripcionPorDni.php";
-      let parametros = {'carrera':carrera,'dni':dni,'codigo':captcha}
+      let token = $('#inputToken').val();
+      let link = "API/findInscripcionPorDni.php?token=<?=$_SESSION['token'];?>";
+      let parametros = {'carrera':carrera,'dni':dni,'codigo':captcha,'token':token}
 
-      if (carrera && dni && captcha) {
+      if (carrera && dni && captcha && token) {
             $.post(link,parametros,function(response) {
                     console.info(response);
                     $("#msg_descargar_inscripcion").removeClass("d-none");

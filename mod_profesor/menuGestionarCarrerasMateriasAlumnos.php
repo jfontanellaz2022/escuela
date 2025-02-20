@@ -82,8 +82,7 @@
 
 <!-- JAVASCRIPT CUSTOM -->
 
-<script src="./js/funciones.js"></script>
-<script src="./js/gestionarCursado.js"></script>
+
 <script>
    
    let carrera_id = '';
@@ -93,6 +92,7 @@
    let materia_nombre = '';
    let opcion = 'cursado';
    let llamado_numero = '';
+   let token = "<?=$_SESSION['token'];?>";
 
    function expired() {
       location.href = "./logout.php";
@@ -107,6 +107,8 @@
 
 </script>
 
+<script src="./js/funciones.js"></script>
+<script src="./js/gestionarCursado.js"></script>
 
 
 </body>

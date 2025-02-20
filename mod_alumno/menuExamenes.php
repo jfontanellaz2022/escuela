@@ -8,7 +8,7 @@ require_once "Constantes.php";
 
 $id_url = "menu_examenes";
 $_SESSION['arr_materias_inscriptas_actualizadas'] = [];
-
+//var_dump($_SESSION['arreglo_credenciales_usuario']);exit;
 //* OBTENEMOS EL ID DE LA PERSONA Y EL ID DEL ALUMNO  **
 $idPersona = $idAlumno = $idCalendario = $cantidad_llamados = 0;
 $fecha_inicio = $fecha_final = "";
@@ -27,7 +27,8 @@ if (!empty($arr_datos_alumno)) {
 
 $objCalendario = new CalendarioAcademico();
 $arr_datos_calendario = $objCalendario->getLastInscripcionExamen();
-
+$arr_datos_turno = $objCalendario->getLastTurnoExamen();
+$_SESSION['turno_id'] = $arr_datos_turno['id'];
 if (!empty($arr_datos_calendario)) {
       $fecha_inicio = $arr_datos_calendario['fecha_inicio'];
       $fecha_final = $arr_datos_calendario['fecha_final'];
@@ -53,15 +54,11 @@ if (!empty($arr_datos_calendario)) {
             $_SESSION['arr_calendario']['cantidad_llamados'] = $cantidad_llamados;
       } else { 
             $arr_datos_calendario = $objCalendario->getLastInscripcionExamenConIntermedias();
-            //var_dump($arr_datos_calendario);exit;
-            //$idCalendario = $arr_datos_calendario['']
             $fecha_inicio = $arr_datos_calendario['fecha_inicio'];
             $fecha_final = $arr_datos_calendario['fecha_final'];
             if ( strtotime($hoy)>=strtotime($fecha_inicio) && strtotime($hoy)<=strtotime($fecha_final) ) {
-                //die('entroo');
                 $_SESSION['arr_calendario']['inscripcion_asociada'] = $objCalendario->getLastInscripcionExamen()['id'];
                 $_SESSION['arr_calendario']['inscripcion_activa'] = $arr_datos_calendario['id'];
-                //var_dump($_SESSION['arr_calendario']);exit;
             } else {
                 $_SESSION['arr_calendario']['inscripcion_activa'] =  $idCalendario;
             }
@@ -71,21 +68,16 @@ if (!empty($arr_datos_calendario)) {
 
 
 
+$disabledCarrerasClass = 'disabledbutton';
+$disabledMateriasClass = 'disabledbutton';
 
-//var_dump($_SESSION['arr_calendario']);die;
+if ( strtotime($hoy)>=strtotime($arr_datos_calendario['fecha_inicio']) && 
+     strtotime($hoy)<=strtotime($arr_datos_turno['fecha_final']) ) {
+    $disabledCarrerasClass = '';
+}
 
-//$_SESSION['arr_calendario']['inscripcion_activa'] = $idCalendario;
-
-
-
-
-//$_SESSION['arr_calendario']['inscripcion_activa'];
-//$calendario_id = $_SESSION['arr_calendario']['inscripcion_asociada'];
-//$cantidad_llamados = $_SESSION['arr_calendario']['cantidad_llamados'];
-
-$disabledClass = 'disabledbutton';
 if (!$_SESSION['arr_calendario']['inscripcion_activa']==0) {
-  $disabledClass = '';
+    $disabledMateriasClass = '';
 }
 
 ?>
@@ -93,6 +85,9 @@ if (!$_SESSION['arr_calendario']['inscripcion_activa']==0) {
 <!doctype html>
 <html lang="es">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex">
 <link rel="shortcut icon" href="../public/img/favicon.png">
 
 <?php
@@ -118,11 +113,11 @@ if (!$_SESSION['arr_calendario']['inscripcion_activa']==0) {
     </div>
   </article>
 
-  <article class="container <?=$disabledClass?>">
+  <article class="container <?//=$disabledClass?>">
     <div id="titulo"><h3><strong>Inscripción a Exámenes</strong></h3></div>
   </article>
 
-  <article class="container <?=$disabledClass?>">
+  <article class="container <?//=$disabledClass?>">
        <section>
            <div class="row" id="resultado">
               
@@ -167,9 +162,9 @@ function cargarCarrerasExamenes(idAlumno) {
     subtitulo = `<h3>Seleccione Carrera</h3>`;
 
   //Remuevo la class que me deshabilita
-  $("#resultado").removeClass("disabledbutton");
+  //$("#resultado").removeClass("disabledbutton");
   let parametros = {'alumno':idAlumno};
-  $.post( "../API/findAllCarrerasPorAlumno.php", parametros, function( response ) {
+  $.post( "../API/findAllCarrerasPorAlumno.php?token=<?=$_SESSION['token'];?>", parametros, function( response ) {
     $("#breadcrumb").html(bread);
     $("#titulo").html(titulo+subtitulo);
     $("#resultado").html("");
@@ -186,6 +181,7 @@ function cargarCarrerasExamenes(idAlumno) {
                    </div>
              </div>`;
         $("#resultado").append(resul);
+        $(".container").addClass("<?=$disabledCarrerasClass;?>");
      });
   },"json");
 }
@@ -201,7 +197,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
   bread = `<nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="menuEscritorio.php">Home</a></li>
-                    <li class="breadcrumb-item" aria-current="page"><a href="#" onclick="cargarCarrerasExamenes(`+alumno_id+`)">Inscripción a Exámenes</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="menuExamenes.php?token=<?=$_SESSION['token'];?>">Inscripción a Exámenes</a></li>
                     <li class="breadcrumb-item active" aria-current="page">`+carrera_descripcion+`</li>
                     </ol>
                 </nav>`;
@@ -210,8 +206,9 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
   $("#breadcrumb").html(bread);
   $("#titulo").html(titulo+subtitulo);
   let table1,table2,filas = "";
+
   //console.info('aaa:' + carrera_id);
-   $.post("./funciones/getMateriasParaRendirPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
+   $.post("./funciones/getMateriasParaRendirPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(data){
          $("#resultado").html();
          table1 = `<table class="table table-striped" id="tabla_examen">
               <thead>
@@ -249,6 +246,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
 
               });
               $("#resultado").html(table1+filas+table2);       
+              $(".container").addClass("<?=$disabledMateriasClass;?>");
    },"json");
    
 }
@@ -256,7 +254,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
 
 function guardarIncripcion(val,id) {
 
-    $.post('../API/setMateriasParaRendir.php',{"materia_id":id,"inscribir":val},function(data){
+    $.post('../API/setMateriasParaRendir.php?token=<?=$_SESSION['token'];?>',{"materia_id":id,"inscribir":val},function(data){
         if (data.res=='Si') {
           Swal.fire({
               title: "Actualización Realizada!",
@@ -279,7 +277,7 @@ function guardarIncripcion(val,id) {
 
 
 function persistirInscripciones(carrera) {
-  $.post("../API/insertInscripcionesParaRendir.php",{"carrera_id":carrera},function(data) {
+  $.post("../API/insertInscripcionesParaRendir.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera},function(data) {
       Swal.fire({
             title: "Actualización Realizada!",
             text: "La inscripción se ha Confirmado.",

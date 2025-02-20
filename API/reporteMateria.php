@@ -1,5 +1,6 @@
 <?php
-set_include_path('../app/utils/'.PATH_SEPARATOR.'../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../conexion/');
+set_include_path('../app/utils/'.PATH_SEPARATOR.'../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "seguridadNivel2.php";
 require_once 'Materia.php';
 require_once 'AlumnoCursaMateria.php';
 require_once 'ReporteMateriaPdf.class.php';

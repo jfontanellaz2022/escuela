@@ -1,7 +1,6 @@
 <?php
-session_start();
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/');
-
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+require_once "verificarCredenciales.php";
 require_once "Carrera.php";
 require_once "AlumnoRindeMateria.php";
 require_once "AlumnoCursaMateria.php";

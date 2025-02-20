@@ -1,6 +1,5 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-
 require_once 'verificarCredenciales.php';
 require_once 'Sanitize.class.php';
 require_once 'ArrayHash.class.php';
@@ -94,7 +93,7 @@ $turno_id = $ARRAY_TURNO['id'];
       
       <div class="form-row">
         <div class="form-group col-md-6">
-          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Volver</button>
+          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php?token=<?=$_SESSION['token'];?>'">Volver</button>
         </div>
       </div>
     
@@ -190,7 +189,7 @@ function cargaMateriasConPromocionadosPorCarrera()
             let parametros = val+'_'+$("#inputFecha").val();
             let p = {"parametros":parametros}
 
-            $.get("./funciones/generarMateriasConPromocionadosPorCarrera.php",p,function (resul){
+            $.get("./funciones/generarMateriasConPromocionadosPorCarrera.php?token=<?=$_SESSION['token'];?>",p,function (resul){
                 $("#resultado").html(resul);
             });
         } else {
@@ -208,7 +207,7 @@ function getDatosEventoPorCodigo(codigo) {
    var datos = {"codigo":codigo};
    var evento;
    $.ajax({
-      url:"./funciones/getFechasEventoPorCodigo.php",
+      url:"./funciones/getFechasEventoPorCodigo.php?token=<?=$_SESSION['token'];?>",
       type:"POST",
       data: datos,
       dataType : 'json',
@@ -262,7 +261,7 @@ function getTurnoActivo() {
 function getCarrerasHabilitadas() {
    var evento;
    $.ajax({
-      url:"./funciones/getCarrerasHabilitadas.php",
+      url:"./funciones/getCarrerasHabilitadas.php?token=<?=$_SESSION['token'];?>",
       type:"POST",
       dataType : 'json',
       async: false,
@@ -270,7 +269,6 @@ function getCarrerasHabilitadas() {
          evento = response.datos;
       }
     });
-   console.info(evento); 
    return evento;
 }
 
@@ -303,228 +301,6 @@ function getLlamadoActivo() {
    return datos;
 }
 
-
-
-
-
-/*
-$("body").on("click","#botonFiltro",function(e) {
-      e.preventDefault();
-      let anio_lectivo = $("#inputFiltroAnioLectivo").val();
-      let evento = $("#inputFiltroEvento").val();
-      console.info(anio_lectivo+'-'+evento);
-      let per_page = 10;
-      let parametros = {"action": "listar","page": 1,"per_page": per_page,"anio":anio_lectivo,"codigo":evento};
-      $("#titulo").html(titulo);
-      $.ajax({
-          url: 'funciones/calendarioListar.php',
-          data: parametros,
-          method: 'POST',
-          success: function (data) {
-              $("#resultado").html(data);
-              $("#tabla_calendario>tfoot").prepend(`<tr>
-                                                      <td colspan="5">
-                                                          <button class="btn btn-primary" onclick="calendarioAgregar()">Nuevo</button>
-                                                      </td>
-                                                  </tr>`);
-          }
-      });
-
-}) 
-
-
-function loadFiltros() {
-    $.get("./html/calendarioFiltro.html",function(datos) {
-        $("#filtro").html(datos);
-        $.post("./funciones/getAllEvento.php",function(datos_evento){
-            if (datos_evento.codigo == 100) {
-                datos_evento.data.forEach(evento => {
-                      $("#inputFiltroEvento").append($('<option/>', {
-                            text: '('+evento.codigo+') '+evento.descripcion,
-                            value: evento.codigo,
-                      }));
-                });
-                $('#inputFiltroEvento').select2({
-                    theme: "bootstrap4",
-                });
-            } else {
-                console.log("error codigo");
-            }
-        },"json");
-    });
-}    
-
-
-
-function calendarioAgregar() {
-    let titulo = `<h1><i><u>Calendario de Eventos</u></i></h1><h2>Agregar Evento al Calendario</h2>`;
-    let bread = `<nav aria-label="breadcrumb" role="navigation">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="#" onclick="">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#" onclick="cargarModulos()">Calendario</a></li>
-                      <li class="breadcrumb-item">Agregar Evento </li>
-                    </ol>
-                  </nav>`;
-    $("#filtro").html("");
-    $("#breadcrumb").html(bread);
-    $("#titulo").html(titulo);
-    $.get("./html/calendarioAlta.html",function(datos) {
-         $("#resultado").html(datos);
-         $("#inputAltaFechaInicio").datepicker({dateFormat: "yy-mm-dd"});
-         $("#inputAltaFechaFinalizacion").datepicker({dateFormat: "yy-mm-dd"});
-         $.post("./funciones/getAllEvento.php",function(datosEventos) {
-              if (datosEventos.codigo == 100) {
-                  let obj = datosEventos.data; 
-                  obj.forEach(evento => {
-                        $("#inputAltaEvento").append($('<option/>', {
-                              text: ' ('+evento.codigo+') '+evento.descripcion,
-                              value: evento.id,
-                        }));
-                  });
-                  $('#inputAltaEvento').select2({
-                        theme: "bootstrap4",
-                  });
-              }
-         },"json")
-    });
-}
-
-function calendarioEditar(idCalendario) {
-    let titulo = `<h1><i><u>Calendario de Eventos</u></i></h1><h2>Editar Evento del Calendario</h2>`;
-    let bread = `<nav aria-label="breadcrumb" role="navigation">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="#" onclick="">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#" onclick="cargarModulos()">Calendario</a></li>
-                      <li class="breadcrumb-item">Editar Evento</li>
-                    </ol>
-                  </nav>`;
-    let calendario_id = idCalendario;
-    let anio_lectivo;
-    let fecha_inicio;
-    let fecha_finalizacion;
-    let evento_id;       
-    $("#filtro").html("");       
-    $("#breadcrumb").html(bread);
-    $("#titulo").html(titulo);
-
-    let datos_calendario = getCalendarioPorId(calendario_id);
-    if (datos_calendario.codigo == 100) {
-        anio_lectivo = datos_calendario.data[0].AnioLectivo;
-        fecha_inicio = datos_calendario.data[0].fechaInicioEvento;
-        fecha_finalizacion = datos_calendario.data[0].fechaFinalEvento;
-        evento_id = datos_calendario.data[0].idEvento;
-    };
-    $.get("./html/calendarioEditar.html",function(datos) {
-         $("#resultado").html(datos);
-         $("#inputEditarAnio").val(anio_lectivo);
-         $("#inputEditarFechaInicio").val(fecha_inicio);
-         $("#inputEditarFechaFinalizacion").val(fecha_finalizacion);
-         $("#inputEditarFechaInicio").datepicker({dateFormat: "yy-mm-dd"});
-         $("#inputEditarFechaFinalizacion").datepicker({dateFormat: "yy-mm-dd"});
-         $("#inputEditarIdCalendario").val(calendario_id);
-         $.post("./funciones/getAllEvento.php",function(datosEventos) {
-              if (datosEventos.codigo == 100) {
-                    let obj = datosEventos.data; 
-                    obj.forEach(evento => {
-                            $("#inputEditarEvento").append($('<option/>', {
-                                text: ' ('+evento.codigo+') '+evento.descripcion,
-                                value: evento.id,
-                            }));
-                    });
-                    $("#inputEditarEvento option[value="+ evento_id +"]").attr("selected",true);
-                    $('#inputEditarEvento').select2({
-                        theme: "bootstrap4",
-                    });
-              };
-
-          },"json")
-    });
-};
-
-function calendarioEditarGuardar() {
-    let anio_lectivo = $("#inputEditarAnio").val();
-    let evento = $('#inputEditarEvento').val();
-    let fecha_inicio = $("#inputEditarFechaInicio").val();
-    let fecha_finalizacion = $("#inputEditarFechaFinalizacion").val();
-    let calendario = $("#inputEditarIdCalendario").val();
-    let parametros = {"anio":anio_lectivo,"evento":evento,"fecha_inicio":fecha_inicio,"fecha_finalizacion":fecha_finalizacion,"calendario":calendario};
-
-    $.post("./funciones/updCalendario.php",parametros,function(datos){
-        if (datos.codigo == 100) {
-            cargarModulos();
-            $("#resultado_accion").html();
-            $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+datos.data+`</span></i>
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                         </button></div></div>`);
-        } else {
-            
-            $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+datos.data+`</span></i>
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                         </button></div></div>`);
-        }
-    },"json");
-
-    
-}
-
-
-function calendarioAltaGuardar() {
-    let anio_lectivo = $("#inputAltaAnio").val();
-    let evento = $('#inputAltaEvento').val();
-    let fecha_inicio = $("#inputAltaFechaInicio").val();
-    let fecha_finalizacion = $("#inputAltaFechaFinalizacion").val();
-    let parametros = {"anio":anio_lectivo,"evento":evento,"fecha_inicio":fecha_inicio,"fecha_finalizacion":fecha_finalizacion};
-    $.post("./funciones/setCalendario.php",parametros,function(datos){
-        if (datos.codigo == 100) {
-            cargarModulos();
-            $("#resultado_accion").html();
-            $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+datos.data+`</span></i>
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                         </button></div></div>`);
-        } else {
-            
-            $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+datos.data+`</span></i>
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                         </button></div></div>`);
-        }
-    },"json");
-   
-}
-
-
-function calendarioEliminar(idCalendario) {
-    if (confirm("Va a Eliminar un Evento del Calendario, desea hacerlo?.")) {
-        let parametros = {"calendario":idCalendario};
-        $.post("./funciones/delCalendario.php",parametros,function(datos){
-            if (datos.codigo == 100) {
-                cargarModulos();
-                $("#resultado_accion").html();
-                $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                            `+datos.data+`</span></i>
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button></div></div>`);
-            } else {
-                $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                            `+datos.data+`</span></i>
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button></div></div>`);
-            }
-        },"json");
-    }
-   
-}
-
-*/
 
 </script>
 

@@ -1,10 +1,10 @@
 <?php
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../../conexion/'.PATH_SEPARATOR.'./');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
+require_once "verificarCredenciales.php";
+include_once "Sanitize.class.php";
 require_once "Materia.php";
-include_once 'conexion.php';
-include_once 'Sanitize.class.php';
-require_once "_seguridad.php";
+
 
 $arr_resultados = [];
 $search = (isset($_GET['searchTerm']))?$_GET['searchTerm']:false;

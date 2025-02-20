@@ -4,7 +4,6 @@ set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'.
 require_once 'Sanitize.class.php';
 require_once 'ArrayHash.class.php';
 require_once 'verificarCredenciales.php';
-
 require_once 'Carrera.php';
 
 
@@ -75,7 +74,7 @@ $arr_carreras_habilitadas_registracion = $obj->getCarrerasHabilitadasRegistracio
       
       <div class="form-row">
         <div class="form-group col-md-6">
-          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Volver</button>
+          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php?token=<?=$_SESSION['token'];?>'">Volver</button>
         </div>
       </div>
     
@@ -126,7 +125,7 @@ function cargarAlumnos() {
     let tr = "";
     $("#resultado_accion").html("");
     if (anio!="") {
-            $.post("./funciones/getAlumnosCompletoPorIdCarrera.php",param,function(data) {
+            $.post("./funciones/getAlumnosCompletoPorIdCarrera.php?token=<?=$_SESSION['token'];?>",param,function(data) {
                 $("#resultado_accion").html(`<table id="tabla" class="table"><thead>
                                                 <tr>
                                                   <th scope="col">#</th>

@@ -46,10 +46,10 @@ class CaptchaSecurityImages {
         }
 
 }
-
-$width = isset($_GET['width']) ? $_GET['width'] : '120';
-$height = isset($_GET['height']) ? $_GET['height'] : '40';
-$characters = isset($_GET['characters']) && $_GET['characters'] > 1 ? $_GET['characters'] : '6';
-//var_dump($width,$height,$characters);exit;
-$captcha = new CaptchaSecurityImages($width,$height,$characters);
+if ($_GET['token']==$_SESSION['token']) {
+        $width = isset($_GET['width']) ? $_GET['width'] : '120';
+        $height = isset($_GET['height']) ? $_GET['height'] : '40';
+        $characters = isset($_GET['characters']) && $_GET['characters'] > 1 ? $_GET['characters'] : '6';
+        $captcha = new CaptchaSecurityImages($width,$height,$characters);
+};
 ?>

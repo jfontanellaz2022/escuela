@@ -10,6 +10,15 @@ require_once 'Profesor.php';
 
 
 $id_profesor = (isset($_POST['profesor']))?SanitizeVars::INT($_POST['profesor']):false;
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+if ($token!=$_SESSION['token']) {
+  $finalResponse['codigo'] = 500;
+  $finalResponse['class'] = 'danger';
+  $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($finalResponse);die;
+}
+//****************************************************** */
 
 if ($id_profesor) {
    $objeto = new Profesor;

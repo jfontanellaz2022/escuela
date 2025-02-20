@@ -10,25 +10,25 @@
  <ul class="navbar-nav">
 
    <li class="nav-item <?php echo ($id_url=='menu_home')?'active':'';?>">
-    <a class="nav-link" href="home.php">
+    <a class="nav-link" href="home.php?token=<?=$_SESSION['token'];?>">
       <img src="../public/img/icons/home_icon.png" width="23">
       <span class="sr-only">(current)</span></a>
    </li>
 
    <li class="nav-item <?php echo ($id_url=='menu_historia')?'active':'';?>">
-       <a class="nav-link" href="menuHistoria.php">
+       <a class="nav-link" href="menuHistoria.php?token=<?=$_SESSION['token'];?>">
          Historia Academica
          <span class="sr-only">(current)</span></a>
    </li>
 
    <li class="nav-item <?php echo ($id_url=='menu_examenes')?'active':'';?>">
-       <a class="nav-link" href="menuExamenes.php">
+       <a class="nav-link" href="menuExamenes.php?token=<?=$_SESSION['token'];?>">
          Examenes
          <span class="sr-only">(current)</span></a>
    </li>
 
    <li class="nav-item <?php echo ($id_url=='menu_cursado')?'active':'';?>">
-       <a class="nav-link" href="menuCursado.php">
+       <a class="nav-link disabled" href="menuCursado.php?token=<?=$_SESSION['token'];?>">
          Cursado
          <span class="sr-only">(current)</span></a>
    </li>
@@ -44,7 +44,7 @@
       <font color='black'><strong><?=$_SESSION['arreglo_datos_usuario']['usuario_nombre']?></strong></font> <img src="../public/img/icons/user_icon.png" width="22">
       </a>
       <div class="dropdown-menu dropdown-menu-right bg-info" aria-labelledby="servicesDropdown">
-      <a class="dropdown-item" href="menuCambiarPassword.php"><img src="../public/img/icons/chpassword_icon.png" width="25"> Cambiar Contrase&ntilde;a</a>
+      <a class="dropdown-item disabled" href="menuCambiarPassword.php"><img src="../public/img/icons/chpassword_icon.png" width="25"> Cambiar Contrase&ntilde;a</a>
        <a class="dropdown-item" href="../logout.php"><img src="../public/img/icons/exit_icon.png" width="22"> Salir</a>
    </div>
  </li>

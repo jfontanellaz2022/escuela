@@ -1,11 +1,22 @@
 <?php
 
-set_include_path('../app/lib/'.PATH_SEPARATOR.'../app/lib/controllers/');
+set_include_path('../app/lib/'.PATH_SEPARATOR.'../app/lib/controllers/'.PATH_SEPARATOR.'./');
 define('ROOT_DIR1',realpath('../app/controllers'));
+require_once "ActasInscripcionCarreraPdf.class.php";
+require_once (ROOT_DIR1 . '/ReporteController.php');
 
-require_once('ActasInscripcionCarreraPdf.class.php');
-require_once(ROOT_DIR1 . '/ReporteController.php');
-
+//*******************TOKEN  *****************************/
+$array_resultados = [];
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+/*
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}*/
+//****************************************************** */
 $arr_param = explode('&',base64_decode($_GET['p']));
 $anio_lectivo = $arr_param[0];
 $dni = $arr_param[1];
@@ -92,20 +103,22 @@ $pdf->Ln(2);
 //CARRERA
 $pdf->SetFont('times', 'U', 8.5);
 $pdf->Cell(10);
-$pdf->Cell(15, 10, 'CARRERA:',  0, 0, '');
+$pdf->Cell(17, 10, 'CARRERA:',  0, 0, '');
 $pdf->SetFont('times', 'I', 8);
-$pdf->Cell(1, 10, $arr_datos['NombreCarrera'], 0, 0, 'L');
+$pdf->Cell(102, 10, $arr_datos['NombreCarrera'], 0, 0, 'L');
 
 
 //Anio
 $pdf->SetFont('times', 'U', 8.5);
-$pdf->Cell(112, 10, 'AÑO:',  0, 0, 'R');
+$pdf->Cell(9, 10, 'AÑO:',  0, 0, 'L');
 $pdf->SetFont('times', 'I', 8);
 $pdf->Cell(5, 10, '1°',  0, 0, 'R');
 
 //Division
 $pdf->SetFont('times', 'U', 8.5);
-$pdf->Cell(150, 10, 'DIVISIÓN: ÚNICA',  0, 1, 'L');
+$pdf->Cell(17, 10, 'DIVISIÓN: ',  0, 0, 'L');
+$pdf->SetFont('times', 'I', 8);
+$pdf->Cell(20, 10, 'ÚNICA',  0, 1, 'L');
 
 
 //DATOS PERSONALES
@@ -145,14 +158,14 @@ $pdf->Cell(37, 10, ucfirst($arr_datos['EstadoCivil']), 0, 1, 'L');
 //DOMICILIO
 $pdf->SetFont('times', 'U', 8.5);
 $pdf->Cell(10);
-$pdf->Cell(31, 10, 'DOMICILIO ACTUAL:',  0, 0, 'L');
+$pdf->Cell(33, 10, 'DOMICILIO ACTUAL:',  0, 0, 'L');
 $pdf->SetFont('times', 'I', 8);
 $pdf->Cell(1, 10, ucfirst($arr_datos['Domicilio']), 0, 1, '');
 
 //LOCALIDAD DE RESIDENCIA:
 $pdf->SetFont('times', 'U', 8.5);
 $pdf->Cell(10);
-$pdf->Cell(19, 10, 'LOCALIDAD:',  0, 0, 'L');
+$pdf->Cell(20, 10, 'LOCALIDAD:',  0, 0, 'L');
 $pdf->SetFont('times', 'I', 8);
 $pdf->Cell(1, 10, ucfirst($arr_datos['Localidad']), 0, 0, '');
 
@@ -172,7 +185,7 @@ $pdf->Cell(1, 10, $arr_datos['Email'], 0, 1, '');
 //TITULO NIVEL MEDIO
 $pdf->SetFont('times', 'U', 8.5);
 $pdf->Cell(10);
-$pdf->Cell(33, 10, 'TITULO NIVEL MEDIO:',  0, 0, 'L');
+$pdf->Cell(34, 10, 'TITULO NIVEL MEDIO:',  0, 0, 'L');
 $pdf->SetFont('times', 'I', 8);
 $pdf->Cell(1, 10, ucfirst($arr_datos['Titulo']), 0, 1, '');
 

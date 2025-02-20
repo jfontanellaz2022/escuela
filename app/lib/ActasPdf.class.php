@@ -1,6 +1,9 @@
 <?php
 require_once('tcpdf/tcpdf.php');
 
+date_default_timezone_set("America/Argentina/Buenos_Aires");
+setlocale(LC_TIME, 'es_AR.UTF-8','esp');
+
 class ActasPdf extends TCPDF {
 
     //Page header

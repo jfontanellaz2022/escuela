@@ -6,11 +6,21 @@ require_once "Usuario.php";
 
 $inputUsuario = SanitizeCustom::USUARIO($_POST['inputUsuario'],2,15);
 $inputPassword = SanitizeCustom::USUARIO($_POST['inputPassword'],3,15);
+$inputToken = SanitizeCustom::USUARIO($_POST['token'],3,50);
 
 $finalResponse = array();
 $_SESSION['arreglo_datos_usuario'] = $_SESSION['arreglo_credenciales_usuario'] = "";
 
 //var_dump($inputUsuario . '**' . $inputPassword . '**' );die;
+
+if ($inputToken!=$_SESSION['token']) {
+      $finalResponse['codigo'] = 500;
+      $finalResponse['class'] = 'danger';
+      $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+      echo json_encode($finalResponse);die;
+}
+
+
 if (!$inputUsuario || !$inputPassword ) {
       $finalResponse['codigo'] = 500;
       $finalResponse['class'] = 'danger';

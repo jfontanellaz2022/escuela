@@ -14,11 +14,20 @@ require_once "Constantes.php";
 
 $idAlumno = $_SESSION['idAlumno'];
 $idCalendario = $_SESSION['arr_calendario']['inscripcion_asociada'];
+$idTurno = $_SESSION['turno_id'];
 $idCarrera = $_POST['carrera_id'];
 //die($idAlumno.' '.$idCalendario.' '.$idCarrera);
 $arr_resultado = [];
 
-
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+if ($token!=$_SESSION['token']) {
+  $finalResponse['codigo'] = 500;
+  $finalResponse['class'] = 'danger';
+  $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($finalResponse);die;
+}
+//****************************************************** */
 
 $materia_tiene_fecha = new MateriaFechaExamen();
 
@@ -85,7 +94,7 @@ foreach($arr_en_condiciones_de_rendir as $val_en_condiciones_rendir) {
         $arr_item['anio'] = $val_en_condiciones_rendir['anio'];
         $arr_item['cursado'] = getCursado($val_en_condiciones_rendir['materia_id'],$arr_materias_por_tipo_cursado);
         $arr_item['condicion'] = getCondicion($val_en_condiciones_rendir['materia_id'],$arr_materias_por_tipo_cursado);
-        $arr_item['fecha'] = $materia_tiene_fecha->getMateriaFechaExamenByIdMateriaByIdCalendario($val_en_condiciones_rendir['materia_id'],$idCalendario);
+        $arr_item['fecha'] = $materia_tiene_fecha->getMateriaFechaExamenByIdMateriaByIdCalendario($val_en_condiciones_rendir['materia_id'],$idTurno);
         $arr_resultado[] = $arr_item;
 }
 echo json_encode($arr_resultado);

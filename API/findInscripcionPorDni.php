@@ -1,20 +1,30 @@
 <?php
-set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../app/lib/controllers/');
-define('ROOT_DIR1',realpath('../app/controllers'));
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../app/lib/controllers/'.PATH_SEPARATOR.'./');
 session_start();
+define('ROOT_DIR1',realpath('../app/controllers'));
+require_once 'SanitizeCustom.class.php';
 require_once('ActasInscripcionCarreraPdf.class.php');
 require_once(ROOT_DIR1 . '/ReporteController.php');
 require_once('Parameters.php');
-$dni = $_POST['dni'];
-$carrera_id = $_POST['carrera'];
-$codigo = $_POST['codigo'];
+$dni = SanitizeCustom::DOCUMENTO_CUIL($_POST['dni'],8,8);
+$carrera_id = SanitizeCustom::STRING($_POST['carrera']);
+$codigo = SanitizeCustom::STRING($_POST['codigo']);
+$token = SanitizeCustom::STRING($_POST['token'],3,50);
+
+//var_dump($dni,$codigo,$carrera_id,$token,$_SESSION['security_code'],$_SESSION['token']);exit;
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 $respuesta = array();
 
-
-
-
-
-if ($dni && strtoupper($codigo)==strtoupper($_SESSION['security_code'])) {
+if ($dni && $carrera_id && strtoupper($codigo)==strtoupper($_SESSION['security_code']) && $token==$_SESSION['token']) {
     $hoy = date('Y-m-d'); 
     $mes = date('m');
     $anio = date('Y');

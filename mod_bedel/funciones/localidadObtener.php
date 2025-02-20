@@ -1,6 +1,5 @@
 <?php
 set_include_path('../../app/models/v1/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../'.PATH_SEPARATOR.'../../conexion/');
-
 require_once 'verificarCredenciales.php';
 require_once "conexion.php";
 require_once 'Sanitize.class.php';

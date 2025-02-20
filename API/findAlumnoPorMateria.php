@@ -16,12 +16,11 @@
 //***************************************************************************************************
 
 
-set_include_path('../conexion/'.PATH_SEPARATOR.'../app/models/'.PATH_SEPARATOR.'../app/lib');
-
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once "seguridadNivel2.php";
 require_once('Alumno.php');
 require_once 'conexion.php';
 require_once 'SanitizeCustom.class.php';
-//include_once 'seguridadNivel2.php';
 
 $id_materia = (isset($_POST['materia']))?SanitizeCustom::INT($_POST['materia']):false;
 $id_alumno = (isset($_POST['alumno']))?SanitizeCustom::INT($_POST['alumno']):false;

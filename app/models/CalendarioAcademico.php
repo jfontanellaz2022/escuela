@@ -306,7 +306,6 @@ class CalendarioAcademico {
 				$id = $param["id"];
 				$anio_lectivo = $actualObjeto["anio_lectivo"];
 				$idTipificacion = $actualObjeto["idTipificacion"];
-				$idUsuario = $actualObjeto["idUsuario"];
 				$fecha_inicio = $actualObjeto["fecha_inicio"];
 				$fecha_final = $actualObjeto["fecha_final"];
 			}

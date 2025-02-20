@@ -26,19 +26,6 @@ if (count($arr_materias_por_carrera)>0) {
     }
 }
 
-//echo $sqlMateriasPorCarrera;die;    
-/*                  
-$resultadoMateriasPorCarrera=mysqli_query($conex,$sqlMateriasPorCarrera);
-$arraytodasMateriasConPromocionadosPorCarrera=array();
-while ($filaMateriasPorCarrera=mysqli_fetch_assoc($resultadoMateriasPorCarrera)) {
-    $arrayMateriaPorCarrera=array(); 
-        array_push($arrayMateriaPorCarrera,$filaMateriasPorCarrera['id'],$filaMateriasPorCarrera['nombre'],$filaMateriasPorCarrera['anio'],$filaMateriasPorCarrera['cantidad']);
-        array_push($arraytodasMateriasConPromocionadosPorCarrera,$arrayMateriaPorCarrera);
-            
-    }
-   
-    */
-
 echo "<table class=\"table\">";
 $band=true;
 
@@ -53,7 +40,7 @@ function sacaMateriaPorAnio($anio) {
           ." onclick=\"window.open('./funciones/PDF_ActaPromocionados.php?parametros=".$param."','_blank')\">"
           ."<td style='text-align: left;'>$valor[1]</td><td style='text-align: center;'>$valor[3]</td></tr>";*/
      $str.= "<tr id='tr_{$parametros}_{$valor[0]}' >"
-          . " <td style='text-align: left;'><a href=\"../API/reporteActaPromocionados.php?parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
+          . " <td style='text-align: left;'><a href=\"../API/reporteActaPromocionados.php?token=" . $_SESSION['token'] . "&parametros=$param\" target=\"_blank\"><img src=\"../public/img/icons/listado_icon.png\" width=\"25\"></a>&nbsp;$valor[1] <strong>($valor[0])</strong></td>" 
           . " <td style='text-align: center;'>$valor[3]</td> " 
           . "</tr> ";
      $band=true;

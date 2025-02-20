@@ -12,7 +12,8 @@ $anio_lectivo = (isset($_POST['anio']) && $_POST['anio']!=NULL)?SanitizeVars::IN
 $evento = (isset($_POST['evento']) && $_POST['evento']!=NULL)?SanitizeVars::INT($_POST['evento']):false;
 $fecha_inicio = (isset($_POST['fecha_inicio']) && $_POST['fecha_inicio']!=NULL)?SanitizeVars::DATE($_POST['fecha_inicio']):false;
 $fecha_final = (isset($_POST['fecha_finalizacion']) && $_POST['fecha_finalizacion']!=NULL)?SanitizeVars::DATE($_POST['fecha_finalizacion']):false;
-
+$idUsuario = $_SESSION['arreglo_datos_usuario']['id'];
+//var_dump( $_SESSION['arreglo_datos_usuario']);exit;
 //die($anio_lectivo."&&".$evento."&&".$fecha_inicio."&&".$fecha_final);
 
 $arr_resultados = array();
@@ -27,6 +28,8 @@ if ($anio_lectivo && $evento && $fecha_inicio && $fecha_final) {
     $arr_param['fecha_inicio'] = $fecha_inicio;
     $arr_param['fecha_final'] = $fecha_final;
     $arr_param['idTipificacion'] = $evento;
+    $arr_param['idUsuario'] = $idUsuario;
+    //var_dump($arr_param);exit;
     if ($cal->save($arr_param)) {
             $arr_resultados['codigo'] = 200;
             $arr_resultados['class'] = "success";

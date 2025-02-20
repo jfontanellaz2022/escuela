@@ -8,7 +8,7 @@ if ( !isset($_SESSION['arreglo_credenciales_usuario']) ) {
     header('location: ../index.php');
 };
 
-if ( !in_array($_SESSION['arreglo_credenciales_usuario'],['Profesor','Bedel']) ) {
+if ( !in_array($_SESSION['arreglo_credenciales_usuario'][0],['Profesor','Bedel']) ) {
     session_destroy();
     header('location: ../index.php');
 };

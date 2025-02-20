@@ -1,15 +1,10 @@
 <?php
 set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
-
+require_once 'verificarCredenciales.php';
 require_once 'Sanitize.class.php';
-
 require_once 'CalendarioAcademico.php';
 
-require_once 'verificarCredenciales.php';
-
 $id = ( isset($_POST['id']) )?SanitizeVars::INT($_POST['id']):false;
-
-
 
 $array_resultados = array();
 if ($id) {

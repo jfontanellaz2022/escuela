@@ -28,7 +28,7 @@ if ($idAlumno && $idCarrera && $anio) {
       if ($res) {
             $array_resultados['codigo'] = 200;
             $array_resultados['alert'] = 'success';
-            $array_resultados['mensaje'] = "El $entidad con ID <strong>$idAlumno</strong> ya se encuentra vinculado a esa carrera.";   
+            $array_resultados['mensaje'] = "El $entidad con ID <strong>$idAlumno</strong> se vinculó a la carrera.";   
       } else {
             $array_resultados['codigo'] = 500;
             $array_resultados['alert'] = 'danger';

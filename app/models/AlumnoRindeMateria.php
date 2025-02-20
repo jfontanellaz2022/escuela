@@ -40,6 +40,7 @@ class AlumnoRindeMateria {
 		return $stmt->fetchAll();
 	}
 
+
 	/* Get Alumno by Id */
 	public function getAlumnoRindenMateriaById($id){
 		$this->getConection();
@@ -50,7 +51,7 @@ class AlumnoRindeMateria {
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-	/* Get Alumno by Dni */
+	/* Get Alumno by alumno_id */
 	public function getAlumnoRindeMateriasByIdAlumno($alumno_id){
 		$this->getConection();
 		$sql = "SELECT * FROM " . $this->table . " WHERE idAlumno = ?";
@@ -172,23 +173,40 @@ class AlumnoRindeMateria {
 
 
 	// Bedel - generarMateriasConInscriptosPorCarrera
-	public function getMateriasConInscriptosExamenPorCarrera($calendario_id,$carrera_id,$llamado)
+	public function getMateriasConInscriptosExamenPorCarrera($calendario_id,$carrera_id,$llamado,$estado="")
     {
 		$this->getConection();
-        $sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
-				FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
-				WHERE a.idCalendario = ? AND
-					a.llamado = ? AND
-					a.idMateria = b.idMateria AND
-					b.idCarrera = ? AND
-					b.idMateria = c.id AND
-					a.condicion not like '%Promocion%' AND
-					a.condicion not like '%Homologacion%' 
-				GROUP BY c.nombre
-				ORDER BY c.anio";
-		$stmt = $this->conection->prepare($sql);
-		
-		$stmt->execute([$calendario_id,$llamado,$carrera_id]);
+		if ($estado=="") {
+			$sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
+					FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
+					WHERE a.idCalendario = ? AND
+						a.llamado = ? AND
+						a.idMateria = b.idMateria AND
+						b.idCarrera = ? AND
+						b.idMateria = c.id AND
+						a.condicion not like '%Promocion%' AND
+						a.condicion not like '%Homologacion%'
+					GROUP BY c.nombre
+					ORDER BY c.anio";
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$calendario_id,$llamado,$carrera_id]);
+		} else {
+			$sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio
+					FROM alumno_rinde_materia a, carrera_tiene_materia b, materia c
+					WHERE a.idCalendario = ? AND
+						a.llamado = ? AND
+						a.idMateria = b.idMateria AND
+						b.idCarrera = ? AND
+						b.idMateria = c.id AND
+						a.condicion not like '%Promocion%' AND
+						a.condicion not like '%Homologacion%' AND
+						a.estado_final = ?
+					GROUP BY c.nombre
+					ORDER BY c.anio";
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$calendario_id,$llamado,$carrera_id,$estado]);
+		}
+        
 		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $res;

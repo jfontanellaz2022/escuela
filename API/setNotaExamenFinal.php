@@ -1,7 +1,6 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
-
-include_once 'seguridadNivel2.php';
+require_once "seguridadNivel2.php";
 include_once 'Sanitize.class.php';
 
 require_once 'AlumnoRindeMateria.php';
@@ -19,7 +18,16 @@ $condicion = (isset($_POST['condicion']) && $_POST['condicion']!=NULL)?$_POST['c
 
 $hoy=date('Y-m-d H:i:s');
 
-$arr_resultados = array();
+//*******************TOKEN  *****************************/
+$token = (isset($_GET['token']))?$_GET['token']:false;
+$array_resultados = [];
+if ($token!=$_SESSION['token']) {
+  $array_resultados['codigo'] = 500;
+  $array_resultados['class'] = 'danger';
+  $array_resultados['mensaje'] = 'El Token es INCORRECTO.';
+  echo json_encode($array_resultados);die;
+}
+//****************************************************** */
 if ($materia_id && $alumno_id && $nota && $estado_final && $calendario_id && $llamado) {
       $arm = new AlumnoRindeMateria();
       $id = $arm->getIdCalendario(['materia_id'=>$materia_id,'alumno_id'=>$alumno_id,
