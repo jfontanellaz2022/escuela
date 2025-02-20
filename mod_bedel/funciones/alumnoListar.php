@@ -131,8 +131,10 @@ if (!empty($arr_objetos)){
 				       <?php 
 					        foreach ($arreglo_carreras as $itemCarrera) { 
 								echo "<li>" . 
+								     "    <a href='menuAlumnoMateriasCursadasPorAlumno.php?token=".$_SESSION['token']."&carrera_id=".$itemCarrera['id']."&alumno_id=".$fila['id']."'><img src='../public/img/icons/libros_no_organizados.jpg' width='40' title='Materias Cursadas'></a>&nbsp;" . 
+								     "    <a href='menuAlumnoMateriasRendidasPorAlumno.php?token=".$_SESSION['token']."&carrera_id=".$itemCarrera['id']."&alumno_id=".$fila['id']."'><img src='../public/img/icons/libros_organizados.jpg' width='40' title='Materias Rendidas'></a>&nbsp;" . 
 									 "    <a href='#' onclick=\"cargarHistoriaPorCarrera(".$itemCarrera['id'].",".$fila['id'].",'".$itemCarrera['descripcion']."','".$rowCampo2."')\"><span class=\"badge badge-info\">".$itemCarrera['descripcion']."</span></a>" . 
-									 "</li>";
+									 "</li>";		 
 							}	
 					    ?>
 					</ul>	

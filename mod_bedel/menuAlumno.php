@@ -958,7 +958,7 @@ function cargarHistoriaPorCarrera(carrera_id,alumno_id,carrera_descripcion,alumn
       let bread;
       bread = `<nav aria-label="breadcrumb" role="navigation">
                       <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="menuEscritorio.php">Home</a></li>
+                      <li class="breadcrumb-item"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
                       <li class="breadcrumb-item"><a href="menuAlumno.php?token=<?=$_SESSION['token'];?>">Alumnos</a></li>
                       <li class="breadcrumb-item active" aria-current="page">`+alumno_descripcion+` <strong>|</strong> `+carrera_descripcion+' <strong>('+carrera_id+`)</strong></li>
                       </ol>

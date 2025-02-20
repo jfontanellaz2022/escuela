@@ -31,7 +31,7 @@ class Alumno extends Persona{
 		$this->getConection();
 		$sql = "SELECT per.*, l.id as 'localidad_id', l.nombre as 'localidad_nombre', 
 		              l.cp as 'codigo_postal', p.nombre as 'provincia_nombre',
-                   a.anio_ingreso, a.debe_titulo, a.habilitado, a.id as idAlumno
+                   a.anio_ingreso, a.debe_titulo, a.id as idAlumno
             FROM alumno a, persona per, localidad l, provincia p 
             WHERE a.id = ? AND 
 			      a.idPersona = per.id AND 

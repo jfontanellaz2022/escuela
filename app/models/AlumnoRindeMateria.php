@@ -185,7 +185,7 @@ class AlumnoRindeMateria {
 						b.idCarrera = ? AND
 						b.idMateria = c.id AND
 						a.condicion not like '%Promocion%' AND
-						a.condicion not like '%Homologacion%'
+						a.condicion not like '%Homologacion%' AND
 					GROUP BY c.nombre
 					ORDER BY c.anio";
 			$stmt = $this->conection->prepare($sql);
@@ -233,6 +233,48 @@ class AlumnoRindeMateria {
 
 		return $res;
 	}
+
+
+	// ***** IMPORTANTE (mod_bedel: fn 'sacar las materias cursadas por alumno en una carrera')
+	// METODO PARA SACAR LAS MATERIAS QUE CURSO UN ALUMNO EN UNA CARRERA 
+	public function getHistorialMateriasRendidasByAlumnoByCarrera($alumno_id,$carrera_id) {
+		$arr_resultado = [];
+		$stmt = "";
+		$this->getConection();
+
+		$sql = "SELECT arm.id, m.id as 'materia_id', m.nombre as 'materia_nombre', m.anio as 'materia_anio', 
+		                arm.idCalendario as 'calendario_id', arm.llamado, arm.condicion, arm.nota, arm.estado_final, arm.FechaHoraInscripcion as 'fecha_hora_inscripcion', 
+						t.nombre as 'evento_nombre' 
+			    FROM alumno_rinde_materia arm, materia m, calendario_academico c, tipificacion t 
+				WHERE arm.idAlumno = ? AND 
+				      arm.idMateria IN (SELECT idMateria FROM carrera_tiene_materia WHERE idCarrera = ?) AND 
+					  arm.idMateria = m.id AND 
+					  arm.idCalendario = c.id AND 
+					  c.idTipificacion = t.id 
+				ORDER BY m.anio ASC,m.nombre ASC, arm.idCalendario ASC, arm.llamado ASC";
+
+	    $stmt = $this->conection->prepare($sql);
+		$stmt->execute([$alumno_id,$carrera_id]);
+		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $fila) {
+			$arr_materia = [];
+			$arr_materia['id'] = $fila['id'];
+			$arr_materia['materia_id'] = $fila['materia_id'];
+			$arr_materia['materia_nombre'] = $fila['materia_nombre'];
+			$arr_materia['materia_anio'] = $fila['materia_anio'];
+			$arr_materia['calendario_id'] = $fila['calendario_id'];
+			$arr_materia['llamado'] = $fila['llamado'];
+			$arr_materia['nota'] = $fila['nota'];
+			$arr_materia['condicion'] = $fila['condicion'];
+			$arr_materia['estado_final'] = $fila['estado_final'];
+			$arr_materia['fecha_hora_inscripcion'] = $fila['fecha_hora_inscripcion'];
+			$arr_materia['evento_nombre'] = $fila['evento_nombre'];
+			$arr_resultado[] = $arr_materia;
+		}
+
+	return $arr_resultado;
+		
+	
+		}
 
 
 	/* Save Alumno */

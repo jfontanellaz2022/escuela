@@ -301,6 +301,49 @@ class AlumnoCursaMateria {
         return $arr_resultado;
     }
 
+	// ***** IMPORTANTE (mod_bedel: fn 'sacar las materias cursadas por alumno en una carrera')
+	// METODO PARA SACAR LAS MATERIAS QUE CURSO UN ALUMNO EN UNA CARRERA 
+	public function getHistorialMateriasCursadasByAlumnoByCarrera($alumno_id,$carrera_id) {
+		$arr_resultado = [];
+		$stmt = "";
+		$this->getConection();
+
+		$sql = "SELECT acm.id, m.id as 'materia_id', m.nombre as 'materia_nombre', m.anio as 'materia_anio', 
+						acm.anio_cursado, acm.nota, acm.estado_final, acm.fecha_vencimiento_regularidad, 
+		               acm.idCursado as 'cursado_id', t1.nombre as 'cursado_nombre',
+					   acm.idEstado as 'estado_id', t2.nombre as 'estado_nombre'
+				FROM alumno_cursa_materia acm, materia m, tipificacion t1, tipificacion t2
+				WHERE acm.idAlumno = ? AND
+						acm.idMateria IN (SELECT idMateria FROM carrera_tiene_materia WHERE idCarrera = ?) AND
+						acm.idMateria = m.id AND
+						acm.idCursado = t1.id AND
+						acm.idEstado = t2.id
+				ORDER BY m.anio ASC, m.nombre ASC";
+
+	    $stmt = $this->conection->prepare($sql);
+		$stmt->execute([$alumno_id,$carrera_id]);
+		foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $fila) {
+			$arr_materia = [];
+			$arr_materia['id'] = $fila['id'];
+			$arr_materia['materia_id'] = $fila['materia_id'];
+			$arr_materia['materia_nombre'] = $fila['materia_nombre'];
+			$arr_materia['materia_anio'] = $fila['materia_anio'];
+			$arr_materia['anio_cursado'] = $fila['anio_cursado'];
+			$arr_materia['nota'] = $fila['nota'];
+			$arr_materia['estado_final'] = $fila['estado_final'];
+			$arr_materia['fecha_vencimiento_regularidad'] = $fila['fecha_vencimiento_regularidad'];
+			$arr_materia['cursado_id'] = $fila['cursado_id'];
+			$arr_materia['cursado_nombre'] = $fila['cursado_nombre'];
+			$arr_materia['estado_id'] = $fila['estado_id'];
+			$arr_materia['estado_nombre'] = $fila['estado_nombre'];
+			$arr_resultado[] = $arr_materia;
+		}
+
+	return $arr_resultado;
+		
+	
+		}
+	
 
 	/* Save Alumno */
 	public function save($param){
