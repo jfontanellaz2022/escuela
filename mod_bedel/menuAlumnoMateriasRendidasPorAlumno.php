@@ -32,11 +32,9 @@ $alumno_id = $idAlumno;
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiGeAl - Bedelia</title>
-   <?php include_once('componente_header.html'); ?>
-   <?php include("componente_script_jquery.html"); ?>
+<?php
+    include_once('../app/views/header.html');
+?>
 </head>
 <body>
  
@@ -44,7 +42,7 @@ $alumno_id = $idAlumno;
  
  <!-- NAVBAR -->
  <header>
-    <?php include("componente_navbar.php"); ?>
+    <?php include("navbar.php"); ?>
   </header>
 
   <article>
@@ -74,7 +72,14 @@ $alumno_id = $idAlumno;
   
 
 <!-- FOOTER -->
-<?php include("componente_footer.html"); ?>
+<?php
+    include_once('../app/views/footer.html');
+?>
+
+<!-- JAVASCRIPT LIBRARIES-->
+<?php 
+    include("../app/views/script_jquery.html");
+?>
 
 <!-- JAVASCRIPT CUSTOM -->
 <script src="./js/funciones.js"></script>
@@ -140,13 +145,13 @@ function load(page) {
           data: parametros,
           method: 'POST',
           beforeSend: function () {
-            $("#resultado").html("<img src='../public/img/load_icon.gif' width='50' >");  
+            $("#resultado").html("<img src='../public/img/icons/load_icon.png' width='50' >");  
           },
           success: function (data) {
               $("#resultado").fadeIn(100).html(data);
               $("#tabla_calendario>tfoot").prepend(`<tr>
                                                       <td colspan="9">
-                                                          <button class="btn btn-primary disabledbutton" onclick="rendidaNuevo()">Nuevo</button>
+                                                          <button class="btn btn-primary" onclick="rendidaNuevo()">Nuevo</button>
                                                       </td>
                                                   </tr>`);
           }
@@ -203,11 +208,11 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
     },"json")
 */
 
-        $('#inputMateria').select2({
+        /*$('#inputMateria').select2({
                 theme: "bootstrap",
                 placeholder: "Materia",
                 ajax: {
-                    url: 'funciones/materiaPorIdCarreraSelect2.php', 
+                    url: "./funciones/getMateriasPorIdCarrera.php?token=", 
                     dataType: 'json',
                     delay: 250,
                     language: {
@@ -231,9 +236,43 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
                     },
                     cache: true
                 }
-        });
+        });*/
 
-        $('#inputCalendario').select2({
+
+        $('#inputMateria').val(null).trigger('change');
+        $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
+            if (response.codigo==200) {
+                $("#inputMateria").empty(); 
+                response.datos.forEach(materia => {
+                            $("#inputMateria").append($('<option/>', {
+                                    text: materia.nombre + ' ('+materia.id+') ',
+                                    value: materia.id,
+                            }));
+                        });
+                        $('#inputMateria').select2({
+                            theme: "bootstrap",
+                        });
+            };
+        },"json");
+
+
+        $('#inputCalendario').val(null).trigger('change');
+        $.post("./funciones/getCalendario.php?token=<?=$_SESSION['token'];?>",function(response){
+            if (response.codigo==200) {
+                $("#inputCalendario").empty(); 
+                response.datos.forEach(calendario => {
+                            $("#inputCalendario").append($('<option/>', {
+                                    text: calendario.evento_nombre + ' ('+calendario.calendario_id+') ',
+                                    value: calendario.calendario_id,
+                            }));
+                        });
+                        $('#inputCalendario').select2({
+                            theme: "bootstrap",
+                        });
+            };
+        },"json");
+
+        /*$('#inputCalendario').select2({
                 theme: "bootstrap",
                 placeholder: "Calendario",
                 ajax: {
@@ -260,7 +299,7 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
                     },
                     cache: true
                 }
-            });
+            });*/
 
             $('#inputLlamado').prepend("<option value='' selected>** Llamado **</option>");
             $('#inputNota').prepend("<option value='' selected>** Nota **</option>");
@@ -391,13 +430,13 @@ function rendidaGuardar() {
             if (datos.codigo == 100) {
                 cargarModulos();
                 $("#resultado_accion").html();
-                $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                             Los datos han sido modificados.</span></i>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button></div></div>`);
             } else {
-                $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                             <strong>Error</strong>No se han modificado los datos.</span></i>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -414,13 +453,13 @@ function rendidaEliminar(id){
                     if (datos.codigo == 100) {
                         cargarModulos();
                         $("#resultado_accion").html();
-                        $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                        $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                         `+datos.datos+`</span></i>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button></div></div>`);
                     } else {
-                        $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                        $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                                     <strong>Error</strong> `+datos.datos+`</span></i>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>

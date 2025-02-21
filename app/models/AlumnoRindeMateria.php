@@ -185,7 +185,7 @@ class AlumnoRindeMateria {
 						b.idCarrera = ? AND
 						b.idMateria = c.id AND
 						a.condicion not like '%Promocion%' AND
-						a.condicion not like '%Homologacion%' AND
+						a.condicion not like '%Homologacion%'
 					GROUP BY c.nombre
 					ORDER BY c.anio";
 			$stmt = $this->conection->prepare($sql);

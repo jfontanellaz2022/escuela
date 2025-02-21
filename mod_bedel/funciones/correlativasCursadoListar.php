@@ -109,8 +109,9 @@ if (!empty($arr_objetos)){
 				$rowIdCampo1 = $fila['id']; 
 				//$hashId = ArrayHash::encode(array($MY_SECRET=>$rowIdCampo1));
 				$rowCampo2 = $fila['carrera'];
-				$rowCampo3 = $fila['materia_nombre'].' <strong>('.$fila['materia_id'].')</strong>';
-				$rowCampo4 = $fila['materia_requerida_nombre'].' <strong>('.$fila['materia_requerida_id'].')</strong>';
+				$rowCampo3 = $fila['materia_nombre'].' <strong>('.$fila['materia_id'].') Año:</strong> ' . $fila['materia_anio'];
+				$rowCampo4 = $fila['materia_requerida_nombre'].' <strong>('.$fila['materia_requerida_id'].') Año:</strong> ' . $fila['materia_requerida_anio'];
+
 				$rowCampo5 = (($fila['idCondicionMateriaRequerida']==1)?'Regular':'Aprobada').' <strong>('. $fila['idCondicionMateriaRequerida'].')</strong>';
 				
 ?>						

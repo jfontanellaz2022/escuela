@@ -14,12 +14,9 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiGeAl - Bedelia</title>
-   <?php include_once('componente_header.html'); ?>
-   <?php include("componente_script_jquery.html"); ?>
-        
+<?php
+    include_once('../app/views/header.html');
+?>
 </head>
 <body>
  
@@ -27,7 +24,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
  
  <!-- NAVBAR -->
  <header>
-    <?php include("componente_navbar.php"); ?>
+    <?php include("navbar.php"); ?>
   </header>
 
   <article>
@@ -64,7 +61,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 
                     <div class="form-row">
                         <label for="inputMateria"><strong>Materia</strong></label><br>
-                        <select id="inputMateria" class="form-control select2-container" style="height: 100;">
+                        <select id="inputMateria" class="form-control select2-container" >
                             <option value="">-- Materia --</option>
                         </select>
                     </div>
@@ -115,24 +112,18 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
   
 
 <!-- FOOTER -->
-<?php include("componente_footer.html"); ?>
+<?php
+    include_once('../app/views/footer.html');
+?>
 
-
-
+<!-- JAVASCRIPT LIBRARIES-->
+<?php 
+    include("../app/views/script_jquery.html");
+?>
 
 <!-- JAVASCRIPT CUSTOM -->
 <script>
-
-$('#inputCarrera').select2({
-                    theme: "bootstrap",
-                });
-
-$('#inputNota').select2({
-                    theme: "bootstrap",
-                });  
-
-
-                $("#inputCarrera").change(function(){
+    $("#inputCarrera").change(function(){
     let carrera_id = $("#inputCarrera").val();
     //Carga las Materias de una carrera en la select2
     //alert(carrera_id);
@@ -150,6 +141,7 @@ $('#inputNota').select2({
                 $('#inputMateria').select2({
                     theme: "bootstrap",
                 });
+                
           };
     },"json")
 

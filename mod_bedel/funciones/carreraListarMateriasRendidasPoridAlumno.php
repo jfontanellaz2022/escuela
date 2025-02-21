@@ -48,7 +48,7 @@ if($action == 'listar' && $idCarrera){
 			} else {
 				$nota = $row['nota'];
 			}
-			/*$hash = ArrayHash::encode(array($secreto=>$row['id']));*/
+			
 			if ($row['estado_final']=='Aprobo') {
 				$badge = 'badge-success';
 			} else if ($row['estado_final']=='Desaprobo') {

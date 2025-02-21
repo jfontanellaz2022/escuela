@@ -11,10 +11,10 @@ class CorrelativasParaRendirFilter extends CorrelativasParaRendir{
                 WHERE cpr.idMateria = m.id and 
                       cpr.idMateriaRequerida = m1.id ";
        
-        $sql = "SELECT cpr.id, m.id as materia_id, m.nombre as materia_nombre , 
-                       m1.id as materia_requerida_id, m1.nombre as materia_requerida_nombre,
+        $sql = "SELECT cpr.id, m.id as 'materia_id', m.nombre as 'materia_nombre', m.anio as 'materia_anio', 
+                       m1.id as 'materia_requerida_id', m1.nombre as 'materia_requerida_nombre', m1.anio as 'materia_requerida_anio',
                        m.carrera as carrera,
-                       cpr.idCondicionMateriaRequerida, IF(cpr.idCondicionMateriaRequerida=1, 'REGULAR', 'APROBADA') as Condicion
+                       cpr.idCondicionMateriaRequerida, IF(cpr.idCondicionMateriaRequerida=1, 'REGULAR', 'APROBADA') as 'Condicion'
         FROM correlativaspararendir cpr, materia m, materia m1 
         WHERE cpr.idMateria = m.id and 
               cpr.idMateriaRequerida = m1.id ";   
@@ -35,8 +35,9 @@ class CorrelativasParaRendirFilter extends CorrelativasParaRendir{
             $sql .= " and ( cpr.idCondicionMateriaRequerida = ".$filtros['condicion']." ) ";
             $sqlcount .= " and ( cpr.idCondicionMateriaRequerida = ".$filtros['condicion']." ) ";
         };
+        $sql .= " ORDER BY m.anio ASC, m.nombre ASC, m1.anio ASC, m1.nombre ASC";
         if (isset($inicio)&&isset($final)) {
-            $sql .= "LIMIT ".$inicio. "," . $final; 
+            $sql .= " LIMIT ".$inicio. "," . $final; 
         }
         $stmtcount = $this->conection->prepare($sqlcount);
         $stmtcount->execute();

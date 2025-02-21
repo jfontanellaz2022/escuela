@@ -34,11 +34,9 @@ $alumno_id = $idAlumno;
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiGeAl - Bedelia</title>
-   <?php include_once('componente_header.html'); ?>
-   <?php include("componente_script_jquery.html"); ?>
+<?php
+    include_once('../app/views/header.html');
+?>
 </head>
 <body>
  
@@ -46,7 +44,7 @@ $alumno_id = $idAlumno;
  
  <!-- NAVBAR -->
  <header>
-    <?php include("componente_navbar.php"); ?>
+    <?php include("navbar.php"); ?>
   </header>
 
   <article>
@@ -73,13 +71,15 @@ $alumno_id = $idAlumno;
         </section>
   </article>
 
-  
-
 <!-- FOOTER -->
-<?php include("componente_footer.html"); ?>
+<?php
+    include_once('../app/views/footer.html');
+?>
 
-
-
+<!-- JAVASCRIPT LIBRARIES-->
+<?php 
+    include("../app/views/script_jquery.html");
+?>
 
 <!-- JAVASCRIPT CUSTOM -->
 <script src="./js/funciones.js"></script>
@@ -145,7 +145,7 @@ function load(page) {
           data: parametros,
           method: 'POST',
           beforeSend: function () {
-            $("#resultado").html("<img src='../public/img/load_icon.gif' width='50' >");  
+            $("#resultado").html("<img src='../public/img/icons/load_icon.png' width='50' >");  
           },
           success: function (data) {
               $("#resultado").fadeIn(100).html(data);
@@ -313,13 +313,13 @@ function cursadoGuardar() {
             if (datos.codigo == 100) {
                 cargarModulos();
                 $("#resultado_accion").html();
-                $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                             Los datos han sido modificados.</span></i>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button></div></div>`);
             } else {
-                $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                             <strong>Error </strong>No se han modificado los datos.</span></i>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -340,13 +340,13 @@ function cursadoEliminar(id){
                     if (datos.codigo == 100) {
                         cargarModulos();
                         $("#resultado_accion").html();
-                        $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                        $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                         `+datos.datos+`</span></i>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button></div></div>`);
                     } else {
-                        $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/assets/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
+                        $("#resultado_accion").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
                                                     <strong>Error</strong> `+datos.datos+`</span></i>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>

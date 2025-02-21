@@ -11,13 +11,13 @@ class CorrelativasParaCursarFilter extends CorrelativasParaCursar{
                 WHERE cpc.idMateria = m.id and 
                       cpc.idMateriaRequerida = m1.id ";
        
-        $sql = "SELECT cpc.id, m.id as materia_id, m.nombre as materia_nombre , 
-                       m1.id as materia_requerida_id, m1.nombre as materia_requerida_nombre,
+        $sql = "SELECT cpc.id, m.id as 'materia_id', m.nombre as 'materia_nombre', m.anio as 'materia_anio',
+                       m1.id as 'materia_requerida_id', m1.nombre as 'materia_requerida_nombre', m1.anio as 'materia_requerida_anio',
                        m.carrera as carrera,
-                       cpc.idCondicionMateriaRequerida, IF(cpc.idCondicionMateriaRequerida=1, 'REGULAR', 'APROBADA') as Condicion
+                       cpc.idCondicionMateriaRequerida, IF(cpc.idCondicionMateriaRequerida=1, 'REGULAR', 'APROBADA') as 'Condicion'
         FROM correlativasparacursar cpc, materia m, materia m1 
         WHERE cpc.idMateria = m.id and 
-              cpc.idMateriaRequerida = m1.id ";   
+              cpc.idMateriaRequerida = m1.id";   
 
         if (isset($filtros['carrera'])) {
             $sql .= " and ( m.carrera like '%".$filtros['carrera']."%' ) ";
@@ -35,9 +35,16 @@ class CorrelativasParaCursarFilter extends CorrelativasParaCursar{
             $sql .= " and ( cpc.idCondicionMateriaRequerida = ".$filtros['condicion']." ) ";
             $sqlcount .= " and ( cpc.idCondicionMateriaRequerida = ".$filtros['condicion']." ) ";
         };
+        
+        $sql .= " ORDER BY m.anio ASC, m.nombre ASC, m1.anio ASC, m1.nombre ASC";
+
         if (isset($inicio)&&isset($final)) {
-            $sql .= "LIMIT ".$inicio. "," . $final; 
+            $sql .= " LIMIT ".$inicio. "," . $final;
         }
+
+        
+
+        //var_dump($sql);exit;
         $stmtcount = $this->conection->prepare($sqlcount);
         $stmtcount->execute();
         $res = $stmtcount->fetch(PDO::FETCH_ASSOC);  

@@ -38,6 +38,17 @@ class CalendarioAcademico {
 		return $stmt->fetchAll();
 	}
 
+	//Get Calendario by Id 
+	public function getCalendarioEventosDetalle(){
+		$this->getConection();
+		$sql = "SELECT c.id as 'calendario_id', c.anio_lectivo, c.fecha_inicio, c.fecha_final, 
+		               c.idTipificacion, t.codigo, t.nombre as 'evento_nombre'
+		        FROM calendario_academico c, tipificacion t";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 	// Get all Alumnos 
 	public function getCalendarioEventosFilter($filtros){
 		var_dump('asdsadasdsad');exit;

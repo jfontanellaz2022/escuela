@@ -1,5 +1,5 @@
 !.gitignore
 /documentacion/*
 /public/*
-/app/models/Parameters.php
 /app/lib/tcpdf/*
+Parameters.php

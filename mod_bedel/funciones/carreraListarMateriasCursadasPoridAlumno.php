@@ -33,7 +33,7 @@ if($action == 'listar' && $idCarrera){
 							<th class="text-center" width="40%"><small><b>MATERIAS</b><small></th>
 							<th class="text-center" width="10%"><small><b>AÑO</b><small></th>
 							<th class="text-center" width="10%"><small><b>T.CURSADO</b><small></th>
-							<th class="text-center" width="10%"><small><b>AÑO CURSO</b><small></th>
+							<th class="text-center" width="10%"><small><b>AÑO CURSADO</b><small></th>
 							<th class="text-center" width="10%"><small><b>NOTA</b><small></th>
 							<th class="text-center" width="10%"><small><b>ESTADO</b><small></th>
 							<th class="text-center" width="10%"><small><b>F.EXPIRACIÓN</b><small></th>
@@ -47,6 +47,7 @@ if($action == 'listar' && $idCarrera){
 		$pagina = (($page-1)*$per_page);
 
 	    //$tipo_organismo = substr($_SESSION['organismo_codigo'],0,1);
+	$badge = '';	
     foreach ($arr_datos as $row) {
         	$c++;
 			$indice = $pagina + $c;
@@ -58,6 +59,16 @@ if($action == 'listar' && $idCarrera){
 				$fecha_expiracion_materia = '<strong>'.substr($row['fecha_vencimiento_regularidad'],0,10).'</strong>';
 				//die($fecha_expiracion_materia);
 			};
+
+			if ($row['estado_final']=='Aprobo' || $row['estado_final']=='Promociono') {
+				$badge = 'badge-success';
+			} else if ($row['estado_final']=='Regularizo') {
+				$badge = 'badge-warning';
+			} else if ($row['estado_final']=='Libre') {
+				$badge = 'badge-danger';
+			} else if ($row['estado_final']=='Cursando') {
+				$badge = 'badge-info';
+			}
 			
         	echo '<tr>';
 			echo '   <td align="center">'.'<b>'.$indice.'</b></td>'.
@@ -66,7 +77,7 @@ if($action == 'listar' && $idCarrera){
 				 '   <td align="right"><small>'.$row['cursado_nombre'].' <strong>('.$row['cursado_id'].')</strong></small></td>'.
 				 '   <td align="right"><small>'.$row['anio_cursado'].'</small></td>'.
 				 '   <td align="right"><small>'.$row['nota'].'</small></td>'.
-				 '   <td align="right"><small>'.$row['estado_final'].'</small></td>'.
+				 '   <td align="right"><small><span class="badge '.$badge.'">'.$row['estado_final'].'</span></small></td>'.
 				 '   <td align="right"><small>'.$fecha_expiracion_materia.'</small></td>'.
 				 '   <td align="left" class="text-center"><small>'.$accion_eliminar.$espacio.$accion_editar.$espacio.'</small></td>';
 			echo '</tr>';

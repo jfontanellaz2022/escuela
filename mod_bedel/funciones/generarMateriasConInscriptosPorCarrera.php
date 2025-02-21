@@ -4,6 +4,8 @@ require_once "verificarCredenciales.php";
 require_once 'Sanitize.class.php';
 require_once "AlumnoRindeMateria.php";
 
+
+
 $parametros=$_GET['parametros'];
 $arrCarreraTurnoLlamado=explode('_',$parametros);
 $idCarrera=$arrCarreraTurnoLlamado[0];
@@ -14,7 +16,6 @@ $arrayMateriasAprobadasPorCarrera = $arraytodasMateriasConInscriptosPorCarrera =
 
 $objARM = new AlumnoRindeMateria();
 $arr_materias_por_carrera = $objARM->getMateriasConInscriptosExamenPorCarrera($idCalendario,$idCarrera,$llamado);
-//var_dump($arr_materias_por_carrera);exit;
 
 if (count($arr_materias_por_carrera)>0) {
     foreach ($arr_materias_por_carrera as $filaMateriasPorCarrera) {
@@ -24,6 +25,7 @@ if (count($arr_materias_por_carrera)>0) {
     }
 }
    
+
 echo "<table class=\"table\">";
 $band=true;
 

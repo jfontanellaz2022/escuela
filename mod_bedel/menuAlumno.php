@@ -6,13 +6,9 @@ require_once 'verificarCredenciales.php';
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiGeAl - Bedelia</title>
-   <?php include_once('componente_header.html'); ?>
-   <?php include("componente_script_jquery.html"); ?>
-  
-      
+<?php
+    include_once('../app/views/header.html');
+?>    
 </head>
 <body>
  
@@ -20,7 +16,7 @@ require_once 'verificarCredenciales.php';
  
  <!-- NAVBAR -->
  <header>
-    <?php include("componente_navbar.php"); ?>
+    <?php include("navbar.php"); ?>
   </header>
 <article>
     <div id="breadcrumb">
@@ -47,7 +43,14 @@ require_once 'verificarCredenciales.php';
 <span id="modalEliminar"></span>
 
 <!-- FOOTER -->
-<?php include("componente_footer.html"); ?>
+<?php
+    include_once('../app/views/footer.html');
+?>
+
+<!-- JAVASCRIPT LIBRARIES-->
+<?php 
+    include("../app/views/script_jquery.html");
+?>
 
 <!-- JAVASCRIPT CUSTOM -->
 <script src="./js/funciones.js"></script>
@@ -132,7 +135,7 @@ function load(page) {
             data: parametros,
             method: 'POST',
             beforeSend: function () {
-              //$("#resultado").html("<img src='../assets/img/load_icon.gif' width='50' >");  
+              //$("#resultado").html("<img src='../public/img/icons/load_icon.png' width='50' >");  
             },
             success: function (data) {
                 $("#principal").slideDown("slow").html(data);

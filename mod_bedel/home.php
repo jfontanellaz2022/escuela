@@ -7,19 +7,15 @@ $dni = 24912834;
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiGeAl - Bedelia</title>
-   <?php include_once('componente_header.html'); ?>
-   <?php include("componente_script_jquery.html"); ?>
+<?php
+    include_once('../app/views/header.html');
+?>
 </head>
 <body>
  
-
- 
- <!-- NAVBAR -->
+<!-- NAVBAR -->
  <header>
-    <?php include("componente_navbar.php"); ?>
+    <?php include("navbar.php"); ?>
   </header>
 
   <article>
@@ -55,7 +51,14 @@ $dni = 24912834;
   
 
 <!-- FOOTER -->
-<?php include("componente_footer.html"); ?>
+<?php
+    include_once('../app/views/footer.html');
+?>
+
+<!-- JAVASCRIPT LIBRARIES-->
+<?php 
+    include("../app/views/script_jquery.html");
+?>
 
 <script>
 $(function () {
