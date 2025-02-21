@@ -49,6 +49,24 @@ class CalendarioAcademico {
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	//Get Calendario by Id 
+	public function getCalendarioInscripcionesDetalle(){
+		$this->getConection();
+		$sql = "SELECT c.id as 'calendario_id', c.anio_lectivo, c.fecha_inicio, c.fecha_final, 
+		               c.idTipificacion, t.codigo, t.nombre as 'evento_nombre'
+		        FROM calendario_academico c, tipificacion t
+				WHERE c.idTipificacion=t.id AND (t.codigo = " . Constantes::CODIGO_INSCRIPCION_SIN_DEFINIR ." OR
+				      t.codigo = " . Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO ." OR
+					  t.codigo = " . Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO ." OR
+					  t.codigo = " . Constantes::CODIGO_INSCRIPCION_TERCER_TURNO ." OR
+					  t.codigo = " . Constantes::CODIGO_INSCRIPCION_MESA_ESPECIAL .") 
+				ORDER BY c.id DESC, t.codigo DESC";
+		//var_dump($sql);exit;
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 	// Get all Alumnos 
 	public function getCalendarioEventosFilter($filtros){
 		var_dump('asdsadasdsad');exit;

@@ -257,12 +257,12 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
 
 
         $('#inputCalendario').val(null).trigger('change');
-        $.post("./funciones/getCalendario.php?token=<?=$_SESSION['token'];?>",function(response){
+        $.post("./funciones/getCalendarioInscripciones.php?token=<?=$_SESSION['token'];?>",function(response){
             if (response.codigo==200) {
                 $("#inputCalendario").empty(); 
                 response.datos.forEach(calendario => {
                             $("#inputCalendario").append($('<option/>', {
-                                    text: calendario.evento_nombre + ' ('+calendario.calendario_id+') ',
+                                    text: calendario.anio_lectivo +' | '+ calendario.evento_nombre + ' ('+calendario.calendario_id+') ',
                                     value: calendario.calendario_id,
                             }));
                         });
@@ -272,40 +272,11 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
             };
         },"json");
 
-        /*$('#inputCalendario').select2({
-                theme: "bootstrap",
-                placeholder: "Calendario",
-                ajax: {
-                    url: "funciones/eventoObtener.php?token=<?=$_SESSION['token'];?>", 
-                    dataType: 'json',
-                    delay: 250,
-                    language: {
-                                noResults: function() {
-                                          return "No hay resultado";        
-                                },
-                                searching: function() {
-                                          return "Buscando..";
-                                }
-                              },
-                    data: function (datos) {
-                        return {
-                            searchTerm: datos.term // search term
-                        };
-                    },
-                    processResults: function (response) {
-                        return {
-                            results:response
-                        };
-                    },
-                    cache: true
-                }
-            });*/
-
-            $('#inputLlamado').prepend("<option value='' selected>** Llamado **</option>");
-            $('#inputNota').prepend("<option value='' selected>** Nota **</option>");
-            $('#inputEstado').prepend("<option value='' selected>** Estado **</option>");
-            $('#inputCondicion').prepend("<option value='' selected>** Condicion **</option>");    
-            $("#inputFecha").datepicker({dateFormat: "yy-mm-dd"});
+        $('#inputLlamado').prepend("<option value='' selected>** Llamado **</option>");
+        $('#inputNota').prepend("<option value='' selected>** Nota **</option>");
+        $('#inputEstado').prepend("<option value='' selected>** Estado **</option>");
+        $('#inputCondicion').prepend("<option value='' selected>** Condicion **</option>");    
+        $("#inputFecha").datepicker({dateFormat: "yy-mm-dd"});
 
 
     });
@@ -426,8 +397,8 @@ function rendidaGuardar() {
             alert('tiene valores nulos');
         }
 
-        $.post("./funciones/materiaRendidaGuardar.php",parametros,function(datos){
-            if (datos.codigo == 100) {
+        $.post("./funciones/materiaRendidaGuardar.php?token=<?=$_SESSION['token'];?>",parametros,function(datos){
+            if (datos.codigo == 200) {
                 cargarModulos();
                 $("#resultado_accion").html();
                 $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
@@ -450,7 +421,7 @@ function rendidaGuardar() {
 function rendidaEliminar(id){
     if (confirm("Desea Eliminar el Registro?")) {
             $.post("./funciones/materiaRendidaEliminar.php?token=<?=$_SESSION['token'];?>",{"id":id,"accion":'Eliminar'},function(datos){
-                    if (datos.codigo == 100) {
+                    if (datos.codigo == 200) {
                         cargarModulos();
                         $("#resultado_accion").html();
                         $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">

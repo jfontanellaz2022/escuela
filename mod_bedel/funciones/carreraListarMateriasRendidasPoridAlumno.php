@@ -39,7 +39,7 @@ if($action == 'listar' && $idCarrera){
 			$indice++;
 			$espacio = "&nbsp;";
 			$accion_editar = '<a href="#" class="disabledbutton" onclick="rendidaEditar(\''.$idAlumno.'&'.$row['materia_id'].'&'.$row['materia_nombre'].'&'.$row['materia_anio'].'&'.$row['calendario_id'].'&'.$row['llamado'].'&'.$row['nota'].'&'.$row['estado_final'].'&'.$row['condicion'].'&'.$row['fecha_hora_inscripcion'].'&'.$row['evento_nombre'].'&'.$row['id'].'\')" title="Editar"><img src="../public/img/icons/edit_icon.png" width="20"></a>';
-			$accion_eliminar = '<a href="#" class="disabledbutton" onclick="rendidaEliminar('.$row['id'].')" title="Eliminar"><img src="../public/img/icons/delete_icon.png" width="15"></a>';
+			$accion_eliminar = '<a href="#" onclick="rendidaEliminar('.$row['id'].')" title="Eliminar"><img src="../public/img/icons/delete_icon.png" width="15"></a>';
 			$nota = "";
 			if ($row['nota']=='-1') {
 				$nota = "---";
