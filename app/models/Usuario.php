@@ -127,11 +127,12 @@ public function save($param){
         $sql = "UPDATE usuario SET nombre = ? , password = ?, idPersona = ?, idRol = ? WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
         $res = $stmt->execute([$nombre, md5($password), $idPersona, $idRol, $id]);
+        //$stmt->debugDumpParams();exit;
     } else {
         $sql = "INSERT INTO usuario (nombre, password, idPersona, idRol) values(?, ?, ?, ?)";
         $stmt = $this->conection->prepare($sql);
-        //var_dump($param,'-----',[$nombre, md5($password), $idPersona, $idRol]);exit;
         $stmt->execute([$nombre, md5($password), $idPersona, $idRol]);
+        //$stmt->debugDumpParams();exit;
         $this->id = $this->conection->lastInsertId();
     }
 

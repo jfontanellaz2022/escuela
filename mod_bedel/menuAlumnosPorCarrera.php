@@ -138,18 +138,19 @@ function cargarAlumnos() {
                                                 </tr>
                                               </thead><tbody></tbody></table>`);
                 if (data.codigo==200) {
-                 
-                $.each(data.datos, function(i, item) {
-                     if (item.anio==anio) {
-                         let wsp = '<a href="https://api.whatsapp.com/send/?phone=549'+
-                                    item.telefono_caracteristica+item.telefono_numero+
-                                    '&text=Hola&type=phone_number&app_absent=0" target="_blank"><img src="../public/img/icons/wsp_icon.png" width="20"></a>';
-                         tr="<tr><td>"+item.id+"</td><td>"+item.apellido+', '+item.nombre+"</td><td>"+item.dni+
-                            "</td><td>"+item.email+"</td><td> "+wsp+" ("+item.telefono_caracteristica+") "+
-                            item.telefono_numero+"</td><td>"+item.localidad_nombre+" ("+item.provincia_nombre.toUpperCase()+")</td></tr>";
-                         $("#tabla tbody").append(tr);  
-                     };
-                });
+                    let cont = 0;
+                    $.each(data.datos, function(i, item) {
+                        cont++;
+                        if (item.anio==anio) {
+                            let wsp = '<a href="https://api.whatsapp.com/send/?phone=549'+
+                                        item.telefono_caracteristica+item.telefono_numero+
+                                        '&text=Hola&type=phone_number&app_absent=0" target="_blank"><img src="../public/img/icons/wsp_icon.png" width="20"></a>';
+                            tr="<tr><td>"+cont+"</td><td>"+item.apellido+', '+item.nombre+" ("+item.id+")</td><td>"+item.dni+
+                                "</td><td>"+item.email+"</td><td> "+wsp+" ("+item.telefono_caracteristica+") "+
+                                item.telefono_numero+"</td><td>"+item.localidad_nombre+" ("+item.provincia_nombre.toUpperCase()+")</td></tr>";
+                            $("#tabla tbody").append(tr);  
+                        };
+                    });
                 } else {
                     
                 }

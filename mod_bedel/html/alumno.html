@@ -7,61 +7,61 @@
 <div class="img form visible" id="alumno_editar">
   <div class="jumbotron jumbotron-fluid rounded form2">
     <div class="container justifu+y-content-center">
-      <h1 class="display-4">Alumno</h1>
+      <h1 class="display-4">Alumno (<font color="red">*</font> Datos Obligatorios)</h1>
       <hr>
 
   <form id="form">
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Documento</strong>
+        <strong>Documento <font color="red">(*)</font></strong>
         <input id="inputDocumento" inputmode="numeric" placeholder="Documento" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
       </div>
     </div>
     
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Apellido</strong>
+        <strong>Apellido <font color="red">(*)</font></strong>
         <input id="inputApellido" placeholder="Apellido" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
       </div>
     </div>
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Nombre</strong>
+        <strong>Nombre <font color="red">(*)</font></strong>
         <input id="inputNombre" placeholder="Nombre" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
       </div>
     </div>
   
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Fecha Nacimiento</strong>
+        <strong>Fecha Nacimiento <font color="red">(*)</font></strong>
         <input type="text" class="form-control" id="inputFechaNacimiento" placeholder="dd/mm/aaaa" required autocomplete="off">
       </div>
     </div>
     
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Domicilio</strong>
+        <strong>Domicilio <font color="red">(*)</font></strong>
         <input id="inputDomicilio" placeholder="Domicilio" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
       </div>
     </div>
 
     <div class="form-row">  
       <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          <strong>Cel.Numero (Sin el 0)</strong>
+          <strong>Cel.Numero (Sin el 0) <font color="red">(*)</font></strong>
           <input id="inputTelefonoCaracteristica" inputmode="tel" placeholder="Caracteristica" type="text" class="form-control" minlength="2" maxlength="4" onkeypress="return valideKeySoloNumerosSinPrimerCero(event,this.value);" required autocomplete="off">
       
         </div>
 
         <div class="form-group col-md-3">
-          <strong>Cel.Numero (Sin el 15)</strong>
+          <strong>Cel.Numero (Sin el 15) <font color="red">(*)</font></strong>
           <input id="inputTelefonoNumero" inputmode="tel" placeholder="Numero" type="text" class="form-control" minlength="6" maxlength="9" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
         </div>
     </div>      
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Email</strong>
+        <strong>Email <font color="red">(*)</font></strong>
         <input id="inputEmail" inputmode="email" placeholder="Email" type="email" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
         <input id="inputAccion" type="hidden" class="form-control" required>
       </div>
@@ -69,7 +69,7 @@
 
     <div class="form-row">
         <div class="form-group col-md-6"> 
-              <strong>Localidad</strong>
+              <strong>Localidad <font color="red">(*)</font></strong>
               <select id="inputLocalidad" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
             </select> 
         </div>
@@ -77,7 +77,7 @@
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Año Ingreso</strong>
+        <strong>Año Ingreso <font color="red">(*)</font></strong>
         <select id="inputAnioIngreso" class="form-control">
           <option value="2025">2025</option>
           <option value="2024">2024</option>
@@ -88,7 +88,7 @@
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Debe Título</strong>
+        <strong>Debe Título <font color="red">(*)</font></strong>
         <select id="inputDebeTitulo" class="form-control">
           <option value="Si">Si</option>
           <option value="No">No</option>

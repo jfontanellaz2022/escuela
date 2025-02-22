@@ -4,6 +4,7 @@ require_once 'verificarCredenciales.php';
 require_once "Sanitize.class.php";
 require_once "Persona.php";
 require_once "Alumno.php";
+require_once "Usuario.php";
 
 $entidad = "Alumno";
 $accion = (isset($_POST['accion']) && $_POST['accion']!=NULL)?SanitizeVars::STRING($_POST['accion']):false;
@@ -27,10 +28,11 @@ $alumno_id = 0;
 $array_resultados = [];
 
 if ($persona_id) {
+      //die('entroo');
       $objPersona = new Persona();
       $param['idPersona'] = $persona_id;
       $param['apellido'] = $apellido;
-      $param['nombre'] = $nombres;
+      $param['nombres'] = $nombres;
       $param['dni'] = $dni;
       $param['fecha_nacimiento'] = $fecha_nacimiento;
       $param['localidad_id'] = $localidad_id;
@@ -39,6 +41,7 @@ if ($persona_id) {
       $param['telefono_caracteristica'] = $telefono_caracteristica;
       $param['telefono_numero'] = $telefono_numero;
       $res = $objPersona->save($param);
+      
       if (!$res) {
             $array_resultados['codigo'] = 500;
             $array_resultados['alert'] = 'danger';
@@ -68,41 +71,64 @@ if ($persona_id) {
       }
    
 } else {
-     /* $persona_id = 0;
-      $sql_persona = "INSERT persona(dni,apellido,nombre,fecha_nacimiento,nacionalidad,idLocalidad,domicilio,email,telefono_caracteristica,telefono_numero) VALUES
-                       ('$dni','$apellido','$nombres',$fecha_nacimiento,'Argentina',$localidad_id,'$domicilio','$email','$telefono_caracteristica','$telefono_numero')";
+     
+      $objPersona = new Persona();
+      $param['apellido'] = $apellido;
+      $param['nombres'] = $nombres;
+      $param['dni'] = $dni;
+      $param['fecha_nacimiento'] = $fecha_nacimiento;
+      $param['localidad_id'] = $localidad_id;
+      $param['domicilio'] = $domicilio;
+      $param['email'] = $email;
+      $param['telefono_caracteristica'] = $telefono_caracteristica;
+      $param['telefono_numero'] = $telefono_numero;
+      $res = $objPersona->save($param);
+      if (!$res) {
+            $array_resultados['codigo'] = 500;
+            $array_resultados['alert'] = 'danger';
+            $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del $entidad.";  
+            echo json_encode($array_resultados);exit;
+      } 
       
+      $persona_id = $res;
+      //var_dump($param,$res);exit;
 
-      try {
-            $resultado_1 = mysqli_query($conex,$sql_persona);
-            $persona_id = mysqli_insert_id($conex);
-            
-            $sql_alumno = "INSERT alumno(dni,anio_ingreso,debe_titulo,habilitado,idPersona) VALUES('$dni','$anioIngreso','$debeTitulo','Si',$persona_id)";
-            //var_dump($persona_id,$sql_alumno);exit;
-            $resultado = mysqli_query($conex,$sql_alumno);
-            
-            $sql_usuario = "INSERT usuario(dni,nombre,idtipo,pass, idPersona,idRol) VALUES('$dni','$dni',1,'".md5($dni)."',".$persona_id.",4)";
-            //var_dump($persona_id,$sql_usuario);exit;
-            $resultado = mysqli_query($conex,$sql_usuario);  
+      $objAlumno = new Alumno();
+      $param_alumno['anio_ingreso'] = $anioIngreso;
+      $param_alumno['debe_titulo'] = $debeTitulo;
+      $param_alumno['habilitado'] = 'Si';
+      $param_alumno['idPersona'] = $persona_id;
+      $res_alumno = $objAlumno->save($param_alumno);
 
-      } catch(Exception $e) {
-            $sql_persona = "UPDATE persona 
-                            SET apellido = '$apellido',
-                                nombre = '$nombres',
-                                fechaNacimiento = $fecha_nacimiento,
-                                nacionalidad = 'Argentina',
-                                idLocalidad = $localidad_id,
-                                domicilio = '$domicilio',
-                                email = '$email',
-                                telefono_caracteristica = '$telefono_caracteristica',
-                                telefono_numero = '$telefono_numero'
-                            WHERE dni = $dni";
-            $resultado_1 = mysqli_query($conex,$sql_persona);
-            
-      };*/
-      
-      $array_resultados['codigo'] = 200;
-      $array_resultados['mensaje'] = "El $entidad con <strong>$dni</strong> ya se ha registrado.";
+      if ($res_alumno) {
+                  $array_resultados['codigo'] = 200;
+                  $array_resultados['alert'] = 'success';
+                  $array_resultados['mensaje'] = "Los datos del $entidad <strong>$apellido, $nombres</strong> fueron Actualizados Exitosamente.";  
+      } else {
+                  $array_resultados['codigo'] = 500;
+                  $array_resultados['alert'] = 'danger';
+                  $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del $entidad.";  
+                  echo json_encode($array_resultados);exit;
+      }
+
+      // CREA EL USUARIO
+      $objUsuario = new Usuario();
+      $param_usuario['nombre'] = $dni;
+      $param_usuario['password'] = $dni;
+      $param_usuario['idPersona'] = $persona_id;
+      $param_usuario['idRol'] = 4;
+      $res_usuario = $objUsuario->save($param_usuario);
+
+      if ($res_usuario) {
+                  $array_resultados['codigo'] = 200;
+                  $array_resultados['alert'] = 'success';
+                  $array_resultados['mensaje'] = "Los datos del $entidad <strong>$apellido, $nombres</strong> fueron Actualizados Exitosamente.";  
+      } else {
+                  $array_resultados['codigo'] = 500;
+                  $array_resultados['alert'] = 'danger';
+                  $array_resultados['mensaje'] = "Hubo un Error en la Actualizacion de los datos del $entidad.";  
+                  echo json_encode($array_resultados);exit;
+      }
 
 };
 
