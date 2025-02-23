@@ -4,16 +4,32 @@ require_once "verificarCredenciales.php";
 
 require_once "CalendarioAcademico.php";
 require_once "InscripcionCursarMaterias.php";
-
-$calendario = new CalendarioAcademico();
-$inscripcion_cursado = $calendario->getInscripcionCursadoActiva();
+require_once "Alumno.php";
 
 $id_url = "menu_cursado";
 $_SESSION['arr_materias_inscriptas_cursar_actualizadas'] = [];
 
+
+$idPersona = $_SESSION['arreglo_datos_usuario']['idPersona'];
+$objAlumno = new Alumno();
+$arr_datos_alumno = $objAlumno->getAlumnoByIdPersona($idPersona);
+
+$hoy = date('Y-m-d');
+if (!empty($arr_datos_alumno)) {
+  $idAlumno = $arr_datos_alumno['idAlumno'];
+  $_SESSION['idAlumno'] = $idAlumno;
+}
+
+$calendario = new CalendarioAcademico();
+$arr_datos_cursado = $calendario->getLastInscripcionCursado();
+
 $disabledClass = 'disabledbutton';
-if ($inscripcion_cursado) {
-  $disabledClass = '';
+if (!empty($arr_datos_cursado)) {
+  $fecha_inicio = $arr_datos_cursado['fecha_inicio'];
+  $fecha_final = $arr_datos_cursado['fecha_final'];
+  if ( strtotime($hoy)>=strtotime($fecha_inicio) && strtotime($hoy)<=strtotime($fecha_final) ) {
+     $disabledClass = '';
+  }
 }
 
 

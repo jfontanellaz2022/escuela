@@ -28,7 +28,7 @@
    </li>
 
    <li class="nav-item <?php echo ($id_url=='menu_cursado')?'active':'';?>">
-       <a class="nav-link disabled" href="menuCursado.php?token=<?=$_SESSION['token'];?>">
+       <a class="nav-link" href="menuCursado.php?token=<?=$_SESSION['token'];?>">
          Cursado
          <span class="sr-only">(current)</span></a>
    </li>

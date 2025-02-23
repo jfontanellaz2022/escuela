@@ -31,5 +31,5 @@ class Constantes {
     const CODIGO_PRIMER_LLAMADO = 1020;
     const CODIGO_SEGUNDO_LLAMADO = 1021;
 
-
+    const CODIGO_INSCRIPCION_CURSADO = 1023;
 }    

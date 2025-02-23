@@ -273,6 +273,21 @@ class CalendarioAcademico {
 	}
 
 
+	// Devuelve la ultima inscripcion a  examenes
+	public function getLastInscripcionCursado(){
+		$this->getConection();
+		$sql = "SELECT c.*, t.codigo, t.nombre as evento_descripcion 
+				FROM calendario_academico c, tipificacion t 
+				WHERE t.id=c.idTipificacion and ( t.codigo = " . Constantes::CODIGO_INSCRIPCION_CURSADO . " )
+				ORDER BY c.fecha_final desc
+				LIMIT 0,1 ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+		$arr_resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $arr_resultado;
+	}
+
+
 	// Get Calendario by Codigo
 	
 	public function getInscripcionCursadoActiva(){
