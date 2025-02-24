@@ -38,7 +38,7 @@ if($action == 'listar' && $idCarrera){
     foreach ($arr_datos as $row) {
 			$indice++;
 			$espacio = "&nbsp;";
-			$accion_editar = '<a href="#" class="disabledbutton" onclick="rendidaEditar(\''.$idAlumno.'&'.$row['materia_id'].'&'.$row['materia_nombre'].'&'.$row['materia_anio'].'&'.$row['calendario_id'].'&'.$row['llamado'].'&'.$row['nota'].'&'.$row['estado_final'].'&'.$row['condicion'].'&'.$row['fecha_hora_inscripcion'].'&'.$row['evento_nombre'].'&'.$row['id'].'\')" title="Editar"><img src="../public/img/icons/edit_icon.png" width="20"></a>';
+			//$accion_editar = '<a href="#" class="disabledbutton" onclick="rendidaEditar(\''.$idAlumno.'&'.$row['materia_id'].'&'.$row['materia_nombre'].'&'.$row['materia_anio'].'&'.$row['calendario_id'].'&'.$row['llamado'].'&'.$row['nota'].'&'.$row['estado_final'].'&'.$row['condicion'].'&'.$row['fecha_hora_inscripcion'].'&'.$row['evento_nombre'].'&'.$row['id'].'\')" title="Editar"><img src="../public/img/icons/edit_icon.png" width="20"></a>';
 			$accion_eliminar = '<a href="#" onclick="rendidaEliminar('.$row['id'].')" title="Eliminar"><img src="../public/img/icons/delete_icon.png" width="15"></a>';
 			$nota = "";
 			if ($row['nota']=='-1') {
@@ -69,7 +69,7 @@ if($action == 'listar' && $idCarrera){
 				 '   <td align="left"><small>'.$row['condicion'].'</small></td>'.
 				 '   <td align="center"><small><strong>'.$nota.'</strong></small></td>'.
 				 '   <td align="center"><small><span class="badge '.$badge.'">'.$row['estado_final'].'</span></small></td>'.
-				 '   <td align="center" class="text-center"><small>'.$accion_eliminar.$espacio.$accion_editar.$espacio.'</small></td>';
+				 '   <td align="center" class="text-center"><small>'.$accion_eliminar.'</small></td>';
 			echo '</tr>';
     };
 	echo "</tbody><tfoot><tr><td colspan='9'>";

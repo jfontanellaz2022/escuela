@@ -58,7 +58,9 @@ $alumno_id = $idAlumno;
   </article>
 
   <article class="container">
-    <div id="titulo"></div>
+    <div id="titulo">
+        
+    </div>
   </article>
 
   <article class="container">
@@ -91,11 +93,11 @@ $(function () {
     let datos_carrera = "<?=$carrera_nombre?> (<?=$carrera_id?>)";
     cargarModulos();
     let datos_alumnos_jumbo = `<div class="jumbotron">
-                            <h3 class="display-6">Datos del Alumno</h3>
+                            <h3 class="display-6">Materia Rendidas del Alumno</h3>
                                 <p class="lead">`+datos_alumno+ `<br>
                                 `+datos_carrera+ `</p>
                                  </div>`;
-    $("#titulo").html(datos_alumnos_jumbo);
+    $("#titulo").append(datos_alumnos_jumbo);
 });
 
 function cargarModulos() {
@@ -141,7 +143,7 @@ function load(page) {
       let per_page = 10;
       let parametros = {"action":"listar", "page":page, "per_page":per_page, "alumno_id":<?=$idAlumno;?> ,"carrera_id":<?=$idCarrera;?> };
       $.ajax({
-          url: './funciones/carreraListarMateriasRendidasPoridAlumno.php?token=<?=$_SESSION['token'];?>',
+          url: './funciones/materiasRendidasPorCarreraListar.php?token=<?=$_SESSION['token'];?>',
           data: parametros,
           method: 'POST',
           beforeSend: function () {
@@ -188,57 +190,7 @@ function rendidaNuevo(){
         $("#inputAccion").val('Nuevo');
         $("#inputIdAlumno").val(alumno_id);
         $("#inputId").val('');
-
         $("#inputCarrera").val('<?=$carrera_nombre?> ('+carrera_id+')');
-
-/*
-$.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
-          if (response.codigo==200) {
-               $("#inputMateria").empty(); 
-           response.datos.forEach(materia => {
-                      $("#inputMateria").append($('<option/>', {
-                            text: materia.nombre + ' ('+materia.id+') ',
-                            value: materia.id,
-                      }));
-                });
-                $('#inputMateria').select2({
-                    theme: "bootstrap",
-                });
-          };
-    },"json")
-*/
-
-        /*$('#inputMateria').select2({
-                theme: "bootstrap",
-                placeholder: "Materia",
-                ajax: {
-                    url: "./funciones/getMateriasPorIdCarrera.php?token=", 
-                    dataType: 'json',
-                    delay: 250,
-                    language: {
-                                noResults: function() {
-                                          return "No hay resultado";        
-                                },
-                                searching: function() {
-                                          return "Buscando..";
-                                }
-                              },
-                    data: function (datos) {
-                        return {
-                            "searchTerm": datos.term, // search term
-                            "carrera_id": carrera_id // search term
-                        };
-                    },
-                    processResults: function (response) {
-                        return {
-                            results:response
-                        };
-                    },
-                    cache: true
-                }
-        });*/
-
-
         $('#inputMateria').val(null).trigger('change');
         $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
             if (response.codigo==200) {
@@ -278,7 +230,6 @@ $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",
         $('#inputCondicion').prepend("<option value='' selected>** Condicion **</option>");    
         $("#inputFecha").datepicker({dateFormat: "yy-mm-dd"});
 
-
     });
 }
 
@@ -315,13 +266,11 @@ function rendidaEditar(val){
                             </ol>
                         </nav>`;
     $("#breadcrumb").html(breadcrumble);     
-                 
     $.get("html/materiaRendidaPorAlumno.html",function(data){
         $("#resultado").fadeIn(100).html(data);
         $("#inputAccion").val('Editar');
         $("#inputIdAlumno").val(alumno_id);
         $("#inputId").val(id);
-
         $("#inputCarrera").val('<?=$carrera_nombre?> ('+carrera_id+')');
         $('#inputMateria').prepend("<option value='"+materia_id+"' >"+materia_nombre+' ('+materia_id+")</option>");
         $('select[name="inputMateria"]').attr('disabled', 'disabled');
@@ -331,7 +280,6 @@ function rendidaEditar(val){
         $("#inputCondicion option[value="+ condicion +"]").attr("selected",true);
         $("#inputFecha").val(fecha);
         $("#inputFecha").datepicker({dateFormat: "yy-mm-dd"});
-
         $('#inputCalendario').select2({
                 theme: "bootstrap",
                 placeholder: "Calendario",
@@ -365,13 +313,9 @@ function rendidaEditar(val){
                 id: calendario_id,
                 text: descripcion_evento+' ('+calendario_id+')'
             };
-            
             var newOption = new Option(data.text, data.id, false, false);
             $('#inputCalendario').append(newOption).trigger('change');
-
             
-            
-            //$("#inputCalendario option[value="+ calendario_id +"]").attr("selected",true);
     });
 }
 

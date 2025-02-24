@@ -3,8 +3,6 @@
 <!--  ID del ALUMNO que se va a procesar-->
 <input type="text" id="inputIdAlumno">
 <input type="text" id="inputId">
-<input type="text" id="inputAccion">
-
 
 <form>
 
@@ -18,19 +16,21 @@
     </div>
 
     <div class="form-row">
-        <label for="inputMateria"><strong>Materia</strong></label>
-        <select name="inputMateria" id="inputMateria"  class="form-control select2-container">
-        </select><br>
+        <label for="inputAnioCursado"><strong>Año Cursado</strong></label>
+            <input type='text' name="inputAnioCursado" id="inputAnioCursado"  class="form-control" maxlength="4"><br>   
     </div>
+    
 
     <div class="form-row">
         &nbsp;
     </div>
 
     <div class="form-row">
-        <label for="inputAnioCursado"><strong>Año Cursado</strong></label>
-            <input type='text' name="inputAnioCursado" id="inputAnioCursado"  class="form-control" maxlength="4"><br>   
+        <label for="inputMateria"><strong>Materia</strong></label>
+        <select name="inputMateria" id="inputMateria"  class="form-control select2-container">
+        </select><br>
     </div>
+    
 
     <div class="form-row">
         &nbsp;
@@ -98,6 +98,10 @@
 
     <div class="form-row">
         <button type="button" class="btn btn-primary" onclick="cursadoGuardar()">Guardar</button>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
     </div>
     
 </form>

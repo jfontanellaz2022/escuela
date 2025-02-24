@@ -91,7 +91,7 @@ $(function () {
     let datos_carrera = "<?=$carrera_nombre?> (<?=$carrera_id?>)";
     cargarModulos();
     let datos_alumnos_jumbo = `<div class="jumbotron">
-                            <h3 class="display-6">Datos del Alumno</h3>
+                            <h3 class="display-6">Materias Cursadas del Alumno</h3>
                                 <p class="lead">`+datos_alumno+ `<br>
                                 `+datos_carrera+ `</p>
                                  </div>`;
@@ -141,17 +141,17 @@ function load(page) {
       let per_page = 10;
       let parametros = { "action":"listar", "page":page, "per_page":per_page, "alumno_id":<?=$idAlumno;?> ,"carrera_id":<?=$idCarrera;?> };
       $.ajax({
-          url: './funciones/carreraListarMateriasCursadasPoridAlumno.php?token=<?=$_SESSION['token'];?>',
+          url: './funciones/materiasCursadasPorCarreraListar.php?token=<?=$_SESSION['token'];?>',
           data: parametros,
           method: 'POST',
           beforeSend: function () {
             $("#resultado").html("<img src='../public/img/icons/load_icon.png' width='50' >");  
           },
-          success: function (data) {
-              $("#resultado").fadeIn(100).html(data);
-              $("#tabla_calendario>tfoot").prepend(`<tr>
+          success: function (response) {
+              $("#resultado").fadeIn(200).html(response);
+              $("#tabla_materias_cursadas>tfoot").append(`<tr>
                                                       <td colspan="9">
-                                                          <button class="btn btn-primary disabledbutton" onclick="cursadoNuevo()">Nuevo</button>
+                                                          <button class="btn btn-primary" onclick="cursadoNuevo()">Nuevo</button>
                                                       </td>
                                                   </tr>`);
           }
@@ -190,57 +190,55 @@ function cursadoNuevo(){
 
         $("#inputCarrera").val('<?=$carrera_nombre?> ('+carrera_id+')');
         $("#inputAnioCursado").val();
-        $('#inputMateria').select2({
-                    theme: "bootstrap4",
-        });
-        
         $("#inputFechaExpiracion").datepicker({dateFormat: "yy-mm-dd"});
 
-        /*$.post("./funciones/getMateriasPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
-          if (data.codigo==100) {
-            data.datos.forEach(materia => {
-                      $("#inputMateria").append($('<option/>', {
-                            text: materia.nombre+' ('+materia.id+')',
-                            value: materia.id,
-                      }));
-                });
-                
+        $('#inputMateria').val(null).trigger('change');
+        $.post("./funciones/getMateriasPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(response){
+            if (response.codigo==200) {
+                $("#inputMateria").empty(); 
+                response.datos.forEach(materia => {
+                            $("#inputMateria").append($('<option/>', {
+                                    text: materia.nombre + ' ('+materia.id+') ',
+                                    value: materia.id,
+                            }));
+                        });
+                        $('#inputMateria').select2({
+                            theme: "bootstrap",
+                        });
             };
-        },"json")*/
+        },"json");
 
-        $('#inputMateria').select2({
-                theme: "bootstrap",
-                placeholder: "Materia",
-                ajax: {
-                    url: 'funciones/materiaPorIdCarreraSelect2.php?token=<?=$_SESSION['token'];?>', 
-                    dataType: 'json',
-                    delay: 250,
-                    language: {
-                                noResults: function() {
-                                          return "No hay resultado";        
-                                },
-                                searching: function() {
-                                          return "Buscando..";
-                                }
-                              },
-                    data: function (datos) {
-                        return {
-                            "searchTerm": datos.term, // search term
-                            "carrera_id": carrera_id // search term
-                        };
-                    },
-                    processResults: function (response) {
-                        return {
-                            results:response
-                        };
-                    },
-                    cache: true
-                }
-        });
+        $('#inputEstado').val(null).trigger('change');
+        $.post("../API/findAllEstadosMateria.php?token=<?=$_SESSION['token'];?>",function(response){
+            if (response.codigo==200) {
+                $("#inputEstado").empty(); 
+                response.datos.forEach(materia => {
+                            $("#inputEstado").append($('<option/>', {
+                                    text: materia.nombre + ' ('+materia.id+') ',
+                                    value: materia.id,
+                            }));
+                        });
+                        $('#inputEstado').select2({
+                            theme: "bootstrap",
+                        });
+            };
+        },"json");
 
-        $('#inputCursado').prepend("<option value='' selected>** Llamado **</option>");
-        $('#inputNota').prepend("<option value='' selected>** Nota **</option>");
-        $('#inputEstado').prepend("<option value='' selected>** Estado **</option>");
+        $('#inputCursado').val(null).trigger('change');
+        $.post("../API/findAllAlumnoTiposCursado.php?token=<?=$_SESSION['token'];?>",function(response){
+            if (response.codigo==200) {
+                $("#inputCursado").empty(); 
+                response.datos.forEach(materia => {
+                            $("#inputCursado").append($('<option/>', {
+                                    text: materia.nombre + ' ('+materia.id+') ',
+                                    value: materia.id,
+                            }));
+                        });
+                        $('#inputCursado').select2({
+                            theme: "bootstrap",
+                        });
+            };
+        },"json");
 
     });
 }
@@ -295,22 +293,21 @@ function cursadoEditar(val){
 }
 
 function cursadoGuardar() {
-    let accion = $("#inputAccion").val();
     let id = $("#inputId").val();
     let alumno_id = $("#inputIdAlumno").val();
     let materia_id = $("#inputMateria").val();
     let cursado_anio = $("#inputAnioCursado").val();
     let cursado_nombre = $('select[id="inputCursado"] option:selected').text();
     let cursado_id = $("#inputCursado").val();
+    let estado_nombre = $('select[id="inputEstado"] option:selected').text();
+    let estado_id = $("#inputEstado").val();
     let nota = $("#inputNota").val();
-    let estado_final = $("#inputEstado").val();
     let fecha_expiracion = $("#inputFechaExpiracion").val();
     let parametros;
-
-    if (accion!="" && alumno_id!=null &&materia_id!=null && cursado_id!=null && cursado_nombre!="" && cursado_anio!="" && nota!="" && estado_final!="")  {
-        parametros = {"accion":accion,"id":id,"alumno_id":alumno_id,"materia_id":materia_id,"cursado_anio":cursado_anio,"cursado_nombre":cursado_nombre,"cursado_id":cursado_id,"nota":nota,"estado_final":estado_final,"fecha_expiracion":fecha_expiracion};
-        $.post("./funciones/materiaCursadaGuardar.php?token=<?=$_SESSION['token'];?>",parametros,function(datos){
-            if (datos.codigo == 100) {
+      
+    if (alumno_id!=null &&materia_id!=null && cursado_id!=null && cursado_nombre!="" && cursado_anio!="" && nota!="" && estado_id!=null && estado_nombre!="")  {
+        parametros = {"id":id,"alumno_id":alumno_id,"materia_id":materia_id,"cursado_anio":cursado_anio,"cursado_nombre":cursado_nombre,"cursado_id":cursado_id,"nota":nota,"estado_nombre":estado_nombre,"estado_id":estado_id,"fecha_expiracion":fecha_expiracion};        $.post("./funciones/materiaCursadaGuardar.php?token=<?=$_SESSION['token'];?>",parametros,function(response){
+            if (response.codigo == 200) {
                 cargarModulos();
                 $("#resultado_accion").html();
                 $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
@@ -330,14 +327,13 @@ function cursadoGuardar() {
             alert('tiene valores nulos');
     }
 
-    console.log(parametros);
 };    
 
 
 function cursadoEliminar(id){
     if (confirm("Desea Eliminar el Registro?")) {
             $.post("./funciones/materiaCursadaEliminar.php?token=<?=$_SESSION['token'];?>",{"id":id,"accion":'Eliminar'},function(datos){
-                    if (datos.codigo == 100) {
+                    if (datos.codigo == 200) {
                         cargarModulos();
                         $("#resultado_accion").html();
                         $("#resultado_accion").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">

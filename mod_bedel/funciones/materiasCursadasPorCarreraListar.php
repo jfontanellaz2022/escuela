@@ -26,7 +26,7 @@ if($action == 'listar' && $idCarrera){
 	if (count($arr_datos)>0){
 		$c=0;
 			echo '<div class="table-responsive" ">
-				<table class="table table-striped table-bordered table-hover" id="tabla_calendario">
+				<table class="table table-striped table-bordered table-hover" id="tabla_materias_cursadas">
 					<thead class="thead-dark">
 						<tr>
 							<th class="text-center" width="5%">#</th>
@@ -53,7 +53,7 @@ if($action == 'listar' && $idCarrera){
 			$indice = $pagina + $c;
 			$espacio = "&nbsp;";
 			$accion_editar = '<a href="#" class="disabledbutton" onclick="cursadoEditar(\''.$idAlumno.'&'.$row['materia_id'].'&'.$row['materia_nombre'].'&'.$row['anio_cursado'].'&'.$row['cursado_id'].'&'.$row['nota'].'&'.$row['estado_final'].'&'.$row['fecha_vencimiento_regularidad'].'&'.$row['id'].'\')" title="Editar"><img src="../public/img/icons/edit_icon.png" width="20"></a>';
-			$accion_eliminar = '<a href="#" class="disabledbutton" onclick="cursadoEliminar('.$row['id'].')" title="Eliminar"><img src="../public/img/icons/delete_icon.png" width="17"></a>';
+			$accion_eliminar = '<a href="#" onclick="cursadoEliminar('.$row['id'].')" title="Eliminar"><img src="../public/img/icons/delete_icon.png" width="17"></a>';
 			$fecha_expiracion_materia = "------";
 			if ($row['estado_final']=='Libre' || $row['estado_final']=='Regularizo') {
 				$fecha_expiracion_materia = '<strong>'.substr($row['fecha_vencimiento_regularidad'],0,10).'</strong>';
@@ -79,22 +79,24 @@ if($action == 'listar' && $idCarrera){
 				 '   <td align="right"><small>'.$row['nota'].'</small></td>'.
 				 '   <td align="right"><small><span class="badge '.$badge.'">'.$row['estado_final'].'</span></small></td>'.
 				 '   <td align="right"><small>'.$fecha_expiracion_materia.'</small></td>'.
-				 '   <td align="left" class="text-center"><small>'.$accion_eliminar.$espacio.$accion_editar.$espacio.'</small></td>';
+				 '   <td align="left" class="text-center"><small>'.$accion_eliminar.'</small></td>';
 			echo '</tr>';
         $finales++;
     }; // END FOREACH
-	echo "</tbody><tfoot><tr><td colspan='9'>";
-	echo "</td></tr>";
-    echo '</tfoot>';
-	echo '</table>';
+	echo "   </tbody>
+	         <tfoot>
+			 </tfoot>
+		 </table>";
 } else {
-	echo '<table class="table">';
-	echo '<tbody>';
-	echo '<tr><td><div class="alert alert-danger" role="alert">
-				 <b>Atenci&oacute;n:</b> No existen Materias .
-			 </div></td></tr>';
-	echo '</tbody>';
-	echo '</table>';
+	echo '<table class="table" id="tabla_materias_cursadas">
+			<tbody>
+				<tr><td><div class="alert alert-danger" role="alert">
+							<b>Atenci&oacute;n:</b> No existen Materias Cursadas.
+						</div></td></tr>
+			</tbody>
+			<tfoot>
+			</tfoot>
+	     </table>';
 };
 };
 

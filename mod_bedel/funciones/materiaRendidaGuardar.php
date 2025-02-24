@@ -18,7 +18,6 @@ $condicion = SanitizeVars::STRING($_POST['condicion']);
 $fecha = $_POST['fecha'];
 
 $usuario = $_SESSION['arreglo_datos_usuario']['id'];
-//var_dump($_SESSION['arreglo_datos_usuario']);exit;
 $array_resultados = array();
 
 if ($accion && $idAlumno && $idCalendario && $estado_final && $estado_final && $estado_final && $condicion && $fecha) {
