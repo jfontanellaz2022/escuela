@@ -477,16 +477,18 @@ function finalesAgregarNotaAlumno(idMateria,materia_nombre,idCarrera,carrera_nom
    $.post( "../API/setNotaExamenFinal.php?token="+token, parametros, function( response ) {
             $("#resultado_carga").removeClass("d-none");
             if (response.codigo==200) {
-                $("#resultado_carga").html(`<div class="alert alert-dark" role="alert">
-                                           <b><img src="../public/img/icons/ok_icon.png" width="21">&nbsp;</b><span style="color: #000000;"><i>`+response.mensaje+`</i></span>
-                                            </div>`);
+                     Swal.fire({
+                                title: "Actualización Realizada!",
+                                text: "La Nota se ha Registrado.",
+                                icon: "success"
+                     });
                   cargarAlumnosPorMateriaExamenes(idCarrera, carrera_nombre, idMateria,materia_nombre,idProfesor,llamado)
             } else {
-                $("#resultado_carga").html(`<div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                           `+response.mensaje+`</span></i>
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                         </button></div>`);
+                  Swal.fire({
+                        title: "Actualización Realizada!",
+                        text: "La Nota No se ha Registrado.",
+                        icon: "error"
+               });
             }
     },"json");
 }

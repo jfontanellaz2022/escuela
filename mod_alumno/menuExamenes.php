@@ -29,6 +29,7 @@ $objCalendario = new CalendarioAcademico();
 $arr_datos_calendario = $objCalendario->getLastInscripcionExamen();
 $arr_datos_turno = $objCalendario->getLastTurnoExamen();
 $_SESSION['turno_id'] = $arr_datos_turno['id'];
+$_SESSION['arr_calendario']['inscripcion_asociada'] = $_SESSION['arr_calendario']['inscripcion_activa'] = 0;
 if (!empty($arr_datos_calendario)) {
       $fecha_inicio = $arr_datos_calendario['fecha_inicio'];
       $fecha_final = $arr_datos_calendario['fecha_final'];
@@ -70,9 +71,8 @@ if (!empty($arr_datos_calendario)) {
 
 $disabledCarrerasClass = 'disabledbutton';
 $disabledMateriasClass = 'disabledbutton';
-
-if ( strtotime($hoy)>=strtotime($arr_datos_calendario['fecha_inicio']) && 
-     strtotime($hoy)<=strtotime($arr_datos_turno['fecha_final']) ) {
+if ( strtotime($hoy)>=strtotime($objCalendario->getLastInscripcionExamen()['fecha_inicio']) && 
+     strtotime($hoy)<=strtotime($objCalendario->getLastTurnoExamen()['fecha_final']) ) {
     $disabledCarrerasClass = '';
 }
 
