@@ -1,7 +1,7 @@
 <?php
 set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
 require_once "verificarCredenciales.php";
-
+require_once "Constantes.php";
 require_once "CalendarioAcademico.php";
 require_once "InscripcionCursarMaterias.php";
 require_once "Alumno.php";
@@ -114,7 +114,7 @@ function cargarCarrerasCursado(idAlumno) {
   //Remuevo la class que me deshabilita
   $("#resultado").removeClass("disabledbutton");
   let parametros = {'alumno':idAlumno};
-  $.post( "./funciones/getCarrerasPorIdAlumno.php", parametros, function( data ) {
+  $.post( "./funciones/getCarrerasPorIdAlumno.php?token=<?=$_SESSION['token'];?>", parametros, function( data ) {
     $("#breadcrumb").html(bread);
     $("#titulo").html(titulo);
     $("#resultado").html("");
@@ -154,7 +154,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
   subtitulo = `<h3>Seleccione las Materias</h3><p><i><strong>*</strong> Una vez que seleccione las materias que se inscribe deberá presionar el Botón <strong>Confirmar</strong> para que la inscripción se haga efectiva.</i>`;
   $("#breadcrumb").html(bread);
   $("#titulo").html(titulo+subtitulo);
-   $.post("./funciones/getMateriasParaCursarPorIdCarrera.php",{"carrera_id":carrera_id},function(data){
+   $.post("./funciones/getMateriasParaCursarPorIdCarrera.php?token=<?=$_SESSION['token'];?>",{"carrera_id":carrera_id},function(data){
          $("#resultado").html();
          table1 = `<table class="table table-striped" id="tabla_cursado">
               <thead>
@@ -166,14 +166,19 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
               <tfoot><td colspan=3><button class='btn btn-primary btn-block' onclick='persistirInscripciones()'>Confirmar</button></td></tfoot>
               </table>`;     
          data.forEach(materia => {
+                let disable_cursado_talleres = "";
+                if (materia['materia_formato_codigo']==<?=Constantes::CODIGO_FORMATO_TALLER;?> ||
+                    materia['materia_formato_codigo']==<?=Constantes::CODIGO_FORMATO_TALLER_PRACTICA;?> ) {
+                      disable_cursado_talleres = "disabledbutton";
+                    }
                 if (materia['estado'][0]==1) {
                           filas += `<tr class=''>
                                         <td id='col_`+materia.materia_id+`'></td>
                                         <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br><strong>Año: </strong>`+materia.anio+`</td>
-                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
-                                            <button class='btn btn-warning btn-block' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
-                                            <button class='btn btn-primary btn-block' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
-                                            <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
+                                        <td><button class='btn btn-success btn-block ' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
+                                            <button class='btn btn-warning btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
+                                            <button class='btn btn-primary btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
+                                            <button class='btn btn-danger btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
                                     </tr>`;
                                               
                 } else if (materia['estado'][0]==2) {
@@ -184,10 +189,10 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
                           filas += `<tr style="cursor:default">
                                         <td id='col_`+materia.materia_id+`'><span class="badge `+class_badge+`">`+materia['estado'][1]+`</span></td>
                                         <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br><strong>Año: </strong>`+materia.anio+`</td>
-                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
-                                            <button class='btn btn-warning btn-block' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
-                                            <button class='btn btn-primary btn-block' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
-                                            <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
+                                        <td><button class='btn btn-success btn-block ' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
+                                            <button class='btn btn-warning btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
+                                            <button class='btn btn-primary btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
+                                            <button class='btn btn-danger btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
                                     </tr>`;
                 };
 
@@ -202,7 +207,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
 
 function guardarIncripcion(val,id) {
 
-$.post('./funciones/setMateriasParaCursar.php',{"materia_id":id,"inscribir":val},function(data){
+$.post('./funciones/setMateriasParaCursar.php?token=<?=$_SESSION['token'];?>',{"materia_id":id,"inscribir":val},function(data){
     if (data.res=='Presencial') {
       Swal.fire({
           title: "Registración Provisoria Realizada!",
@@ -240,7 +245,7 @@ $.post('./funciones/setMateriasParaCursar.php',{"materia_id":id,"inscribir":val}
 
 
 function persistirInscripciones() {
-  $.post("./funciones/persistirInscripcionesParaCursar.php",function(data) {
+  $.post("./funciones/persistirInscripcionesParaCursar.php?token=<?=$_SESSION['token'];?>",function(data) {
       Swal.fire({
             title: "Actualización Realizada!",
             text: "La inscripción se ha Confirmado.",

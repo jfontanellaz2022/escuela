@@ -1,5 +1,6 @@
 <?php 
-require_once('Db.php');
+require_once "Db.php";
+require_once "Constantes.php";
 
 class Tipificacion {
 
@@ -40,7 +41,10 @@ class Tipificacion {
 		$this->getConection();
 		$sql = "SELECT * 
 		        FROM tipificacion 
-		        WHERE codigo = 201 or  codigo = 202 or  codigo = 203 ORDER BY id ASC;";
+		        WHERE codigo = " . Constantes::CODIGO_CURSADO_PRESENCIAL . " or  
+				      codigo = " . Constantes::CODIGO_CURSADO_SEMIPRESENCIAL . " or  
+					  codigo = " . Constantes::CODIGO_CURSADO_LIBRE . "
+			    ORDER BY id ASC";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 
@@ -100,6 +104,16 @@ class Tipificacion {
 		$sql = "SELECT * FROM " . $this->table . " WHERE codigo = ? ORDER BY id ASC;";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$codigo]);
+
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+	/* getTipificacionByCodigo by Codigo */
+	public function getTipificacionByNombre($nombre){
+		$this->getConection();
+		$sql = "SELECT * FROM " . $this->table . " WHERE nombre = ? ORDER BY id ASC;";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$nombre]);
 
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}

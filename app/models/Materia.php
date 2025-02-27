@@ -52,6 +52,21 @@ class Materia {
 	}
 
 	/* Get by Id */
+	public function getMateriaDetalleById($id){
+		$this->getConection();
+		$sql = "SELECT m.*, t1.codigo as 'cursado_codigo', t1.nombre as 'cursado_nombre',
+					   t2.codigo as 'formato_codigo', t2.nombre as 'formato_nombre'
+		        FROM materia m, tipificacion t1, tipificacion t2 
+		        WHERE m.id = ? AND 
+				      m.idCursado = t1.id AND 
+					  m.idFormato = t2.id ";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$id]);
+
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+	/* Get by Id */
 	public function getMateriaNombreById($id){
 		$this->getConection();
 		$sql = "SELECT nombre FROM " . $this->table . " WHERE id = ?";

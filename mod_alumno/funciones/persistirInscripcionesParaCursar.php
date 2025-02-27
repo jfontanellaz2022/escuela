@@ -1,7 +1,9 @@
 <?php
-session_start();
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../lib');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
+
+require_once "verificarCredenciales.php";
 require_once "AlumnoCursaMateria.php";
+require_once "Tipificacion.php";
 
 $acm = new AlumnoCursaMateria();
 
@@ -26,18 +28,29 @@ array(1) {
   } 
   */
   
-
+$objTipificacion = new Tipificacion();
 foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
    $materia_id = $value[0];
    $valor = $value[1];
+   
+   
+   $cursado_id = $objTipificacion->getTipificacionByCodigo($valor)['id'];
+   $cursado_nombre = $objTipificacion->getTipificacionByCodigo($valor)['nombre'];
+   
+   $estado_id = $objTipificacion->getTipificacionByCodigo(Constantes::CODIGO_ESTADO_CURSANDO)['id']; 
+   $estado_nombre = $objTipificacion->getTipificacionByCodigo(Constantes::CODIGO_ESTADO_CURSANDO)['nombre']; 
+
    $argumentos = [];
    $argumentos['alumno_id'] = $alumno_id;
    $argumentos['materia_id'] = $materia_id;
+   $argumentos['cursado_id'] = $cursado_id;
+   $argumentos['cursado_nombre'] = $cursado_nombre;
+   $argumentos['estado_id'] = $estado_id;
    $argumentos['anio_cursado'] = $anio_cursado;
    $argumentos['tipo'] = $valor; 
    $argumentos['fecha_hora_inscripcion'] = date('Y-m-d');
    $argumentos['nota'] = 0; //Se pone 0 porque es una inscripcion
-   $argumentos['estado_final'] = 'Cursando'; //Se pone Cursando porque es una inscripcion
+   $argumentos['estado_final'] = $estado_nombre; //Se pone Cursando porque es una inscripcion
    $argumentos['fecha_modificacion_nota'] = date('Y-m-d');; //Se pone 0 porque es una inscripcion
    $argumentos['fecha_vencimiento_regularidad'] = NULL; //Se pone 0 porque es una inscripcion
    $argumentos['usuario_id'] = $alumno_id;
@@ -49,14 +62,15 @@ foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
    //var_dump($argumentos);die;
 
    if ($valor=='No') {
-       $acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
+       //$acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
    } else {
-       $acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
-       $acm->save($argumentos);
+       //$acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
+       //$acm->save($argumentos);
    }
-      
+   var_dump($argumentos);
 }
 
+exit;
 $arr_resultado = [];
 $respuesta['estado'] = 0;
 $respuesta['mensaje'] = "nada";

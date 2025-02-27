@@ -3,9 +3,9 @@
 //** Autor: jfontanellaz@gmail.com                                                     **
 //** SACA TODAS LAS CARRERAS QUE EN LAS QUE DICTA CLASES UN PROFESOR POR ID PROFESOR   **
 //***************************************************************************************
-session_start();
-set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/');
+set_include_path('../../app/models/'.PATH_SEPARATOR.'../../app/lib/'.PATH_SEPARATOR.'../');
 
+require_once "verificarCredenciales.php";
 require_once 'AlumnoEstudiaCarrera.php';
 require_once 'Sanitize.class.php';
 
