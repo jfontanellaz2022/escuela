@@ -44,17 +44,22 @@ foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
    $argumentos['alumno_id'] = $alumno_id;
    $argumentos['materia_id'] = $materia_id;
    $argumentos['cursado_id'] = $cursado_id;
-   $argumentos['cursado_nombre'] = $cursado_nombre;
    $argumentos['estado_id'] = $estado_id;
+   $argumentos['usuario_id'] = $alumno_id;
    $argumentos['anio_cursado'] = $anio_cursado;
-   $argumentos['tipo'] = $valor; 
-   $argumentos['fecha_hora_inscripcion'] = date('Y-m-d');
+   $argumentos['fecha_inscripcion'] = date('Y-m-d');
    $argumentos['nota'] = 0; //Se pone 0 porque es una inscripcion
-   $argumentos['estado_final'] = $estado_nombre; //Se pone Cursando porque es una inscripcion
+   $argumentos['cursado_nombre'] = $cursado_nombre;
+   $argumentos['estado_nombre'] = $estado_nombre; //Se pone Cursando porque es una inscripcion
    $argumentos['fecha_modificacion_nota'] = date('Y-m-d');; //Se pone 0 porque es una inscripcion
    $argumentos['fecha_vencimiento_regularidad'] = NULL; //Se pone 0 porque es una inscripcion
-   $argumentos['usuario_id'] = $alumno_id;
+   
+   
 
+   
+   
+   //$argumentos['tipo'] = $valor; 
+   
 //$arr = ['alumno_id'=>646,'materia_id'=>401,'anio_cursado'=>2024,'tipo'=>'Presencial','fecha_hora_inscripcion'=>'2023-12-12',
 //         'nota'=>0,'estado_final'=>'Cursando','fecha_modificacion_nota'=>'2023-12-12','fecha_vencimiento_regularidad'=>'2023-12-12','usuario_id'=>7];
 
@@ -62,15 +67,15 @@ foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
    //var_dump($argumentos);die;
 
    if ($valor=='No') {
-       //$acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
+       $acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
    } else {
-       //$acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
-       //$acm->save($argumentos);
+       $acm->deleteAlumnoCursaMateriaByIdAlumnoByIdMateriaByAnio($alumno_id,$materia_id,$anio_cursado);
+       
+       $acm->save($argumentos);
    }
-   var_dump($argumentos);
+   //var_dump($argumentos);
 }
 
-exit;
 $arr_resultado = [];
 $respuesta['estado'] = 0;
 $respuesta['mensaje'] = "nada";

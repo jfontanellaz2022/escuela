@@ -178,7 +178,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
                                         <td><button class='btn btn-success btn-block ' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
                                             <button class='btn btn-warning btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
                                             <button class='btn btn-primary btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
-                                            <button class='btn btn-danger btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
+                                            <button class='btn btn-danger btn-block ' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
                                     </tr>`;
                                               
                 } else if (materia['estado'][0]==2) {
@@ -192,7 +192,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
                                         <td><button class='btn btn-success btn-block ' onclick="guardarIncripcion('Presencial','`+materia.materia_id+`')" >Presencial</button>
                                             <button class='btn btn-warning btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Semipresencial','`+materia.materia_id+`')">Semipresencial</button>
                                             <button class='btn btn-primary btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('Libre','`+materia.materia_id+`')">Libre</button>
-                                            <button class='btn btn-danger btn-block ` + disable_cursado_talleres +`' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
+                                            <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">Anular</button></td>
                                     </tr>`;
                 };
 

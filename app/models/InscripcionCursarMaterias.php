@@ -4,7 +4,6 @@ require_once('AlumnoCursaMateria.php');
 require_once('AlumnoRindeMateria.php');
 require_once('CorrelativasParaCursar.php');
 require_once('Carrera.php');
-//require_once('../lib/ArrayCustom.class.php');
 
 
 class InscripcionCursarMaterias
@@ -82,8 +81,61 @@ class InscripcionCursarMaterias
     }
 
 
+    // VERIFICA QUE SE CUMPLA LA APROBACION DE AL MENOS UNA CANTIDAD O IGUAL A UNA CANTIDAD
+    function verificarExcepciones($idAlumno, $idMateria) {
+        $band = false;
+        
+        $objMateria = new Materia();
+        $code = $objMateria->getMateriaById($idMateria)['codigo'];
+
+
+        
+        if ($code==1111) { //INICIAL
+            $arm = new AlumnoRindeMateria();
+            $arr_materias_aprobadas = $arm->getMateriasRendidasByEstado($idAlumno,'Aprobo');
+            $cant = 0;
+            if (in_array(356,$arr_materias_aprobadas)) $cant++;
+            if (in_array(354,$arr_materias_aprobadas)) $cant++;
+            if (in_array(357,$arr_materias_aprobadas)) $cant++;
+            if (in_array(355,$arr_materias_aprobadas)) $cant++;
+            if (in_array(353,$arr_materias_aprobadas)) $cant++;
+         
+            if ($cant>=3) {
+                      return TRUE;
+            } else return FALSE;
+
+        } else if ($code==2222) { //PRIMARIA
+            $arm = new AlumnoRindeMateria();
+            $arr_materias_aprobadas = $arm->getMateriasRendidasByEstado($idAlumno,'Aprobo');
+            $cant = 0;
+            if (in_array(314,$arr_materias_aprobadas)) $cant++;
+            if (in_array(315,$arr_materias_aprobadas)) $cant++;
+            if (in_array(316,$arr_materias_aprobadas)) $cant++;
+            if (in_array(317,$arr_materias_aprobadas)) $cant++;
+            if (in_array(318,$arr_materias_aprobadas)) $cant++;
+            if (in_array(319,$arr_materias_aprobadas)) $cant++;
+         
+            if ($cant>=3) {
+                      return TRUE;
+            } else return FALSE;
+        } else {
+            return TRUE;
+        }
+
+
+
+        //1 si materia = id_materia = 325 // Taller de Practica II - Seminario de lo grupal y los grupos en el aprendizaje - Primaria 
+        // AL MENOS 3 DE LOS TALLERES DE PRACTICA DE 1ER AÑO DEL CAMPO DE LA FORMACION ESPECIFICA
+        // (Comunicación y Expresión Oral y Escrita (314) - Resolución de Problemas y creatividad (315) Ciencias Naturales para una cultura ciudadana 
+        //  Problemáticas de las Ciencias Sociales - Área Estético Expresiva I )
+
+
+
+    }
+
+
     // *******************************************************************************
-    //  Retorna el arreglo de Materias en la que puede Inscribir a Rendir o a Cursar.
+    //  Retorna el arreglo de Materias en la que puede Inscribir a Cursar.
     // *******************************************************************************
     public function getArregloMateriasVerificadasParaInscribirse($idAlumno,$idCarrera)
     {
@@ -99,7 +151,7 @@ class InscripcionCursarMaterias
         return $arr_materias_verificadas_para_inscribirse;
     }
 
-
+    
     public function getArregloMateriasVerificadasParaInscribirseDetalles($alumno_id,$carrera_id)
     {
         $arr_materias_carrera = [];

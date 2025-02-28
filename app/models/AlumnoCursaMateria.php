@@ -10,12 +10,12 @@ class AlumnoCursaMateria {
 	private $id;
 	private $alumno_id;
 	private $materia_id;
-	private $cursado_tipo_id; 
+	private $cursado_id; 
 	private $cursado_anio;
-	private $cursado_tipo_descripcion;
+	private $cursado_nombre;
 	private $fecha_inscripcion;
 	private $nota;
-	private $estado_final;
+	private $estado_nombre;
 	private $fecha_modificacion_nota;
 	private $fecha_vencimiento_regularidad = NULL;
 	private $estado_id;
@@ -359,11 +359,11 @@ class AlumnoCursaMateria {
 				$this->id = $param["id"];
 				$this->alumno_id = $instancia["idAlumno"];
 				$this->materia_id = $instancia["idMateria"];
-				$this->cursado_tipo_id = $instancia["idCursado"];
+				$this->cursado_id = $instancia["idCursado"];
 				$this->cursado_anio = $instancia["anio_cursado "];
 				$this->fecha_inscripcion = $instancia["fecha_inscripcion"];
 				$this->nota = $instancia["nota"];
-				$this->estado_final = $instancia["estado_final"];
+				$this->estado_nombre = $instancia["estado_final"];
 				$this->fecha_modificacion_nota = $instancia["fecha_modificacion_nota"];
 				$this->fecha_vencimiento_regularidad = $instancia["fecha_vencimiento_regularidad"];
 				$this->estado_id = $instancia["idEstado"];
@@ -376,21 +376,31 @@ class AlumnoCursaMateria {
 		//die($param["fecha_vencimiento_regularidad"]);
 		if(isset($param["alumno_id"])) $this->alumno_id = $param["alumno_id"];
 		if(isset($param["materia_id"])) $this->materia_id = $param["materia_id"];
-		if(isset($param["anio_cursado"])) $this->cursado_anio = $param["anio_cursado"];
-		if(isset($param["cursado_id"])) $this->cursado_tipo_id = $param["cursado_id"];
-		if(isset($param["fecha_inscripcion"])) $this->fecha_inscripcion = $param["fecha_inscripcion"];
-		else $this->fecha_inscripcion = NULL;
-		if(isset($param["nota"])) $this->nota = $param["nota"];
-		if(isset($param["estado_final"])) $this->estado_final = $param["estado_final"];
-		if(isset($param["fecha_modificacion_nota"])) $this->fecha_modificacion_nota = $param["fecha_modificacion_nota"];
-		else $this->fecha_modificacion_nota = NULL;
-		if(isset($param["fecha_vencimiento_regularidad"])) $this->fecha_vencimiento_regularidad = $param["fecha_vencimiento_regularidad"];
-		else $this->fecha_vencimiento_regularidad = NULL;
-		if(isset($param["estado_id"])) $this->estado_id = $param["estado_id"];
 		if(isset($param["usuario_id"])) $this->usuario_id = $param["usuario_id"];
-		
+		if(isset($param["anio_cursado"])) $this->cursado_anio = $param["anio_cursado"];
+		if(isset($param["nota"])) $this->nota = $param["nota"];
 
+		if(isset($param["cursado_id"])) $this->cursado_id = $param["cursado_id"];
+		if(isset($param["cursado_nombre"])) $this->cursado_nombre = $param["cursado_nombre"];
+		if(isset($param["estado_id"])) $this->estado_id = $param["estado_id"];
+		if(isset($param["estado_nombre"])) $this->estado_nombre = $param["estado_nombre"];
 
+		if(isset($param["fecha_inscripcion"])) {
+			$this->fecha_inscripcion = $param["fecha_inscripcion"];
+		} else {
+			$this->fecha_inscripcion = NULL;
+		}
+		if(isset($param["fecha_modificacion_nota"])) {
+			$this->fecha_modificacion_nota = $param["fecha_modificacion_nota"];
+		} else {
+			$this->fecha_modificacion_nota = NULL;
+		}
+		if(isset($param["fecha_vencimiento_regularidad"])) {
+			$this->fecha_vencimiento_regularidad = $param["fecha_vencimiento_regularidad"];
+		} else {
+			$this->fecha_vencimiento_regularidad = NULL;
+		}
+				
 		// Database operations 
 		if($exists){
 			$sql = "UPDATE ".$this->table. " SET idAlumno = ?, idMateria = ?, 
@@ -400,32 +410,31 @@ class AlumnoCursaMateria {
 										     WHERE id = ? ";
 			$stmt = $this->conection->prepare($sql);
 			try {
-				$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_tipo_id,$this->fecha_inscripcion,$this->nota,
-				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id,$this->id];
+				$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_id,$this->cursado_nombre,$this->fecha_inscripcion,$this->nota,
+				            $this->estado_nombre,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id,$this->id];
 			    $stmt->execute($arr_arg);
 			} catch (Exception $e) {
 				return -1*$e->getCode();
 			}	
 			$id = $this->id;
 		} else {
-			
-			/*$sql = "INSERT INTO " . $this->table . 
-			       " (idAlumno, idMateria, anio_cursado, idCursado, fecha_inscripcion, nota, estado_final, 
-				     fecha_modificacion_nota, fecha_vencimiento_regularidad, idEstado, idUsuario) 
-					values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";*/
-					$sql = "INSERT INTO " . $this->table . 
-					" (idAlumno, idMateria, anio_cursado, idCursado, fecha_hora_inscripcion,nota, estado_final, 
-					   fecha_modificacion_nota,fecha_vencimiento_regularidad, idEstado, idUsuario) 
-					 values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+			$sql = "INSERT INTO " . $this->table . 
+					" (idAlumno, idMateria, anio_cursado, idCursado, tipo, nota, idEstado, estado_final, 
+					   fecha_hora_inscripcion, fecha_modificacion_nota, fecha_vencimiento_regularidad, idUsuario) 
+					 values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
 			try {
-				/*$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_tipo_id,$this->fecha_inscripcion,$this->nota,
-				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id];*/
-							$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_tipo_id,$this->fecha_inscripcion,$this->nota,
-				            $this->estado_final,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->estado_id,$this->usuario_id];
+		
+				$arr_arg = [$this->alumno_id,$this->materia_id,$this->cursado_anio,$this->cursado_id,$this->cursado_nombre,$this->nota, $this->estado_id,$this->estado_nombre,
+							$this->fecha_inscripcion,$this->fecha_modificacion_nota,$this->fecha_vencimiento_regularidad,$this->usuario_id];
+				
+						
 				
 				$stmt->execute($arr_arg);
+
 				//$stmt->debugDumpParams();
+				//var_dump("acm",$arr_arg);exit;	
 
 				$id = $this->conection->lastInsertId();
 				$this->id = $id;

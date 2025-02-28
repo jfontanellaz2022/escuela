@@ -306,7 +306,8 @@ function cursadoGuardar() {
     let parametros;
       
     if (alumno_id!=null &&materia_id!=null && cursado_id!=null && cursado_nombre!="" && cursado_anio!="" && nota!="" && estado_id!=null && estado_nombre!="")  {
-        parametros = {"id":id,"alumno_id":alumno_id,"materia_id":materia_id,"cursado_anio":cursado_anio,"cursado_nombre":cursado_nombre,"cursado_id":cursado_id,"nota":nota,"estado_nombre":estado_nombre,"estado_id":estado_id,"fecha_expiracion":fecha_expiracion};        $.post("./funciones/materiaCursadaGuardar.php?token=<?=$_SESSION['token'];?>",parametros,function(response){
+        parametros = {"id":id,"alumno_id":alumno_id,"materia_id":materia_id,"cursado_anio":cursado_anio,"cursado_nombre":cursado_nombre,"cursado_id":cursado_id,"nota":nota,"estado_nombre":estado_nombre,"estado_id":estado_id,"fecha_expiracion":fecha_expiracion};        
+        $.post("./funciones/materiaCursadaGuardar.php?token=<?=$_SESSION['token'];?>",parametros,function(response){
             if (response.codigo == 200) {
                 cargarModulos();
                 $("#resultado_accion").html();

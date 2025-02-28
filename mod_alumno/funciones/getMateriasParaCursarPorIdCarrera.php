@@ -32,21 +32,23 @@ $objMateria = new Materia();
 foreach($arr_en_condiciones_de_cursar as $val_en_condiciones_cursar) {
         $arr_datos_materia = [];
         $arr_item = [];
-        $arr_item['estado'] = has_estado($val_en_condiciones_cursar['materia_id'],$arreglo_materias_inscriptas);
-        $arr_item['nombre'] = $val_en_condiciones_cursar['nombre'];
-        $arr_item['materia_id'] = $val_en_condiciones_cursar['materia_id'];
-        $arr_item['anio'] = $val_en_condiciones_cursar['anio'];
+        if ($icm->verificarExcepciones($idAlumno, $val_en_condiciones_cursar['materia_id'])) {
+            $arr_item['estado'] = has_estado($val_en_condiciones_cursar['materia_id'],$arreglo_materias_inscriptas);
+            $arr_item['nombre'] = $val_en_condiciones_cursar['nombre'];
+            $arr_item['materia_id'] = $val_en_condiciones_cursar['materia_id'];
+            $arr_item['anio'] = $val_en_condiciones_cursar['anio'];
 
-        $arr_datos_materia = $objMateria->getMateriaDetalleById($arr_item['materia_id']);
+            $arr_datos_materia = $objMateria->getMateriaDetalleById($arr_item['materia_id']);
 
-        $arr_item['materia_formato_codigo'] = $arr_datos_materia['formato_codigo'];
-        $arr_item['materia_formato_id'] = $arr_datos_materia['idFormato'];
-        $arr_item['materia_formato_nombre'] = $arr_datos_materia['formato_nombre'];
-        $arr_item['materia_cursado_codigo'] = $arr_datos_materia['cursado_codigo'];
-        $arr_item['materia_cursado_id'] = $arr_datos_materia['idCursado'];
-        $arr_item['materia_cursado_nombre'] = $arr_datos_materia['cursado_nombre'];
+            $arr_item['materia_formato_codigo'] = $arr_datos_materia['formato_codigo'];
+            $arr_item['materia_formato_id'] = $arr_datos_materia['idFormato'];
+            $arr_item['materia_formato_nombre'] = $arr_datos_materia['formato_nombre'];
+            $arr_item['materia_cursado_codigo'] = $arr_datos_materia['cursado_codigo'];
+            $arr_item['materia_cursado_id'] = $arr_datos_materia['idCursado'];
+            $arr_item['materia_cursado_nombre'] = $arr_datos_materia['cursado_nombre'];
 
-        $arr_resultado[] = $arr_item;
+            $arr_resultado[] = $arr_item;
+        }
 }
 
 //var_dump($arr_resultado);die;

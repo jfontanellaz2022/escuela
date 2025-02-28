@@ -33,8 +33,8 @@ if ($idAlumno && $idMateria && $cursado_anio!="" && $cursado_id!="" && $cursado_
     if ($id) {
             
         $arr = ["id"=>$id,"alumno_id"=>$idAlumno ,"materia_id"=>$idMateria, "anio_cursado"=>$cursado_anio,
-                "tipo"=>$cursado_nombre,"cursado_id"=>$cursado_id,"nota"=>$nota,"estado_id"=>$estado_id,"estado_final"=>$estado_nombre,
-                "fecha_hora_inscripcion"=>$fecha_hora_inscripcion,"fecha_modificacion_nota"=>$fecha_modificacion_nota,
+                "cursado_nombre"=>$cursado_nombre,"cursado_id"=>$cursado_id,"nota"=>$nota,"estado_id"=>$estado_id,"estado_nombre"=>$estado_nombre,
+                "fecha_inscripcion"=>$fecha_hora_inscripcion,"fecha_modificacion_nota"=>$fecha_modificacion_nota,
                 "fecha_vencimiento_regularidad"=>$fecha_vencimiento_regularidad, "usuario_id"=>$usuario];
             
         //var_dump($arr);die;
@@ -49,8 +49,8 @@ if ($idAlumno && $idMateria && $cursado_anio!="" && $cursado_id!="" && $cursado_
         }
     } else {
         $arr = ["alumno_id"=>$idAlumno ,"materia_id"=>$idMateria, "anio_cursado"=>$cursado_anio,
-                "tipo"=>$cursado_nombre,"cursado_id"=>$cursado_id,"nota"=>$nota,"estado_id"=>$estado_id,"estado_final"=>$estado_nombre,
-                "fecha_hora_inscripcion"=>$fecha_hora_inscripcion,"fecha_modificacion_nota"=>$fecha_modificacion_nota,"fecha_vencimiento_regularidad"=>$fecha_vencimiento_regularidad,
+                "cursado_nombre"=>$cursado_nombre,"cursado_id"=>$cursado_id,"nota"=>$nota,"estado_id"=>$estado_id,"estado_nombre"=>$estado_nombre,
+                "fecha_inscripcion"=>$fecha_hora_inscripcion,"fecha_modificacion_nota"=>$fecha_modificacion_nota,"fecha_vencimiento_regularidad"=>$fecha_vencimiento_regularidad,
                 "usuario_id"=>$usuario];
         //var_dump($arr);die;
        
