@@ -33,19 +33,23 @@ if ($token!=$_SESSION['token']) {
 }
 //****************************************************** */
 
-if ($inscribir=='Si') {
-    if (!in_array([$idMateria,'Si'],$_SESSION['arr_materias_inscriptas_actualizadas'])) {
-        $_SESSION['arr_materias_inscriptas_actualizadas'][] = [$idMateria,'Si'];
-    }
-    $_SESSION['arr_materias_inscriptas_actualizadas'] = removeItem([$idMateria,'No'],$_SESSION['arr_materias_inscriptas_actualizadas']);
-} else if ($inscribir=='No') {
+if ($inscribir=='No') {
+
     if (!in_array([$idMateria,'No'],$_SESSION['arr_materias_inscriptas_actualizadas'])) {
         $_SESSION['arr_materias_inscriptas_actualizadas'][] = [$idMateria,'No'];
     }
-    $_SESSION['arr_materias_inscriptas_actualizadas'] = removeItem([$idMateria,'Si'],$_SESSION['arr_materias_inscriptas_actualizadas']);
+    $_SESSION['arr_materias_inscriptas_actualizadas'] = removeItem([$idMateria,'REGULAR'],$_SESSION['arr_materias_inscriptas_actualizadas']);
+    $_SESSION['arr_materias_inscriptas_actualizadas'] = removeItem([$idMateria,'LIBRE'],$_SESSION['arr_materias_inscriptas_actualizadas']);
+    $arr_resultado['res'] = 'No';
+} else {
+   
+    if (!in_array([$idMateria,$inscribir],$_SESSION['arr_materias_inscriptas_actualizadas'])) {
+        $_SESSION['arr_materias_inscriptas_actualizadas'][] = [$idMateria,$inscribir];
+    }
+    $_SESSION['arr_materias_inscriptas_actualizadas'] = removeItem([$idMateria,'No'],$_SESSION['arr_materias_inscriptas_actualizadas']);
+    $arr_resultado['res'] = 'Si';
 }
 
-$arr_resultado['res'] = $inscribir;
 echo json_encode($arr_resultado);
 
 ?>

@@ -224,7 +224,7 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
                           filas += `<tr class=''>
                                         <td id='col_`+materia.materia_id+`'></td>
                                         <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
-                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
+                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('`+materia.condicion+`','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
                     
@@ -232,14 +232,14 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
                           filas += `<tr style="cursor:default">
                                         <td id='col_`+materia.materia_id+`'><span class="badge badge-success">Inscripto</span></td>
                                         <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
-                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
+                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('`+materia.condicion+`','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
                 } else if (materia['estado_inscripcion']==3) {
                           filas += `<tr class='disabledbutton'>
                                         <td id='col_`+materia.materia_id+`'><span class="badge badge-success">Inscripto</span></td>
                                         <td>`+materia.nombre+` <strong>(`+materia.materia_id+`) </strong><br>Cursado: <strong>`+materia.cursado+`</strong> | Condición: <strong>`+materia.condicion+`</strong></br>Año: <strong>`+materia.anio+`</strong><br>Fecha Exámen: <strong>`+materia.fecha+`</strong></td>
-                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('Si','`+materia.materia_id+`')" >Si</button>
+                                        <td><button class='btn btn-success btn-block' onclick="guardarIncripcion('`+materia.condicion+`','`+materia.materia_id+`')" >Si</button>
                                             <button class='btn btn-danger btn-block' onclick="guardarIncripcion('No','`+materia.materia_id+`')">No</button></td>
                                     </tr>`;
                 }
@@ -253,7 +253,6 @@ function cargarMaterias(alumno_id,carrera_id,carrera_descripcion)
 
 
 function guardarIncripcion(val,id) {
-
     $.post('../API/setMateriasParaRendir.php?token=<?=$_SESSION['token'];?>',{"materia_id":id,"inscribir":val},function(data){
         if (data.res=='Si') {
           Swal.fire({

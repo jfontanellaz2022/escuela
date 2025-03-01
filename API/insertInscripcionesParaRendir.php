@@ -50,7 +50,7 @@ foreach ($_SESSION['arr_materias_inscriptas_actualizadas'] as $value) {
         $argumentos['alumno_id'] = $alumno_id;
         $argumentos['materia_id'] = $materia_id;
         $argumentos['calendario_id'] = $calendario_id;
-        $argumentos['condicion'] = getCursado($materia_id,$arr_materias_por_tipo_cursado); //Esto se debera cambiar
+        $argumentos['condicion'] = $value[1];
         $argumentos['fecha_hora_inscripcion'] = date('Y-m-d H:i:s');
         $argumentos['nota'] = 0; //Se pone 0 porque es una inscripcion
         $argumentos['estado_final'] = 'Pendiente'; //Se pone 0 porque es una inscripcion
@@ -60,7 +60,7 @@ foreach ($_SESSION['arr_materias_inscriptas_actualizadas'] as $value) {
 
         if ($inscribe=='No') {
             $arm->deleteAlumnoRindeMateriaByIdAlumnoByIdMateriaByIdCalendario($alumno_id,$materia_id,$calendario_id);
-        } else if ($inscribe=='Si') {
+        } else {
             if ($inscripcion_activa!=$calendario_id) { // Es una Inscripcion Intermedia
                     $argumentos['llamado'] = 2;
                     $arm->save($argumentos);

@@ -5,6 +5,7 @@
    require_once "CalendarioAcademico.php";
 
 
+
    $id_pagina = 'home';
    $_SESSION['id_persona'] = $_SESSION['arreglo_datos_usuario']['idPersona'];
    $objProfesor = new Profesor();

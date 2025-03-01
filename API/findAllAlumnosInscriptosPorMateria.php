@@ -3,7 +3,6 @@ set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'.
 require_once "seguridadNivel1.php";
 require_once "AlumnoRindeMateriaDetalle.php";
 require_once "Sanitize.class.php";
-//require_once "_seguridad.php";
 
 $calendario_id = ( isset($_POST['calendario_id']) )?SanitizeVars::INT($_POST['calendario_id']):false;
 $materia_id = ( isset($_POST['materia_id']) )?SanitizeVars::INT($_POST['materia_id']):false;
@@ -20,8 +19,9 @@ if ($token!=$_SESSION['token']) {
 $arr_resultados = $arr_datos = [];
 if ($materia_id && $calendario_id) {
     
-    $profesor_carrera = new AlumnoRindeMateriaDetalle();
-    $arr_datos = $profesor_carrera->getAlumnosByIdMateriaByIdCalendarioDetalle($materia_id,$calendario_id,$llamado);
+    $alumnos_carrera = new AlumnoRindeMateriaDetalle();
+    $arr_datos = $alumnos_carrera->getAlumnosByIdMateriaByIdCalendarioDetalle($materia_id,$calendario_id,$llamado);
+    //var_dump($arr_datos);exit;
     $arr_datos_filtrados = [];
     //die('entro 2');
     foreach ($arr_datos as $val) {
