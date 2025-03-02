@@ -78,7 +78,7 @@ $pdf->setAnio($yy);
 
 $alumnos_rinden_materia = new AlumnoRindeMateriaDetalle();
 $ARRAY_ALUMNOS_RINDEN_MATERIA = $alumnos_rinden_materia->getAlumnosByIdMateriaByIdCalendarioDetalle($idMateria,$idCalendario,$llamado);
-
+//var_dump($ARRAY_ALUMNOS_RINDEN_MATERIA);exit;
 $carrera = new Carrera();
 $carrera_nombre = $carrera->getCarreraById($idCarrera)['descripcion_corta'];
 
@@ -154,7 +154,7 @@ $cant_desaprobados = $cant_aprobados = $cant_ausentes = $i = 0;
 //var_dump($ARRAY_ALUMNOS_RINDEN_MATERIA);exit;
 
 foreach ($ARRAY_ALUMNOS_RINDEN_MATERIA as $item) {
-    if ($item['condicion']=='Regular') {
+    //if ($item['condicion']=='Regular') {
             $i++;
             $pdf->SetX(11);
             if ($item['nota']==-1) {$nota='-';$determ='AUSENTE';$cant_ausentes++;}
@@ -177,7 +177,7 @@ foreach ($ARRAY_ALUMNOS_RINDEN_MATERIA as $item) {
             $pdf->Cell(15,5,$nota,1,0,'C',false);
             $pdf->Cell(15,5,$determ,1,0,'C',false);
             $pdf->Cell(30,5,$item['condicion'],1,1,'R',false);
-    }
+    //}
 };
 
 $pdf->setAprobados($cant_aprobados);
