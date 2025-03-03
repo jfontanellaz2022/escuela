@@ -38,4 +38,17 @@ abstract class SanitizeCustom extends SanitizeVars {
  }
 
 
+ public static function PASSWD($cadena){
+    // Expresión regular que valida la cadena
+    $patron = '/^(?=.*\d)(?=.*[#_@*\-$.&])[A-Za-z\d#_@*\-$.&]{8,10}$/';
+
+    // Validar la cadena con la expresión regular
+    if (preg_match($patron, $cadena)) {
+        return $cadena; // La cadena es válida
+    } else {
+        return false; // La cadena no es válida
+    }
+}
+
+
 }//-- end CLASS

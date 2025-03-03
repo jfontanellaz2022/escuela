@@ -18,7 +18,6 @@ class Usuario extends Persona
     public function autenticar($name,$password){
 		$this->getConection();
         $password_encriptada = md5($password);
-        //var_dump("ppp:" . $name . "ppp:" . $password_encriptada);exit;
 		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.password, u.idPersona, u.idRol, 
                        r.descripcion as rol_descripcion,
                        p.dni, p.apellido, p.nombre, p.fecha_nacimiento,
@@ -26,7 +25,6 @@ class Usuario extends Persona
                        p.telefono_caracteristica, p.telefono_numero
                 FROM usuario u, persona p, rol r
                 WHERE u.nombre = ? AND u.password = ? AND u.idPersona = p.id and u.idRol=r.id";
-        //var_dump($sql);                
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name,$password_encriptada]);
 		return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -88,9 +86,13 @@ class Usuario extends Persona
 
 
     public function setPasswordById($id,$password) {
-        $sql = "UPDATE usuario SET password = ? WHERE id = ?";
+        $this->getConection();
+        $password_encriptada = md5($password);
+        $sql = "UPDATE usuario SET `password` = ? WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
-		return $stmt->execute([md5($password),$id]);
+        $stmt = $this->conection->prepare($sql);
+        $res = $stmt->execute([$password_encriptada,$id]);
+		return $res;
     }
 
 
@@ -152,6 +154,7 @@ public function save($param){
 //$usuario = new Usuario();
 //var_dump($usuario->getCredencialesByIdPersona(99));
 //$res = $usuario->getUsuarioById(1);
+//var_dump($usuario->setPasswordById(1889, '1q2w3e4R_'));
 //$res = $usuario->autenticar('jfontanellaz','jhframbo');
 //var_dump($res);
 

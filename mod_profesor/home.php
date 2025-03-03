@@ -1,10 +1,9 @@
 <?php
    set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib'.PATH_SEPARATOR.'./');
+
    include_once "verificarCredenciales.php";
    require_once "Profesor.php";
    require_once "CalendarioAcademico.php";
-
-
 
    $id_pagina = 'home';
    $_SESSION['id_persona'] = $_SESSION['arreglo_datos_usuario']['idPersona'];
@@ -15,9 +14,6 @@
    $cal = new CalendarioAcademico;
    $_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS'] = $cal->getEventosArmadoMateriasActivo();
    
-  // var_dump($_SESSION['ARRAY_CODIGOS_EVENTOS_ARMADO_LISTADOS_MATERIAS_ACTIVOS']);exit;
-  
-
 ?>
 
 <!doctype html>
@@ -46,19 +42,29 @@
     </div>
   </article>
 
-  <article class="container-fluid">
-    <div id="control_habilitado" style='display:none'></div>
-    <div id="cargar_regularidades_habilitado" style='display:none'></div>
-    <div id="titulo"></div>
-    <hr>
+  <article class="container">
+    <div id="titulo">
+    </div>
   </article>
 
   <article class="container">
-       <section>
-           <div class="row" id="resultado"></div><!-- Cierra Row-->
-           <div class="row" id="controles"></div><!-- Cierra Row-->
+       <section id="section_principal">
+
+       
+        
         </section>
   </article>
+
+  <article class="container">
+       <section id="section_footer">
+
+       
+        
+        </section>
+  </article>
+
+<!-- Modal -->
+<?php include_once('./html/cambiarPassword.html');?>
 
 <!-- FOOTER -->
 <?php include_once('../app/views/footer.html');?>
@@ -68,19 +74,53 @@
 
 <!-- JAVASCRIPT CUSTOM -->
 <script>
-let carrera_nombre = '';
-let carrera_id = '';
-var profesor_id = '';
-var materia_nombre = '';
-var materia_id = '';
-var opcion = '';
-let llamado_numero = '';
-function expired() {
-  location.href = "./logout.php";
+  $(function () {
+    $('[data-toggle="popover"]').popover({
+    html: true,
+sanitize: false,
+  })
+    load();
+
+    
+});
+
+function load() {
+    $.get("./html/notice.html", function(data) {
+            $("#section_principal").html(data);
+    });
+    $("#section_footer").html("");
 }
 
-//setTimeout(expired, 60000*20);
+$('#btnCambiarPassword').click(function(event) {
+      let password = $('#inputPasswordNueva').val();
+      let rePassword = $('#inputRePasswordNueva').val();
+      let captcha = $('#inputCaptcha').val();
+
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
+
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                          console.info(response);
+                          $("#msg_restablecer").removeClass("d-none");
+                          $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                          $('#inputPasswordNueva').prop("disabled",true);
+                          $('#inputRePasswordNueva').prop("disabled",true);
+                          $('#inputCaptcha').prop("disabled",true);
+                          $('#btnCambiarPassword').prop("disabled",true);
+                  },"json");
+         } else {
+              alert("no coinciden las contraseñas");
+         }
+      } else {
+          alert("existen campos nulos");
+      }
+
+
+});
+
+  
 </script>
-<script src="./js/loadHome.js"></script>
 </body>
 </html>

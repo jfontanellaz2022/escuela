@@ -37,13 +37,19 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
 
     $disabledVerCarreras = $disabledVerMaterias = $disabledVerAlumnos = "";
     $disabledPonerNotasAlumnos = "disabledbutton";
+    $fecha_primer_llamado_desde = $fecha_primer_llamado_hasta = $fecha_segundo_llamado_desde = $fecha_segundo_llamado_hasta = "";
 
     // *********  SACAR LOS PERIODOS CORRESPONDIENTES A LOS LLAMADOS *************
     if ($cantidad_llamados==2) {
       if (empty($arr_datos_llamado)) {
-        //var_dump('entroooo',$calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO));exit;
         $arr_datos_llamado[Constantes::CODIGO_PRIMER_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_PRIMER_LLAMADO);
         $arr_datos_llamado[Constantes::CODIGO_SEGUNDO_LLAMADO] = $calendario->getEventoActivoByCodigo(Constantes::CODIGO_SEGUNDO_LLAMADO);
+        
+        //var_dump('entroooo',$calendario->getLastPrimerLlamado());exit;
+        $fecha_primer_llamado_desde = $calendario->getLastPrimerLlamado()['fecha_inicio'];
+        $fecha_primer_llamado_hasta = $calendario->getLastPrimerLlamado()['fecha_final'];
+        $fecha_segundo_llamado_desde = $calendario->getLastSegundoLlamado()['fecha_inicio'];
+        $fecha_segundo_llamado_hasta = $calendario->getLastSegundoLlamado()['fecha_final'];
       };
     } else if ($cantidad_llamados==1) {
         if (empty($arr_datos_llamado)) {
@@ -143,6 +149,9 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
       include_once('../app/views/header.html');
   ?>
 
+ <!-- CUSTOM CSS -->
+ <link rel="stylesheet" href="../public/css/footerProfesor.css" />
+
 </head>
 
 
@@ -152,37 +161,11 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
     <?php include("navbar.php");?>
   </header>
 
-  <article>
-    <div id="breadcrumb">
-      
-      <nav aria-label="breadcrumb" role="navigation">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#" onclick="cargarHome()">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Carreras</li>
-                </ol>
-      </nav>
-
-      <h1><i>&nbsp;Carreras</i></h1>
-      <h3>&nbsp;Gestión de los Exámenes Finales de Alumnos</h3>
-
-    </div>
-  </article>
+  <article id="breadcrumb"></article>
 
   <article class="container-fluid">
     <div id="control_habilitado" style='display:none'></div>
     <div id="cargar_regularidades_habilitado" style='display:none'></div>
-    <div id="titulo"></div>
-    <hr>
-  </article>
-
-  <article class="container-fluid <?php ($inscripcion_activa=='0')?'d-none':'';?>">
-       <section>
-           <div class="row">
-
-                  <h3>&nbsp;&nbsp;Inscripcion Activa: <?=$inscripcion_activa;?></h3>
-
-           </div><!-- Cierra Row-->
-        </section>
   </article>
 
   <article class="container-fluid">
@@ -225,6 +208,10 @@ let disabledVerLlamado2 = "<?=$disabledVerLlamado2;?>";
 let disabledVerMateriasLlamado2 = "<?=$disabledVerMateriasLlamado2;?>";
 let disabledVerAlumnosLlamado2 = "<?=$disabledVerAlumnosLlamado2;?>";
 let disabledPonerNotasAlumnosLlamado2 = "<?=$disabledPonerNotasAlumnosLlamado2;?>";
+let fecha_primer_llamado_desde = "<?=$fecha_primer_llamado_desde;?>";
+let fecha_primer_llamado_hasta = "<?=$fecha_primer_llamado_hasta;?>";
+let fecha_segundo_llamado_desde = "<?=$fecha_segundo_llamado_desde;?>";
+let fecha_segundo_llamado_hasta = "<?=$fecha_segundo_llamado_hasta;?>";
 
 
 function expired() {

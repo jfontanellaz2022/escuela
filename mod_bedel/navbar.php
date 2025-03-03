@@ -53,11 +53,13 @@
 
   <li class="nav-item dropdown">
         <a class="nav-link i dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Promociones
+          Procesos
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item disabled" href="menuPromociones.php?token=<?=$_SESSION['token'];?>">Procesar Promocionados<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuPromociones.php?token=<?=$_SESSION['token'];?>">Procesar Alumnos Promocionados<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuProcesoActualizarExamenes.php?token=<?=$_SESSION['token'];?>">Procesar Exámenes Aprobados<span class="sr-only">(current)</span></a>
         </div>
+        
   </li>
 
   
@@ -73,7 +75,7 @@
            <div class="dropdown-divider"></div>
            <a class="dropdown-item" href="menuAlumnosPorCarrera.php?token=<?=$_SESSION['token'];?>">Alumnos Por Carrera<span class="sr-only">(current)</span></a>
            <div class="dropdown-divider"></div>
-           <a class="dropdown-item" href="menuActasExamenesPendientes.php?token=<?=$_SESSION['token'];?>">Actas Examenes Pendientes<span class="sr-only">(current)</span>&nbsp;<img src='../public/img/icons/nuevo.png' width='33'></a>
+           <a class="dropdown-item" href="menuActasExamenesPendientes.php?token=<?=$_SESSION['token'];?>">Actas Exámenes Pendientes<span class="sr-only">(current)</span>&nbsp;<img src='../public/img/icons/nuevo.png' width='33'></a>
           </div>
   </li>
 

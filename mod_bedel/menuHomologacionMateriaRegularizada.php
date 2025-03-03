@@ -31,7 +31,7 @@ $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
     <div id="breadcrumb">
       <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
-              <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Homologacion Materia Regularizada</li>
           </ol>
       </nav>

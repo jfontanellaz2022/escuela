@@ -34,7 +34,7 @@ $arr_carreras_habilitadas_registracion = $obj->getCarrerasHabilitadasRegistracio
     <div id="breadcrumb">
       <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
-              <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Listado de Alumnos</li>
           </ol>
       </nav>

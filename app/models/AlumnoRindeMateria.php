@@ -363,7 +363,39 @@ class AlumnoRindeMateria {
 		return $stmt->execute([$alumno_id,$materia_id, $calendario_id]);
 	}
 
+
+    public function procesoActualizarNotasExamenes($idCalendario) {
+		$this->getConection();
+		$sql = "DELETE FROM alumno_rinde_materia 
+				WHERE idCalendario = ? AND 
+					  llamado = 2 AND
+					  concat(idAlumno,'|',idMateria,'|',idCalendario) IN (
+								SELECT concat(idAlumno,'|',idMateria,'|',idCalendario) 
+								FROM alumno_rinde_materia 
+								WHERE idCalendario = ? AND 
+										estado_final = 'Aprobo' AND
+										llamado = 1 
+					  )";
+		/*$sql = "SELECT * FROM alumno_rinde_materia 
+		WHERE idCalendario = ? AND 
+			  llamado = 2 AND
+			  concat(idAlumno,'|',idMateria,'|',idCalendario) IN (
+						SELECT concat(idAlumno,'|',idMateria,'|',idCalendario) 
+						FROM alumno_rinde_materia 
+						WHERE idCalendario = ? AND 
+								estado_final = 'Aprobo' AND
+								llamado = 1 
+			  )";*/	  
+		$stmt = $this->conection->prepare($sql);
+		return $stmt->execute([$idCalendario,$idCalendario]);
+	}
+
+
+
+
+
 }
+
 
 // ACA HACEMOS LAS PRUEBAS ** NO OLVIDAR COMENTAR
 /*
@@ -371,4 +403,6 @@ $arm = new AlumnoRindeMateria();
 $argumentos = ['alumno_id'=>364,'materia_id'=>402,'calendario_id'=>123,'llamado'=>1,'condicion'=>'Regular','fecha_hora_inscripcion'=>'2016-07-11 00:00:00','nota'=>0,'estado_final'=>'Pendiente','fecha_hora_modificacion'=>'2016-07-11 00:00:00','usuario_id'=>3];
 var_dump($arm->save($argumentos));
 */
+
+
 ?>

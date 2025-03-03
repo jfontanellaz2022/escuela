@@ -22,7 +22,7 @@ require_once 'verificarCredenciales.php';
     <div id="breadcrumb">
       <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
-              <li class="breadcrumb-item" aria-current="page"><a href="home.php">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Carreras</li>
           </ol>
       </nav>
