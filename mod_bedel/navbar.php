@@ -87,7 +87,7 @@
           <img src="../public/img/icons/user_icon.png" width="22">
         </a>
         <div class="dropdown-menu dropdown-menu-right bg-light" aria-labelledby="servicesDropdown">
-            <a class="dropdown-item disabled" href="#" onclick="cambiarPassword()"><img src='../public/img/icons/chpassword_icon.png' width='20'>&nbsp;Cambiar Contraseña</a>
+            <a class="dropdown-item" href="#" onclick="cambiarPassword()"><img src='../public/img/icons/chpassword_icon.png' width='20'>&nbsp;Cambiar Contraseña</a>
             <a class="dropdown-item disabled" href="#" onclick="cambiarUsuario()"><img src='../public/img/icons/pngwing.png' width='20'>&nbsp;Cambiar Nombre Usuario</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../logout.php"><img src='../public/img/icons/exit_icon.png' width='18'>&nbsp;Salir</a>

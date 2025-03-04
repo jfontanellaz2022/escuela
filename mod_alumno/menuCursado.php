@@ -77,6 +77,9 @@ if (!empty($arr_datos_cursado)) {
         </section>
   </article>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarPassword.html');?>
+
 <!-- FOOTER -->
 <?php include("../app/views/footer.html");?>
 
@@ -86,12 +89,57 @@ if (!empty($arr_datos_cursado)) {
 <!-- JAVASCRIPT CUSTOM -->
 <script>
 $("document").ready(function() {
+    $('[data-toggle="popover"]').popover({
+        html: true,
+        sanitize: false,
+    });
    cargarCarrerasCursado(<?=$_SESSION['idAlumno'];?>);
 })
+
 function expired() {
   location.href = "../logout.php";
 }
 setTimeout(expired, 60000*20);
+
+$('#btnCambiarPassword').click(function(event) {
+      let password = $('#inputPasswordNueva').val();
+      let rePassword = $('#inputRePasswordNueva').val();
+      let captcha = $('#inputCaptcha').val();
+
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
+
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer").removeClass("d-none");
+                       $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                            $('#inputPasswordNueva').prop("disabled",true);
+                            $('#inputRePasswordNueva').prop("disabled",true);
+                            $('#inputCaptcha').prop("disabled",true);
+                            $('#btnCambiarPassword').prop("disabled",true);
+                       }
+                  },"json");
+         } else {
+              alert("no coinciden las contraseñas");
+         }
+      } else {
+          alert("existen campos nulos");
+      }
+});
+
+$( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioPwd").on('hide.bs.modal', function(){
+     $("#msg_restablecer").addClass("d-none");
+     $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
+     $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");
+     $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
+});
+
 
 //*************************************************************************************
 //********************* CARGA LAS CARRERAS QUE TIENE EL ALUMNO ************************

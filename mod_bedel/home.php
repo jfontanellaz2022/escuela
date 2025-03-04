@@ -49,6 +49,8 @@ $dni = 24912834;
         </section>
   </article>
   
+<!-- Modal -->
+<?php include_once('./html/cambiarPassword.html');?>
 
 <!-- FOOTER -->
 <?php
@@ -62,6 +64,10 @@ $dni = 24912834;
 
 <script>
 $(function () {
+    $('[data-toggle="popover"]').popover({
+        html: true,
+        sanitize: false,
+    })
     load();
 });
 
@@ -72,54 +78,44 @@ function load() {
     $("#section_footer").html("");
 }
   
+$('#btnCambiarPassword').click(function(event) {
+      let password = $('#inputPasswordNueva').val();
+      let rePassword = $('#inputRePasswordNueva').val();
+      let captcha = $('#inputCaptcha').val();
 
-function cambiarPassword() {
-    $.get("./html/passwordModificar.html?token=<?=$_SESSION['token'];?>", function(data) {
-            $("#section_principal").html(data);
-    });
-}
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
 
-function guardarPassword() {
-    let password_actual = $("#inputPasswordActual").val();
-    let password_nueva = $("#inputPasswordNueva").val();
-    let password_re_nueva = $("#inputRePasswordNueva").val();
-    let parametros = {"dni":<?=$dni?>,"password_actual":password_actual,"password_nueva":password_nueva,"password_re_nueva":password_re_nueva}
-    if ( password_nueva==password_re_nueva) {
-        $.post("./funciones/passwordModificar.php?token=<?=$_SESSION['token'];?>",parametros,function(datos){
-                if (datos.codigo == 100) {
-                    $("#section_footer").html();
-                    $("#section_footer").append(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/ok_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                                `+datos.mensaje+`</span></i>
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button></div></div>`);
-                    habilitarControles(true);                             
-                } else {
-                    $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                                `+datos.mensaje+`</span></i>
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button></div></div>`);
-                    habilitarControles(false);
-                }
-        },"json");
-    } else {
-        $("#section_footer").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><div class="alert alert-warning alert-dismissible fade show" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                                                La contraseña no coincide con la repetición.</span></i>
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button></div></div>`);
-        habilitarControles(true);
-    }    
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer").removeClass("d-none");
+                       $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                          $('#inputPasswordNueva').prop("disabled",true);
+                          $('#inputRePasswordNueva').prop("disabled",true);
+                          $('#inputCaptcha').prop("disabled",true);
+                          $('#btnCambiarPassword').prop("disabled",true);
+                        }
+                  },"json");
+         } else {
+              alert("no coinciden las contraseñas");
+         }
+      } else {
+          alert("existen campos nulos");
+      }
+});
 
-};
+$( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
 
-function habilitarControles(val) {
-    $("#inputPasswordActual").attr("disabled",val);
-    $("#inputPasswordNueva").attr("disabled",val);
-    $("#inputRePasswordNueva").attr("disabled",val);
-    $("#btnVerEditar").attr("disabled",val);
-}
+$("#idCambioPwd").on('hide.bs.modal', function(){
+     $("#msg_restablecer").addClass("d-none");
+     $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
+     $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");
+     $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
+});
 
 </script>
 </body>
