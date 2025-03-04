@@ -5,7 +5,7 @@ require_once "SanitizeCustom.class.php";
 require_once "Usuario.php";
 
 $inputUsuario = SanitizeCustom::USUARIO($_POST['inputUsuario'],2,15);
-$inputPassword = SanitizeCustom::USUARIO($_POST['inputPassword'],3,15);
+$inputPassword = SanitizeCustom::PASSWDFLEX($_POST['inputPassword'],6,10);
 $inputToken = SanitizeCustom::USUARIO($_POST['token'],3,50);
 
 $finalResponse = array();

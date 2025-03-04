@@ -63,12 +63,18 @@ $dni = 24912834;
 ?>
 
 <script>
+
+let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
+
 $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
         sanitize: false,
     })
     load();
+    if (password_vencida=='Si') {
+       $( "#idCambioPwd").modal("show");
+    }
 });
 
 function load() {

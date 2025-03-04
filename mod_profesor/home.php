@@ -5,6 +5,7 @@
    require_once "Profesor.php";
    require_once "CalendarioAcademico.php";
 
+   //var_dump($_SESSION['arreglo_datos_usuario']);exit;
    $id_pagina = 'home';
    $_SESSION['id_persona'] = $_SESSION['arreglo_datos_usuario']['idPersona'];
    $objProfesor = new Profesor();
@@ -74,14 +75,17 @@
 
 <!-- JAVASCRIPT CUSTOM -->
 <script>
+  let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
   $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
         sanitize: false,
     })
     load();
-
-    
+    if (password_vencida=='Si') {
+       $( "#idCambioPwd").modal("show");
+    }
+   
 });
 
 function load() {

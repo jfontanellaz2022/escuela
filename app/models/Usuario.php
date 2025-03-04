@@ -14,11 +14,11 @@ class Usuario extends Persona
     /* Set conection */
 	
 
-
+    // Autentica y si es verdadero pone todos los datos en un arreglo de sesion
     public function autenticar($name,$password){
 		$this->getConection();
         $password_encriptada = md5($password);
-		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.password, u.idPersona, u.idRol, 
+		$sql = "SELECT u.id, u.nombre as usuario_nombre, u.password, u.idPersona, u.idRol, u.password_vencida,
                        r.descripcion as rol_descripcion,
                        p.dni, p.apellido, p.nombre, p.fecha_nacimiento,
                        p.idLocalidad, p.domicilio, p.email, 
@@ -88,7 +88,7 @@ class Usuario extends Persona
     public function setPasswordById($id,$password) {
         $this->getConection();
         $password_encriptada = md5($password);
-        $sql = "UPDATE usuario SET `password` = ? WHERE id = ?";
+        $sql = "UPDATE usuario SET `password` = ?, password_vencida = 'No' WHERE id = ?";
         $stmt = $this->conection->prepare($sql);
         $stmt = $this->conection->prepare($sql);
         $res = $stmt->execute([$password_encriptada,$id]);

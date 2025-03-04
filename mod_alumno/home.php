@@ -72,12 +72,18 @@ $id_url = "menu_home";
 <!-- JAVASCRIPT CUSTOM -->
 <script>
 
+let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
 
 $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
         sanitize: false,
-    })
+    });
+
+    if (password_vencida=='Si') {
+       $( "#idCambioPwd").modal("show");
+    }
+
 });
 
 $('#btnCambiarPassword').click(function(event) {

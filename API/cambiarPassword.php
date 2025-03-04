@@ -63,7 +63,7 @@ if ($password!=$re_password) {
 if (!$password) {
     $array_resultados['codigo'] = 500;
     $array_resultados['class'] = 'danger';
-    $array_resultados['mensaje'] = 'La contraseña no cumple con las reglas exigidas. Recuerde que debe tener al menos 6 caracteres y máximo 10, estar formada por letras, al menos un número y al menos un caracter especial como los siguientes: <strong>#_@*-$.&</strong>';
+    $array_resultados['mensaje'] = 'La contraseña no cumple con las reglas exigidas. Ésta debe tener entre 6 y 10 caracteres, estar formada por letras, al menos un número y al menos un caracter especial como los siguientes: <strong>#_@*-$.&</strong>';
     echo json_encode($array_resultados);die;
 } 
 

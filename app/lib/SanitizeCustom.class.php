@@ -37,6 +37,13 @@ abstract class SanitizeCustom extends SanitizeVars {
    } else return false;
  }
 
+ public static function PASSWDFLEX($strNumber){
+  $patron = "/^[a-zA-Z0-9_#$.&@]+$/"; //#_@*-$.&
+  if (preg_match($patron, $strNumber)) {
+    return $strNumber;
+ } else return false;
+}
+
 
  public static function PASSWD($cadena){
     // Expresión regular que valida la cadena
