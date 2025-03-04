@@ -276,15 +276,12 @@ if (!isset($_SESSION['token'])) {
           </div>
 
           <div class="modal-footer"> 
-            <div class="row">
-              <div class="col d-grid gap-2 d-md-flex disabled">
+
+           <div class="col d-grid gap-2">
+               <button type="button" id="btnIngresar" class="btn btn-primary btn-block">Ingresar</button>
                <a class="" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalOlvideContrasenia">¿Olvidaste tu contraseña?</a>
-              </div>
             </div>
-            <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" id="btnIngresar" class="btn btn-primary">Ingresar</button>
-            </div>
+
           </div>
         </div>
       </div>
@@ -320,9 +317,11 @@ if (!isset($_SESSION['token'])) {
           </div>
 
           <div class="modal-footer"> 
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Volver al inicio</button>
-            <button type="button" id="btnRestablecer" class="btn btn-primary" >Reestablecer</button>
+              <div class="col d-grid gap-2">
+                  <button type="button" id="btnRestablecer" class="btn btn-primary btn-block">Reestablecer</button>
+                </div>
           </div>
+
         </div>
       </div>
     </div>
