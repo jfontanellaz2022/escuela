@@ -76,9 +76,9 @@
 <script>
   $(function () {
     $('[data-toggle="popover"]').popover({
-    html: true,
-sanitize: false,
-  })
+        html: true,
+        sanitize: false,
+    })
     load();
 
     
@@ -116,8 +116,6 @@ $('#btnCambiarPassword').click(function(event) {
       } else {
           alert("existen campos nulos");
       }
-
-
 });
 
   

@@ -177,6 +177,9 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
         </section>
   </article>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarPassword.html');?>
+
 <!-- FOOTER -->
 <?php
       include_once('../app/views/footer.html');
@@ -224,7 +227,38 @@ $(function () {
     /*$.get("./html/modalEliminar.html",function(data){
       $("#modalEliminar").html(data);
     })*/
+    $('[data-toggle="popover"]').popover({
+        html: true,
+        sanitize: false,
+    })
     cargarCarreras(profesor_id);
+});
+
+$('#btnCambiarPassword').click(function(event) {
+      let password = $('#inputPasswordNueva').val();
+      let rePassword = $('#inputRePasswordNueva').val();
+      let captcha = $('#inputCaptcha').val();
+
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
+
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                          console.info(response);
+                          $("#msg_restablecer").removeClass("d-none");
+                          $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                          $('#inputPasswordNueva').prop("disabled",true);
+                          $('#inputRePasswordNueva').prop("disabled",true);
+                          $('#inputCaptcha').prop("disabled",true);
+                          $('#btnCambiarPassword').prop("disabled",true);
+                  },"json");
+         } else {
+              alert("no coinciden las contraseñas");
+         }
+      } else {
+          alert("existen campos nulos");
+      }
 });
 
 
