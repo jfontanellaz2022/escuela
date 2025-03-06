@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-warning"  >
-  <a class="navbar-brand" href="index.php"><img
-    src="../public/img/logo.png" width="100"></a>
+  <a class="navbar-brand" href="index.php"><img  src="../public/img/logo_50x50.jpg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -87,8 +86,8 @@
           <img src="../public/img/icons/user_icon.png" width="22">
         </a>
         <div class="dropdown-menu dropdown-menu-right bg-light" aria-labelledby="servicesDropdown">
-            <a class="dropdown-item" href="#" onclick="cambiarPassword()"><img src='../public/img/icons/chpassword_icon.png' width='20'>&nbsp;Cambiar Contraseña</a>
-            <a class="dropdown-item disabled" href="#" onclick="cambiarUsuario()"><img src='../public/img/icons/pngwing.png' width='20'>&nbsp;Cambiar Nombre Usuario</a>
+        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#idCambioPwd"><img src="../public/img/icons/chpassword_icon.png" width="22">&nbsp;Cambiar password</a>
+        <a class="dropdown-item disabled" href="#"><img src='../public/img/icons/pngwing.png' width='20'>&nbsp;Cambiar Nombre Usuario</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../logout.php"><img src='../public/img/icons/exit_icon.png' width='18'>&nbsp;Salir</a>
         </div>

@@ -20,7 +20,6 @@
 <!doctype html>
 <html lang="es">
   <head>
-  <link rel="shortcut icon" href="../public/img/favicon.png">
   <?php
       include_once('../app/views/header.html');
   ?>
@@ -116,10 +115,12 @@ $('#btnCambiarPassword').click(function(event) {
                        }
                   },"json");
          } else {
-              alert("no coinciden las contraseñas");
+              $("#msg_restablecer").removeClass("d-none");
+              $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
          }
       } else {
-          alert("existen campos nulos");
+          $("#msg_restablecer").removeClass("d-none");
+          $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
       }
 });
 

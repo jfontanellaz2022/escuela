@@ -36,7 +36,7 @@ if (!isset($_SESSION['token'])) {
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light"> <!--Navegación-->
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
-          <img src="./public/img/Logo ENS40.png" alt="Logo" width="40" class="d-inline-block align-text-center">
+          <img src="./public/img/logo_623x781.png" alt="Logo" width="40" class="d-inline-block align-text-center">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

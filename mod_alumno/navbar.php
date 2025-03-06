@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-sm navbar-light" style="background-color:#e3e1e2" id="myNavbar">
-<a href="#" class="navbar-brand"><img src="../public/img/logo.png" width="60">&nbsp;Gesti&oacute;n del Alumno</a>
+<a href="#" class="navbar-brand"><img src="../public/img/logo_50x50.jpg">&nbsp;Gesti&oacute;n del Alumno</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
  </button>
@@ -32,12 +32,8 @@
          Cursado
          <span class="sr-only">(current)</span></a>
    </li>
-
 </ul>
-
 <ul class="navbar-nav ml-auto">
-
-
 
 <li class="nav-item px-4 dropdown">
       <a class="nav-link dropdown-toggle text-white" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

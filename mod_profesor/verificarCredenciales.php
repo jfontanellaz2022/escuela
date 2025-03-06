@@ -1,10 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('America/Argentina/Buenos_Aires');
-if ($_SESSION['token']!=$_REQUEST['token'])  {
-    session_destroy();
-    header('location: ../index.php');
-};
+//var_dump($_SESSION['arreglo_credenciales_usuario']);exit;
 
 if ( !isset($_SESSION['arreglo_credenciales_usuario']) ) {
     session_destroy();

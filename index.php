@@ -34,7 +34,7 @@ if (!isset($_SESSION['token'])) {
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light"> <!--Navegación-->
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
-          <img src="./public/img/Logo ENS40.png" alt="Logo" width="40" class="d-inline-block align-text-center">
+          <img src="./public/img/logo_623x781.png" alt="Logo" width="40" class="d-inline-block align-text-center">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,13 +93,13 @@ if (!isset($_SESSION['token'])) {
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./public/img/Esc40_1.png" class="d-block w-100" alt="...">
+            <img src="./public/img/slider_1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/img/Esc40_2.png" class="d-block w-100" alt="...">
+            <img src="./public/img/slider_2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/img/Esc40_3.png" class="d-block w-100" alt="...">
+            <img src="./public/img/slider_3.png" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

@@ -64,17 +64,12 @@ $dni = 24912834;
 
 <script>
 
-let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
-
 $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
         sanitize: false,
     })
     load();
-    if (password_vencida=='Si') {
-       $( "#idCambioPwd").modal("show");
-    }
 });
 
 function load() {
@@ -105,10 +100,12 @@ $('#btnCambiarPassword').click(function(event) {
                         }
                   },"json");
          } else {
-              alert("no coinciden las contraseñas");
+            $("#msg_restablecer").removeClass("d-none");
+            $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
          }
       } else {
-          alert("existen campos nulos");
+         $("#msg_restablecer").removeClass("d-none");
+         $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
       }
 });
 
