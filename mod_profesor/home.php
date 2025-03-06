@@ -66,6 +66,9 @@
 <!-- Modal -->
 <?php include_once('./html/cambiarPassword.html');?>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarPasswordObligatorio.html');?>
+
 <!-- FOOTER -->
 <?php include_once('../app/views/footer.html');?>
 
@@ -82,7 +85,11 @@
     })
     load();
     if (password_vencida=='Si') {
-       $( "#idCambioPwd").modal("show");
+          $('#idCambioPwdObligatorio').modal({
+                        backdrop: 'static',
+                        keyboard: false, 
+                        show: true
+                });
     }
    
 });
@@ -135,6 +142,50 @@ $("#idCambioPwd").on('hide.bs.modal', function(){
      $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
 });
 
+$('#btnCambiarPasswordO').click(function(event) {
+      let password = $('#inputPasswordNuevaO').val();
+      let rePassword = $('#inputRePasswordNuevaO').val();
+      let captcha = $('#inputCaptchaO').val();
+
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
+
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecerO").removeClass("d-none");
+                       $("#msg_restablecerO").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                            $('#inputPasswordNuevaO').prop("disabled",true);
+                            $('#inputRePasswordNuevaO').prop("disabled",true);
+                            $('#inputCaptchaO').prop("disabled",true);
+                            $('#btnCambiarPasswordO').prop("disabled",true);
+                            setTimeout(function(){
+                               $('#idCambioPwdObligatorio').modal('hide');
+                            },1500); 
+                            
+                       }
+                  },"json");
+         } else {
+              $("#msg_restablecerO").removeClass("d-none");
+              $("#msg_restablecerO").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
+         }
+      } else {
+          $("#msg_restablecerO").removeClass("d-none");
+          $("#msg_restablecerO").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
+});
+
+$( "#idCambioPwdObligatorio" ).on('shown.bs.modal', function (e) {
+     $("#img_captchaO").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioPwdObligatorio").on('hide.bs.modal', function(){
+     $("#msg_restablecerO").addClass("d-none");
+     $('#inputPasswordNuevaO').prop("disabled",false); $('#inputPasswordNuevaO').val("");
+     $('#inputRePasswordNuevaO').prop("disabled",false); $('#inputRePasswordNuevaO').val("");
+     $('#inputCaptchaO').prop("disabled",false); $('#inputCaptchaO').val("");
+});
   
 </script>
 </body>
