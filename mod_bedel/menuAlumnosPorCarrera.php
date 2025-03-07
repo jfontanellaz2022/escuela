@@ -129,6 +129,13 @@ function cargarAlumnos() {
             $.post("./funciones/getAlumnosCompletoPorIdCarrera.php?token=<?=$_SESSION['token'];?>",param,function(data) {
                 $("#resultado_accion").html(`<table id="tabla" class="table"><thead>
                                                 <tr>
+                                                  <th scope="col" colspan=6>Listado de Inscriptos&nbsp;
+                                                           <a class="btn btn-secondary" href="./funciones/getAlumnosCompletoPorIdCarreraDescarga.php?anio=`+anio+`&carrera_id=`+carrera_id+`" target="_blank">
+                                                              Descargar&nbsp;<img src="../public/img/icons/excel_icon.png" width="25">
+                                                           </a>
+                                                  </th>
+                                                </tr>
+                                                <tr>
                                                   <th scope="col">#</th>
                                                   <th scope="col">Nombre</th>
                                                   <th scope="col">DNI</th>
