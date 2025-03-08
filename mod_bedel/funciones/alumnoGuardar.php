@@ -24,22 +24,24 @@ $debeTitulo = (isset($_POST['debe_titulo']))?SanitizeVars::STRING($_POST['debe_t
 
 //var_dump($_POST);die;
 //die($persona_id. '-'. $accion.'-'.$apellido.'-'.$nombres.'-'.$dni.'-'.$domicilio.'-'.$telefono_caracteristica.'-'.$telefono_numero.'-'.$email.'-'.$localidad_id.'-'.$fecha_nacimiento . '-' .$anioIngreso .'-' . $debeTitulo);
+
 $alumno_id = 0;
 $array_resultados = [];
 
 if ($persona_id) {
-      //die('entroo');
       $objPersona = new Persona();
       $param['idPersona'] = $persona_id;
       $param['apellido'] = $apellido;
       $param['nombres'] = $nombres;
       $param['dni'] = $dni;
-      $param['fecha_nacimiento'] = $fecha_nacimiento;
       $param['localidad_id'] = $localidad_id;
-      $param['domicilio'] = $domicilio;
+      if ($fecha_nacimiento!="" && $fecha_nacimiento!=null) {$param['fecha_nacimiento'] = $fecha_nacimiento;}
+      if ($domicilio!="" && $domicilio!=null) {$param['domicilio'] = $domicilio;}
+      if ($telefono_caracteristica!="" && $telefono_caracteristica!=null) {$param['telefono_caracteristica'] = $telefono_caracteristica;}
+      if ($telefono_numero!="" && $telefono_numero!=null) {$param['telefono_numero'] = $telefono_numero;}
       $param['email'] = $email;
-      $param['telefono_caracteristica'] = $telefono_caracteristica;
-      $param['telefono_numero'] = $telefono_numero;
+      
+      
       $res = $objPersona->save($param);
       
       if (!$res) {

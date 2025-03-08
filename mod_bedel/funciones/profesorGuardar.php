@@ -30,9 +30,18 @@ if ($profesor_id) /* UPDATE */ {
     //var_dump($persona_id);exit;
     if ($persona_id) {
         //*** PERSONA: ACTUALIZA DATOS ****************
-        $param = ['idPersona'=>$persona_id,'dni'=>$dni,'apellido'=>$apellido,'nombres'=>$nombres,'fecha_nacimiento'=>$fecha_nacimiento,
-                  'localidad_id'=>$localidad_id,'domicilio'=>$domicilio,'email'=>$email,
-                  'telefono_caracteristica'=>$telefono_caracteristica,'telefono_numero'=>$telefono_numero];
+
+        $param['idPersona'] = $persona_id;
+        $param['apellido'] = $apellido;
+        $param['nombres'] = $nombres;
+        $param['dni'] = $dni;
+        $param['localidad_id'] = $localidad_id;
+        if ($fecha_nacimiento!="" && $fecha_nacimiento!=null) {$param['fecha_nacimiento'] = $fecha_nacimiento;}
+        if ($domicilio!="" && $domicilio!=null) {$param['domicilio'] = $domicilio;}
+        if ($telefono_caracteristica!="" && $telefono_caracteristica!=null) {$param['telefono_caracteristica'] = $telefono_caracteristica;}
+        if ($telefono_numero!="" && $telefono_numero!=null) {$param['telefono_numero'] = $telefono_numero;}
+        $param['email'] = $email;
+        
         $res = $objetoPersona->save($param);
         if (!$res) {
             $array_resultados['codigo'] = 500;

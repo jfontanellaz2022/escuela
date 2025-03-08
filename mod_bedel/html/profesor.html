@@ -8,7 +8,7 @@
     
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Documento</strong>
+        <strong>Documento <font color="red">(*)</font></strong>
         <input id="inputDocumento" inputmode="numeric" placeholder="Documento" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
         <input id="inputId" inputmode="numeric" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
       </div>
@@ -16,14 +16,14 @@
     
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Apellido</strong>
+        <strong>Apellido <font color="red">(*)</font></strong>
         <input id="inputApellido" placeholder="Apellido" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
       </div>
     </div>
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Nombre</strong>
+        <strong>Nombre <font color="red">(*)</font></strong>
         <input id="inputNombre" placeholder="Nombre" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
       </div>
     </div>
@@ -57,7 +57,7 @@
 
     <div class="form-row">  
       <div class="form-group col-md-6">
-        <strong>Email</strong>
+        <strong>Email <font color="red">(*)</font></strong>
         <input id="inputEmail" inputmode="email" placeholder="Email" type="email" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
         <input id="inputAccion" type="hidden" class="form-control" required>
       </div>
@@ -65,7 +65,7 @@
 
     <div class="form-row">
         <div class="form-group col-md-6"> 
-              <strong>Localidad</strong>
+              <strong>Localidad <font color="red">(*)</font></strong>
               <select id="inputLocalidad" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
             </select> 
         </div>

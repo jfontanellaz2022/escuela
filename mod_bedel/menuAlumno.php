@@ -492,7 +492,7 @@ function entidadGuardar(){
     let debe_titulo = $("#inputDebeTitulo").val();
     let parametros = {"accion":accion, "apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento,"anio_ingreso":anio_ingreso,"debe_titulo":debe_titulo,"persona_id":persona_id};
     let url = "funciones/"+entidad_nombre+"Guardar.php?token=<?=$_SESSION['token'];?>";
-    if (accion!="" && apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="" && fecha_nacimiento!="") {
+    if (accion!="" && apellido!="" && nombres!=="" && dni!="" && email!="" && localidad_id!="" ) {
         $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">

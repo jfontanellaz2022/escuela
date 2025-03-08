@@ -445,7 +445,7 @@ function entidadGuardar(){
     let fecha_nacimiento = $("#inputFechaNacimiento").val();
     let parametros = {"id":id,"apellido":apellido, "nombres":nombres, "dni":dni, "domicilio":domicilio, "telefono_caracteristica":telefono_caracteristica, "telefono_numero":telefono_numero ,"email":email, "localidad_id":localidad_id, "fecha_nacimiento":fecha_nacimiento};
     let url = "funciones/"+entidad_nombre+"Guardar.php?token=<?=$_SESSION['token'];?>";
-    if (apellido!="" && nombres!=="" && dni!="" && domicilio!=""  && telefono_caracteristica!="" && telefono_numero!="" && email!="" && localidad_id!="") {
+    if (apellido!="" && nombres!=="" && dni!="" && email!="" && localidad_id!="") {
         $.post(url,parametros, function(response) {
                     $("#resultado_accion").html(`
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.alert+`">
