@@ -6,6 +6,7 @@ require_once 'ArrayHash.class.php';
 require_once 'pagination.php';
 require_once 'ProfesorFilter.php';
 require_once 'ProfesorPerteneceCarrera.php';
+require_once 'ProfesorDictaMateriaDetalle.php';
 
 
 //die(unserialize('a:1:{i:0;s:8:"empleado";}')[0]);
@@ -96,7 +97,10 @@ if (!empty($arr_objetos)){
 				$rowIdCampo1 = $fila['id']; 
 				//$hashId = ArrayHash::encode(array($MY_SECRET=>$rowIdCampo1));
 				$objPPC = new ProfesorPerteneceCarrera();
+				$objPDC = new ProfesorDictaMateriaDetalle();
 				$arreglo_carreras = $objPPC->getProfesorPerteneceCarreraByIdProfesor($fila['id']);
+				$arreglo_materias = $objPDC->getMateriasByIdProfesor($fila['id']);
+
 				$rowCampo2 = $fila['apellido'].', '.$fila['nombre'].' <strong>('.$fila['id'].')</strong>';
 				$rowCampo3 = $fila['dni'];
 				$wsp = ($fila['telefono_caracteristica']!=NULL && $fila['telefono_numero']!=null)?'<a href="https://api.whatsapp.com/send/?phone=549'.$fila['telefono_caracteristica'].$fila['telefono_numero'].'&text=Hola&type=phone_number&app_absent=0" target="_blank"><img src="../public/img/icons/wsp_icon.png" width="20"></a>&nbsp;':'';
@@ -130,6 +134,15 @@ if (!empty($arr_objetos)){
 					        foreach ($arreglo_carreras as $itemCarrera) { 
 								echo "<li><span class='badge badge-info'>" . $itemCarrera['descripcion'] . "</span><a href='#' ><img src='../public/img/icons/delete.png' width='15'></a></li>";
 							}	
+					    ?>
+					</ul>	
+					<strong>Materias:</strong>
+				    <ul>
+				       <?php 
+					   //var_dump($arreglo_materias);exit;
+					        foreach ($arreglo_materias as $itemMateria) { 
+								echo "<li><span class='badge badge-secondary'>" . $itemMateria['materia_nombre'].' (' .$itemMateria['materia_id']. ") </span><a href='#' ><img src='../public/img/icons/delete.png' width='15'></a></li>";
+							}
 					    ?>
 					</ul>	
 				  </td>

@@ -18,45 +18,45 @@
 
         <li class="nav-item dropdown ">
               <a class="nav-link i dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Configuracion 
+                <img src="../public/img/icons/configuraciones_icon.png" width="20"> Configuración 
               </a>
               <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="menuCalendario.php?token=<?=$_SESSION['token'];?>">Calendario de Eventos<span class="sr-only">(current)</span></a>
-                <a class="dropdown-item" href="menuFechasExamenes.php?token=<?=$_SESSION['token'];?>">Fechas de Exámenes<span class="sr-only">(current)</span></a>
-                <a class="dropdown-item" href="menuCorrelativasRendir.php?token=<?=$_SESSION['token'];?>">Correlativas Para Rendir<span class="sr-only">(current)</span></a>
-                <a class="dropdown-item" href="menuCorrelativasCursado.php?token=<?=$_SESSION['token'];?>">Correlativas Para Cursar<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item" href="menuCalendario.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Calendario de Eventos<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item" href="menuFechasExamenes.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Fechas de Exámenes<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item" href="menuCorrelativasRendir.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Correlativas Para Rendir<span class="sr-only">(current)</span></a>
+                <a class="dropdown-item" href="menuCorrelativasCursado.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Correlativas Para Cursar<span class="sr-only">(current)</span></a>
               </div>
         </li>
 
         <li class="nav-item dropdown">
         <a class="nav-link i dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Gestión
+        <img src="../public/img/icons/gestion_icon.png" width="20"> Gestión
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item" href="menuAlumno.php?token=<?=$_SESSION['token'];?>">Alumnos<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuProfesor.php?token=<?=$_SESSION['token'];?>">Docentes<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item disabled" href="menuMateria.php?token=<?=$_SESSION['token'];?>">Materias<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item disabled" href="menuCarrera.php?token=<?=$_SESSION['token'];?>">Carreras<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuAlumno.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Alumnos<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuProfesor.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Docentes<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuMateria.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Materias<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuCarrera.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Carreras<span class="sr-only">(current)</span></a>
         </div>
   </li>
 
   <li class="nav-item dropdown">
         <a class="nav-link i dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Homologación
+           <img src="../public/img/icons/verificado_icon.png" width="20"> Homologación
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item" href="menuHomologacionMateriaRegularizada.php?token=<?=$_SESSION['token'];?>">Regularidad<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuHomologacionMateriaAprobada.php?token=<?=$_SESSION['token'];?>">Aprobación<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuHomologacionMateriaRegularizada.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Regularidad<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuHomologacionMateriaAprobada.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Aprobación<span class="sr-only">(current)</span></a>
         </div>
   </li>
 
   <li class="nav-item dropdown">
         <a class="nav-link i dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Procesos
+        <img src="../public/img/icons/proceso_icon.png" width="20"> Procesos
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item disabled" href="menuPromociones.php?token=<?=$_SESSION['token'];?>">Procesar Alumnos Promocionados<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuProcesoActualizarExamenes.php?token=<?=$_SESSION['token'];?>">Procesar Exámenes Aprobados<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuPromociones.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Procesar Alumnos Promocionados<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuProcesoActualizarExamenes.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Procesar Exámenes Aprobados<span class="sr-only">(current)</span></a>
         </div>
         
   </li>
@@ -65,16 +65,16 @@
 
   <li class="nav-item dropdown">
         <a class="nav-link i dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Reportes
+        <img src="../public/img/icons/reporte_icon.png" width="20"> Reportes
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item disabled" href="menuActasCursado.php?token=<?=$_SESSION['token'];?>">Actas Cursado<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item disabled" href="menuActasPromociones.php?token=<?=$_SESSION['token'];?>">Actas Promociones<span class="sr-only">(current)</span></a>
-           <a class="dropdown-item" href="menuActasExamenes.php?token=<?=$_SESSION['token'];?>">Actas Exámenes<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuActasCursado.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Cursado<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item disabled" href="menuActasPromociones.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Promociones<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuActasExamenes.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Exámenes<span class="sr-only">(current)</span></a>
            <div class="dropdown-divider"></div>
-           <a class="dropdown-item" href="menuAlumnosPorCarrera.php?token=<?=$_SESSION['token'];?>">Alumnos Por Carrera<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuAlumnosPorCarrera.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Alumnos Por Carrera<span class="sr-only">(current)</span></a>
            <div class="dropdown-divider"></div>
-           <a class="dropdown-item" href="menuActasExamenesPendientes.php?token=<?=$_SESSION['token'];?>">Actas Exámenes Pendientes<span class="sr-only">(current)</span>&nbsp;<img src='../public/img/icons/nuevo.png' width='33'></a>
+           <a class="dropdown-item" href="menuActasExamenesPendientes.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Exámenes Pendientes<span class="sr-only">(current)</span></a>
           </div>
   </li>
 
