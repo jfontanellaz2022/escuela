@@ -52,6 +52,9 @@ $dni = 24912834;
 <!-- Modal -->
 <?php include_once('./html/cambiarPassword.html');?>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarUsuario.html');?>
+
 <!-- FOOTER -->
 <?php
     include_once('../app/views/footer.html');
@@ -114,6 +117,44 @@ $( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
 });
 
 $("#idCambioPwd").on('hide.bs.modal', function(){
+     $("#msg_restablecer").addClass("d-none");
+     $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
+     $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");
+     $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
+});
+
+
+
+$('#btnCambiarUsuario').click(function(event) {
+      let nombre = $('#inputUsuario').val();
+      let idPersona = 99;
+      let captcha = $('#inputCaptcha').val();
+
+      let parametros = {'nombre':nombre, "idPersona": 99, "captcha":captcha}
+      let link = "../API/setNombreUsuario.php?token=<?=$_SESSION['token'];?>";
+
+      if (nombre!="" && idPersona!="" && captcha!="") {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer").removeClass("d-none");
+                       $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                          $('#inputUsuario').prop("disabled",true);
+                          $('#inputCaptcha').prop("disabled",true);
+                          $('#btnCambiarUsuario').prop("disabled",true);
+                        }
+                  },"json");
+        
+      } else {
+         $("#msg_restablecer").removeClass("d-none");
+         $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
+});
+
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
      $("#msg_restablecer").addClass("d-none");
      $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
      $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");

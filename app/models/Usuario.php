@@ -142,6 +142,37 @@ public function save($param){
 
 }    
 
+
+/* Save Usuario */
+public function setNombre($param){
+    $this->getConection();
+
+    $nombre = $idPersona = 0;
+    $res = false;
+    //* Check if exists 
+    if(isset($param["idPersona"]) && $param["idPersona"] !='' && 
+       isset($param["nombre"]) && $param["nombre"] != '') {
+        
+            $nombre = $param["nombre"];
+            $idPersona = $param["idPersona"];
+            $sql = "UPDATE usuario SET nombre = ? WHERE idPersona = ?";
+            try {
+                $stmt = $this->conection->prepare($sql);
+                $res = $stmt->execute([$nombre, $idPersona]);
+            } catch (Exception $e) {
+                //echo 'Caught exception: '.  $e->getCode() . ': ' . $e->Message(), "\n";
+                //exit;
+                $res = $e->getCode();
+            }
+            
+            return $res;
+
+        }
+   
+    return false;
+
+}  
+
     
 
 
@@ -152,6 +183,7 @@ public function save($param){
 
 
 //$usuario = new Usuario();
+//var_dump($usuario->setNombre(["idPersona"=>99, 'nombre'=>'39661121']));
 //var_dump($usuario->getCredencialesByIdPersona(99));
 //$res = $usuario->getUsuarioById(1);
 //var_dump($usuario->setPasswordById(1889, '1q2w3e4R_'));

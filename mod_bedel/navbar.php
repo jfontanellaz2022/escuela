@@ -87,7 +87,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right bg-light" aria-labelledby="servicesDropdown">
         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#idCambioPwd"><img src="../public/img/icons/chpassword_icon.png" width="22">&nbsp;Cambiar password</a>
-        <a class="dropdown-item disabled" href="#"><img src='../public/img/icons/pngwing.png' width='20'>&nbsp;Cambiar Nombre Usuario</a>
+        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#idCambioUsuario"><img src="../public/img/icons/pngwing.png" width="21">&nbsp;Cambiar Nombre Usuario</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../logout.php"><img src='../public/img/icons/exit_icon.png' width='18'>&nbsp;Salir</a>
         </div>
