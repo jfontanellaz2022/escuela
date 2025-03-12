@@ -139,7 +139,9 @@ $('#btnCambiarPassword').click(function(event) {
 });
 
 $( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
-     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+     $('#img_captcha').attr('width',"90");
+     $('#img_captcha').attr('height',"24");
+     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=25&characters=5');
 });
 
 $("#idCambioPwd").on('hide.bs.modal', function(){
@@ -175,6 +177,8 @@ $("body").on("click",".img",function(e){
 
 // CAMBIO CONTRASEÑA OBLIGATORIO
 $( "#idCambioPwdObligatorio" ).on('shown.bs.modal', function (e) {
+     $('#img_captchaO').attr('width',"90");
+     $('#img_captchaO').attr('height',"24");
      $("#img_captchaO").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=25&characters=5');
 });
 

@@ -260,15 +260,34 @@ if (!isset($_SESSION['token'])) {
           <div class="modal-body"> 
             <form action="" method="POST"> 
                
-              <div class="mb-3 d-block"> 
-                <label for="inputUsuario" class="form-label">Ingrese su usuario</label>
-                <input type="text" class="form-control" id="inputUsuario" maxlength="15" placeholder="">
+            <div class="form-row">
+                <div class="form-group col-xs-6 col-sm-12 col-md-12">
+                    <label class="text-white" for="inputUsuario"><strong>Usuario</strong></label>
+                    <div class="input-group mb-3">
+                          <input type="text" class="form-control" name="inputUsuario" id="inputUsuario" maxlength="15" placeholder="Usuario">
+                          <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <img id="imgUsuario" src="./public/img/icons/user.png" width="30">
+                                </span>
+                          </div>
+                    </div>
+                </div>
               </div>
-  
-              <div class="mb-3"> 
-                <label for="inputPassword" class="form-label">Ingrese su contraseña</label>
-                <input type="password" id="inputPassword" class="form-control" maxlength="10" aria-describedby="passwordHelpBlock">
-              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-xs-6 col-sm-12 col-md-12">
+                    <label class="text-white" for="inputPassword"><strong>Contraseña</strong></label>
+                    <div class="input-group mb-3">
+                          <input type="password" class="form-control" name="inputPassword" id="inputPassword" maxlength="15" placeholder="Contraseña">
+                          <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <a href="#"><img id="imgPassword" src="./public/img/icons/eye_closed.png" width="30"></a>
+                                </span>
+                          </div>
+                    </div>
+                </div>
+              </div> 
+
             </form>
 
             <div id="msg_ingreso" class="mb-3 d-none">
@@ -627,7 +646,19 @@ $("#modalOlvideContrasenia").on('hide.bs.modal', function(){
     $('#inputCaptcha').val("");
 });
 
+$("#imgPassword").click(function(e){
+           e.preventDefault();
+           if ( $('#inputPassword').attr('type')=='password') {
+                $('#inputPassword').attr('type', 'text');
+                $('#imgPassword').attr('width',"30");
+                $('#imgPassword').attr('src',"./public/img/icons/eye_closed.png");
+           } else if ($('#inputPassword').attr('type')=='text') {
+                $('#inputPassword').attr('type', 'password');
+                $('#imgPassword').attr('width',"30");
+                $('#imgPassword').attr('src',"./public/img/icons/eye_open.png");
 
+           }
+})
        
 
 </script>
