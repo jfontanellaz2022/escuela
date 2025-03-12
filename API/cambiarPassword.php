@@ -45,9 +45,9 @@ if ($token!=$_SESSION['token']) {
 
 $password = SanitizeCustom::PASSWD($_POST['password']);
 $re_password = SanitizeCustom::PASSWD($_POST['repassword']);
-$captcha = SanitizeCustom::STRING($_POST['captcha']);
+$captcha = SanitizeCustom::TOKEN($_POST['captcha']);
 
-//var_dump($_SESSION['arreglo_datos_usuario'],$_SESSION['arreglo_credenciales_usuario']);exit;
+//var_dump($password,$re_password,$_POST['captcha'],$captcha,$_SESSION['security_code']);exit;
 
 $email = $_SESSION['arreglo_datos_usuario']['email'];
 $idPersona = $_SESSION['arreglo_datos_usuario']['idPersona'];

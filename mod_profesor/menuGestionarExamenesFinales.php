@@ -75,10 +75,6 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
     }
 
 
-
-
-
-
 } else {
    $disabledVerCarreras = $disabledVerLlamado1 = $disabledVerMateriasLlamado1 = $disabledVerAlumnosLlamado1 = $disabledPonerNotasAlumnosLlamado1  = "disabledbutton";
    $disabledVerLlamado2 = $disabledVerMateriasLlamado2 = $disabledVerAlumnosLlamado2 = $disabledPonerNotasAlumnosLlamado2  = "disabledbutton";
@@ -116,14 +112,6 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
   
 
   
-
-
-
-
- 
-
-
-  
 // DETERMINAR SI HAY INSCRIPCION_ACTIVA (FECHA_DESDE_INSCRIPCION A FECHA_HASTA_TURNO_2DO_LLAMADO) - HABILITAR VER_CARRERAS, VER_LLAMADO_1, VER_MATERIAS, VER_ALUMNOS 
    
 
@@ -145,6 +133,8 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
 <!doctype html>
 <html lang="es">
   <head>
+
+
   <?php
       include_once('../app/views/header.html');
   ?>
@@ -179,6 +169,9 @@ if ($fecha_actual>=$fecha_inicio && $fecha_actual<=$fecha_final) {
 
 <!-- Modal -->
 <?php include_once('./html/cambiarPassword.html');?>
+
+<!-- Modal -->
+<?php include_once('./html/cambiarUsuario.html');?>
 
 <!-- FOOTER -->
 <?php
@@ -215,25 +208,10 @@ let fecha_primer_llamado_desde = "<?=$fecha_primer_llamado_desde;?>";
 let fecha_primer_llamado_hasta = "<?=$fecha_primer_llamado_hasta;?>";
 let fecha_segundo_llamado_desde = "<?=$fecha_segundo_llamado_desde;?>";
 let fecha_segundo_llamado_hasta = "<?=$fecha_segundo_llamado_hasta;?>";
+let idUsuario = <?=$_SESSION['arreglo_datos_usuario']['id'];?>;     
 
 
-function expired() {
-  //location.href = "./logout.php";
-}
-
-
-
-$(function () {
-    /*$.get("./html/modalEliminar.html",function(data){
-      $("#modalEliminar").html(data);
-    })*/
-    $('[data-toggle="popover"]').popover({
-        html: true,
-        sanitize: false,
-    })
-    cargarCarreras(profesor_id);
-});
-
+// CAMBIO CONTRASEÑA OPCIONAL
 $('#btnCambiarPassword').click(function(event) {
       let password = $('#inputPasswordNueva').val();
       let rePassword = $('#inputRePasswordNueva').val();
@@ -255,7 +233,7 @@ $('#btnCambiarPassword').click(function(event) {
                        }
                   },"json");
          } else {
-          $("#msg_restablecer").removeClass("d-none");
+              $("#msg_restablecer").removeClass("d-none");
               $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
          }
       } else {
@@ -275,6 +253,81 @@ $("#idCambioPwd").on('hide.bs.modal', function(){
      $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
 });
 
+$("body").on("click",".img",function(e){
+           e.preventDefault();
+           if ( $('#inputPasswordNueva').attr('type')=='password') {
+                $('#inputPasswordNueva').attr('type', 'text');
+                $('#inputRePasswordNueva').attr('type', 'text');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_closed.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_closed.png");
+           } else if ($('#inputPasswordNueva').attr('type')=='text') {
+                $('#inputPasswordNueva').attr('type', 'password');
+                $('#inputRePasswordNueva').attr('type', 'password');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_open.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_open.png");
+
+           }
+})
+
+
+// FIN CAMBIO CONTRASEÑA OPCIONAL
+
+// JS CAMBIO DE USUARIO
+$('#btnCambiarUsuario').click(function(event) {
+      let nombre = $('#inputUsuario').val();
+      let captcha = $('#inputCaptchaCambioUsuario').val();
+
+      let parametros = {'nombre':nombre, "idUsuario": idUsuario, "captcha":captcha}
+      let link = "../API/setNombreUsuario.php?token=<?=$_SESSION['token'];?>";
+
+      if (nombre!="" && idUsuario!="" && captcha!="") {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer_usuario").removeClass("d-none");
+                       $("#msg_restablecer_usuario").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                          $('#inputUsuario').prop("disabled",true);
+                          $('#inputCaptchaCambioUsuario').prop("disabled",true);
+                          $('#btnCambiarUsuario').prop("disabled",true);
+                        }
+                  },"json");
+        
+      } else {
+         $("#msg_restablecer_usuario").removeClass("d-none");
+         $("#msg_restablecer_usuario").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
+});
+
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
+     $("#msg_restablecer_usuario").addClass("d-none");
+     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
+     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
+     $('#btnCambiarUsuario').prop("disabled",false);
+});
+
+function expired() {
+  //location.href = "./logout.php";
+}
+
+
+
+$(function () {
+    /*$.get("./html/modalEliminar.html",function(data){
+      $("#modalEliminar").html(data);
+    })*/
+    $('[data-toggle="popover"]').popover({
+        html: true,
+        sanitize: false,
+    })
+    cargarCarreras(profesor_id);
+});
 
 //setTimeout(expired, 60000*20);
 

@@ -4,9 +4,10 @@ session_start();
 require_once "SanitizeCustom.class.php";
 require_once "Usuario.php";
 
-$inputUsuario = SanitizeCustom::USUARIO($_POST['inputUsuario'],2,15);
+$inputUsuario = SanitizeCustom::USUARIOFLEX($_POST['inputUsuario'],3,15);
 $inputPassword = SanitizeCustom::PASSWDFLEX($_POST['inputPassword'],6,10);
-$inputToken = SanitizeCustom::USUARIO($_POST['token'],3,50);
+//$inputPassword = $_POST['inputPassword'];
+$inputToken = SanitizeCustom::TOKEN($_POST['token'],3,5);
 
 $finalResponse = array();
 $_SESSION['arreglo_datos_usuario'] = $_SESSION['arreglo_credenciales_usuario'] = "";
@@ -16,7 +17,7 @@ $_SESSION['arreglo_datos_usuario'] = $_SESSION['arreglo_credenciales_usuario'] =
 if ($inputToken!=$_SESSION['token']) {
       $finalResponse['codigo'] = 500;
       $finalResponse['class'] = 'danger';
-      $finalResponse['mensaje'] = 'El Token es INCORRECTO.';
+      $finalResponse['mensaje'] = 'El Token es INCORRECTO.<p><strong>Actualice</strong> la página con la <strong>tecla F5</strong>.';
       echo json_encode($finalResponse);die;
 }
 

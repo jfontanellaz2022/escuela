@@ -30,15 +30,35 @@ abstract class SanitizeCustom extends SanitizeVars {
     } else return FALSE;
   }
 
-  public static function USUARIO($strNumber){
+  public static function TOKEN($strNumber){
     $patron = "/^[a-zA-Z0-9_]+$/";
     if (preg_match($patron, $strNumber)) {
       return $strNumber;
-   } else return false;
- }
+    } else return false;
+  }
+
+
+  public static function USUARIOFLEX($strNumber){
+    $patron = "/^[a-zA-Z0-9_#$.&@]+$/";
+    if (preg_match($patron, $strNumber)) {
+      return $strNumber;
+    } else return false;
+  }
+
+  public static function USUARIO($cadena){
+    $patron = '/^[a-zA-Z0-9#_@*\-\$.&]{3,15}$/';
+
+    // Verificar si la cadena cumple con la expresión regular
+    if (preg_match($patron, $cadena)) {
+        return $cadena;
+    } else {
+        return false;
+    }
+  }
+
 
  public static function PASSWDFLEX($strNumber){
-  $patron = "/^[a-zA-Z0-9_#$.&@]+$/"; //#_@*-$.&
+  $patron = "/^[a-zA-Z0-9#-_*$.&@]+$/"; //#_@*-$.&
   if (preg_match($patron, $strNumber)) {
     return $strNumber;
  } else return false;

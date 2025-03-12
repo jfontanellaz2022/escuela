@@ -69,6 +69,9 @@
 <!-- Modal -->
 <?php include_once('./html/cambiarPasswordObligatorio.html');?>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarUsuario.html');?>
+
 <!-- FOOTER -->
 <?php include_once('../app/views/footer.html');?>
 
@@ -77,7 +80,9 @@
 
 <!-- JAVASCRIPT CUSTOM -->
 <script>
+  let idUsuario = <?=$_SESSION['arreglo_datos_usuario']['id'];?>;     
   let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
+  
   $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
@@ -101,6 +106,8 @@ function load() {
     $("#section_footer").html("");
 }
 
+
+// CAMBIO CONTRASEÑA OPCIONAL
 $('#btnCambiarPassword').click(function(event) {
       let password = $('#inputPasswordNueva').val();
       let rePassword = $('#inputRePasswordNueva').val();
@@ -142,6 +149,62 @@ $("#idCambioPwd").on('hide.bs.modal', function(){
      $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
 });
 
+$("body").on("click",".img",function(e){
+           e.preventDefault();
+           if ( $('#inputPasswordNueva').attr('type')=='password') {
+                $('#inputPasswordNueva').attr('type', 'text');
+                $('#inputRePasswordNueva').attr('type', 'text');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_closed.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_closed.png");
+           } else if ($('#inputPasswordNueva').attr('type')=='text') {
+                $('#inputPasswordNueva').attr('type', 'password');
+                $('#inputRePasswordNueva').attr('type', 'password');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_open.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_open.png");
+
+           }
+})
+
+
+// FIN CAMBIO CONTRASEÑA OPCIONAL
+
+
+// CAMBIO CONTRASEÑA OBLIGATORIO
+$( "#idCambioPwdObligatorio" ).on('shown.bs.modal', function (e) {
+     $("#img_captchaO").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=25&characters=5');
+});
+
+$("#idCambioPwdObligatorio").on('hide.bs.modal', function(){
+     $("#msg_restablecerO").addClass("d-none");
+     $('#inputPasswordNuevaO').prop("disabled",false); $('#inputPasswordNuevaO').val("");
+     $('#inputRePasswordNuevaO').prop("disabled",false); $('#inputRePasswordNuevaO').val("");
+     $('#inputCaptchaO').prop("disabled",false); $('#inputCaptchaO').val("");
+});
+
+$("body").on("click",".imgO",function(e){
+           e.preventDefault();
+           if ( $('#inputPasswordNuevaO').attr('type')=='password') {
+                $('#inputPasswordNuevaO').attr('type', 'text');
+                $('#inputRePasswordNuevaO').attr('type', 'text');
+                $('#imgPassword1o').attr('width',"23");
+                $('#imgPassword2o').attr('width',"23");
+                $('#imgPassword1o').attr('src',"../public/img/icons/eye_closed.png");
+                $('#imgPassword2o').attr('src',"../public/img/icons/eye_closed.png");
+           } else if ($('#inputPasswordNuevaO').attr('type')=='text') {
+                $('#inputPasswordNuevaO').attr('type', 'password');
+                $('#inputRePasswordNuevaO').attr('type', 'password');
+                $('#imgPassword1o').attr('width',"23");
+                $('#imgPassword2o').attr('width',"23");
+                $('#imgPassword1o').attr('src',"../public/img/icons/eye_open.png");
+                $('#imgPassword2o').attr('src',"../public/img/icons/eye_open.png");
+
+           }
+})
+
 $('#btnCambiarPasswordO').click(function(event) {
       let password = $('#inputPasswordNuevaO').val();
       let rePassword = $('#inputRePasswordNuevaO').val();
@@ -176,15 +239,44 @@ $('#btnCambiarPasswordO').click(function(event) {
       }
 });
 
-$( "#idCambioPwdObligatorio" ).on('shown.bs.modal', function (e) {
-     $("#img_captchaO").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+// FIN CAMBIO CONTRASEÑA OBLIGATORIO
+
+
+
+// JS CAMBIO DE USUARIO
+$('#btnCambiarUsuario').click(function(event) {
+      let nombre = $('#inputUsuario').val();
+      let captcha = $('#inputCaptchaCambioUsuario').val();
+
+      let parametros = {'nombre':nombre, "idUsuario": idUsuario, "captcha":captcha}
+      let link = "../API/setNombreUsuario.php?token=<?=$_SESSION['token'];?>";
+
+      if (nombre!="" && idUsuario!="" && captcha!="") {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer_usuario").removeClass("d-none");
+                       $("#msg_restablecer_usuario").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                          $('#inputUsuario').prop("disabled",true);
+                          $('#inputCaptchaCambioUsuario').prop("disabled",true);
+                          $('#btnCambiarUsuario').prop("disabled",true);
+                        }
+                  },"json");
+        
+      } else {
+         $("#msg_restablecer_usuario").removeClass("d-none");
+         $("#msg_restablecer_usuario").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
 });
 
-$("#idCambioPwdObligatorio").on('hide.bs.modal', function(){
-     $("#msg_restablecerO").addClass("d-none");
-     $('#inputPasswordNuevaO').prop("disabled",false); $('#inputPasswordNuevaO').val("");
-     $('#inputRePasswordNuevaO').prop("disabled",false); $('#inputRePasswordNuevaO').val("");
-     $('#inputCaptchaO').prop("disabled",false); $('#inputCaptchaO').val("");
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
+     $("#msg_restablecer_usuario").addClass("d-none");
+     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
+     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
+     $('#btnCambiarUsuario').prop("disabled",false);
 });
   
 </script>

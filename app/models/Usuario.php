@@ -146,22 +146,19 @@ public function save($param){
 /* Save Usuario */
 public function setNombre($param){
     $this->getConection();
-
-    $nombre = $idPersona = 0;
+    $nombre = $id = 0;
     $res = false;
-    //* Check if exists 
-    if(isset($param["idPersona"]) && $param["idPersona"] !='' && 
+    if(isset($param["id"]) && $param["id"] !='' && 
        isset($param["nombre"]) && $param["nombre"] != '') {
         
             $nombre = $param["nombre"];
-            $idPersona = $param["idPersona"];
-            $sql = "UPDATE usuario SET nombre = ? WHERE idPersona = ?";
+            $id = $param["id"];
+            $sql = "UPDATE usuario SET nombre = ? WHERE id = ?";
             try {
                 $stmt = $this->conection->prepare($sql);
-                $res = $stmt->execute([$nombre, $idPersona]);
+                $stmt->execute([$nombre, $id]);
+                $res = 1;
             } catch (Exception $e) {
-                //echo 'Caught exception: '.  $e->getCode() . ': ' . $e->Message(), "\n";
-                //exit;
                 $res = $e->getCode();
             }
             

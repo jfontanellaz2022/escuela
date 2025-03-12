@@ -72,6 +72,9 @@
         </section>
   </article>
 
+<!-- Modal -->
+<?php include_once('./html/cambiarUsuario.html');?>
+
 <!-- FOOTER -->
 <?php
       include_once('../app/views/footer.html');
@@ -93,6 +96,45 @@
    let opcion = 'cursado';
    let llamado_numero = '';
    let token = "<?=$_SESSION['token'];?>";
+   let idUsuario = <?=$_SESSION['arreglo_datos_usuario']['id'];?>;  
+
+
+   // JS CAMBIO DE USUARIO
+$('#btnCambiarUsuario').click(function(event) {
+      let nombre = $('#inputUsuario').val();
+      let captcha = $('#inputCaptchaCambioUsuario').val();
+
+      let parametros = {'nombre':nombre, "idUsuario": idUsuario, "captcha":captcha}
+      let link = "../API/setNombreUsuario.php?token=<?=$_SESSION['token'];?>";
+
+      if (nombre!="" && idUsuario!="" && captcha!="") {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer_usuario").removeClass("d-none");
+                       $("#msg_restablecer_usuario").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                          $('#inputUsuario').prop("disabled",true);
+                          $('#inputCaptchaCambioUsuario').prop("disabled",true);
+                          $('#btnCambiarUsuario').prop("disabled",true);
+                        }
+                  },"json");
+        
+      } else {
+         $("#msg_restablecer_usuario").removeClass("d-none");
+         $("#msg_restablecer_usuario").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
+});
+
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
+     $("#msg_restablecer_usuario").addClass("d-none");
+     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
+     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
+     $('#btnCambiarUsuario').prop("disabled",false);
+});
+
 
    function expired() {
       location.href = "./logout.php";

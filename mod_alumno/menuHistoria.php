@@ -99,6 +99,40 @@ function expired() {
 
 setTimeout(expired, 60000*20);
 
+// CAMBIO CONTRASEÑA OPCIONAL
+$( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
+     $('#img_captcha').attr('width',"100");
+     $('#img_captcha').attr('height',"25");
+     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioPwd").on('hide.bs.modal', function(){
+     $("#msg_restablecer").addClass("d-none");
+     $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
+     $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");
+     $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
+});
+
+$("body").on("click",".img",function(e){
+           e.preventDefault();
+           if ( $('#inputPasswordNueva').attr('type')=='password') {
+                $('#inputPasswordNueva').attr('type', 'text');
+                $('#inputRePasswordNueva').attr('type', 'text');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_closed.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_closed.png");
+           } else if ($('#inputPasswordNueva').attr('type')=='text') {
+                $('#inputPasswordNueva').attr('type', 'password');
+                $('#inputRePasswordNueva').attr('type', 'password');
+                $('#imgPassword1').attr('width',"23");
+                $('#imgPassword2').attr('width',"23");
+                $('#imgPassword1').attr('src',"../public/img/icons/eye_open.png");
+                $('#imgPassword2').attr('src',"../public/img/icons/eye_open.png");
+
+           }
+})
+
 $('#btnCambiarPassword').click(function(event) {
       let password = $('#inputPasswordNueva').val();
       let rePassword = $('#inputRePasswordNueva').val();
@@ -128,17 +162,9 @@ $('#btnCambiarPassword').click(function(event) {
           $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
       }
 });
+// FIN CAMBIO CONTRASEÑA OPCIONAL
 
-$( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
-     $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
-});
 
-$("#idCambioPwd").on('hide.bs.modal', function(){
-     $("#msg_restablecer").addClass("d-none");
-     $('#inputPasswordNueva').prop("disabled",false); $('#inputPasswordNueva').val("");
-     $('#inputRePasswordNueva').prop("disabled",false); $('#inputRePasswordNueva').val("");
-     $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
-});
 
 
 </script>
