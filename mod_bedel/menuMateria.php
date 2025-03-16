@@ -198,19 +198,26 @@ function entidadVer(entidad_id){
     //$('#alumno_editar').css('display', 'none !important');
          
     datos_entidad = entidadObtenerPorId(entidad_id);
+    console.log(datos_entidad);
+
     $.get(url,function(data) {
           $("#resultado_accion").html("");
           $("#principal").slideDown("slow").html(data);
-          $('#alumno_ver').removeClass('d-none');
-          $('#alumno_editar').addClass('d-none');
-          $('#alumno_asignar_carrera').addClass('d-none');
-          $('#alumno_asignar_mesa').addClass('d-none'); 
+          $('#materia_ver').removeClass('d-none');
+          $('#materia_editar').addClass('d-none');
           //******************************************************************** 
           //**************************** CAMBIAR ******************************* 
-          $("#spn_nombres").html(datos_entidad.datos[0].apellido+', '+datos_entidad.datos[0].nombre);
-          $("#spn_fecha_nacimiento").html(datos_entidad.datos[0].fechaNacimiento);
-          $("#spn_documento").html(datos_entidad.datos[0].dni);
-          $("#spn_domicilio").html(datos_entidad.datos[0].domicilio);
+          $("#spn_codigo").html(datos_entidad.datos.codigo);
+          $("#spn_nombre").html(datos_entidad.datos.nombre);
+          $("#spn_anio").html(datos_entidad.datos.anio);
+          $("#spn_campo").html(datos_entidad.datos.idCampo);
+          $("#spn_cursado").html(datos_entidad.datos.idCursado);
+          $("#spn_formato").html(datos_entidad.datos.idFormato);
+          $("#spn_carrera").html(datos_entidad.datos.carrera);
+
+
+
+
           $("#inputId").val(entidad_id);
           
           if (datos_entidad.datos[0].telefono_caracteristica!=null && datos_entidad.datos[0].telefono_numero!=null) {
@@ -311,7 +318,7 @@ function entidadCrear(){
 //************************************************* 
 function entidadEditar(entidad_id){
       let datos_entidad = "";
-      let url = "html/"+entidad_nombre+".html";
+      let url = "html/materia.html";
       let url_obtener_entidad = "funciones/localidadObtener.php";
       let breadcrumb = `<nav aria-label="breadcrumb" role="navigation">
                               <ol class="breadcrumb">
@@ -325,38 +332,23 @@ function entidadEditar(entidad_id){
       $.get(url,function(data) {
             $("#resultado_accion").html("");
             $("#principal").slideDown("slow").html(data);
-            $('#alumno_editar').removeClass('d-none');
-            $('#alumno_ver').addClass('d-none');
-            $('#telefono_viejo').removeClass('d-none');
-            $('#alumno_asignar_carrera').addClass('d-none');
-            $('#alumno_asignar_mesa').addClass('d-none');
+            $('#materia_editar').removeClass('d-none');
+            $('#materia_ver').addClass('d-none');
             //******************************************************************** 
-            //**************************** CAMBIAR ******************************* 
-            $("#inputAccion").val('editar');
+            //**************************** CAMBIAR *******************************
+           
             $("#inputId").val(entidad_id);
-            $("#inputApellido").val(datos_entidad.datos[0].apellido);
-            $("#inputNombre").val(datos_entidad.datos[0].nombre);
-            $("#inputDocumento").attr('disabled',true)
-            $("#inputDocumento").val(datos_entidad.datos[0].dni);
-            $("#inputDomicilio").val(datos_entidad.datos[0].domicilioCalle+' '+datos_entidad.datos[0].domicilioDpto);
-            $("#inputTelefono").val(datos_entidad.datos[0].telefono);
-            $("#inputTelefono").attr('type','text');
-            $("#inputTelefonoCaracteristica").val(datos_entidad.datos[0].telefono_caracteristica);
-            $("#inputTelefonoNumero").val(datos_entidad.datos[0].telefono_numero);
-            $("#inputEmail").val(datos_entidad.datos[0].email);
-            $("#inputFechaNacimiento").datepicker({
-                dateFormat: 'dd/mm/yy',
-                maxDate: new Date()
-            });
-            if (datos_entidad.datos[0].fechaNacimiento!=null) {
-                let anio = (datos_entidad.datos[0].fechaNacimiento).substr(0,4);
-                let mes = (datos_entidad.datos[0].fechaNacimiento).substr(5,2);
-                let dia = (datos_entidad.datos[0].fechaNacimiento).substr(8,2);
-                $("#inputFechaNacimiento").val(datos_entidad.datos[0].fechaNacimiento);
-                let realDate = new Date(anio+'/'+mes+'/'+dia);  
-                $("#inputFechaNacimiento").datepicker('setDate',realDate);
-            }
-            $('#inputLocalidad').select2({
+            $("#inputCodigo").val(datos_entidad.datos.codigo);
+            $("#inputNombre").val(datos_entidad.datos.nombre);
+            $("#inputAnio").val(datos_entidad.datos.anio);
+            $("#inputCampo").val(datos_entidad.datos.idCampo);
+            $("#inputCursado").val(datos_entidad.datos.idCursado);
+            $("#inputFormato").val(datos_entidad.datos.idFormato);
+            $("#inputCarrera").val(datos_entidad.datos.carrera);
+            
+            
+            
+            /*$('#inputLocalidad').select2({
                 theme: "bootstrap",
                 placeholder: "Localidad",
                 ajax: {
@@ -392,7 +384,7 @@ function entidadEditar(entidad_id){
             
             var newOption = new Option(data.text, data.id, false, false);
             $('#inputLocalidad').append(newOption).trigger('change');
-            $("#inputLocalidad option[value="+ datos_entidad.datos[0].localidad_id +"]").attr("selected",true);
+            $("#inputLocalidad option[value="+ datos_entidad.datos[0].localidad_id +"]").attr("selected",true);*/
 
       });
 }

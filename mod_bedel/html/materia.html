@@ -1,0 +1,156 @@
+<!--  ID del ALUMNO que se va a procesar-->
+<input id="inputId" inputmode="numeric" placeholder="ID" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+
+<!-- ************************************************* -->
+<!-- *********** 1 - EDITAR DATOS DEL ALUMNO ********* -->
+<!-- ************************************************* -->
+<div class="img form visible" id="materia_editar">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Alumno (<font color="red">*</font> Datos Obligatorios)</h1>
+      <hr>
+
+  <form id="form">
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Codigo <font color="red">(*)</font></strong>
+        <input id="inputCodigo" inputmode="numeric" placeholder="Codigo" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Nombre <font color="red">(*)</font></strong>
+        <input id="inputNombre" placeholder="Nombre" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Año <font color="red">(*)</font></strong>
+        <input id="inputAnio" placeholder="Año" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+  
+   
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Campo </strong>
+        <input id="inputCampo" placeholder="Campo" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Cursado</strong>
+        <input type="text" class="form-control" id="inputCursado" placeholder="Cursado" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Formato </strong>
+        <input id="inputFormato" placeholder="Formato" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Carrera <font color="red">(*)</font></strong>
+              <input id="inputCarrera" placeholder="Carrera" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
+        </div>
+    </div>
+   
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadGuardar()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-primary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+
+<!-- ********************************************************** -->
+<!-- *********** 2 - VER REGISTRO DE DATOS DEL ALUMNO ********* -->
+<!-- ********************************************************** -->
+<div class="img form" id="materia_ver" >
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Ver Registro del Alumno</h1>
+      <hr>
+      <p class="lead">Estos datos son estrictamente confidenciales.</p>
+  
+  <form id="form">
+      
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Código: </strong> <span id="spn_codigo"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Nombre: </strong><span id="spn_nombre"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Año: </strong><span id="spn_anio"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Campo: </strong><span id="spn_campo"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Cursado: </strong><span id="spn_cursado"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Formato: </strong><span id="spn_formato"></span>
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Carrera: </strong><span id="spn_carrera"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadEditar($('#inputId').val())">Editar</button>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  
+  </div>
+  </div>
+</div>
+
+
