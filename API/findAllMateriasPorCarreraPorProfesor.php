@@ -12,7 +12,7 @@ require_once "MateriaFechaExamen.php";
 
 $id_profesor = (isset($_POST['profesor']))?SanitizeCustom::INT($_POST['profesor']):false;
 $id_carrera = (isset($_POST['carrera']))?SanitizeCustom::INT($_POST['carrera']):false;
-$idTurno = $_SESSION['turno_id'];
+$idTurno = isset($_SESSION['turno_id'])?$_SESSION['turno_id']:NULL;
 //*******************TOKEN  *****************************/
 $token = (isset($_GET['token']))?$_GET['token']:false;
 $array_resultados = [];
@@ -32,7 +32,9 @@ if ($id_profesor) {
    $profesor = new Profesor();
    $arr_materias_dicta = $profesor->getMateriasByProfesor($id_profesor);
 
-   $materia_tiene_fecha = new MateriaFechaExamen();
+   if ($idTurno!=NULL) { // ES PARA REUTILIZAR TANTO EN EXAMENES CON EN CURSADO
+      $materia_tiene_fecha = new MateriaFechaExamen();
+   }
 
 
    //var_dump($arr_materias_dicta);exit;
@@ -42,9 +44,11 @@ if ($id_profesor) {
    foreach ($arr_materias_dicta as $materia_item) {
       foreach ($arr_materias_carrera as $mat_carrera_item) {
          if ($materia_item['materia_id']==$mat_carrera_item['materia_id']) {
-            $fecha_examen = $materia_tiene_fecha->getMateriaFechaExamenByIdMateriaByIdCalendario($materia_item['materia_id'],$idTurno);
             $materia_item_tmp =$materia_item;
-            $materia_item_tmp['fecha_examen'] = $fecha_examen;
+            if ($idTurno!=NULL) {
+               $fecha_examen = $materia_tiene_fecha->getMateriaFechaExamenByIdMateriaByIdCalendario($materia_item['materia_id'],$idTurno);
+               $materia_item_tmp['fecha_examen'] = $fecha_examen;
+            }
             $arr_materias[] = $materia_item_tmp;
          };   
       }

@@ -51,11 +51,11 @@ class AlumnoCursaMateria {
 		
 		if ( isset($param['materia_id']) && isset($param['anio_cursado']) ) {
 			$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
-		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
+		               p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
 					   p.telefono_numero, p.observaciones, p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
-					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_inscripcion, acm.nota,
+					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_hora_inscripcion, acm.nota,
 					   acm.fecha_modificacion_nota, acm.idCursado as cursado_id,  acm.idEstado as estado_id,
-					   p.email, p.telefono, 
+					   p.email, 
 					   tca1.id as 'id_cursado', tca1.codigo as 'codigo_cursado', tca1.nombre as 'nombre_cursado',
 					   tca2.id as 'id_estado', tca2.codigo as 'codigo_estado', tca2.nombre as 'nombre_estado'	
 				FROM alumno a, alumno_cursa_materia acm, persona p, tipificacion tca1, tipificacion tca2

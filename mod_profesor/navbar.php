@@ -15,7 +15,7 @@
    </li>
 
    <li class="nav-item nav-item-alumnos <?php echo ($id_pagina == 'carreras')?'active':'';?>">
-    <a href="menuGestionarCarrerasMateriasAlumnos.php?token=<?=$_SESSION['token'];?>" class="nav-link disabled">
+    <a href="menuGestionarCarrerasMateriasAlumnos.php?token=<?=$_SESSION['token'];?>" class="nav-link">
       Carreras/Materias/Alumnos
       <span class="sr-only">(current)</span></a>
    </li>

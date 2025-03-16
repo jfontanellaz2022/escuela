@@ -26,6 +26,10 @@
   <!-- NAVBAR -->
   <header>
     <?php include("navbar.php");?>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="../public/css/footerProfesor.css" />
+
   </header>
 
   <article>
@@ -56,9 +60,9 @@
 
                   <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
-                                  <img src="../public/assets/img/logo_n.jpg" class="card-img-top">
+                                  <img src="../public/img/logo_100x100.jpg" class="card-img-top">
                                   <div class="card-body">
-                                      <h5 class="card-title"><img src="../public/assets/img/icons/add2_icon.png" width="23">&nbsp;Nueva vinculación a Carrera</h5>
+                                      <h5 class="card-title"><img src="../public/img/icons/add2_icon.png" width="23">&nbsp;Nueva vinculación a Carrera</h5>
                                           <h6 class="card-subtitle mb-2 text-muted"></h6>
                                       <p class="card-text"></p>
                                       <button class="btn btn-primary btn-block" onclick="vincularCarrera(`+idProfesor+`)">Vincularme</button>
