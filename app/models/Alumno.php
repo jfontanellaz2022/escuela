@@ -1,5 +1,6 @@
 <?php 
 require_once('Persona.php');
+require_once('Constantes.php');
 
 class Alumno extends Persona{
 	private $id;
@@ -240,6 +241,57 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	/* Get All Alumnos by Materia Detalle - ACTUALIZADO */
+	public function getAllAlumnosByMateriaDetalle($param){
+		$this->getConection();
+		$arr_resultados = [];
+		$codigo_cursado = $anio = $where_cursado = $where_anio = "";
+		if (isset($param['materia_id']) ) {
+			if (isset($param['cursado']) && $param['cursado']!=null) {
+				if ($param['cursado']==Constantes::CODIGO_CURSADO_PRESENCIAL) {
+					$codigo_cursado = Constantes::CODIGO_CURSADO_PRESENCIAL;
+				} else if ($param['cursado']==Constantes::CODIGO_CURSADO_SEMIPRESENCIAL) {
+					$codigo_cursado = Constantes::CODIGO_CURSADO_SEMIPRESENCIAL;
+				} else if ($param['cursado']==Constantes::CODIGO_CURSADO_LIBRE) {
+					$codigo_cursado = Constantes::CODIGO_CURSADO_LIBRE;
+				} 
+				$where_cursado = " AND tca1.codigo = $codigo_cursado";	
+			};
+
+			if (isset($param['anio']) && $param['anio']!=null) {
+				$anio = $param['anio'];
+				$where_anio = " AND acm.anio_cursado = $anio";
+			};
+
+			
+			$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
+						p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
+						p.telefono_numero, p.observaciones, p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
+						acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_hora_inscripcion, acm.nota, acm.fecha_modificacion_nota,
+						p.email,  
+						tca1.id as 'id_cursado', tca1.codigo as 'codigo_cursado', tca1.nombre as 'nombre_cursado',
+						tca2.id as 'id_estado', tca2.codigo as 'codigo_estado', tca2.nombre as 'nombre_estado'	
+					FROM alumno a, alumno_cursa_materia acm, persona p, tipificacion tca1, tipificacion tca2
+					WHERE acm.idMateria = ? and acm.idAlumno = a.id and 
+						a.idPersona = p.id and a.habilitado = 'Si' and 
+						acm.idCursado = tca1.id and
+						acm.idEstado = tca2.id";
+			$sql.= $where_cursado;
+			$sql.= $where_anio;
+			$sql .= " ORDER BY p.apellido asc, p.nombre asc";
+			
+			try {
+				$stmt = $this->conection->prepare($sql);
+				$stmt->execute([$param['materia_id']]);
+				$arr_resultados =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+			} catch (Exception $e) {
+				$arr_resultados = [];
+			} finally {
+				return $arr_resultados;
+			}
+		} else return $arr_resultados;
+	}
+
 
 	/* Save */
 	public function save($param){
@@ -300,5 +352,9 @@ public function getAllMateriasCursadasPorAlumno($id_alumno, $estado = ""){
 
 	
 }
+
+//$obj = new Alumno();
+//var_dump($obj->getAllAlumnosByMateriaDetalle(["materia_id"=>410,"anio"=>2020]));
+
 
 ?>

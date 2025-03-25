@@ -5,19 +5,7 @@
 //***********************************************************************************************************************************/
 
 let arr_carreras = getCarreras();
-//let cursado_activo = getCursadoActivo();
-
-function estaActivoCursado(ev) {
-   resultado = false;
-   for (i = 0; i < cursado_activo.datos.length; i++) {
-      if (cursado_activo.datos[i].codigo==ev) {
-         resultado = true;
-         break;
-      }
-    } 
-   return resultado; 
-}
-
+let arr_materias = getMaterias();
 
 function expired() {
       location.href = "./logout.php";
@@ -26,13 +14,14 @@ function expired() {
 
 
 //***********************************************
-// RETORNA EL NOMBRE DE UNA CARRERA 
+// RETORNA TODAS LAS CARRERAS
 //***********************************************
 function getCarreras() {
    let carreras
    $.ajax({
-      url:"../API/findAllCarreras.php?token="+token,
-      type:"GET",
+      url:"../API/serviceProfesor.php?token="+token,
+      type:"POST",
+      data: {"opcion":"CARRERAS"},
       dataType : 'json',
       async: false,
       success: function(resultado){
@@ -41,6 +30,25 @@ function getCarreras() {
 });
 return carreras;
 }
+
+
+//***********************************************
+// RETORNA TODAS LAS MATERIAS 
+//***********************************************
+function getMaterias() {
+      let materias
+      $.ajax({
+         url:"../API/serviceProfesor.php?token="+token,
+         type:"POST",
+         data: {"opcion":"MATERIAS"},
+         dataType : 'json',
+         async: false,
+         success: function(resultado){
+            materias = resultado.datos;
+         }
+   });
+   return materias;
+   }
 
 
 function getCarreraPorId(carrera_id) {
@@ -56,17 +64,31 @@ function getCarreraPorId(carrera_id) {
 }
 
 
+function getMateriaPorId(materia_id) {
+      let materia;
+     
+      arr_materias.forEach(function(currentValue, index, arr){
+         if (currentValue['id']==materia_id) {
+             materia = currentValue;
+         }; 
+         
+      })
+      return materia;
+   }
+
 //****************************************************************************************** 
 // NOS PERMITE BUSCAR LOS ALUMNOS INSCRIPTOS EN EL CURSADO DE LA MATERIA 
 //****************************************************************************************** 
 function entidadObtenerAlumnosPorMateria(materia_id){
-   let url = "../API/findAllAlumnosPorMateria.php?token="+token;
+   let url = "../API/serviceProfesor.php?token="+token;
    let resultado;
+   let anio_actual = new Date().getFullYear();
+
    
    $.ajaxSetup({
        async: false
      });
-   $.post(url, {"materia":materia_id}, function (data) {
+   $.post(url, {"opcion":"MATERIA_ALUMNOS_CURSADO","materia_id":materia_id,"anio":anio_actual}, function (data) {
          resultado = data;
    },"json")
    return resultado;
@@ -134,8 +156,8 @@ function cargarCarreras(idProfesor) {
 
   //Remuevo la class que me deshabilita
   $("#resultado").removeClass("disabledbutton");
-  let parametros = {'profesor':idProfesor};
-  $.post( "../API/findAllCarrerasPorProfesor.php?token="+token, parametros, function( data ) {
+  let parametros = {'opcion':'CARRERAS_POR_PROFESOR','profesor':idProfesor};
+  $.post( "../API/serviceProfesor.php?token="+token, parametros, function( data ) {
                   let obj = data;
                   $("#breadcrumb").html(bread);
                   $("#titulo").html(titulo);
@@ -178,20 +200,36 @@ function cargarCarreras(idProfesor) {
 //DESVINCULA EL PROFESOR DE UNA CARRERA ESPECIFICADA ESPECIFICA
 //*************************************************************
 function desvincularCarrera(idCarrera,idProfesor) {
-  let parametros = {"carrera":idCarrera, "profesor":idProfesor};
+  let parametros = {"opcion":"DESVINCULAR_PROFESOR_CARRERA","carrera_id":idCarrera, "profesor_id":idProfesor};
   if (confirm("Desea desvincularse de la Carrera?")) {
-      $.post("../API/removeProfesorCarrera.php?token="+token,parametros,function (response) {
+      $.post("../API/serviceProfesor.php?token="+token,parametros,function (response) {
+
             $("#controles").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                                     <span style="color: #000000;">
                                                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                        &nbsp;<strong>Atenci&oacute;n:</strong> `+response.datos+`
+                                                        &nbsp;<strong>Atenci&oacute;n:</strong> `+response.mensaje+`
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>   
                                                     </span>    
                                                 </div>`);
-            cargarCarreras(idProfesor)
+            if (response.codigo==200) { 
+                  Swal.fire({
+                                    title: "Actualización Realizada!",
+                                    text: "Se ha Desvinculado a la Carrera.",
+                                    icon: "success"
+                              });
+            } else {
+                  Swal.fire({
+                        title: "No se pudo Realizar la Operación!",
+                        text: "No se ha podido Desvincular a la Carrera.",
+                        icon: "danger"
+                  });
+            }
+
+            cargarCarreras(idProfesor);
+
       },"json");
   };
 
@@ -206,9 +244,8 @@ function cursadoAgregarCarrera() {
   let idProfesor = profesor_id;
   let parametros;
 
-  if (idCarrera && idProfesor) {
-     parametros = {"profesor":idProfesor,"carrera":idCarrera};
-     $.post("../API/insertProfesorCarrera.php?token="+token,parametros, function(response){
+  parametros = {"opcion":"VINCULAR_PROFESOR_CARRERA","profesor_id":idProfesor,"carrera_id":idCarrera};
+  $.post("../API/serviceProfesor.php?token="+token,parametros, function(response){
             $("#controles").html(`
                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                                       <span style="color: #000000;">
@@ -219,21 +256,23 @@ function cursadoAgregarCarrera() {
                                                          </button>   
                                                       </span>    
                                                    </div>`);
+            if (response.codigo==200) { 
+                                                      Swal.fire({
+                                                                        title: "Actualización Realizada!",
+                                                                        text: "Se ha Vinculado a la Carrera.",
+                                                                        icon: "success"
+                                                                  });
+            } else {
+                                                      Swal.fire({
+                                                            title: "No se pudo Realizar la Operación!",
+                                                            text: "No se ha podido Vincular a la Carrera.",
+                                                            icon: "danger"
+                                                      });
+            }
             cargarCarreras(idProfesor);
          
-     },"json");
-  } else {
-         $("#controles").html(`
-                                                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                      <span style="color: #000000;">
-                                                      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                         &nbsp;<strong>Atención:</strong> No ha seleccionado una carrera.
-                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                               <span aria-hidden="true">&times;</span>
-                                                         </button>   
-                                                      </span>    
-                                                   </div>`);                          
-  }
+  },"json");
+
 }
 
 
@@ -248,7 +287,6 @@ function cursadoAgregarCarrera() {
 //***************************************************************
 function cargarMaterias(id_carrera,id_profesor) {
    
-   let parametros = {'carrera':id_carrera, 'profesor':id_profesor};
    let carrera_nombre = getCarreraPorId(id_carrera).descripcion;
    let titulo = '';
    //Remuevo la class que me deshabilita
@@ -264,7 +302,8 @@ function cargarMaterias(id_carrera,id_profesor) {
                </nav>`;
    $("#breadcrumb").html(bread);
    $("#titulo").html(titulo);
-        $.post( "../API/findAllMateriasPorCarreraPorProfesor.php?token="+token, parametros, function( data ) {
+  
+        $.post( "../API/serviceProfesor.php?token="+token, {'opcion':'MATERIAS_CARRERA_PROFESOR','carrera_id':id_carrera, 'profesor_id':id_profesor}, function( data ) {
           let obj = data;
           $("#resultado").html("");
           let tabla_comienzo = `<div class="col-xs-12 col-sm-12 col-md-12" id='panel_materia'style="background-color: #E9D5B4;border-radius: 10px;">
@@ -297,11 +336,8 @@ function cargarMaterias(id_carrera,id_profesor) {
                let entidad = "";
                let budge = "";
                obj.datos.forEach(materia => {
-
-                      entidad = entidadObtenerAlumnosPorMateria(materia.materia_id);
-                      console.log(materia.materia_id,entidad);
-                      cantidad = entidad.datos.length;
-
+               entidad = entidadObtenerAlumnosPorMateria(materia.materia_id);
+               cantidad = entidad.datos.length;
                     
                       if (cantidad!=0) {
                         budge = `<span class="badge badge-primary">`+cantidad+`</span>`;
@@ -319,7 +355,6 @@ function cargarMaterias(id_carrera,id_profesor) {
                           habilitar_materia = '';  
                        } else {
                           habilitar_materia = 'disabledbutton';
-                          //alert('accca');
                        };
                        
 
@@ -342,7 +377,7 @@ function cargarMaterias(id_carrera,id_profesor) {
                  }
            $("#resultado").html(tabla_comienzo+filas+tabla_final);
 
-           $.post( "../API/findAllMateriasPorCarrera.php?token="+token, parametros, function( data_materias ) {
+           $.post( "../API/serviceProfesor.php?token="+token, {"opcion":"MATERIAS_POR_CARRERA","carrera_id":id_carrera}, function( data_materias ) {
                if (data_materias.codigo==200) {
                      let obj = data_materias.datos; 
                      obj.forEach(materia => {
@@ -363,13 +398,12 @@ function cargarMaterias(id_carrera,id_profesor) {
 // ***************************************************************** VINCULA UNA MATERIA CON EL PROFESOR QUE LA DICTA ****************************************************
 // ***********************************************************************************************************************************************************************
 function cursadoAgregarMateria(carrera_id) {
-   //alert($("#inputAltaMateria").val());
    let valor = ($("body #inputAltaMateria").val()).split('-');
    let materia_id = valor[0];
    let profesor_id = valor[1];
-   let parametros = {"materia":materia_id, "profesor":profesor_id};
+   let parametros = {"opcion":"VINCULAR_PROFESOR_MATERIA","materia_id":materia_id, "profesor_id":profesor_id};
    
-   $.post("../API/insertProfesorMateria.php?token="+token,parametros,function(response){
+   $.post("../API/serviceProfesor.php?token="+token,parametros,function(response){
       if (response.codigo==200) {
                         $("#controles").html(`
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
@@ -404,10 +438,10 @@ function cursadoAgregarMateria(carrera_id) {
 // ***********************************************************************************************************************************************************************
 function cursadoDesvincularMateria(idProfesor,idMateria,idCarrera) {
    if (confirm('Desea desvincularse de la Materia?')) {
-         let carrera = idCarrera;
          let materia = idMateria;
          let profesor = idProfesor;
-         $.post( "../API/removeProfesorMateria.php?token="+token,{"profesor":profesor,"materia":materia},function(response) {
+         let param = {"opcion":"DESVINCULAR_PROFESOR_MATERIA","profesor_id":profesor,"materia_id":materia};
+         $.post( "../API/serviceProfesor.php?token="+token,param,function(response) {
                   $("#controles").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
                                        <span style="color: #000000;">
                                              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -418,63 +452,26 @@ function cursadoDesvincularMateria(idProfesor,idMateria,idCarrera) {
                                        </span>    
                                  </div>`);
                   if (response.codigo==200) {
-                       //$("#tr_"+materia).remove();
                        Swal.fire({
                         title: "Actualización Realizada!",
                         text: "Se ha Desvinculado de la Materia.",
                         icon: "success"
                         });
-                       $("#resultado").html("");
-                        cargarMaterias(idCarrera,idProfesor);
+                        //$("#tr_"+materia).remove();
+                       //$("#resultado").html("");
+                       cargarMaterias(idCarrera,idProfesor);
                   };
          },"json");
    };   
 }
 
 
-//***********************************************
-//OBTIENE EL DATOS DE UNA MATERIA SEGUN SU ID
-//***********************************************
-function sacaDatosMateriaPorId(idMateria) {
-   var datos = {"materia":idMateria};
-   var datos_materia;
-   $.ajax({
-      url:"../API/findMateriaPorId.php?token="+token,
-      type:"POST",
-      data: datos,
-      dataType : 'json',
-      async: false,
-      success: function(datos){
-         datos_materia = datos;
-      }
-});
-return datos_materia;
-}
-
-
-// ********************************************************** PERMITE VINCULAR ALUMNOS A LA MATERIA QUE CURSA *************************************************************
-// ************************************************************************************************************************************************************************
-function cargarAlumnos(idCarrera, idMateria, idProfesor) {
-   let datos_materia;
-   let materia_nombre;
-   let materia_cursado; // 1er CUATRIMESTRE | 2do CUATRIMESTRE | ANUAL
-   datos_materia = sacaDatosMateriaPorId(idMateria);
-   if (datos_materia.codigo==200) {
-      materia_cursado = datos_materia.datos.idCursado;
-      materia_nombre = datos_materia.datos.nombre;
-      materia_formato = datos_materia.datos.idFormato;
-   };
-   cargarAlumnosPorMateriaCursado(idCarrera,idMateria,materia_nombre,idProfesor,materia_cursado);
-}
-
-
-function cargarAlumnosPorMateriaCursado(carrera_id, materia_id,materia_nombre,profesor_id,materia_cursado) {
-    let evento_habilitado;
-    let titulo = '<h1><i>'+materia_nombre+'</h1></i><h3><strong>Alumnos</strong> (Crear Listado)</h3><hr>';
+function cargarAlumnos(carrera_id,materia_id,profesor_id) {
     let carrera_nombre = getCarreraPorId(carrera_id).descripcion;
-    
-    let parametros = {"action":"Listar",'materia':materia_id};
-      $.post( "../API/findAllAlumnosPorMateria.php?token="+token, parametros, function( response ) {
+    let materia_nombre = getMateriaPorId(materia_id).nombre;
+    let anio_actual = new Date().getFullYear();
+    let titulo = '<h1><i>'+materia_nombre+'</h1></i><h3><strong>Alumnos</strong></h3><hr>';
+    $.post( "../API/serviceProfesor.php?token="+token, {"opcion":"MATERIA_ALUMNOS_CURSADO", 'materia_id':materia_id,"anio":anio_actual}, function( response ) {
         let bread = `<nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="#" onclick="cargarHome()">Home</a></li>
@@ -536,194 +533,14 @@ function cargarAlumnosPorMateriaCursado(carrera_id, materia_id,materia_nombre,pr
                                           </button>   
                                     </span>    
                               </div>` ;
-         
-
-
        };
     
-    let tabla_agregar_alumno = `    <div class="col-xs-12 col-sm-12 col-md-12 disabledbutton" style="">
-                                       <div class="row" style="padding: 10px;"> 
-                                             <div class="col-xs-12 col-sm-4 col-md-4 col-md-4">
-                                                <select name="inputAltaAlumno" id="inputAltaAlumno" class="form-control select2">
-                                                   <option value="">-- Alumno --</option>
-                                                </select>
-                                             </div>
-                                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <select name="inputAltaCursado" id="inputAltaCursado" class="form-control select2">
-                                                   <option value="">-- Cursado --</option>
-                                                </select>
-                                                </div>
-                                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <button type="button" id="btnAgregar" class="btn btn-primary btn-block" id="btnAplicar" onclick="cursadoAgregarAlumno(`+materia_id+`,`+carrera_id+`,`+profesor_id+`)">
-                                                   Agregar
-                                                </button>
-                                             </div>
-                                             
-                                       </div>
-                                       <div class="row">
-                                          <div id="resultado_carga" class="col-xs-12 col-md-12 d-none"> 
-                                          </div>
-                                       </div>
-                                    </div>
-                                  `; 
-
-    $("#resultado").html(tabla_agregar_alumno);    
     $("#resultado").append(tabla_comienzo+filas+tabla_final);                       
     if (nofilas!='') {
       $("#resultado_carga").removeClass('d-none'); 
       $("#resultado_carga").html(nofilas);
     };
-   //CARGA EL SELECT2 CON LOS ALUMNOS DE LA CARRERA
-    $.post( "../API/findAllAlumnosPorCarrera.php?token="+token, {'carrera':carrera_id}, function( data_alumnos ) {
-       let obj = data_alumnos;
-       obj.datos.forEach(alumno => {
-             $("#inputAltaAlumno").append($('<option/>', {
-                   text: '('+alumno.id+') '+alumno.apellido+', '+alumno.nombre+', '+alumno.dni,
-                   value: alumno.id,
-             }));
-       });
-    },"json");   
-    $('#inputAltaAlumno').select2({
-      theme: "bootstrap",
-    });
- 
-    //CARGA EL SELECT2 CON LOS DATOS DEL CURSADO
-    $.post( "../API/findAllAlumnoTiposCursado.php?token="+token, function( data_cursado ) {
-       let obj = data_cursado;
-       obj.datos.forEach( cursado_forma => {
-             $("#inputAltaCursado").append($('<option/>', {
-                   text: cursado_forma.nombre,
-                   value: cursado_forma.codigo,
-             }));
-       });
-    },"json");
-    $('#inputAltaCursado').select2({
-      theme: "bootstrap",
-    });
- 
-    //SI SE VERIFICA QUE NO ESTA HABILITADO ENTONCES SE DESHABILITA TODO EL LISTADO
-    if (evento_habilitado=='No') {
-       //$("#resultado").addClass("disabledbutton");
-    }
+   
    },"json");
  }
 
-
-//***********************************************************************
-//OBTIENE LOS DATOS NECESARIOS DE UN ALUMNO PARA EL LISTADO DEL CURSADO
-//***********************************************************************
-function sacaDatosAlumnoParaCursadoPorId(idAlumno,idMateria) {
-   var datos = {"alumno":idAlumno, "materia":idMateria};
-   var datos_alumno;
-   $.ajax({
-      url:"../API/findAlumnoPorMateria.php?token="+token,
-      type:"POST",
-      data: datos,
-      dataType : 'json',
-      async: false,
-      success: function(datos){
-         datos_alumno = datos;
-      }
-});
-return datos_alumno;
-}
-
-
-//****************************************************************************
-//FUNCION PARA CARGAR UN ALUMNO A UNA MATERIA ESPECIFICADA
-//****************************************************************************
-function cursadoAgregarAlumno(idMateria,idCarrera,idProfesor) {
-    let alumno = $('#inputAltaAlumno').val();
-    let cursado_forma = $('#inputAltaCursado').val();
-
-    if (alumno && cursado_forma) {
-         let parametros = {'materia':idMateria, 'alumno':alumno, 'cursado':cursado_forma};
-         $.post( "../API/insertAlumnoMateria.php?token="+token, parametros, function( response ) {
-                  $("#resultado_carga").removeClass("d-none");
-                  
-                  if (response.codigo==200) {
-                     $("#resultado_carga").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-success">
-                                                      <span style="color: #000000;">
-                                                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                                  &nbsp;<strong>Atención:</strong> `+response.mensaje+`.
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                  <span aria-hidden="true">&times;</span>
-                                                            </button>   
-                                                      </span>    
-                                                </div>`);
-                     let datos_alumno = sacaDatosAlumnoParaCursadoPorId(alumno,idMateria); 
-                     if (datos_alumno.codigo==200) {
-                        let accion_eliminar = `<a href="#" class="btn btn-light" title="Eliminar Alumno del Cursado" onclick="cursadoEliminarAlumno(`+alumno+`,`+idMateria+`,`+idCarrera+`,`+idProfesor+`)">
-                                                   <img src="../public/img/icons/delete_icon.png" width="21">
-                                                </a>`;
-                        let fila = `<tr>
-                                       <td>`+datos_alumno.datos[0].apellido+`, `+datos_alumno.datos[0].nombre+` <strong>(`+datos_alumno.datos[0].id+`)</strong></td>
-                                       <td><a href="mailto:`+datos_alumno.datos[0].email+`">`+datos_alumno.datos[0].email+`</a></td>
-                                       <td> <a href="https://api.whatsapp.com/send/?phone=549`+datos_alumno.datos[0].telefono_caracteristica+datos_alumno.datos[0].telefono_numero+`&text=Hola&type=phone_number&app_absent=0" target="_blank">
-                                      <img src="../public/img/icons/wsp_icon.png" width="20"></a> 
-                                <strong>(`+datos_alumno.datos[0].telefono_caracteristica+`) `+ datos_alumno.datos[0].telefono_numero +`</strong></td>
-                                       <td>`+datos_alumno.datos[0].dni+`</td>
-                                       <td><span class="badge badge-info">`+datos_alumno.datos[0].cursado+`</span></td>
-                                       <td>&nbsp;`+accion_eliminar+`&nbsp;</td>
-                                    `;
-                        $("#tabla_alumnos_cursando>tbody").prepend(fila);
-                     } else {
-                        $("#resultado_carga").html(`<div class="alert alert-dark" role="alert"><img src="../public/img/icons/error_icon.png" width="22">&nbsp;<i><span style="color: #000000;">
-                        No se pudo recuperar los datos del Alumno.</span></i>
-                        </div>`);
-                     }                                            
-                  } else {
-                     $("#resultado_carga").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                      <span style="color: #000000;">
-                                                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                                  &nbsp;<strong>Atención:</strong> `+response.mensaje+`.
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                  <span aria-hidden="true">&times;</span>
-                                                            </button>   
-                                                      </span>    
-                                                </div>`);
-                  };
-         },"json");
-   } else {
-         $("body #resultado_carga").removeClass('d-none'); 
-         $("body #resultado_carga").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-                                                      <span style="color: #000000;">
-                                                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                                                  &nbsp;<strong>Atención:</strong> Faltan completar datos obligatorios.
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                  <span aria-hidden="true">&times;</span>
-                                                            </button>   
-                                                      </span>    
-                                                </div>`);
-   }
- }
-
-
-
-//****************************************************************************
-// FUNCION PARA DESVINCULAR UN ALUMNO DE UNA MATERIA ESPECIFICADA
-//****************************************************************************
- function cursadoEliminarAlumno(idAlumno,idMateria,idCarrera,idProfesor) {
-      //alert('dsfsdfsdf');  
-      //let alumno_nombre = sacaNombreAlumnoPorId(idAlumno);
-     
-     let anio = new Date().getFullYear();
-     if(confirm("Desvincular de la materia a ?")) {
-        $.post('../API/removeAlumnoMateria.php?token='+token, {"materia":idMateria,"alumno":idAlumno,"anio":anio}, function(response){
-            $("#controles").html(`<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-`+response.class+`">
-                  <span style="color: #000000;">
-                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                              &nbsp;<strong>Atención:</strong> `+response.mensaje+`
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                        </button>   
-                  </span>    
-            </div>`);
-            if (response.codigo==200) {
-             cargarAlumnos(idCarrera, idMateria, idProfesor);
-             $("body #resultado_carga").removeClass('d-none');
-            }; 
-        },"json")
-     }
- }
- 
