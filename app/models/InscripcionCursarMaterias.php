@@ -56,7 +56,7 @@ class InscripcionCursarMaterias
         //Si encuentra que un item del primer arreglo no esta el el segundo y $band_regulares_libres = FALSE (no cumpliria con correlativas)
         if (!empty($arr_materias_correlativas_regulares_requeridas)) {
             foreach ($arr_materias_correlativas_regulares_requeridas as $item_regulares_requerida) {
-                if (!in_array($item_regulares_requerida,$arr_materias_regulares)) {
+                if (!in_array($item_regulares_requerida,$arr_materias_regulares) && !in_array($item_regulares_requerida,$arr_materias_aprobadas) ) {
                     $band_regulares = FALSE; 
                     break;
                 };
@@ -157,13 +157,10 @@ class InscripcionCursarMaterias
         $arr_materias_carrera = [];
         $alumno_cursa_materia = new AlumnoCursaMateria();
         $max_anio_que_cursa =  $alumno_cursa_materia->getAlumnoCursaMateriasByMaximoAnioCursadoByIdCarrera($alumno_id,$carrera_id);
-        //var_dump('aaaa',$max_anio_que_cursa);die;
         $max_anio = $max_anio_que_cursa;
-        //die('aaa'.$max_anio);
         $carrera = new Carrera();
         $arr_materias_carrera = $carrera->getMateriasPorIdCarrera($carrera_id);
         $arr_materias_verificadas_inscripcion = $this->getArregloMateriasVerificadasParaInscribirse($alumno_id,$carrera_id);
-        //var_dump($arr_materias_verificadas_inscripcion);die;
         $arr_materias_verificadas_inscripcion_detalles = [];
 
         foreach ($arr_materias_carrera as $value) {
@@ -178,7 +175,6 @@ class InscripcionCursarMaterias
                     $arr_materias_verificadas_inscripcion_detalles[] = $arr_value_detalles;
                 };
                 
-                //var_dump($arr_materias_verificadas_inscripcion_detalles);
             };
         }
 

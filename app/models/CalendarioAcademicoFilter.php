@@ -20,16 +20,16 @@ public function arreglo_filter($inicio,$final,$filtros) {
 	else $where = '';
 	
 	$sqlcount = "SELECT count(*) as cantidad
-				FROM calendario_academico c, tipificacion t
-				$where ";
+	FROM calendario_academico c, tipificacion t
+	$where ";
 
 	//sql con los los campos que me interesan 
 	$sql = "SELECT c.id, c.anio_lectivo, c.fecha_inicio, c.fecha_final, c.idTipificacion,
 		           t.id as 'tipificacion_id', t.codigo, t.nombre, t.descripcion
-			FROM calendario_academico c, tipificacion t 
-			$where 
-			ORDER BY c.anio_lectivo DESC, c.fecha_inicio DESC
-			";  
+	FROM calendario_academico c, tipificacion t 
+	$where 
+	ORDER BY c.anio_lectivo DESC, c.fecha_inicio DESC
+	";  
 
 	
 

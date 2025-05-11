@@ -82,6 +82,25 @@ class AlumnoEstudiaCarrera {
 	}
 
 
+    /* Get Carrera by Id */
+	public function hasMesaEspecial($param){
+		$this->getConection();
+		$res = [];
+		if (isset($param['alumno_id']) && isset($param['carrera_id'])) {
+		    $alumno_id = $param['alumno_id'];
+		    $carrera_id = $param['carrera_id'];
+		    $sql = "SELECT mesa_especial
+    				FROM alumno_estudia_carrera
+    				WHERE idAlumno = ? and idCarrera = ?";
+    		$stmt = $this->conection->prepare($sql);
+    		$stmt->execute([$alumno_id,$carrera_id]);
+    		$res = $stmt->fetch(PDO::FETCH_ASSOC);    
+    		return $res["mesa_especial"];
+		}
+		
+		return "No";
+	}
+
 	/* Save Alumno */
 	public function save($param){
 		$this->getConection();

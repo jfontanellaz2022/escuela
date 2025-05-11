@@ -26,19 +26,16 @@ if ($id_carrera) {
 
       if (is_array($arr_datos_carrera)) {
             $array_resultados['codigo'] = 200;
-            $array_resultados['class'] = 'success';
             $array_resultados['mensaje'] = "ok";
             $array_resultados['datos'] = $arr_datos_carrera;
       } else {
             $array_resultados['codigo'] = 500;
-            $array_resultados['class'] = 'danger';
-            $array_resultados['mensaje'] = "Hubo un error en la consulta.";
+            $array_resultados['mensaje'] = "Error 500: Hubo un error en la consulta.";
             $array_resultados['datos'] = [];
       }
 } else {
-      $array_resultados['codigo'] = 500;
-      $array_resultados['class'] = 'success';
-      $array_resultados['mensaje'] = "No ingreso el ID de la carrera.";
+      $array_resultados['codigo'] = 400;
+      $array_resultados['mensaje'] = "Error 400: No ingreso el ID de la carrera.";
       $array_resultados['datos'] = [];
 }
 echo json_encode($array_resultados);

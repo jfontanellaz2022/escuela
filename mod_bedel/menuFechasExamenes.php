@@ -6,12 +6,10 @@ require_once "CalendarioAcademico.php";
 $obj = new CalendarioAcademico();
 $arr_datos_ultima_inscripcion = $obj->getLastInscripcionExamen();
 $arr_datos_ultimo_turno = $obj->getLastTurnoExamen();
-
 $ultima_inscripcion_id = $arr_datos_ultima_inscripcion['id'];
 $ultima_inscripcion_descripcion = $arr_datos_ultima_inscripcion['evento_descripcion'];
 $ultimo_turno_id = $arr_datos_ultimo_turno['id'];
 $ultimo_turno_descripcion = $arr_datos_ultimo_turno['evento_descripcion'].' - '.$arr_datos_ultimo_turno['anio_lectivo'];
-
 ?>
 <!doctype html>
 <html lang="es">

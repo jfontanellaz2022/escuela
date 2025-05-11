@@ -51,11 +51,11 @@ class AlumnoCursaMateria {
 		
 		if ( isset($param['materia_id']) && isset($param['anio_cursado']) ) {
 			$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo,a.habilitado, p.id as idPersona, p.apellido, p.nombre, p.dni, 
-		               p.fecha_nacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
+		               p.fechaNacimiento, p.nacionalidad, p.idLocalidad, p.domicilio, p.email, p.telefono_caracteristica, 
 					   p.telefono_numero, p.observaciones, p.estado_civil, p.ocupacion, p.titulo, p.titulo_expedido_por, 
-					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_hora_inscripcion, acm.nota,
+					   acm.anio_cursado, acm.tipo as cursado, acm.estado_final, acm.fecha_inscripcion, acm.nota,
 					   acm.fecha_modificacion_nota, acm.idCursado as cursado_id,  acm.idEstado as estado_id,
-					   p.email, 
+					   p.email, p.telefono, 
 					   tca1.id as 'id_cursado', tca1.codigo as 'codigo_cursado', tca1.nombre as 'nombre_cursado',
 					   tca2.id as 'id_estado', tca2.codigo as 'codigo_estado', tca2.nombre as 'nombre_estado'	
 				FROM alumno a, alumno_cursa_materia acm, persona p, tipificacion tca1, tipificacion tca2
@@ -109,9 +109,28 @@ class AlumnoCursaMateria {
 		        WHERE acm.idAlumno = ? and acm.idMateria=ctm.idMateria and ctm.idCarrera = ? and ctm.idMateria=m.id and acm.estado_final<>'Cursando'";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$alumno_id,$carrera_id]);
-		$res = $stmt->fetch(PDO::FETCH_ASSOC);
-		//var_dump($res['anio']);die;
-		return $res['anio'];
+		//$stmt->debugDumpParams();
+		$res_cursadas = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		$sql = "SELECT MAX(m.anio) as anio 
+				FROM alumno_rinde_materia arm, carrera_tiene_materia ctm, materia m 
+				WHERE arm.idAlumno = ? and arm.idMateria=ctm.idMateria and ctm.idCarrera = ? and ctm.idMateria=m.id and arm.estado_final='Aprobo';";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$alumno_id,$carrera_id]);
+		$res_aprobadas = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		
+
+		$mayor = 0;
+
+		if ($res_aprobadas['anio']!=NULL) {
+			 
+		     $mayor = ($res_cursadas['anio']<=$res_aprobadas['anio'])?$res_aprobadas['anio']:$res_cursadas['anio'];
+		} else {
+			 $mayor = $res_cursadas['anio'];
+		}
+
+		return $mayor;
 	}
 
 	/* Get Materias by Id Alumno y por Id Calendario */
@@ -340,13 +359,54 @@ class AlumnoCursaMateria {
 		}
 
 	return $arr_resultado;
-		
-	
-		}
-	
+}
 
-	/* Save Alumno */
-	public function save($param){
+public function getMateriasConInscriptosCursadoPorCarrera($idCarrera="",$anio="") {
+
+	$this->getConection();
+	$res = [];
+	if (isset($idCarrera) && $idCarrera!="" && isset($anio) && $anio!="") {
+			$sql = "SELECT DISTINCT c.id, c.nombre, COUNT( * ) as cantidad, c.anio 
+			        FROM alumno_cursa_materia a, carrera_tiene_materia b, materia c 
+					WHERE a.idMateria = b.idMateria AND 
+					      b.idCarrera = ? AND 
+						  b.idMateria = c.id AND 
+						  a.anio_cursado = ? 
+					GROUP BY c.nombre 
+					ORDER BY c.anio";
+			$stmt = $this->conection->prepare($sql);
+			$stmt->execute([$idCarrera,$anio]);
+			$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}; 
+        
+    return $res;
+}
+	
+/* Get Alumnos by Id Materia y por Id Calendario */
+public function getAlumnosCursanByIdMateriaDetalle($materia_id="",$anio="") {
+	$this->getConection();
+	$res = [];
+	if (isset($materia_id) && isset($anio) && $materia_id!="" && $anio!="") {
+		$sql = "SELECT a.id, a.anio_ingreso, a.debe_titulo, a.habilitado, a.idPersona,
+						p.dni, p.apellido, p.nombre, p.email, p.telefono_caracteristica, p.telefono_numero,
+						t.nombre as 'condicion', acm.nota, acm.estado_final, acm.fecha_hora_inscripcion 
+				FROM alumno_cursa_materia acm, alumno a, persona p, tipificacion t
+				WHERE acm.idMateria = ? AND
+					acm.idCursado = t.id AND
+					acm.idAlumno = a.id AND
+					acm.anio_cursado = ? AND
+					a.idPersona = p.id
+				ORDER BY p.apellido ASC, p.nombre ASC;";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$materia_id,$anio]);
+		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	};
+	return $res;
+
+}
+
+/* Save Alumno */
+public function save($param){
 		//var_dump('aca',$param);exit;
 		$this->getConection();
 		// Check if exists 

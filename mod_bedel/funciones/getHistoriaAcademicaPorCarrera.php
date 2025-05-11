@@ -16,9 +16,9 @@ $alumno_rinde_materia = new AlumnoRindeMateria();
 $arr_aprobadas = $alumno_rinde_materia->getMateriasRendidasByEstadoDetalle($idAlumno,'Aprobo');
 
 $alumno_cursa_materia = new AlumnoCursaMateria();
-$arr_regulares_libre = array_merge($alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Regularizo'),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Libre'),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Promociono',FALSE),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Aprobo',FALSE));
+$arr_regulares_libre = array_merge($alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Cursando',false),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Regularizo'),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Libre'),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Promociono',FALSE),$alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Aprobo',FALSE));
 
-//var_dump($alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Promociono',FALSE));die;
+//var_dump($alumno_cursa_materia->getMateriasCursadasByEstadoConDetalles($idAlumno,'Cursando',false));die;
 
 function getDetallesCursado($materia_id,$arr) {
     $arr_resultado = [];
@@ -46,11 +46,12 @@ function getDetallesAprobada($materia_id,$arr) {
 echo "<table class='table table-stripped'>";
 for ($i=1;$i<=$cantidad_anio_carrera;$i++) {
    
-    echo "<tr><th colspan=6 style='text-align: center;background-color: #D8F367;'>A&ntilde;o ".$i."</th></tr>";
+    echo "<tr><th colspan=7 style='text-align: center;background-color: #D8F367;'>A&ntilde;o ".$i."</th></tr>";
     echo "<tr><th style='text-align: center;'></th>"
-       . "<th style='text-align: center;' colspan='3'>CURSADO</th>"
+       . "<th style='text-align: center;' colspan='4'>CURSADO</th>"
        . "<th style='text-align: center;' colspan='2'>EXAMEN FINAL</th></tr>";
     echo "<tr><th style='text-align: center;'>Asignatura</th>"
+       . "<th style='text-align: center;'>Cursado</th>"
        . "<th style='text-align: center;'>Nota</th>"
        . "<th style='text-align: center;'>Estado</th>"
        . "<th style='text-align: center;'>F.Vencimiento</th>"
@@ -64,17 +65,20 @@ for ($i=1;$i<=$cantidad_anio_carrera;$i++) {
         $materia_nota_final = 0;
         $materia_estado = "";
         $materia_estado_final = "";
+        $materia_cursado = "";
         $materia_fecha_vencimiento = "";
 
         $materia_id = $value['materia_id'];
         $materia_nombre = $value['nombre'];
         $materia_anio = $value['anio'];
         $materia_detalles = getDetallesCursado($materia_id,$arr_regulares_libre);
+        //var_dump($materia_detalles);exit;
         $materia_aprobadas_detalles = getDetallesAprobada($materia_id,$arr_aprobadas);
         if (!empty($materia_detalles)) {
             $materia_nota_regularidad = $materia_detalles['nota'];
             $materia_estado = $materia_detalles['estado_final'];
             $materia_fecha_vencimiento = $materia_detalles['fecha_vencimiento_regularidad'];
+            $materia_cursado = $materia_detalles['cursado'];
         } else {
             $materia_nota_regularidad = "";
         }
@@ -86,7 +90,14 @@ for ($i=1;$i<=$cantidad_anio_carrera;$i++) {
         }
         
         if ($materia_anio==$i ) {
-            echo "<tr><td>".$materia_nombre.' <strong>('.$materia_id.")</strong></td><td>".$materia_nota_regularidad."</td><td>".$materia_estado."</td><td>".$materia_fecha_vencimiento."</td><td><strong>".$materia_nota_final."</strong></td><td><span class='badge badge-success'>".$materia_estado_final."</span></td></tr>";
+            echo "<tr><td><small>".$materia_nombre.' <strong>('.$materia_id.")</strong></small></td>".
+                     "<td><small>".$materia_cursado."</small></td>".
+                     "<td><small>".$materia_nota_regularidad."</small></td>".
+                     "<td><small>".$materia_estado."</small></td>".
+                     "<td><small>".$materia_fecha_vencimiento."</small></td>".
+                     "<td><small><strong>".$materia_nota_final."</strong></small></td>".
+                     "<td></small><span class='badge badge-success'>".$materia_estado_final."</span><small></td>".
+                 "</tr>";
         };
     }
     

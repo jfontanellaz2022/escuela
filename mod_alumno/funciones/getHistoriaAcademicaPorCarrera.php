@@ -48,7 +48,7 @@ echo "<div class='table-responsive'><table class='table table-bordered'>";
 for ($i=1;$i<=$cantidad_anio_carrera;$i++) {
     echo "<thead>
             <tr>
-            <th colspan='6' style='text-align: center;background-color: #D8F367;'>A&Ntilde;O " . $i . "</th>
+            <th colspan='6' style='text-align: center;background-color: #D8F367;'>A&Ntilde;O</th>
             </tr>
             <tr>
                 <th style='text-align: center;' colspan='4'>CURSADO</th>

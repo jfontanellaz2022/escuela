@@ -212,37 +212,9 @@ let idUsuario = <?=$_SESSION['arreglo_datos_usuario']['id'];?>;
 
 
 // CAMBIO CONTRASEÑA OPCIONAL
-$('#btnCambiarPassword').click(function(event) {
-      let password = $('#inputPasswordNueva').val();
-      let rePassword = $('#inputRePasswordNueva').val();
-      let captcha = $('#inputCaptcha').val();
-
-      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
-      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
-
-      if (password!="" && rePassword!="" && captcha!="") {
-          if (password==rePassword) {
-                  $.post(link,parametros,function(response) {
-                       $("#msg_restablecer").removeClass("d-none");
-                       $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
-                       if (response.codigo==200) {
-                            $('#inputPasswordNueva').prop("disabled",true);
-                            $('#inputRePasswordNueva').prop("disabled",true);
-                            $('#inputCaptcha').prop("disabled",true);
-                            $('#btnCambiarPassword').prop("disabled",true);
-                       }
-                  },"json");
-         } else {
-              $("#msg_restablecer").removeClass("d-none");
-              $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
-         }
-      } else {
-          $("#msg_restablecer").removeClass("d-none");
-          $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
-      }
-});
-
 $( "#idCambioPwd" ).on('shown.bs.modal', function (e) {
+     $('#img_captcha').attr('width',"90");
+     $('#img_captcha').attr('height',"24");
      $("#img_captcha").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
 });
 
@@ -273,10 +245,52 @@ $("body").on("click",".img",function(e){
            }
 })
 
+$('#btnCambiarPassword').click(function(event) {
+      let password = $('#inputPasswordNueva').val();
+      let rePassword = $('#inputRePasswordNueva').val();
+      let captcha = $('#inputCaptcha').val();
+
+      let parametros = {'password':password, "repassword": rePassword, "captcha":captcha}
+      let link = "../API/cambiarPassword.php?token=<?=$_SESSION['token'];?>";
+
+      if (password!="" && rePassword!="" && captcha!="") {
+          if (password==rePassword) {
+                  $.post(link,parametros,function(response) {
+                       $("#msg_restablecer").removeClass("d-none");
+                       $("#msg_restablecer").html('<div class="alert alert-'+response.class+'" role="alert"><strong>Atención:</strong>&nbsp;'+response.mensaje+'</div>');
+                       if (response.codigo==200) {
+                            $('#inputPasswordNueva').prop("disabled",true);
+                            $('#inputRePasswordNueva').prop("disabled",true);
+                            $('#inputCaptcha').prop("disabled",true);
+                            $('#btnCambiarPassword').prop("disabled",true);
+                       }
+                  },"json");
+         } else {
+              $("#msg_restablecer").removeClass("d-none");
+              $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;No coinciden las contraseñas.</div>');
+         }
+      } else {
+          $("#msg_restablecer").removeClass("d-none");
+          $("#msg_restablecer").html('<div class="alert alert-danger" role="alert"><strong>Error:</strong>&nbsp;Existen campos vacíos.</div>');
+      }
+});
 
 // FIN CAMBIO CONTRASEÑA OPCIONAL
 
 // JS CAMBIO DE USUARIO
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $('#img_captcha_usuario').attr('width',"90");
+     $('#img_captcha_usuario').attr('height',"24");
+     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
+     $("#msg_restablecer_usuario").addClass("d-none");
+     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
+     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
+     $('#btnCambiarUsuario').prop("disabled",false);
+});
+
 $('#btnCambiarUsuario').click(function(event) {
       let nombre = $('#inputUsuario').val();
       let captcha = $('#inputCaptchaCambioUsuario').val();
@@ -301,27 +315,10 @@ $('#btnCambiarUsuario').click(function(event) {
       }
 });
 
-$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
-     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
-});
-
-$("#idCambioUsuario").on('hide.bs.modal', function(){
-     $("#msg_restablecer_usuario").addClass("d-none");
-     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
-     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
-     $('#btnCambiarUsuario').prop("disabled",false);
-});
-
-function expired() {
-  //location.href = "./logout.php";
-}
 
 
-
+// LOAD
 $(function () {
-    /*$.get("./html/modalEliminar.html",function(data){
-      $("#modalEliminar").html(data);
-    })*/
     $('[data-toggle="popover"]').popover({
         html: true,
         sanitize: false,
@@ -329,7 +326,12 @@ $(function () {
     cargarCarreras(profesor_id);
 });
 
-//setTimeout(expired, 60000*20);
+//EXPIRED
+function expired() {
+  location.href = "../logout.php";
+}
+
+setTimeout(expired, 60000*20);
 
 </script>
 <script src="./js/gestionarFinales.js"></script>

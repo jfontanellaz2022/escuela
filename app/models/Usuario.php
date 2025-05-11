@@ -27,6 +27,7 @@ class Usuario extends Persona
                 WHERE u.nombre = ? AND u.password = ? AND u.idPersona = p.id and u.idRol=r.id";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$name,$password_encriptada]);
+        //$stmt->debugDumpParams(); exit;
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -76,7 +77,6 @@ class Usuario extends Persona
             $arr_credenciales[] = 'Bedel';
             $arr_credenciales[] = 'Profesor';
         } else if ($rol_id==7) {
-            $arr_credenciales[] = 'Bedel';
             $arr_credenciales[] = 'Profesor';
             $arr_credenciales[] = 'Alumno';
         }

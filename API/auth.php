@@ -5,6 +5,7 @@ require_once "SanitizeCustom.class.php";
 require_once "Usuario.php";
 
 $inputUsuario = SanitizeCustom::USUARIOFLEX($_POST['inputUsuario'],3,15);
+$inputUsuario = $_POST['inputUsuario'];
 $inputPassword = SanitizeCustom::PASSWDFLEX($_POST['inputPassword'],6,10);
 //$inputPassword = $_POST['inputPassword'];
 $inputToken = SanitizeCustom::TOKEN($_POST['token'],3,5);
@@ -37,6 +38,7 @@ if (!$inputUsuario || !$inputPassword ) {
             $finalResponse['datos'] = $res_auth['rol_descripcion'];
             $_SESSION['arreglo_datos_usuario'] = $res_auth;
             $_SESSION['arreglo_credenciales_usuario'] = $objUsuario->getCredencialesByIdPersona($persona_id);
+            //var_dump($_SESSION['arreglo_datos_usuario'],"****",$_SESSION['arreglo_credenciales_usuario']);exit;
       } else {
             $finalResponse['codigo'] = 500;
             $finalResponse['class'] = 'danger';

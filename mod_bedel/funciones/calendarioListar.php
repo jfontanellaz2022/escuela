@@ -49,6 +49,8 @@ if ($fecha_final) {
 /**********************************************************************************************************************************************************************/
 /**********************************************************************************************************************************************************************/
 /**********************************************************************************************************************************************************************/
+
+
 $sql = $sqlCantidadFilas = "";
 
 if($action == 'listar'){
@@ -105,20 +107,18 @@ if($action == 'listar'){
             <th class="text-center text-primary" width="35%"><small><b><?=$labelCampo3?></b></small></th>
             <th class="text-center text-primary" width="12%"><small><b><?=$labelCampo4?></b></small></th>
             <th class="text-center text-primary" width="12%"><small><b><?=$labelCampo5?></b></small></th>
-			<th class="text-center text-primary" width="12%"><small><b>Estado</b></small></th>
           </tr>
           <tr>
             <th class="text-right" colspan=4>
                 <button class="btn btn-primary btn-sm" onclick="quitarFiltro()" title="Quitar Filtro"><img src="../public/img/icons/filterminus.png" width="22"></button>
                 <button class="btn btn-primary btn-sm" onclick="aplicarFiltro()" title="Aplicar Filtro"><img src="../public/img/icons/filter.png" width="22"></button>
-            </th>
+              </th>
             <th class="text-center" width="7%"><small><b><input type="text" class="form-control" id="inputFiltro<?=$campo1?>" value="<?=$id?>"></b></small></th>
 			<th class="text-center" width="8%"><small><b><input type="text" class="form-control" id="inputFiltro<?=$campo2?>" value="<?=$anio_lectivo?>"></b></small></th>
             <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltro<?=$campo3?>" value="<?=$evento?>"></b></small></th>
             <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltro<?=$campo4?>" value="<?=$fecha_inicio?>"></b></small></th>
             <th class="text-center" width="9%"><small><b><input type="text" class="form-control" id="inputFiltro<?=$campo5?>" value="<?=$fecha_final?>"></b></small></th>
-			<th class="text-center"><small></small></th>
-		</tr>
+          </tr>
         </thead>
 		<tbody>
 
@@ -128,7 +128,6 @@ if($action == 'listar'){
 <?php
 		if (!empty($arr_objetos)){
 			$finales = $c = 0;
-			$fecha_actual = strtotime(date("d-m-Y H:i:00",time()));
 			foreach ($arr_objetos as $fila) {
 						$c++;
 						$rowIdCampo1 = $fila['id']; 
@@ -137,15 +136,6 @@ if($action == 'listar'){
 						$rowCampo3 = $fila['nombre'].' ('.$fila['codigo'].')';
 						$rowCampo4 = $fila['fecha_inicio'];
 						$rowCampo5 = $fila['fecha_final'];
-						$rowCampo6 = "";
-
-						$fecha_inicio_1 = strtotime($fila['fecha_inicio']);
-                        $fecha_final_1 = strtotime($fila['fecha_final']);
-
-						if ($fecha_actual>=$fecha_inicio_1 && $fecha_actual<=$fecha_final_1) {
-							$rowCampo6 = '<span class="badge badge-success">Activo</span>';
-						}
- 
 
 						
 ?>	
@@ -170,7 +160,6 @@ if($action == 'listar'){
                   <td align="left"><small><?=$rowCampo3;?></small></td>
                   <td align="center"><small><?=$rowCampo4;?></small></td>
 				  <td align="center"><small><?=$rowCampo5;?></small></td>
-				  <td align="center"><small><?=$rowCampo6;?></small></td>
                   
               </tr>
 		<?php 

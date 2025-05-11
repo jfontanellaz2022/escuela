@@ -68,7 +68,7 @@
         <img src="../public/img/icons/reporte_icon.png" width="20"> Reportes
         </a>
         <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-           <a class="dropdown-item disabled" href="menuActasCursado.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Cursado<span class="sr-only">(current)</span></a>
+           <a class="dropdown-item" href="menuActasCursado.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Cursado<span class="sr-only">(current)</span></a>
            <a class="dropdown-item disabled" href="menuActasPromociones.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Promociones<span class="sr-only">(current)</span></a>
            <a class="dropdown-item" href="menuActasExamenes.php?token=<?=$_SESSION['token'];?>"><img src="../public/img/icons/item1_icon.png" width="20"> Actas Exámenes<span class="sr-only">(current)</span></a>
            <div class="dropdown-divider"></div>

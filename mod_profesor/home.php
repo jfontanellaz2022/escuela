@@ -83,6 +83,7 @@
   let idUsuario = <?=$_SESSION['arreglo_datos_usuario']['id'];?>;     
   let password_vencida = '<?=$_SESSION['arreglo_datos_usuario']['password_vencida'];?>';
   
+  // LOAD
   $(function () {
     $('[data-toggle="popover"]').popover({
         html: true,
@@ -105,6 +106,14 @@ function load() {
     });
     $("#section_footer").html("");
 }
+
+
+// EXPIRED
+function expired() {
+  location.href = "../logout.php";
+}
+
+setTimeout(expired, 60000*20);
 
 
 // CAMBIO CONTRASEÑA OPCIONAL
@@ -170,8 +179,6 @@ $("body").on("click",".img",function(e){
 
            }
 })
-
-
 // FIN CAMBIO CONTRASEÑA OPCIONAL
 
 
@@ -248,6 +255,19 @@ $('#btnCambiarPasswordO').click(function(event) {
 
 
 // JS CAMBIO DE USUARIO
+$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
+     $('#img_captcha_usuario').attr('width',"90");
+     $('#img_captcha_usuario').attr('height',"24");
+     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
+});
+
+$("#idCambioUsuario").on('hide.bs.modal', function(){
+     $("#msg_restablecer_usuario").addClass("d-none");
+     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
+     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
+     $('#btnCambiarUsuario').prop("disabled",false);
+});
+
 $('#btnCambiarUsuario').click(function(event) {
       let nombre = $('#inputUsuario').val();
       let captcha = $('#inputCaptchaCambioUsuario').val();
@@ -272,16 +292,7 @@ $('#btnCambiarUsuario').click(function(event) {
       }
 });
 
-$( "#idCambioUsuario" ).on('shown.bs.modal', function (e) {
-     $("#img_captcha_usuario").attr('src', '../app/lib/CaptchaSecurityImages.php?width=90&height=30&characters=5');
-});
 
-$("#idCambioUsuario").on('hide.bs.modal', function(){
-     $("#msg_restablecer_usuario").addClass("d-none");
-     $('#inputUsuario').prop("disabled",false); $('#inputUsuario').val("");
-     $('#inputCaptchaCambioUsuario').prop("disabled",false); $('#inputCaptchaCambioUsuario').val("");
-     $('#btnCambiarUsuario').prop("disabled",false);
-});
   
 </script>
 </body>

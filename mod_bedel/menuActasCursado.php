@@ -1,52 +1,24 @@
 <?php
-set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'../conexion/'.PATH_SEPARATOR.'./funciones/'.PATH_SEPARATOR.'./');
-require_once 'config.php';
-require_once 'seguridad.php';
-require_once 'conexion.php';
+set_include_path('../app/models/'.PATH_SEPARATOR.'../app/lib/'.PATH_SEPARATOR.'./');
+require_once 'verificarCredenciales.php';
 require_once 'Sanitize.class.php';
 require_once 'ArrayHash.class.php';
 require_once 'CalendarioAcademico.php';
-require_once 'Carrera.php';
-
-$evento_inscripcion_cursado = new CalendarioAcademico();
-$evento_activo = $evento_inscripcion_cursado->getEventoActivoByCodigo(1023);
-//var_dump($evento_activo);die;
-$ARREGLO_CARRERAS = array();
-$bandInscripcionCursadoActivo = FALSE;
-
-$calendario_descripcion = "";
-$calendario_id = 0;
-
-if (!empty($evento_activo)) {
-    
-    $bandInscripcionCursadoActivo = TRUE;
-    $obj_carrera = new Carrera();
-    //$arr_carreras = $obj_carrera->getCarreras();
-
-    //var_dump($arr_carreras);die;    
-
-    foreach ($obj_carrera->getCarreras() as $item) {
-        $arreglo = array();
-        if ($item['habilitacion_cursado']=='Si') {
-            array_push($arreglo, $item['id'], $item['descripcion']);
-            array_push($ARREGLO_CARRERAS, $arreglo);
-        }
-    }
-    
-    /*$sqlCarreras = "SELECT a.id, a.descripcion
-                    FROM carrera a";
-    $resultadoCarreras = mysqli_query($conex, $sqlCarreras);
-    $_SESSION['carreras'] = array();
-    while ($filaCarreras = mysqli_fetch_assoc($resultadoCarreras)) {
-        $arreglo = array();
-        array_push($arreglo, $filaCarreras['id'], $filaCarreras['descripcion']);
-        array_push($_SESSION['carreras'], $arreglo);
-    }; */
-
-    $calendario_descripcion = $evento_activo[0]['evento_descripcion'];
-    $calendario_id = $evento_activo[0]['id'];
-    //var_dump($calendario_descripcion.'*'.$calendario_id);die;
-};
+require_once 'Constantes.php';
+/*
+$objCalendario = new CalendarioAcademico();
+$ARRAY_INSCRIPCION = $objCalendario->getLastInscripcionExamen();
+$ARRAY_TURNO = $objCalendario->getLastTurnoExamen();
+//var_dump($ARRAY_TURNO);exit;
+$cantidad_llamados = 1;
+$turno_id = $inscripcion_activa = $inscripcion_asociada = 0;
+if ( $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO || 
+     $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_TERCER_TURNO ) {
+      $inscripcion_activa = $ARRAY_INSCRIPCION['id'];
+      $inscripcion_asociada = $ARRAY_INSCRIPCION['id'];
+      $cantidad_llamados = 2;
+      $turno_id = $ARRAY_TURNO['id'];
+}*/
 
 ?>
 
@@ -55,7 +27,7 @@ if (!empty($evento_activo)) {
 <head>
 <?php
     include_once('../app/views/header.html');
-?>
+?> 
 </head>
 <body>
  
@@ -71,7 +43,7 @@ if (!empty($evento_activo)) {
       <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
               <li class="breadcrumb-item" aria-current="page"><a href="home.php?token=<?=$_SESSION['token'];?>">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Actas Cursado</li>
+              <li class="breadcrumb-item active" aria-current="page">Actas Exámenes</li>
           </ol>
       </nav>
     </div>
@@ -80,28 +52,39 @@ if (!empty($evento_activo)) {
   <article class="img form">
     <div class="jumbotron jumbotron-fluid rounded form2">
       <div class="container justifu+y-content-center">
-        <h2 class="display-5">Actas de Cursado</h2>
+        <h2 class="display-5">Actas de Cursado del Año en Curso</h2>
         <hr>
     <form id="form">
+        
+      
     
       <div class="form-row">  
         <div class="form-group col-md-6">
           <strong>Carrera</strong>
-          <select name="selectCarreras" id="selectCarreras"  class="form-control" onchange="cargaMateriasConInscriptosCursadoPorCarrera(this.value)">
+          <select name="selectCarreras" id="selectCarreras"  class="form-control" >
             <option value='0'> - Seleccione Carrera - </option>  
         </select>
+        </div>
+      </div>
+      
+
+
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha del Acta</strong>
+          <input type="text"  class="form-control datepicker" id="inputFecha" autocomplete="off" placeholder="dd/mm/aaaa" required>
         </div>
       </div>
         
       <div class="form-row">
         <div class="form-group col-md-6">
-          <button type="button" class="btn btn-primary btn-block" onclick="location.href='menuActasCursado.php'">Nueva Consulta</button>
+          <button type="button" class="btn btn-primary btn-block" onclick="cargaMateriasConInscriptosPorCarrera()">Aceptar</button>
         </div>
       </div>
-
+      
       <div class="form-row">
         <div class="form-group col-md-6">
-          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Volver</button>
+          <button type="button" class="btn btn-primary btn-block" onclick="location.href='home.php?token=<?=$_SESSION['token'];?>'">Volver</button>
         </div>
       </div>
     
@@ -118,9 +101,11 @@ if (!empty($evento_activo)) {
             <div class="row" id="resultado_accion"></div><!-- Cierra Row-->
         </section>
   </article>
+
 <!-- Modal -->
 <?php include_once('./html/cambiarPassword.html');?>
   
+
 <!-- FOOTER -->
 <?php
     include_once('../app/views/footer.html');
@@ -131,35 +116,51 @@ if (!empty($evento_activo)) {
     include("../app/views/script_jquery.html");
 ?>
 
-
 <!-- JAVASCRIPT CUSTOM -->
 <script>
 
 $(function () {
-    let turno;
-    let datos_turno;
     let titulo;
     let carrera;
     let arreglo_carreras;
 
-    
-    
-    let calendario_evento = '<?=$calendario_descripcion?> (<?=$calendario_id?>)';
-
-    if (<?=$bandInscripcionCursadoActivo;?>) {
-       titulo = "Inscripcion: <font color='red'>"+calendario_evento+"</font>";
-       carreras = getCarrerasHabilitadas();
-       arreglo_carreras = carreras.data;
-       $.each(arreglo_carreras, function(i, item) {
+    $('.datepicker').datepicker({
+      dateFormat: 'dd/mm/yy',
+      showButtonPanel: false,
+      changeMonth: false,
+      changeYear: false,
+      /*showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true,
+      minDate: '+1D',
+      maxDate: '+3M',*/
+      inline: true
+    }).datepicker("setDate", new Date());;
+  
+    $.datepicker.regional['es'] = {
+    closeText: 'Cerrar',
+    prevText: '<Ant',
+    nextText: 'Sig>',
+    currentText: 'Hoy',
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    weekHeader: 'Sm',
+    dateFormat: 'dd/mm/yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+  };
+  $.datepicker.setDefaults($.datepicker.regional['es']);
+    /**** SACA LAS CARRERAS HABILITADAS ******/
+    carreras = getCarrerasHabilitadas();
+       $.each(carreras, function(i, item) {
            $('#selectCarreras').append("<option value='"+item.id+"' >"+item.descripcion+" ("+item.id+")</option>");
        });
-
-
-    };
     
-    //let titulo1 = "<h3><i><strong><u>CARRERA:</u></strong> "+datos_carrera+ "</i></h3>";
-    //let titulo2 = "<h4>Listado de Alumnos</h4>";
-
     $("#titulo").html(titulo);
 });
 
@@ -203,54 +204,40 @@ $("#idCambioPwd").on('hide.bs.modal', function(){
      $('#inputCaptcha').prop("disabled",false); $('#inputCaptcha').val("");
 });
 
-
-
 //***********************************************************
 // RETORNA LAS CARRERAS ACTIVAS 
 //***********************************************************
 function getCarrerasHabilitadas() {
    var evento;
    $.ajax({
-      url:"./funciones/carrerasHabilitadasCursadoSelect.php",
+      url:"./funciones/getCarrerasHabilitadas.php?token=<?=$_SESSION['token'];?>",
       type:"POST",
       dataType : 'json',
       async: false,
-      success: function(datos){
-         evento = datos;
+      success: function(response){
+         evento = response.datos;
       }
     });
    return evento;
 }
 
 
-function cargaMateriasConInscriptosCursadoPorCarrera(val)
-    {
-        if (val!=0) {
-            let parametros = val;
-            let p = {"parametros":parametros}
-
-            $.get("./funciones/generarMateriasConInscriptosCursadoPorCarrera.php",p,function (resul){
+function cargaMateriasConInscriptosPorCarrera() {
+        let carrera = $("#selectCarreras").val();
+        let fecha = $("#inputFecha").val();
+        if (carrera!="" && fecha!="") {
+            let p = {"carrera":carrera, "fecha":fecha}
+            $.post("./funciones/generarMateriasConInscriptosCursadoPorCarrera.php?token=<?=$_SESSION['token'];?>",p,function (resul){
                 $("#resultado").html(resul);
             });
         } else {
-            alert('debe seleccionar');
+            alert('Debe seleccionar alguna de las opciones.');
         }
-    }
+}
 
 
-function cargaInscriptosCursadoPorMateria(materia_id,materia_nombre)
-    {
-        //alert(materia_nombre+'*'+materia_id);
-        if (materia_id!=0) {
-            let parametros = {"materia_id":materia_id,"materia_nombre":materia_nombre}
 
-            $.post("./funciones/alumnosInscriptosCursadoPorIdMateria.php",parametros,function (resul){
-                $("#resultado").html(resul);
-            });
-        } else {
-            alert('debe seleccionar');
-        };
-    }
+
 
 
 </script>

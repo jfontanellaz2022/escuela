@@ -18,6 +18,12 @@ if ( $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_PRIMER_TURNO |
       $inscripcion_asociada = $ARRAY_INSCRIPCION['id'];
       $cantidad_llamados = 2;
       $turno_id = $ARRAY_TURNO['id'];
+} else if ( $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_SEGUNDO_TURNO || 
+     $ARRAY_INSCRIPCION['codigo']==Constantes::CODIGO_INSCRIPCION_MESA_ESPECIAL ) {
+    $inscripcion_activa = $ARRAY_INSCRIPCION['id'];
+    $inscripcion_asociada = $ARRAY_INSCRIPCION['id'];
+    $cantidad_llamados = 1;
+    $turno_id = $ARRAY_TURNO['id'];
 }
 
 ?>

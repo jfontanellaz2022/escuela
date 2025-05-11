@@ -14,8 +14,8 @@ $alumno_id = $_SESSION['idAlumno'];
 $anio_cursado = date('Y');
 
 //var_dump($_SESSION['arr_materias_inscriptas_cursar_actualizadas']);die;
-/*
-$_SESSION['arr_materias_inscriptas_cursar_actualizadas'] 
+
+/*$_SESSION['arr_materias_inscriptas_cursar_actualizadas'] 
 
 array(1) {
     [0]=>
@@ -25,8 +25,8 @@ array(1) {
       [1]=>
       string(14) "Semipresencial"
     }
-  } 
-  */
+  } */
+  
   
 $objTipificacion = new Tipificacion();
 foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
@@ -57,7 +57,6 @@ foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
    
 
    
-   
    //$argumentos['tipo'] = $valor; 
    
 //$arr = ['alumno_id'=>646,'materia_id'=>401,'anio_cursado'=>2024,'tipo'=>'Presencial','fecha_hora_inscripcion'=>'2023-12-12',
@@ -73,7 +72,7 @@ foreach ($_SESSION['arr_materias_inscriptas_cursar_actualizadas'] as $value) {
        
        $acm->save($argumentos);
    }
-   //var_dump($argumentos);
+   
 }
 
 $arr_resultado = [];

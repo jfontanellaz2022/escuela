@@ -263,6 +263,7 @@ class CalendarioAcademico {
 				FROM calendario_academico c, tipificacion t 
 				WHERE t.id=c.idTipificacion and ( t.codigo = " . Constantes::CODIGO_PRIMER_TURNO . " or 
 				                                  t.codigo = " . Constantes::CODIGO_SEGUNDO_TURNO . " or 
+				                                  t.codigo = " . Constantes::CODIGO_MESA_ESPECIAL_TURNO . " or
 												  t.codigo = " . Constantes::CODIGO_TERCER_TURNO . " )
 				ORDER BY c.fecha_final desc
 				limit 0,1 ";

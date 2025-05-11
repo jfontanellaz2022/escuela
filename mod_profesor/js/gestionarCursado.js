@@ -359,11 +359,11 @@ function cargarMaterias(id_carrera,id_profesor) {
                        
 
                        filas += `
-                                  <tr class=`+habilitar_materia+` id="tr_`+materia.materia_id+`"><td>`+materia.materia_nombre+` <strong>(`+materia.materia_id+`)</strong></td><td>`+materia.materia_anio+`</td>`+
+                                  <tr class=`+habilitar_materia+` id="tr_`+materia.materia_id+`"><td>`+materia.materia_nombre+` <strong>(`+materia.materia_id+`)</strong><a href="#" class="disabledbutton" ><img src="../../public/img/icons/documento-legal.png" width="35"></a></td><td>`+materia.materia_anio+`</td>`+
                                      `<td>`+materia.formato_nombre+`</td>`+
                                      `<td>`+materia.cursado_nombre + `</td>`+
                                      `<td>`+
-                                     `      <a href="#" class="`+habilitar_materia+`" onclick="cargarAlumnos(`+id_carrera+`,`+materia.materia_id+`,`+id_profesor+`)" data-toggle="tooltip" data-placement="bottom" title="Editar Listado de Alumnos"><img src="../public/img/icons/listado_icon.png" width="25">`+budge+`</a>`+
+                                     `      <a href="#" class="`+habilitar_materia+`" onclick="cargarAlumnos(`+id_carrera+`,`+materia.materia_id+`,`+id_profesor+`)" data-toggle="tooltip" data-placement="bottom" title="Ver Listado de Alumnos"><img src="../public/img/icons/icon_list.png" width="27">`+budge+`</a>`+
                                      `&nbsp;&nbsp;<a href="#" class="link" onclick="cursadoDesvincularMateria(`+id_profesor+`,`+materia.materia_id+`,`+id_carrera+`)"><u>Desvincularme</u></a></td></tr>
                                    `;
                    });
@@ -518,7 +518,7 @@ function cargarAlumnos(carrera_id,materia_id,profesor_id) {
                                 <strong>(`+alumno.telefono_caracteristica+`) `+ alumno.telefono_numero +`</strong></td>`+
                                 `<td>`+alumno.dni+`</td>`+
                                 `<td><span class="badge badge-info">`+alumno.nombre_cursado+`</span></td>`+
-                                `<td>&nbsp;`+accion_eliminar+`&nbsp;</td>
+                                `<td>&nbsp;&nbsp;</td>
                             </tr>
                             `;
             });
