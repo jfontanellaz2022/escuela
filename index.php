@@ -11,7 +11,7 @@ $objCarrera = new Carrera();
 $ARREGLO_CARRERAS = $objCarrera->getCarrerasHabilitadas();
 
 if (!isset($_SESSION['token'])) {
-  headers("location: index.php");
+  header("location: index.php");
 }
 
 ?>
@@ -31,13 +31,13 @@ if (!isset($_SESSION['token'])) {
 
  
   <header class=""> <!--Encabezado-->
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light"> <!--Navegación-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-center" data-bs-theme="light"> <!--Navegación-->
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
           <img src="./public/img/logo_623x781.png" alt="Logo" width="40" class="d-inline-block align-text-center">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -88,19 +88,23 @@ if (!isset($_SESSION['token'])) {
     </nav>
   </header>
 
-  <section class="container-fluid pb-4 pt-4"> <!--Cuerpo de página-->
+  <section class="container-fluid pb-4 pt-2 pt-xl-3"> <!--Cuerpo de página-->
     <div> <!--Carrusel-->
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./public/img/slider_1.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/img/slider_2.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/img/slider_3.png" class="d-block w-100" alt="...">
+            <img src="./public/img/Esc40_3.png" class="d-block w-100" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="./public/img/Esc40_4.png" class="d-block w-100" alt="...">
+          </div>
+          
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -148,9 +152,9 @@ if (!isset($_SESSION['token'])) {
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              En caso de que hayas olvidado tu contraseña, podrás recuperarla haciendo uso de tu correo electrónico (vease "<a href="https://escuela40.net/olvidePassword.php">Olvide mi contraseña</a>"). Como dato adicional, tu usuario corresponderá siempre a tu número de documento (DNI). Recuerda seleccionar el perfil que se adapte a tu condición Institucional (Ej. Si eres un estudiante regular, tu perfil es "Alumno").
+              En caso de que hayas olvidado tu contraseña, podrás recuperarla haciendo uso de tu correo electrónico (vease '<a class="" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalOlvideContrasenia">Olvide mi contraseña</a>'). Como dato adicional, tu usuario corresponderá siempre a tu número de documento (DNI). Recuerda seleccionar el perfil que se adapte a tu condición Institucional (Ej. Si eres un estudiante regular, tu perfil es "Alumno").
 
-              Si haz seguido todos los pasos anteriores y aún así no puedes acceder al sistema, contacta a <a href="#">Soporte técnico</a>.
+              Si haz seguido todos los pasos anteriores y aún así no puedes acceder al sistema, contacta a <a href="mailto:jfontanellaz@gmail.com">Soporte técnico</a>.
             </div>
           </div>
         </div>
@@ -254,6 +258,59 @@ if (!isset($_SESSION['token'])) {
       </div>
     </div>
 
+   <!-- ***********************************************  PERFIL   ******************************************************************** -->
+
+    <div class="modal fade" id="modalPerfilselection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header"> 
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Seleccione Perfil</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body"> 
+                <div class="row">
+                                  <div class="col-md-6">
+                                          <div class="card">
+                                                <div class="card-body">
+                                                      <h5 class="card-title">Profesor</h5>
+                                                      <p class="card-text"></p>
+                                                      <button class="btn btn-primary btn-block" onclick="location.href='./mod_profesor/home.php'">
+                                                        <img src="./public/img/icons/icon_teacher.png" width="120">
+                                                      </button>
+                                                </div>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                          <div class="card">
+                                                <div class="card-body">
+                                                      <h5 class="card-title">Alumno</h5>
+                                                      <p class="card-text"></p>
+                                                      <button class="btn btn-primary btn-block" onclick="location.href='./mod_alumno/home.php'">
+                                                        <img src="./public/img/icons/icon_student.png" width="120">
+                                                      </button>
+                                                </div>
+                                            </div>
+                                    </div> 
+
+
+                </div>
+          </div>
+
+          <div class="modal-footer"> 
+            <div class="col d-grid gap-2">
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   <!-- ************************************************************************************************************************ -->
+
 
     <div class="modal fade" id="modalDescargarInscripcion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -355,13 +412,27 @@ $('#btnIngresar').click(function(event) {
 
       $.post(link,parametros,function(response) {
             if (response.codigo==200) {
-                if (response.datos=='Alumno') {
-                    $(location).attr('href','mod_alumno/home.php?token=<?=$_SESSION['token'];?>');
-                } else if (response.datos=='Profesor') {
-                    $(location).attr('href','mod_profesor/home.php?token=<?=$_SESSION['token'];?>');
-                } else if (response.datos=='Bedel') {
-                    $(location).attr('href','mod_bedel/home.php?token=<?=$_SESSION['token'];?>');
-                };
+                let perfiles = response.datos;
+                let arr_perfiles = perfiles.split(',');
+                let cant_items = arr_perfiles.length;
+
+                //console.info(cant_items,perfiles);
+
+                if (cant_items==1) {
+                    if (response.datos=='Alumno') {
+                      $(location).attr('href','mod_alumno/home.php?token=<?=$_SESSION['token'];?>');
+                    } else if (response.datos=='Profesor') {
+                        $(location).attr('href','mod_profesor/home.php?token=<?=$_SESSION['token'];?>');
+                    } else if (response.datos=='Bedel') {
+                        $(location).attr('href','mod_bedel/home.php?token=<?=$_SESSION['token'];?>');
+                    };
+                } if (cant_items==2) {
+                    $("#modalPerfilselection").modal('show');
+                }
+
+                //arr_perfiles/
+
+                
             } else {
                 $("#msg_ingreso").removeClass('d-none');
                 $("#msg_ingreso").html('<div class="alert alert-'+response.class+'" role="alert">'+response.mensaje+'.</div>');
