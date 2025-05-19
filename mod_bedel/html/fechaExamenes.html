@@ -1,0 +1,66 @@
+<!--  ID del ALUMNO que se va a procesar-->
+<input id="inputIdFechaExamen" inputmode="numeric" placeholder="ID" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+<input id="inputTurnoId" inputmode="numeric" type="hidden">
+<input id="inputAccionFechaExamen" type="hidden" class="form-control" minlength="8" maxlength="8" required autocomplete="off">
+
+<!-- *************************************************** -->
+<!-- **** 1 - CREAR UNA FECHA EXAMEN EN UNA MATERIA DADA -->
+<!-- *************************************************** -->
+<div class="img form visible" id="alta_fecha_materia_mesa">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h3 class="display-4"><span id="subtitulo_formulario">Crear a Fecha en Materia para la Mesa Exámenes</span></h3>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Turno Examenes</strong>
+            <input type="text" class="form-control" id="inputTurnoDescripcion" readonly>
+            
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Materias</strong>
+            <select id="inputMateriaFechaExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Llamado</strong>
+            <select id="inputLlamadoFechaExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+              <option value="1">Llamado 1</option>
+              <option value="2">Llamado 2</option>
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Fecha Exámen</strong>
+        <input type="text" class="form-control" id="inputFechaExamen" placeholder="dd/mm/aaaa" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarFechaMateria()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+

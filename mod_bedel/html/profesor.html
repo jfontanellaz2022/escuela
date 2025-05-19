@@ -1,0 +1,197 @@
+<!-- 1 Formulario -->
+<div class="img form" id="profesor_editar">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Profesor</h1>
+      <hr>
+  <form id="form">
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Documento <font color="red">(*)</font></strong>
+        <input id="inputDocumento" inputmode="numeric" placeholder="Documento" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+        <input id="inputId" inputmode="numeric" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Apellido <font color="red">(*)</font></strong>
+        <input id="inputApellido" placeholder="Apellido" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Nombre <font color="red">(*)</font></strong>
+        <input id="inputNombre" placeholder="Nombre" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Fecha Nacimiento</strong>
+        <input type="text" class="form-control" id="inputFechaNacimiento" placeholder="dd/mm/aaaa" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Domicilio</strong>
+        <input id="inputDomicilio" placeholder="Domicilio" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <strong>Cel.Numero (Sin el 0)</strong>
+          <input id="inputTelefonoCaracteristica" inputmode="tel" placeholder="Caracteristica" type="text" class="form-control" minlength="2" maxlength="4" onkeypress="return valideKeySoloNumerosSinPrimerCero(event,this.value);" required autocomplete="off">
+      
+        </div>
+
+        <div class="form-group col-md-3">
+          <strong>Cel.Numero (Sin el 15)</strong>
+          <input id="inputTelefonoNumero" inputmode="tel" placeholder="Numero" type="text" class="form-control" minlength="6" maxlength="9" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+        </div>
+    </div>      
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Email <font color="red">(*)</font></strong>
+        <input id="inputEmail" inputmode="email" placeholder="Email" type="email" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+        <input id="inputAccion" type="hidden" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Localidad <font color="red">(*)</font></strong>
+              <select id="inputLocalidad" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadGuardar()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+<!-- 2 VER -->
+<div class="img form" id="profesor_ver" >
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Ver Registro del Profesor</h1>
+      <hr>
+      <p class="lead">Estos datos son estrictamente confidenciales.</p>
+  
+  <form id="form">
+      
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Apellido y Nombre: </strong> <span id="spn_nombres">Fontanellaz, Javier</span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Fecha Nacimiento: </strong><span id="spn_fecha_nacimiento">01/02/1976</span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Documento: </strong><span id="spn_documento">24912834</span>
+      </div>
+    </div>
+  
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Domicilio: </strong><span id="spn_domicilio">Espora 2278</span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Celular: </strong><span id="spn_celular">(342) 5163923</span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Email: </strong><span id="spn_email">jfontanellaz@gmail.com</span>
+      </div>
+    </div>
+  
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Localidad: </strong><span id="spn_localidad">San Cristobal | Pcia. Santa Fe | CP: 3000</span>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadEditar($('#inputId').val())">Editar</button>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  
+  </div>
+  </div>
+</div>
+
+
+<!-- *********************************************** -->
+<!-- *********** 3 - ASIGNAR A UNA CARRERA ********* -->
+<!-- *********************************************** -->
+<div class="img form d-none" id="profesor_asignar_carrera">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Vincular Profesor a Carrera</h1>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Carrera</strong>
+              <select id="inputCarrera" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+   <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarVinculo()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>

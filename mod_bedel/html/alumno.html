@@ -1,0 +1,290 @@
+<!--  ID del ALUMNO que se va a procesar-->
+<input id="inputId" inputmode="numeric" placeholder="ID" type="hidden" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+
+<!-- ************************************************* -->
+<!-- *********** 1 - EDITAR DATOS DEL ALUMNO ********* -->
+<!-- ************************************************* -->
+<div class="img form visible" id="alumno_editar">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Alumno (<font color="red">*</font> Datos Obligatorios)</h1>
+      <hr>
+
+  <form id="form">
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Documento <font color="red">(*)</font></strong>
+        <input id="inputDocumento" inputmode="numeric" placeholder="Documento" type="text" class="form-control" minlength="8" maxlength="8" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Apellido <font color="red">(*)</font></strong>
+        <input id="inputApellido" placeholder="Apellido" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Nombre <font color="red">(*)</font></strong>
+        <input id="inputNombre" placeholder="Nombre" type="text" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Fecha Nacimiento </strong>
+        <input type="text" class="form-control" id="inputFechaNacimiento" placeholder="dd/mm/aaaa" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Domicilio </strong>
+        <input id="inputDomicilio" placeholder="Domicilio" type="text" class="form-control" minlength="5" maxlength="50" required autocomplete="off">
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <strong>Cel.Numero (Sin el 0) </strong>
+          <input id="inputTelefonoCaracteristica" inputmode="tel" placeholder="Caracteristica" type="text" class="form-control" minlength="2" maxlength="4" onkeypress="return valideKeySoloNumerosSinPrimerCero(event,this.value);" required autocomplete="off">
+      
+        </div>
+
+        <div class="form-group col-md-3">
+          <strong>Cel.Numero (Sin el 15) </strong>
+          <input id="inputTelefonoNumero" inputmode="tel" placeholder="Numero" type="text" class="form-control" minlength="6" maxlength="9" onkeypress="return valideKeySoloNumeros(event);" required autocomplete="off">
+        </div>
+    </div>      
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Email <font color="red">(*)</font></strong>
+        <input id="inputEmail" inputmode="email" placeholder="Email" type="email" class="form-control" minlength="8" maxlength="35" required autocomplete="off">
+        <input id="inputAccion" type="hidden" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Localidad <font color="red">(*)</font></strong>
+              <select id="inputLocalidad" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Año Ingreso <font color="red">(*)</font></strong>
+        <select id="inputAnioIngreso" class="form-control">
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>  
+      </div>
+    </div>
+
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Debe Título <font color="red">(*)</font></strong>
+        <select id="inputDebeTitulo" class="form-control">
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>  
+      </div>
+    </div>
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadGuardar()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-primary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+
+<!-- ********************************************************** -->
+<!-- *********** 2 - VER REGISTRO DE DATOS DEL ALUMNO ********* -->
+<!-- ********************************************************** -->
+<div class="img form" id="alumno_ver" >
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Ver Registro del Alumno</h1>
+      <hr>
+      <p class="lead">Estos datos son estrictamente confidenciales.</p>
+  
+  <form id="form">
+      
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Apellido y Nombre: </strong> <span id="spn_nombres"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Fecha Nacimiento: </strong><span id="spn_fecha_nacimiento"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Documento: </strong><span id="spn_documento"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Domicilio: </strong><span id="spn_domicilio"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Celular: </strong><span id="spn_celular"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Email: </strong><span id="spn_email"></span>
+      </div>
+    </div>
+    
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <strong>Localidad: </strong><span id="spn_localidad"></span>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadEditar($('#inputId').val())">Editar</button>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  
+  </div>
+  </div>
+</div>
+
+
+<!-- *********************************************** -->
+<!-- *********** 3 - ASIGNAR A UNA CARRERA ********* -->
+<!-- *********************************************** -->
+<div class="img form visible" id="alumno_asignar_carrera">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Vincular Alumno a Carrera</h1>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Carrera</strong>
+              <select id="inputCarrera" class="form-control select2 select2-localidad select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Año</strong>
+            <input type="text" id="inputAnioCarrera" class="form-control" style="width: 100%;" maxlength="4" tabindex="-1" aria-hidden="true">
+      </div>
+  </div>
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarVinculo()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>
+
+<!-- *********************************************** -->
+<!-- **** 4 - INSCRIBIR A EXAMEN EN UNA MATERIA DADA -->
+<!-- *********************************************** -->
+<div class="img form visible" id="alumno_asignar_mesa">
+  <div class="jumbotron jumbotron-fluid rounded form2">
+    <div class="container justifu+y-content-center">
+      <h1 class="display-4">Inscripción a Mesa Exámenes</h1>
+      <hr>
+  <form id="form">
+
+    <div class="form-row">
+        <div class="form-group col-md-6"> 
+              <strong>Carrera</strong>
+              <select id="inputCarreraInscribirExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            </select> 
+        </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Materias</strong>
+            <select id="inputMateriaInscribirExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Turno Examen</strong>
+            <select id="inputTurnoInscribirExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+            <strong>Llamado</strong>
+            <select id="inputLlamadoInscribirExamen" class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
+          </select> 
+      </div>
+    </div>
+
+
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <button id="btnVerGuardar" type="button" class="btn btn-primary btn-block" onclick="guardarInscripcionMesa()">Guardar</button>
+       </div>
+     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" onclick="load(1)">Volver</button>
+      </div>
+    </div>
+  
+  </form>
+  </div>
+  </div>
+</div>

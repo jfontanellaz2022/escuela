@@ -1,0 +1,372 @@
+[06-Mar-2025 18:15:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-Mar-2025 18:15:36 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnosPorCarrera.php(6): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-Mar-2025 18:46:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-Mar-2025 18:46:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuProfesor.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-Mar-2025 21:52:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-Mar-2025 21:52:50 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuActasExamenesPendientes.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Mar-2025 16:41:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Mar-2025 17:51:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Mar-2025 17:51:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:20 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:47:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:47:48 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuProfesor.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-Mar-2025 20:52:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-Mar-2025 20:52:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuFechasExamenes.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-Mar-2025 21:50:35 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-Mar-2025 21:50:35 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:29:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:29:53 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:30:05 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 20:24:18 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuActasExamenesPendientes.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 20:24:55 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuActasExamenesPendientes.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 18:39:15 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 18:39:15 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuCalendario.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 20:29:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 20:29:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 20:41:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[18-Mar-2025 20:41:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnoMateriasRendidasPorAlumno.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:59 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:59 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[20-Mar-2025 18:45:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[20-Mar-2025 18:45:38 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnoMateriasRendidasPorAlumno.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[28-Mar-2025 21:31:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[28-Mar-2025 21:31:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[04-Apr-2025 20:18:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[04-Apr-2025 20:18:56 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-Apr-2025 20:43:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-Apr-2025 20:43:18 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-Apr-2025 20:58:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-Apr-2025 20:58:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:47:41 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:47:48 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:47:50 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:47:51 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:47:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:49:46 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:49:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnoMateriasRendidasPorAlumno.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[21-Apr-2025 19:26:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[21-Apr-2025 19:26:51 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 16:58:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 16:58:34 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnosPorCarrera.php(6): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 17:48:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnoMateriasCursadasPorAlumno.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 17:48:37 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumnoMateriasCursadasPorAlumno.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 18:28:14 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 18:28:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 18:52:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 18:52:44 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 21:04:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 21:04:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 22:04:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 22:04:10 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuActasExamenes.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[29-Apr-2025 21:14:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[29-Apr-2025 21:14:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[29-Apr-2025 21:14:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[29-Apr-2025 21:14:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[01-May-2025 15:21:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[01-May-2025 15:21:35 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[04-May-2025 17:38:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[04-May-2025 17:38:33 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-May-2025 18:47:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-May-2025 18:47:05 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-May-2025 20:40:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[07-May-2025 20:40:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-May-2025 10:55:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-May-2025 10:55:40 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[10-May-2025 18:05:27 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/home.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 07:55:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 07:55:36 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuActasCursado.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 17:40:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 17:40:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 19:15:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[13-May-2025 19:15:09 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/menuAlumno.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10

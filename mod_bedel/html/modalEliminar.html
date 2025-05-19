@@ -1,0 +1,62 @@
+<!-- Modal para confirmar eliminar solo uno -->
+<div class="modal fade" id="confirmarModal" tabindex="-1" aria-labelledby="confirmarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><img src="../public/img/icons/error_icon.png" width="26">&nbsp;&nbsp;Atenci&oacute;n</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="inputEliminarId">
+          <h6 id="tituloEliminarUno">Desea continuar con la Eliminación?</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="entidadEliminarSeleccionado($('#inputEliminarId').val())">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal para confirmar eliminar solo varios-->
+  <div class="modal fade" id="confirmarEliminarTodosModal" tabindex="-1" aria-labelledby="confirmarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><img src="../public/img/icons/error_icon.png" width="26">&nbsp;&nbsp;Atenci&oacute;n</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 id="tituloEliminarVarios">Desea continuar con la Eliminaci&oacute;n de los Registros seleccionados?</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="entidadEliminarSeleccionadosConfirmar()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal para advertir que no hay seleccionados -->
+  <div class="modal fade" id="sinElementosModal" tabindex="-1" aria-labelledby="confirmarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><img src="../public/img/icons/error_icon.png" width="26">&nbsp;&nbsp;Atenci&oacute;n</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 id="tituloEliminarVariosNinguno">No ha seleccionado ningún Registro.</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>

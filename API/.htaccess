@@ -1,0 +1,25 @@
+Order Allow,Deny
+Deny from 156.253.14.176
+Deny from 217.24.66.123
+Deny from 173.239.213.84
+Deny from 160.176.169.108
+Deny from 105.113.56.219
+Deny from 143.58.162.128
+Deny from 217.24.64.215
+Deny from 197.135.31.82
+Deny from 197.210.8.37
+Deny from 54.147.167.168
+
+Allow from all
+
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

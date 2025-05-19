@@ -1,0 +1,982 @@
+[21-Feb-2025 08:05:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[21-Feb-2025 08:05:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[21-Feb-2025 08:23:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[21-Feb-2025 08:23:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[21-Feb-2025 08:24:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:24:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:26:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:26:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:32:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:32:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:34:36 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:34:36 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:35:50 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:35:50 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:48:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:48:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:55:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:55:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:56:49 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 08:56:49 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 09:10:21 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 09:10:21 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 17:39:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 17:39:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 19:12:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[21-Feb-2025 19:12:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[24-Feb-2025 16:35:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key 3 in /home2/uiakkdaq/public_html/mod_bedel/funciones/generarMateriasConInscriptosPendientesPorCarrera.php on line 12
+[26-Feb-2025 16:29:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key 3 in /home2/uiakkdaq/public_html/mod_bedel/funciones/generarMateriasConInscriptosPendientesPorCarrera.php on line 12
+[28-Feb-2025 04:45:00 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rj_yud@hotmail.com' for key 'FU_PERSONA_EMAIL' in /home2/uiakkdaq/public_html/app/models/Persona.php:172
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/Persona.php(172): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoGuardar.php(85): Persona->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/Persona.php on line 172
+[01-Mar-2025 12:10:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:10:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:11:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:11:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:13:18 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:13:18 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:18:07 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:18:07 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:18:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:18:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:19:38 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:19:38 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:21:28 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:21:28 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:22:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:22:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:23:00 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:23:00 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:23:57 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:23:57 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:25:55 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:25:55 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:27:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:27:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:42:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:42:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:47:02 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 12:47:02 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:06:18 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:06:18 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:07:53 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:07:53 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:16:49 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:16:49 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:17:34 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:17:34 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:24:21 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:24:21 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:25:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:25:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:27:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:27:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:29:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:29:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:31:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:31:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:32:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:32:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:34:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:34:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:42:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:42:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:45:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 13:45:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 15:57:50 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 15:57:50 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:03:58 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:03:58 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:07:29 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:07:29 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:20:09 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:20:09 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:25:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:25:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:26:51 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '345-337-1' for key 'idMateria' in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursar.php:124
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursar.php(124): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/correlativasCursadoGuardar.php(27): CorrelativasParaCursar->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursar.php on line 124
+[01-Mar-2025 16:32:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[01-Mar-2025 16:32:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:12:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:12:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:14:32 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:14:32 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:22:19 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:22:19 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:25:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:25:11 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:26:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:26:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:29:17 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:29:17 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:30:45 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:30:45 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:34:32 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:34:32 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:37:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:37:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:56:39 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:56:39 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[04-Mar-2025 14:56:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "token" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 5
+[04-Mar-2025 14:56:57 America/Argentina/Buenos_Aires] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 11
+[04-Mar-2025 14:56:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 15
+[04-Mar-2025 14:56:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:15
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(15): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/correlativasCursadoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 15
+[04-Mar-2025 14:57:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "token" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 5
+[04-Mar-2025 14:57:02 America/Argentina/Buenos_Aires] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 11
+[04-Mar-2025 14:57:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 15
+[04-Mar-2025 14:57:02 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:15
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(15): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/correlativasCursadoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 15
+[05-Mar-2025 14:23:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-Mar-2025 14:23:27 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-Mar-2025 14:23:30 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[05-Mar-2025 14:23:30 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[07-Mar-2025 01:43:48 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[10-Mar-2025 08:02:01 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:02:01 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:04:34 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:04:34 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:10:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:10:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:14:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:14:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:43:52 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:43:52 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:45:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:45:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:57:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 08:57:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:18:52 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:18:52 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:26:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:26:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:27:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:27:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:54:38 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:54:38 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:55:31 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:55:31 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:58:55 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 09:58:55 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 10:01:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 10:01:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 10:07:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 10:07:41 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[10-Mar-2025 19:41:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[11-Mar-2025 16:41:08 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Mar-2025 16:41:09 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Mar-2025 18:03:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key 3 in /home2/uiakkdaq/public_html/mod_bedel/funciones/generarMateriasConInscriptosPendientesPorCarrera.php on line 13
+[12-Mar-2025 19:12:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:12:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:13 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:13 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:14 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:14:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[12-Mar-2025 19:16:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[12-Mar-2025 20:15:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[12-Mar-2025 20:15:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[12-Mar-2025 20:16:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[12-Mar-2025 20:16:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[13-Mar-2025 18:40:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '139-18' for key 'UK_PROFESOR_CARRERA' in /home2/uiakkdaq/public_html/app/models/ProfesorPerteneceCarrera.php:96
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/ProfesorPerteneceCarrera.php(96): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorVincularCarrera.php(19): ProfesorPerteneceCarrera->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/ProfesorPerteneceCarrera.php on line 96
+[13-Mar-2025 21:51:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[13-Mar-2025 21:51:10 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:27:01 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:28:22 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:29:09 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:30:16 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:31:03 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 15:32:13 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[14-Mar-2025 20:04:28 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'barbyperg97@gmail.com' for key 'FU_PERSONA_EMAIL' in /home2/uiakkdaq/public_html/app/models/Persona.php:163
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/Persona.php(163): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoGuardar.php(45): Persona->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/Persona.php on line 163
+[15-Mar-2025 18:02:45 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[15-Mar-2025 18:02:45 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/MateriaFilter.php on line 65
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[17-Mar-2025 19:33:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:48 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[19-Mar-2025 20:03:50 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/profesorListar.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 17:24:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 17:52:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 18:02:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:02:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 19:20:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "accion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 9
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 10
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "alumno_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 11
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "materia_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 12
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "calendario_id" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 13
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "llamado_nro" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 14
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "nota" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 15
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "estado_final" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 16
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "condicion" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 17
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home2/uiakkdaq/public_html/app/lib/Sanitize.class.php on line 10
+[04-Apr-2025 20:44:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "fecha" in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiaRendidaGuardar.php on line 18
+[11-Apr-2025 19:49:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:49:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/getCalendarioInscripciones.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:49:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[11-Apr-2025 19:49:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/getMateriasPorIdCarrera.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[21-Apr-2025 17:45:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '36814379' for key 'FU_PERSONA_DNI' in /home2/uiakkdaq/public_html/app/models/Persona.php:172
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/Persona.php(172): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoGuardar.php(87): Persona->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/Persona.php on line 172
+[22-Apr-2025 17:43:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 17:43:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 20:38:17 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 20:38:17 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 20:42:40 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 20:42:40 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[22-Apr-2025 20:42:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 20:42:45 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/correlativasCursadoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 20:48:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[22-Apr-2025 20:48:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/correlativasCursadoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[24-Apr-2025 15:18:33 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[24-Apr-2025 15:18:33 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[24-Apr-2025 15:21:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[24-Apr-2025 15:21:03 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[24-Apr-2025 18:44:36 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiasCursadasPorCarreraListar.php on line 59
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[24-Apr-2025 23:44:15 UTC] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/getAlumnosCompletoPorIdCarreraDescarga.php on line 30
+[26-Apr-2025 21:04:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 21:04:41 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 21:04:43 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 21:04:43 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 22:03:43 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[26-Apr-2025 22:03:43 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/getHistoriaAcademicaPorCarrera.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[29-Apr-2025 18:03:28 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '46880116' for key 'FU_PERSONA_DNI' in /home2/uiakkdaq/public_html/app/models/Persona.php:172
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/Persona.php(172): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoGuardar.php(87): Persona->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/Persona.php on line 172
+[29-Apr-2025 18:04:58 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '46880116' for key 'FU_PERSONA_DNI' in /home2/uiakkdaq/public_html/app/models/Persona.php:172
+Stack trace:
+#0 /home2/uiakkdaq/public_html/app/models/Persona.php(172): PDOStatement->execute(Array)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoGuardar.php(87): Persona->save(Array)
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/app/models/Persona.php on line 172
+[29-Apr-2025 20:39:40 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[29-Apr-2025 20:39:40 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[30-Apr-2025 18:47:26 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiasCursadasPorCarreraListar.php on line 59
+[02-May-2025 17:40:20 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', '')
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[03-May-2025 19:10:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[03-May-2025 19:10:15 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[03-May-2025 19:30:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[03-May-2025 19:30:42 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-May-2025 16:26:48 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiasCursadasPorCarreraListar.php on line 59
+[05-May-2025 16:27:19 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/materiasCursadasPorCarreraListar.php on line 59
+[05-May-2025 16:44:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-May-2025 16:44:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-May-2025 20:05:59 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[05-May-2025 20:05:59 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[06-May-2025 18:45:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-May-2025 18:45:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-May-2025 18:45:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[06-May-2025 18:45:33 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-May-2025 10:55:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[08-May-2025 10:55:38 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php:10
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php(10): in_array('Bedel', NULL)
+#1 /home2/uiakkdaq/public_html/mod_bedel/funciones/alumnoListar.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_bedel/verificarCredenciales.php on line 10
+[09-May-2025 11:21:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[09-May-2025 11:21:47 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[09-May-2025 11:25:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[09-May-2025 11:25:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[09-May-2025 16:29:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key 3 in /home2/uiakkdaq/public_html/mod_bedel/funciones/generarMateriasConInscriptosPorCarrera.php on line 14
+[16-May-2025 10:29:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:29:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:29:25 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:30:58 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:30:58 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:30:58 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:20 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:31:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/PDF_ActaCursado.php on line 119
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/PDF_ActaCursado.php on line 119
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/uiakkdaq/public_html/mod_bedel/funciones/PDF_ActaCursado.php on line 119
+[16-May-2025 10:32:30 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:22 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:22 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:22 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:33 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:33 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:39:33 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:40:46 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:40:46 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:40:46 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:43:04 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:43:04 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 10:43:04 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:22:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:22:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:22:05 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:25:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:25:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 16:25:23 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:18:08 America/Argentina/Buenos_Aires] PHP Deprecated:  Function strftime() is deprecated in /home2/uiakkdaq/public_html/app/lib/ActasInscripcionCursadoIndividualPdf.class.php on line 170
+[16-May-2025 20:19:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[16-May-2025 20:19:43 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaRendirFilter.php on line 60
+[16-May-2025 20:19:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65
+[16-May-2025 20:19:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Optional parameter $per_page declared before required parameter $filtro is implicitly treated as a required parameter in /home2/uiakkdaq/public_html/app/models/CorrelativasParaCursarFilter.php on line 65

@@ -1,0 +1,1368 @@
+[05-Mar-2025 22:41:15 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[05-Mar-2025 22:41:15 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 17:30:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 17:30:37 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 17:35:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 17:35:37 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:10 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:12 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:12 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:19 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:00:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:55:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 18:55:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 19:23:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 19:23:42 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 19:24:23 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-Mar-2025 19:24:23 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Mar-2025 19:31:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Mar-2025 19:31:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[08-Mar-2025 12:22:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[08-Mar-2025 12:22:50 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 10:23:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 10:23:08 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 10:30:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 10:30:09 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 22:11:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 22:11:56 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 22:17:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-Mar-2025 22:17:02 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 08:12:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 08:12:05 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 15:34:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 15:34:51 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 17:34:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 17:34:44 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 17:49:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 17:49:56 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 18:31:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 18:31:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 20:18:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 20:18:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 22:40:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-Mar-2025 22:40:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 01:55:14 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 01:55:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:01:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:01:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:16:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:16:38 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:25:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:25:22 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:28:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:28:10 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:34:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 17:34:18 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:21:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:21:02 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:21:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:21:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:55:56 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 18:55:56 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 22:19:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[11-Mar-2025 22:19:42 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 06:20:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 06:20:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 09:25:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 09:25:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 13:22:43 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 13:22:43 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 13:55:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 13:55:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 14:49:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 14:49:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 15:04:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 15:04:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 15:35:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 15:35:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:30 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:30 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 18:07:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 19:02:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 19:02:42 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 19:02:46 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 19:02:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 20:13:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 20:13:18 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 20:58:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 20:58:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 21:22:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 21:22:19 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 21:49:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-Mar-2025 21:49:02 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 01:46:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 01:46:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:10:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:10:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:54:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:54:41 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:54:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 09:54:45 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 17:33:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 17:33:38 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 17:33:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 17:33:42 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:04:05 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:04:05 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:34:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:34:19 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:46:55 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 18:46:55 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 20:35:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 20:35:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 21:13:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 21:13:42 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 21:16:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 21:16:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 23:41:13 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-Mar-2025 23:41:13 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-Mar-2025 19:38:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-Mar-2025 19:38:08 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 17:14:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 17:14:37 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 17:36:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 17:36:50 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:14 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-Mar-2025 19:10:34 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 08:11:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 08:11:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 08:11:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 08:11:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 08:12:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 08:12:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 08:12:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 08:12:50 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 08:23:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 08:23:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 08:23:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 08:23:02 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 12:42:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 12:42:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 12:42:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 12:42:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 12:43:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 12:43:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 12:43:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 12:43:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 12:44:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 12:44:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 12:44:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 12:44:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 13:39:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 13:39:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 13:39:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 13:39:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 13:40:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 13:40:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 13:40:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 13:40:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 14:44:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 14:44:44 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 15:15:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:15:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:15:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:15:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:18:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:18:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:18:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:18:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:35:15 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 15:35:15 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 15:35:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:35:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:35:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:35:18 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:35:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 15:35:22 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 15:35:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:35:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:35:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:35:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:35:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:35:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:35:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:35:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:35:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:35:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:35:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:35:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:35:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:35:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:35:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:35:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:52:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:52:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:52:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:52:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:53:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:53:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:53:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:53:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:54:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:54:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:54:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:54:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 15:57:01 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 15:57:01 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 15:57:01 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 15:57:01 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 16:53:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 16:53:20 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 17:11:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:11:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:11:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:11:37 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:11:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:11:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:11:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:11:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:11:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:11:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:11:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:11:51 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:12:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:12:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:12:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:12:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:12:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:12:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:12:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:12:20 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:12:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:12:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:12:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:12:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:19:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 17:19:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 17:19:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:19:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:19:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:19:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 17:52:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 17:52:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 17:57:07 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 17:57:07 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 17:57:07 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 17:57:07 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:03:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:03:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:03:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:03:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:08:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:08:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:08:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:08:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:09:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:09:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:09:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:09:19 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:14:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:14:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:14:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:14:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:14:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:14:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:14:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:14:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:20:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:20:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:20:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:20:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:21:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:21:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:21:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:21:41 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:23:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 18:23:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 18:23:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:23:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:23:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:23:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:24:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[18-Mar-2025 18:24:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[18-Mar-2025 18:24:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[18-Mar-2025 18:24:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[18-Mar-2025 18:38:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 18:38:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 18:38:29 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 18:38:29 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 19:51:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 19:51:45 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 20:05:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 20:05:49 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 20:34:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 20:34:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:23 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:23 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 21:04:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 22:34:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[18-Mar-2025 22:34:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[20-Mar-2025 16:22:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[20-Mar-2025 16:22:45 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[21-Mar-2025 19:24:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[21-Mar-2025 19:24:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Mar-2025 16:49:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 16:49:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 16:49:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 16:49:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Mar-2025 16:50:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 16:50:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 16:50:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 16:50:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Mar-2025 16:52:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 16:52:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 16:52:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 16:52:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Mar-2025 16:55:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 16:55:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 16:55:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 16:55:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Mar-2025 21:51:55 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 21:51:55 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 21:51:55 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 21:51:55 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Mar-2025 21:52:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Mar-2025 21:52:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Mar-2025 21:52:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Mar-2025 21:52:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[25-Mar-2025 12:55:07 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[25-Mar-2025 12:55:07 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[25-Mar-2025 21:45:23 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[25-Mar-2025 21:45:23 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[27-Mar-2025 14:11:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[27-Mar-2025 14:11:49 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Mar-2025 15:58:46 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Mar-2025 15:58:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Mar-2025 16:58:59 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Mar-2025 16:58:59 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Mar-2025 16:59:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[28-Mar-2025 16:59:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[28-Mar-2025 16:59:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[28-Mar-2025 16:59:08 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[01-Apr-2025 08:40:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[01-Apr-2025 08:40:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[01-Apr-2025 23:06:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[01-Apr-2025 23:06:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:07:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:07:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:07:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:07:40 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:09:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:09:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:13:22 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 17:13:22 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 18:58:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[03-Apr-2025 18:58:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Apr-2025 10:28:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Apr-2025 10:28:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Apr-2025 14:10:33 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[07-Apr-2025 14:10:33 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[15-Apr-2025 19:56:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[15-Apr-2025 19:56:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[15-Apr-2025 19:56:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[15-Apr-2025 19:56:44 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Apr-2025 15:38:48 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 15:38:48 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 15:39:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Apr-2025 15:39:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Apr-2025 15:39:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Apr-2025 15:39:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Apr-2025 15:40:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 15:40:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 19:11:40 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 19:11:40 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 19:13:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[24-Apr-2025 19:13:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[24-Apr-2025 19:13:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[24-Apr-2025 19:13:10 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[24-Apr-2025 20:46:46 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 20:46:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 21:10:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[24-Apr-2025 21:10:21 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[28-Apr-2025 12:17:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[28-Apr-2025 12:17:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[28-Apr-2025 12:17:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[28-Apr-2025 12:17:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[28-Apr-2025 12:17:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[28-Apr-2025 12:17:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[28-Apr-2025 12:17:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[28-Apr-2025 12:17:42 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[29-Apr-2025 11:34:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:34:53 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:48:00 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:48:00 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:49:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:49:49 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:59:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 11:59:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 18:36:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 18:36:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 19:11:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 19:11:36 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 20:53:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[29-Apr-2025 20:53:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[29-Apr-2025 20:53:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[29-Apr-2025 20:53:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[29-Apr-2025 20:56:14 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[29-Apr-2025 20:56:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[01-May-2025 15:41:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[01-May-2025 15:41:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[01-May-2025 15:41:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[01-May-2025 15:41:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[01-May-2025 15:41:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[01-May-2025 15:41:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[01-May-2025 15:41:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[01-May-2025 15:41:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[06-May-2025 20:05:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:05:58 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:30 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:30 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:31 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:31 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:36 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[06-May-2025 20:24:36 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 09:40:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[09-May-2025 09:40:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[09-May-2025 09:40:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[09-May-2025 09:40:45 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[09-May-2025 09:40:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 09:40:52 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:06:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[09-May-2025 12:06:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[09-May-2025 12:06:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[09-May-2025 12:06:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[09-May-2025 12:07:09 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:07:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:07:18 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:08:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:09:00 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 12:09:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 16:22:22 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 16:44:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 16:44:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[09-May-2025 19:24:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[09-May-2025 19:24:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[09-May-2025 19:24:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[09-May-2025 19:24:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[09-May-2025 19:24:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[09-May-2025 19:24:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[09-May-2025 19:24:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[09-May-2025 19:24:21 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:25 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:26 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:27 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[10-May-2025 18:05:27 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 12:02:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[12-May-2025 12:02:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[12-May-2025 12:02:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[12-May-2025 12:02:53 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[12-May-2025 12:03:28 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[12-May-2025 12:03:28 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[12-May-2025 12:03:28 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[12-May-2025 12:03:28 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[12-May-2025 16:15:09 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 16:15:09 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 16:15:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[12-May-2025 16:15:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[12-May-2025 16:15:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[12-May-2025 16:15:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[12-May-2025 16:15:23 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 16:15:23 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:05:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:05:06 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:05:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:05:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:37:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:37:08 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:37:10 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:37:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:37:44 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:38:12 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 18:38:16 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', '')
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 22:43:17 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[12-May-2025 22:43:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 08:11:57 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 08:11:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 08:31:58 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 08:31:58 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 17:46:23 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 17:46:23 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarCarrerasMateriasAlumnos.php(3): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 17:57:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 17:57:12 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 20:44:32 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 20:44:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 20:44:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[13-May-2025 20:44:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[13-May-2025 20:44:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[13-May-2025 20:44:34 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[13-May-2025 20:44:39 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 20:44:39 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[13-May-2025 20:44:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[13-May-2025 20:44:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[13-May-2025 20:44:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[13-May-2025 20:44:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 11:18:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 11:18:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 11:18:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 11:18:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 11:18:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 11:18:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 11:18:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 11:18:16 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 11:18:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 11:18:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 11:18:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 11:18:38 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 20:27:04 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-May-2025 20:27:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-May-2025 20:27:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 20:27:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 20:27:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 20:27:06 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 20:27:11 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-May-2025 20:27:11 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php(4): require_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[14-May-2025 20:27:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 20:27:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 20:27:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 20:27:49 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 20:28:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 20:28:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 20:28:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 20:28:47 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[14-May-2025 20:29:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[14-May-2025 20:29:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[14-May-2025 20:29:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[14-May-2025 20:29:03 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[16-May-2025 15:14:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[16-May-2025 15:14:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[16-May-2025 15:14:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[16-May-2025 15:14:25 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[16-May-2025 15:15:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 207
+[16-May-2025 15:15:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_primer_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 208
+[16-May-2025 15:15:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_desde in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 209
+[16-May-2025 15:15:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined variable $fecha_segundo_llamado_hasta in /home2/uiakkdaq/public_html/mod_profesor/menuGestionarExamenesFinales.php on line 210
+[17-May-2025 20:28:52 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "arreglo_credenciales_usuario" in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11
+[17-May-2025 20:28:52 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php:11
+Stack trace:
+#0 /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php(11): in_array('Profesor', NULL)
+#1 /home2/uiakkdaq/public_html/mod_profesor/home.php(4): include_once('/home2/uiakkdaq...')
+#2 {main}
+  thrown in /home2/uiakkdaq/public_html/mod_profesor/verificarCredenciales.php on line 11

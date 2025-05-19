@@ -1,0 +1,122 @@
+<div class="img form visible" id="calendario_editar">
+    <div class="jumbotron jumbotron-fluid rounded form2">
+      <div class="container justifu+y-content-center">
+        <h1 class="display-4">Calendario</h1>
+        <hr>
+    <form id="form">
+      
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Año</strong>
+          <input id="inputAnio" inputmode="numeric" placeholder="Año" type="text" class="form-control" minlength="8" maxlength="8" required autocomplete="off">
+          <input id="inputId" inputmode="numeric" type="hidden" class="form-control" minlength="8" maxlength="8" required autocomplete="off">
+          <input id="inputAccion" type="hidden" class="form-control" required>
+        </div>
+      </div>
+      
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Evento</strong>
+          <select id="inputEvento" class="form-control select2-container" style="height: 100;">
+          </select> 
+        </div>
+      </div>
+      
+      <!-- <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Cuatrimestre</strong>
+          <select id="inputCuatrimestre" class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true" required>
+              <option value="">Seleccione cuatrimestre</option>
+              <option value="1">1er Cuatrimestre</option>
+              <option value="2">2do Cuatrimestre</option>
+          </select> 
+        </div>
+      </div> -->
+
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha Inicio</strong>
+          <input type="text" class="form-control" id="inputFechaInicio" placeholder="dd/mm/aaaa" required autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha Finalización</strong>
+          <input type="text" class="form-control" id="inputFechaFinalizacion" placeholder="dd/mm/aaaa" required autocomplete="off">
+        </div>
+      </div>
+      
+      <div class="form-row">
+         <div class="form-group col-md-6">
+           <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadGuardar()">Guardar</button>
+         </div>
+       </div>
+  
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <button type="button" class="btn btn-primary btn-block" onclick="load(1)">Volver</button>
+        </div>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+  
+  <div class="img form" id="calendario_ver" >
+    <div class="jumbotron jumbotron-fluid rounded form2">
+      <div class="container justifu+y-content-center">
+        <h1 class="display-4">Ver Registro del Calendario</h1>
+        <hr>
+        <p class="lead">Estos datos son estrictamente confidenciales.</p>
+    
+    <form id="form">
+        
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>ID: </strong> <span id="spn_id"></span>
+        </div>
+      </div>
+    
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>AÑO: </strong><span id="spn_anio">01/02/1976</span>
+        </div>
+      </div>
+    
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Evento: </strong><span id="spn_evento">24912834</span>
+        </div>
+      </div>
+    
+    
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha Inicio: </strong><span id="spn_fecha_inicio">Espora 2278</span>
+        </div>
+      </div>
+    
+      <div class="form-row">  
+        <div class="form-group col-md-6">
+          <strong>Fecha Finalizacion: </strong><span id="spn_fecha_finalizacion">(342) 5163923</span>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <button id="btnVerEditar" type="button" class="btn btn-primary btn-block" onclick="entidadEditar($('#inputId').val())">Editar</button>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <button type="button" class="btn btn-primary btn-block" onclick="load(1)">Volver</button>
+        </div>
+      </div>
+    
+    </form>
+    
+    </div>
+    </div>
+  </div>

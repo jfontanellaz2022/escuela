@@ -1,0 +1,109 @@
+<article class="container">
+    <section>
+<!--  ID del ALUMNO que se va a procesar-->
+<input type="hidden" id="inputIdAlumno">
+<input type="hidden" id="inputId">
+
+<form>
+
+    <div class=" form-row">
+        <label for="inputCarrera"><strong>Carrera</strong></label>
+        <input type='text' name="inputCarrera" id="inputCarrera"  class="form-control" disabled>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputAnioCursado"><strong>Año Cursado</strong></label>
+            <input type='text' name="inputAnioCursado" id="inputAnioCursado"  class="form-control" maxlength="4"><br>   
+    </div>
+    
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputMateria"><strong>Materia</strong></label>
+        <select name="inputMateria" id="inputMateria"  class="form-control select2-container">
+        </select><br>
+    </div>
+    
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputCursado"><strong>Tipo Cursado</strong></label>
+        <select name="inputCursado" id="inputCursado"  class="form-control input-form">
+            <option value="1">Presencial</option>
+            <option value="2">Semipresencial</option>
+            <option value="3">Libre</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputNota"><strong>Nota</strong></label>
+        <select name="inputNota" id="inputNota"  class="form-control input-form">
+            <option value="-1">-1 (Libre)</option>
+            <option value="0">0 (Cursando)</option>
+            <option value="1">1 (Uno)</option>
+            <option value="2">2 (Dos)</option>
+            <option value="3">3 (Tres)</option>
+            <option value="4">4 (Cuatro)</option>
+            <option value="5">5 (Cinco)</option>
+            <option value="6">6 (Seis)</option>
+            <option value="7">7 (Siete)</option>
+            <option value="8">8 (Ocho)</option>
+            <option value="9">9 (Nueve)</option>
+            <option value="10">10 (Diez)</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputEstado"><strong>Estado</strong></label>
+        <select name="inputEstado" id="inputEstado"  class="form-control input-form">
+            <option value="Regularizo">Regularizo</option>
+            <option value="Libre">Libre</option>
+            <option value="Promociono">Promociono</option>
+            <option value="Homologo">Homologo</option>
+            <option value="Aprobo">Aprobo</option>
+            <option value="Cursando">Cursando</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <label for="inputFechaExpiracion"><strong>Fecha Expiración</strong></label>
+        <input type="text" class="form-control input-form" id="inputFechaExpiracion" placeholder="aaaa/mm/dd" >
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+
+    <div class="form-row">
+        <button type="button" class="btn btn-primary" onclick="cursadoGuardar()">Guardar</button>
+    </div>
+
+    <div class="form-row">
+        &nbsp;
+    </div>
+    
+</form>
+</section>
+</article>
